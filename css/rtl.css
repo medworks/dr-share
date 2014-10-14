@@ -277,69 +277,69 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul
 /* --- icon small arrow --- */
 li.icon_small_arrow.left_black
 {
-	background-image: url('images/icon_arrow_right_black.png');
+	background-image: url('../images/icon_arrow_right_black.png');
 }
 li.icon_small_arrow.right_black
 {
-	background-image: url('images/icon_arrow_left_black.png');
+	background-image: url('../images/icon_arrow_left_black.png');
 }
 .icon_small_arrow.margin_right_black
 {
-	background-image: url('images/icon_arrow_margin_left_black.png');
+	background-image: url('../images/icon_arrow_margin_left_black.png');
 }
 li.icon_small_arrow.left_white
 {
-	background-image: url('images/icon_arrow_right_white.png');
+	background-image: url('../images/icon_arrow_right_white.png');
 }
 .icon_small_arrow.margin_right_white
 {
-	background-image: url('images/icon_arrow_margin_left_white.png');
+	background-image: url('../images/icon_arrow_margin_left_white.png');
 }
 li.icon_small_arrow.right_white
 {
-	background-image: url('images/icon_arrow_left_white.png');
+	background-image: url('../images/icon_arrow_left_white.png');
 }
 .icon_small_arrow.top_white
 {
-	background-image: url('images/icon_arrow_top_white.png');
+	background-image: url('../images/icon_arrow_top_white.png');
 }
 .icon_small_arrow.top_black
 {
-	background-image: url('images/icon_arrow_top_black.png');
+	background-image: url('../images/icon_arrow_top_black.png');
 }
 .icon_small_arrow.right_gray
 {
-	background-image: url('images/icon_arrow_right_gray.png');
+	background-image: url('../images/icon_arrow_right_gray.png');
 }
 .icon_small_arrow.square
 {
-	background-image: url('images/icon_arrow_square_rtl.png');
+	background-image: url('../images/icon_arrow_square_rtl.png');
 }
 .icon_small_arrow.mark
 {
-	background-image: url('images/icon_arrow_mark_rtl.png');
+	background-image: url('../images/icon_arrow_mark_rtl.png');
 }
 .icon_small_arrow.tick
 {
-	background-image: url('images/icon_tick.png');
+	background-image: url('../images/icon_tick.png');
 }
 /* --- icon clock --- */
 .icon_clock_green
 {
-	background-image: url('images/icon_clock_green.png');
+	background-image: url('../images/icon_clock_green.png');
 }
 .icon_clock_black
 {
-	background-image: url('images/icon_clock_black.png');
+	background-image: url('../images/icon_clock_black.png');
 }
 /* --- icon card --- */
 .icon_card_green
 {
-	background-image: url('images/icon_card_green.png');
+	background-image: url('../images/icon_card_green.png');
 }
 .icon_card_white
 {
-	background-image: url('images/icon_card_white.png');
+	background-image: url('../images/icon_card_white.png');
 }
 /* --- social_icons --- */
 .top_header_icons
@@ -380,7 +380,7 @@ li.icon_small_arrow.right_white
 }
 .header_icon.phone
 {
-	background-image: url("images/header_phone.png");
+	background-image: url("../images/header_phone.png");
 	padding-right: 18px;
 	padding-left: 0;
 }
@@ -391,15 +391,15 @@ li.icon_small_arrow.right_white
 }
 .notification_box.nb_success
 {
-	background: url('images/icons_notification/info.png') no-repeat right center #5FAA4B;
+	background: url('../images/icons_notification/info.png') no-repeat right center #5FAA4B;
 }
 .notification_box.nb_error
 {
-	background: url('images/icons_notification/cross.png') no-repeat right center #EB6D58;
+	background: url('../images/icons_notification/cross.png') no-repeat right center #EB6D58;
 }
 .notification_box.nb_info
 {
-	background: url('images/icons_notification/info.png') no-repeat right center #42B3E5;
+	background: url('../images/icons_notification/info.png') no-repeat right center #42B3E5;
 }
 .closing_in
 {
@@ -428,7 +428,7 @@ li.icon_small_arrow.right_white
 }
 .home_box .more.light:hover
 {
-	background-image: url('images/icon_arrow_margin_left_black.png');
+	background-image: url('../images/icon_arrow_margin_left_black.png');
 }
 /* --- items list --- */
 .items_list li
@@ -701,7 +701,7 @@ li.icon_small_arrow.right_white
 /* --- departments --- */
 .accordion .ui-accordion-header h3
 {
-	background: url('images/accordion/accordion_plus.png') no-repeat left center;
+	background: url('../images/accordion/accordion_plus.png') no-repeat left center;
 	padding-left: 13px;
 	padding-right: 0;
 }
@@ -712,7 +712,7 @@ li.icon_small_arrow.right_white
 }
 .accordion .ui-accordion-header.ui-state-active h3
 {
-	background: url('images/accordion/accordion_minus.png') no-repeat left center !important;
+	background: url('../images/accordion/accordion_minus.png') no-repeat left center !important;
 }
 .accordion .ui-accordion-content .item_footer .more.blue
 {
@@ -843,7 +843,7 @@ li.icon_small_arrow.right_white
 /* --- timetable --- */
 .timetable tbody tr
 {
-	background: url('images/dotted_line.png') right top repeat-x;
+	background: url('../images/dotted_line.png') right top repeat-x;
 }
 .timetable .last
 {
@@ -913,11 +913,11 @@ li.icon_small_arrow.right_white
 }
 .gallery_item_details .prev
 {
-	background-image: url('images/icon_arrow_right_black.png');
+	background-image: url('../images/icon_arrow_right_black.png');
 }
 .gallery_item_details .next
 {
-	background-image: url('images/icon_arrow_left_black.png');
+	background-image: url('../images/icon_arrow_left_black.png');
 }
 /* --- scrolling gallery --- */
 /* --- fancybox --- */
@@ -990,7 +990,7 @@ li.icon_small_arrow.right_white
 .widget_archive li
 {
 	float: right;	
-	background: url('images/icon_arrow_left_black.png') right center no-repeat;
+	background: url('../images/icon_arrow_left_black.png') right center no-repeat;
     padding: 5px 18px 5px 0;
 }
 /* --- preloader --- */

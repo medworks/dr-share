@@ -46,15 +46,15 @@
 			<div class="textwidget">
 				<div style="padding: 9px 0;" class="clearfix">
 					<ul class="thin_list">
-						<li><span class="header_icon address">33 Farlane Street, Keilor East</span></li>
-						<li><span class="header_icon phone">1-800-643-4300</span></li>
-						<li><a href="mailto:medicenter@mail.com" target="_blank" class="header_icon mail">medicenter@mail.com</a></li>
+						<li><span class="header_icon address fs15">مشهد، احمدآباد، خیابان عارف، ساختمان نگین، طبقه دوم، واحد3</span></li>
+						<li><span class="header_icon phone ltr fs15">+98-51-3 841 7740</span></li>
+						<li><a href="mailto:info@rahyab.com" target="_blank" class="header_icon mail fs15">info@rahyab.com</a></li>
 					</ul>
 					<div class="top_header_icons">
-						<a href="#" target="_blank" style="background-image:url(http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/social_body/blue_light/mail.png);" class="social_icon single"></a>
-						<a href="#" target="_blank" style="background-image:url(http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/social_body/blue_light/facebook.png);" class="social_icon single"></a>
-						<a href="#" target="_blank" style="background-image:url(http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/social_body/blue_light/googleplus.png);" class="social_icon single"></a>
-						<a href="#" target="_blank" style="background-image:url(http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/social_body/blue_light/skype.png);" class="social_icon single last"></a>
+						<a href="javascript:void();" target="_blank" style="background-image:url(./images/mail.png);" class="social_icon single"></a>
+						<a href="javascript:void();" target="_blank" style="background-image:url(./images/facebook.png);" class="social_icon single"></a>
+						<a href="javascript:void();" target="_blank" style="background-image:url(./images/googleplus.png);" class="social_icon single"></a>
+						<a href="javascript:void();" target="_blank" style="background-image:url(./images/skype.png);" class="social_icon single last"></a>
 					</div>
 				</div>
 			</div>
