@@ -12,6 +12,10 @@ h1,h2,h3,h4,h5,h6,p,span,strong,a{
 	font-family:"bmitra";
 	font-weight: normal;
 }
+.bmitra{
+	font-family:"bmitra";
+	font-weight: normal;
+}
 .ltr{
 	direction:ltr;	
 }
