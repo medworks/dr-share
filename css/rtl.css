@@ -465,9 +465,11 @@ li.icon_small_arrow.right_white
 }
 .timeago {
 	text-align: right;
+	font-size: 15px;
 }
 .scrolling_list.latest_tweets li p {
 	text-align: right;
+	font-size: 18px;
 }
 .scrolling_list li .number
 {
@@ -701,7 +703,7 @@ li.icon_small_arrow.right_white
 /* --- departments --- */
 .accordion .ui-accordion-header h3
 {
-	background: url('../images/accordion/accordion_plus.png') no-repeat left center;
+	background: url('../images/accordion_plus.png') no-repeat left center;
 	padding-left: 13px;
 	padding-right: 0;
 }
@@ -712,7 +714,7 @@ li.icon_small_arrow.right_white
 }
 .accordion .ui-accordion-header.ui-state-active h3
 {
-	background: url('../images/accordion/accordion_minus.png') no-repeat left center !important;
+	background: url('../images/accordion_minus.png') no-repeat left center !important;
 }
 .accordion .ui-accordion-content .item_footer .more.blue
 {

@@ -692,7 +692,7 @@
 		<ul class="footer_banner_box_container clearfix">
 			<li class="footer_banner_box animated_element animation-fadeIn duration-500" style="background-color: #42b3e5">
 				<h2>
-					<a href="javascript:void();" title="">فرم وقت ملاقات</a>
+					<a href="javascript:void();" title="">درباره رهیاب</a>
 				</h2>
 				<!-- <p>	
 					<a class="icon_small_arrow right_white" href="http://quanticalabs.com/wp_themes/medicenter/pricing-plans/" title="Here in medicenter we have individual">Here in medicenter we have individual</a>
@@ -700,7 +700,7 @@
 			</li>
 			<li class="footer_banner_box animated_element animation-slideRight duration-800 delay-250" style="background-color: #0384ce">
 				<h2>
-					<a href="javascript:void();" title="">درباره رهیاب</a>
+					<a href="javascript:void();" title="">فرم وقت ملاقات</a>
 				</h2>
 				<!-- <p>	
 					<a class="icon_small_arrow right_white" href="http://quanticalabs.com/wp_themes/medicenter/sliding-pricing-plans/" title="Here in medicenter we have individual">Here in medicenter we have individual</a>
@@ -717,74 +717,63 @@
 		</ul>
 			<div class="footer_box_container clearfix">
 				<div id="medicenter_contact_details-2" class="widget contact_details_widget footer_box">
-					<h3 class="box_header animation-slide">Medicenter Clinic</h3>
-					<p class="info">Mauris adipiscing mauris fringilla turpis interdum sed pulvinar nisi malesuada individual. </p>
+					<h3 class="box_header animation-slide">کلینیک رهیاب</h3>
+					<p class="info">کلینیک رهیاب با مشاورین مجرب در زمینه... از سال... فعالیت خود را آغاز کرده...</p>
 					<ul class="footer_contact_info_container clearfix">
 						<li class="footer_contact_info_row">
-							<div class="footer_contact_info_left">Medicenter Clinic</div>
+							<div class="footer_contact_info_left">کلینیک رهیاب</div>
 							<div class="footer_contact_info_right"></div>
 						</li>
 						<li class="footer_contact_info_row">
-							<div class="footer_contact_info_left">33 Farlane Street</div>
+							<div class="footer_contact_info_left">مشهد</div>
 							<div class="footer_contact_info_right">+123 655 655</div>
 						</li>
 						<li class="footer_contact_info_row">
-							<div class="footer_contact_info_left">Keilor East</div>
+							<div class="footer_contact_info_left">خیابان احمد آباد</div>
 							<div class="footer_contact_info_right">+123 655 755</div>
 						</li>
 						<li class="footer_contact_info_row">
-							<div class="footer_contact_info_left">VIC 3033, Australia</div>
+							<div class="footer_contact_info_left">خیابان عارف، مجتمع نگین، طبقه دوم، واحد 3</div>
 							<div class="footer_contact_info_right">
-								<a title="Send Email" href="mailto:medicenter@mail.com">medicenter@mail.com</a>
+								<a title="Send Email" href="mailto:info@rahyab.com">info@rahyab.com</a>
 							</div>
 						</li>
 					</ul>
 					<ul class="social_icons clearfix">
 						<li>
-							<a target="_blank" href="http://facebook.com/QuanticaLabs" class="social_icon" style="background-image: url('http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/social_footer/blue_light/facebook.png');"></a>
+							<a target="_blank" href="javascript:void();" class="social_icon" style="background-image: url('./images/facebook2.png');"></a>
 						</li>
 						<li>
-							<a target="_blank" href="http://twitter.com/QuanticaLabs" class="social_icon" style="background-image: url('http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/social_footer/blue_light/twitter.png');"></a>
+							<a target="_blank" href="javascript:void();" class="social_icon" style="background-image: url('./images/twitter.png');"></a>
 						</li>
 						<li>
-							<a href="#" class="social_icon" style="background-image: url('http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/social_footer/blue_light/googleplus.png');"></a>
+							<a target="_blank" href="javascript:void();" class="social_icon" style="background-image: url('./images/googleplus2.png');"></a>
 						</li>
 						<li>
-							<a href="mailto:medicenter@mail.com" class="social_icon" style="background-image: url('http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/social_footer/blue_light/mail.png');"></a>
+							<a target="_blank" href="mailto:info@rahyab.com" class="social_icon" style="background-image: url('./images/mail2.png');"></a>
 						</li>
 					</ul>
 				</div>
 				<div id="medicenter_scrolling_recent_posts-2" class="widget scrolling_recent_posts_widget footer_box">
 					<div class="clearfix">
 						<div class="header_left">
-							<h3 class="box_header animation-slide">Latest Posts</h3>
+							<h3 class="box_header animation-slide">ساعات کار کلینیک</h3>
 						</div>
-						<div class="header_right">
+						<!-- <div class="header_right">
 							<a href="#" id="footer_recent_posts_prev" class="scrolling_list_control_left icon_small_arrow left_white"></a>
 							<a href="#" id="footer_recent_posts_next" class="scrolling_list_control_right icon_small_arrow right_white"></a>
-						</div>
+						</div> -->
 					</div>
 					<div class="scrolling_list_wrapper">
 						<ul class="scrolling_list footer_recent_posts">
 							<li class="icon_small_arrow right_white">
-								<a href="http://quanticalabs.com/wp_themes/medicenter/2013/05/03/new-study-links-lutein-with-eye-health-benefits/" title="New study links lutein with eye health benefits">New study links lutein with eye health benefits</a>
-								<abbr title="2013-05-03T09:06:09+0000" class="timeago">2013-05-03T09:06:09+0000</abbr>
+								<p style="text-align:right">شنبه تا چهارشنبه: 17:00- 18:00</p>
 							</li>
 							<li class="icon_small_arrow right_white">
-								<a href="http://quanticalabs.com/wp_themes/medicenter/2013/05/02/pets-may-reduce-risk-of-heart-disease/" title="Pets may reduce risk of heart disease">Pets may reduce risk of heart disease</a>
-								<abbr title="2013-05-02T10:28:21+0000" class="timeago">2013-05-02T10:28:21+0000</abbr>
+								<p style="text-align:right">پنج شنبه: 17:00- 18:00</p>
 							</li>
 							<li class="icon_small_arrow right_white">
-								<a href="http://quanticalabs.com/wp_themes/medicenter/2013/03/01/discoveries-offer-a-new-explanation-for-diabetes/" title="Discoveries offer a new explanation for diabetes">Discoveries offer a new explanation for diabetes</a>
-								<abbr title="2013-03-01T12:29:28+0000" class="timeago">2013-03-01T12:29:28+0000</abbr>
-							</li>
-							<li class="icon_small_arrow right_white">
-								<a href="http://quanticalabs.com/wp_themes/medicenter/2013/02/08/day-care-snacks-lacking-in-nutritional-value/" title="Day care snacks lacking in nutritional value">Day care snacks lacking in nutritional value</a>
-								<abbr title="2013-02-08T09:16:19+0000" class="timeago">2013-02-08T09:16:19+0000</abbr>
-							</li>
-							<li class="icon_small_arrow right_white">
-								<a href="http://quanticalabs.com/wp_themes/medicenter/2012/11/23/childhood-metabolic-disorders-predict-hardening-of-the-arterial-walls/" title="Childhood metabolic disorders predict hardening of the arterial walls">Childhood metabolic disorders predict hardening of the arterial walls</a>
-								<abbr title="2012-11-23T09:36:04+0000" class="timeago">2012-11-23T09:36:04+0000</abbr>
+								<p style="text-align:right">جمعه: 17:00- 18:00</p>
 							</li>
 						</ul>
 					</div>
@@ -792,56 +781,50 @@
 				<div id="medicenter_twitter-2" class="widget twitter_widget footer_box">
 					<div class="clearfix">
 						<div class="header_left">
-							<h3 class="box_header animation-slide">Latest Tweets</h3>
+							<h3 class="box_header animation-slide">اخبار اخیر</h3>
 						</div>
-						<div class="header_right">
+						<!-- <div class="header_right">
 							<a href="#" id="latest_tweets_prev" class="scrolling_list_control_left icon_small_arrow left_white"></a>
 							<a href="#" id="latest_tweets_next" class="scrolling_list_control_right icon_small_arrow right_white"></a>
-						</div>
+						</div> -->
 					</div>
 					<div class="scrolling_list_wrapper">
 						<ul class="scrolling_list latest_tweets">
 							<li class="icon_small_arrow right_white">
-								<p>@momaland Please install some Anti-Malware plugin/script. You can find license certificate in your downloads section on @ThemeForest<abbr title="2014-10-07T07:42:10+00:00" class="timeago">Tue Oct 07 07:42:10 +0000 2014</abbr></p>
+								<p>
+									<a href="javascript:void();">
+										متن خبر سه
+									</a>
+									<abbr title="" class="timeago">سه شنبه فروردین 07 1393</abbr>									
+								</p>
 							</li>
 							<li class="icon_small_arrow right_white">
-								<p>@ali Yes, we'll release also WP version.<abbr title="2014-10-06T08:28:56+00:00" class="timeago">Mon Oct 06 08:28:56 +0000 2014</abbr></p>
+								<p>
+									<a href="javascript:void();">
+										متن خبر دو
+									</a>
+									<abbr title="" class="timeago">سه شنبه فروردین 07 1393</abbr>									
+								</p>
 							</li>
 							<li class="icon_small_arrow right_white">
-								<p>We're glad to present our new Template for news, newspaper, magazine or review sites - Pressroom: <a href="http://t.co/mtBQWrAEgf" target="_blank">t.co/mtBQWrAEgf</a><abbr title="2014-10-03T17:52:36+00:00" class="timeago">Fri Oct 03 17:52:36 +0000 2014</abbr></p>
-							</li>
-							<li class="icon_small_arrow right_white">
-								<p>New version of Timetable Responsive Schedule For WordPress plugin is available (v2.7) - <a href="http://t.co/ThCmIJAX2t" target="_blank">t.co/ThCmIJAX2t</a><abbr title="2014-10-03T11:26:14+00:00" class="timeago">Fri Oct 03 11:26:14 +0000 2014</abbr></p>
-							</li>
-							<li class="icon_small_arrow right_white">
-								<p>GymBase - WordPress Theme v8.3 is available with the newest version of @wpbakery Visual Composer plugin (v4.3.4): <a href="http://t.co/WCmW6fmOYe" target="_blank">t.co/WCmW6fmOYe</a><abbr title="2014-10-03T07:55:37+00:00" class="timeago">Fri Oct 03 07:55:37 +0000 2014</abbr></p>
-							</li>
-							<li class="icon_small_arrow right_white">
-								<p>MediCenter - WordPress Theme v6.1 is available with the newest version of @wpbakery Visual Composer plugin (v4.3.4): <a href="http://t.co/Nugj1Aw0rh" target="_blank">t.co/Nugj1Aw0rh</a><abbr title="2014-10-03T07:54:30+00:00" class="timeago">Fri Oct 03 07:54:30 +0000 2014</abbr></p>
-							</li>
-							<li class="icon_small_arrow right_white">
-								<p>@Grafiproject Thank you! Dziękujemy :)<abbr title="2014-09-30T08:18:35+00:00" class="timeago">Tue Sep 30 08:18:35 +0000 2014</abbr></p>
-							</li>
-							<li class="icon_small_arrow right_white">
-								<p>New version of MediCenter - WordPress Theme is available (v6.0): <a href="http://t.co/Nugj1Aw0rh" target="_blank">t.co/Nugj1Aw0rh</a><abbr title="2014-09-25T09:01:49+00:00" class="timeago">Thu Sep 25 09:01:49 +0000 2014</abbr></p>
-							</li>
-							<li class="icon_small_arrow right_white">
-								<p>@Narine_hvh Thank you!<abbr title="2014-09-23T14:46:21+00:00" class="timeago">Tue Sep 23 14:46:21 +0000 2014</abbr></p>
-							</li>
-							<li class="icon_small_arrow right_white">
-								<p>@Saijo_George Thank you :)<abbr title="2014-09-19T07:55:08+00:00" class="timeago">Fri Sep 19 07:55:08 +0000 2014</abbr></p>
+								<p>
+									<a href="javascript:void();">
+										متن خبر یک
+									</a>
+									<abbr title="" class="timeago">سه شنبه فروردین 07 1393</abbr>									
+								</p>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="copyright_area clearfix">
-				<div class="copyright_left">© Copyright - 
-					<a href="http://themeforest.net/user/QuanticaLabs/portfolio?ref=QuanticaLabs" target="_blank">MediCenter Theme</a> by 
-					<a href="http://quanticalabs.com" title="QuanticaLabs" target="_blank">QuanticaLabs</a>
+				<div class="copyright_left ltr">&#169; Copyright - 
+					<a href="./">Rahyab clinic Theme</a> by 
+					<a href="http://www.mediateq.ir" title="QuanticaLabs" target="_blank">Mediateq</a>
 				</div>
 				<div class="copyright_right">
-					<a class="scroll_top icon_small_arrow top_white" href="#top" title="Scroll to top">Top</a>
+					<a class="scroll_top icon_small_arrow top_white" href="#top" title="Scroll to top" style="font-size:15px">بالا</a>
 				</div>
 			</div>
 		</div>
@@ -868,7 +851,7 @@
 <script type="text/javascript" src="./js/jquery.sliderControl.js"></script>
 <script type="text/javascript" src="./js/jquery.timeago.js"></script>
 <script type="text/javascript" src="./js/jquery.hint.js"></script>
-<script type="text/javascript" src="./js/jquery.isotope.min.js2"></script>
+<script type="text/javascript" src="./js/jquery.isotope.min.js"></script>
 <script type="text/javascript" src="./js/jquery.isotope.masonry.js"></script>
 <script type="text/javascript" src="./js/jquery.fancybox-1.3.4.pack.js"></script>
 <script type="text/javascript" src="./js/jquery.qtip.min.js"></script>

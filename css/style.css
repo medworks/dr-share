@@ -2038,7 +2038,7 @@ a.social_icon:hover, span.social_icon:hover
 }
 .accordion .ui-accordion-header.ui-state-active h3
 {
-	background: url('images/accordion/accordion_minus.png') no-repeat right center !important;
+	background: url('../images/accordion_minus.png') no-repeat right center !important;
 	color: #FFF !important;
 }
 .accordion .ui-accordion-content
@@ -2204,7 +2204,7 @@ a.social_icon:hover, span.social_icon:hover
 .tabs_box_navigation.sf-menu .tabs_box_navigation_selected:hover
 {
 	background-color: #42B3E5;
-	background-image: url("../images/accordion/accordion_minus.png"); 
+	background-image: url("../images/accordion_minus.png"); 
 }
 .tabs_box_navigation.sf-menu li:hover ul, .tabs_box_navigation.sf-menu li.sfHover ul
 {
@@ -3100,11 +3100,14 @@ ul.gallery_item_details_list.not_hidden
 .footer_box p
 {
 	color: #909090;
+	font-size: 18px;
 }
 /* --- footer contact info --- */
 .footer_contact_info_container
 {
 	clear: both;
+	font-size: 17px;
+	font-family: 'bmitra';
 }
 .footer_contact_info_row
 {
