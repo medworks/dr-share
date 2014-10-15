@@ -363,155 +363,95 @@
 		<div class="wpb_row vc_row-fluid page_margin_top">
 			<div class="vc_span8 wpb_column column_container">
 				<div class="wpb_wrapper">
-					<h3 class="box_header animation-slide">Latest News</h3>
+					<h3 class="box_header animation-slide">آخرین اخبار</h3>
 					<div class="columns clearfix">
 						<ul class="blog column_left">
-							<li class="post-1393 post type-post status-publish format-standard has-post-thumbnail hentry category-general category-ophthalmology-clinic post">
+							<li>
 								<ul class="comment_box clearfix">
 									<li class="date">
-										<div class="value">03 MAY 13</div>
+										<div class="value">03 فروردین 1393</div>
 										<div class="arrow_date"></div>
-									</li>
-									<li class="comments_number">
-										<a href="http://quanticalabs.com/wp_themes/medicenter/2013/05/03/new-study-links-lutein-with-eye-health-benefits/#comments" title="6 comments">6</a>
 									</li>
 								</ul>
 								<div class="post_content">
-									<a class="post_image" href="http://quanticalabs.com/wp_themes/medicenter/2013/05/03/new-study-links-lutein-with-eye-health-benefits/" title="New study links lutein with eye health benefits">
+									<a class="post_image" href="javascript:void();" title="">
 										<span class="mc_preloader"></span>
-										<img width="480" height="300" src="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_031-480x300.jpg" class="attachment-medicenter-gallery-image wp-post-image" alt="New study links lutein with eye health benefits" title="">
+										<img width="480" height="300" src="./images/slides/slide1.jpg" title="">
 									</a>
 									<h2>
-										<a href="http://quanticalabs.com/wp_themes/medicenter/2013/05/03/new-study-links-lutein-with-eye-health-benefits/" title="New study links lutein with eye health benefits">New study links lutein with eye health benefits</a>
+										<a href="javascript:void();" title="">قابلیت رسپانسیو سایت</a>
 									</h2>
-									<p>Maecenas etos sit amet, consectetur adipiscing elit. Terminal volutpat rutrum metro amet sollicitudin interdum. Suspendisse pulvinar, velit etos pharetra interdum, ante tellus gravida mollis tellus neque vitae elit. Mauris adipiscing mauris fringilla turpis interdum pulvinar nisi malesuada, consectetur adipiscing libero est cuprum.</p>
+									<p>در دیوایسهای مختلف با سایزهای مختلف بدون زوم میتوان سایت را به بهترین نحو مشاهده نمود.</p>
 									<div class="post_footer clearfix">
 										<ul class="post_footer_details">
-											<li>Posted in </li>
-											<li>
-												<a href="http://quanticalabs.com/wp_themes/medicenter/category/general/" title="View all posts filed under General">General</a>, 
-											</li>
-											<li>
-												<a href="http://quanticalabs.com/wp_themes/medicenter/category/ophthalmology-clinic/" title="View all posts filed under Ophthalmology Clinic">Ophthalmology Clinic</a>
-											</li>
+											<li>منتشر شده توسط: مدیر</li>
 										</ul>
 									</div>
 								</div>
 							</li>
-							<li class="post-489 post type-post status-publish format-standard hentry category-general category-health category-rehabilitation post">
+							<li>
 								<ul class="comment_box clearfix">
 									<li class="date">
-										<div class="value">02 MAY 13</div>
+										<div class="value">03 دی 1392</div>
 										<div class="arrow_date"></div>
-									</li>
-									<li class="comments_number">
-										<a href="http://quanticalabs.com/wp_themes/medicenter/2013/05/02/pets-may-reduce-risk-of-heart-disease/#comments" title="7 comments">7</a>
 									</li>
 								</ul>
 								<div class="post_content">
+									<a class="post_image" href="javascript:void();" title="">
+										<span class="mc_preloader"></span>
+										<img width="480" height="300" src="./images/slides/slide2.jpg" title="">
+									</a>
 									<h2>
-										<a href="http://quanticalabs.com/wp_themes/medicenter/2013/05/02/pets-may-reduce-risk-of-heart-disease/" title="Pets may reduce risk of heart disease">Pets may reduce risk of heart disease</a>
+										<a href="javascript:void();" title="">بالا رفتن رنک گوگل</a>
 									</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, et mollis tellus neque vitae elit. Mauris adipiscing mauris.</p>
+									<p>بکارگیری آخرین متدها برای بالا بردن رنکینگ گوگل.</p>
 									<div class="post_footer clearfix">
 										<ul class="post_footer_details">
-											<li>Posted in </li>
-											<li>
-												<a href="http://quanticalabs.com/wp_themes/medicenter/category/general/" title="View all posts filed under General">General</a>, 
-											</li>
-											<li>
-												<a href="http://quanticalabs.com/wp_themes/medicenter/category/health/" title="View all posts filed under Health">Health</a>, 
-											</li>
-											<li>
-												<a href="http://quanticalabs.com/wp_themes/medicenter/category/rehabilitation/" title="View all posts filed under Rehabilitation">Rehabilitation</a>
-											</li>
+											<li>منتشر شده توسط: مدیر</li>
 										</ul>
 									</div>
 								</div>
 							</li>
 						</ul>
 						<ul class="blog column_right">
-							<li class="post-257 post type-post status-publish format-standard hentry category-general category-primary-health-care post">
+							<li>
 								<ul class="comment_box clearfix">
 									<li class="date">
-											<div class="value">01 MAR 13</div>
-											<div class="arrow_date"></div>
-									</li>
-									<li class="comments_number">
-										<a href="http://quanticalabs.com/wp_themes/medicenter/2013/03/01/discoveries-offer-a-new-explanation-for-diabetes/#comments" title="7 comments">7</a>
+										<div class="value">03 آبان 1392</div>
+										<div class="arrow_date"></div>
 									</li>
 								</ul>
 								<div class="post_content">
+									<a class="post_image" href="javascript:void();" title="">
+										<span class="mc_preloader"></span>
+										<img width="480" height="300" src="./images/slides/slide3.jpg" title="">
+									</a>
 									<h2>
-										<a href="http://quanticalabs.com/wp_themes/medicenter/2013/03/01/discoveries-offer-a-new-explanation-for-diabetes/" title="Discoveries offer a new explanation for diabetes">Discoveries offer a new explanation for diabetes</a>
+										<a href="javascript:void();" title="">کار با مرورگرهای مختلف</a>
 									</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet sollicitudin. Suspendisse pulvinar, velit nec pharetra interdum, ante tellus ornare mi, et mollis tellus neque vitae elit. Mauris adipiscing mauris.</p>
+									<p>سازگاری با انواع مرورگرها و بکارگیری متدهای جدید.</p>
 									<div class="post_footer clearfix">
 										<ul class="post_footer_details">
-											<li>Posted in </li>
-											<li>
-												<a href="http://quanticalabs.com/wp_themes/medicenter/category/general/" title="View all posts filed under General">General</a>, 
-											</li>
-											<li>
-												<a href="http://quanticalabs.com/wp_themes/medicenter/category/primary-health-care/" title="View all posts filed under Primary Health Care">Primary Health Care</a>
-											</li>
+											<li>منتشر شده توسط: مدیر</li>
 										</ul>
 									</div>
 								</div>
 							</li>
-							<li class="post-44 post type-post status-publish format-standard hentry category-general category-outpatient-surgery post">
+							<li>
 								<ul class="comment_box clearfix">
 									<li class="date">
-										<div class="value">08 FEB 13</div>
+										<div class="value">03 تیر 1392</div>
 										<div class="arrow_date"></div>
-									</li>
-									<li class="comments_number">
-										<a href="http://quanticalabs.com/wp_themes/medicenter/2013/02/08/day-care-snacks-lacking-in-nutritional-value/#comments" title="7 comments">7</a>
 									</li>
 								</ul>
 								<div class="post_content">
-									<div class="gallery_box">
-										<ul class="image_carousel">
-											<li>
-												<span class="mc_preloader"></span>
-												<img width="480" height="300" src="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_021-480x300.jpg" class="attachment-medicenter-gallery-image" alt="image_02">
-												<ul class="controls">
-													<li>
-														<a href="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_02.jpg" title="" class="fancybox open_lightbox" style="background-image: url('http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/icons_media/blue_light/image.png')"></a>
-													</li>
-												</ul>
-											</li>
-											<li>
-												<img width="480" height="300" src="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_041-480x300.jpg" class="attachment-medicenter-gallery-image" alt="image_04">
-												<ul class="controls">
-													<li>
-														<a href="http://www.youtube.com/embed/KAi2QIq1SUs" title="" class="fancybox-video open_video_lightbox" style="background-image: url('http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/icons_media/blue_light/video.png')"></a>
-													</li>
-												</ul>
-											</li>
-											<li>
-												<img width="480" height="300" src="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_011-480x300.jpg" class="attachment-medicenter-gallery-image" alt="image_01">
-												<ul class="controls">
-													<li>
-														<a href="http://player.vimeo.com/video/56755711" title="" class="fancybox-video open_video_lightbox" style="background-image: url('http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/icons_media/blue_light/video.png')"></a>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</div>
 									<h2>
-										<a href="http://quanticalabs.com/wp_themes/medicenter/2013/02/08/day-care-snacks-lacking-in-nutritional-value/" title="Day care snacks lacking in nutritional value">Day care snacks lacking in nutritional value</a>
+										<a href="javascript:void();" title="">سایت با قابلیت لود برروی موبایل</a>
 									</h2>
-									<p>Maecenas etos sit amet, consectetur adipiscing elit. Terminal volutpat rutrum metro amet sollicitudin interdum. Suspendisse pulvinar, velit etos pharetra interdum, ante tellus gravida mollis tellus neque vitae elit. Mauris adipiscing mauris fringilla turpis interdum pulvinar nisi malesuada, consectetur adipiscing libero est cuprum.</p>
+									<p>قابلیت سازگاری با مرورگر های موبایل و سازگاری با اندازه دیوایس مورد نظر.</p>
 									<div class="post_footer clearfix">
 										<ul class="post_footer_details">
-											<li>Posted in </li>
-											<li>
-												<a href="http://quanticalabs.com/wp_themes/medicenter/category/general/" title="View all posts filed under General">General</a>, 
-											</li>
-											<li>
-												<a href="http://quanticalabs.com/wp_themes/medicenter/category/outpatient-surgery/" title="View all posts filed under Outpatient Surgery">Outpatient Surgery</a>
-											</li>
+											<li>منتشر شده توسط: مدیر</li>
 										</ul>
 									</div>
 								</div>
@@ -519,7 +459,7 @@
 						</ul>
 					</div>
 					<div class="show_all clearfix">
-						<a href="blog" title="Show all →">Show all →</a>
+						<a href="blog" title="مشاهده اخبار &#8592;">مشاهده اخبار &#8592;</a>
 					</div>
 				</div> 
 			</div> 

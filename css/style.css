@@ -299,7 +299,7 @@ h2
 }
 h3
 {
-	font-size: 18px;
+	font-size: 22px;
 }
 h4
 {
@@ -1511,6 +1511,8 @@ a.social_icon:hover, span.social_icon:hover
 	padding: 9px 10px;
 	font-size: 11px;
 	text-align: center;
+	font-family: 'bmitra';
+	font-size: 15px;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
@@ -1573,6 +1575,7 @@ a.social_icon:hover, span.social_icon:hover
 .columns .comment_box .comments_number a
 {
 	padding: 10px 12px;
+	font-size: 15px;
 }
 .comment_box .comments_number:hover
 {
@@ -1628,6 +1631,7 @@ a.social_icon:hover, span.social_icon:hover
 	line-height: 150%;
 	padding-top: 0;
 	padding-bottom: 1em;
+	font-size: 18px;
 }
 .post_content blockquote p
 {
@@ -1668,6 +1672,8 @@ a.social_icon:hover, span.social_icon:hover
 	font-size: 11px;
 	color: #909090;
 	margin-right: 5px;
+	font-family: 'bmitra';
+	font-size: 16px;
 }
 .post_footer_details li:last-child
 {
@@ -1686,6 +1692,7 @@ a.social_icon:hover, span.social_icon:hover
 .show_all a
 {
 	float: right;
+	font-size: 18px;
 }
 /* --- comments --- */
 .comments .comments_number a
