@@ -294,26 +294,23 @@
 </div>
 <!-- /Header -->
 <ul class="slider medicenter_slider_settings_home-slider id-medicenter_slider_settings_home-slider autoplay-1 pause_on_hover- interval-5000 effect-scroll easing-easeInOutQuint duration-750">
-	<li id="slide_0" style="background-image: url(http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/slider/img1.jpg);">
-					&nbsp;</li>
-	<li id="slide_1" style="background-image: url(http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/slider/img2.jpg);">
-					&nbsp;</li>
-	<li id="slide_2" style="background-image: url(http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/slider/img3.jpg);">
-					&nbsp;</li>
+	<li id="slide_0" style="background-image: url(./images/slides/slide1.jpg);"></li>
+	<li id="slide_1" style="background-image: url(./images/slides/slide2.jpg);"></li>
+	<li id="slide_2" style="background-image: url(./images/slides/slide3.jpg);"></li>
 </ul>
 <div class="theme_page relative noborder">
 	<div class="slider_content_box clearfix">
 		<div id="slide_0_content" class="slider_content" style="display: block;">
-			<h1 class="title">Top notch<br>experience</h1>
-			<h2 class="subtitle">Medicenter is a responsive template<br>perfect for all screen sizes</h2>
+			<h1 class="title">قابلیت رسپانسیو سایت</h1>
+			<h2 class="subtitle">در دیوایسهای مختلف با سایزهای مختلف بدون زوم میتوان سایت را به بهترین نحو مشاهده نمود</h2>
 		</div>
 		<div id="slide_1_content" class="slider_content">
-			<h1 class="title">Show your<br>schedule</h1>
-			<h2 class="subtitle">Organize and visualize your week<br>with build-in timetable</h2>
+			<h1 class="title">بالا رفتن رنک گوگل</h1>
+			<h2 class="subtitle">بکارگیری آخرین متدها برای بالا بردن رنکینگ گوگل</h2>
 		</div>
 		<div id="slide_2_content" class="slider_content">
-			<h1 class="title">Build it<br>your way</h1>
-			<h2 class="subtitle">Limitless possibilities with multiple<br>page layouts and different shortcodes</h2>
+			<h1 class="title">کار با مرورگرهای مختلف</h1>
+			<h2 class="subtitle">سازگاری با انواع مرورگرها و بکارگیری متدهای جدید</h2>
 		</div>
 	</div>
 	<ul class="home_box_container_list clearfix">
