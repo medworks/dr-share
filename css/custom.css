@@ -9,12 +9,12 @@
     font-style: normal;
 }
 h1,h2,h3,h4,h5,h6,p,span,strong,a{
-	font-family:"bmitra";
-	font-weight: normal;
+	font-family:"bmitra" !important;
+	font-weight: normal !important;
 }
 .bmitra{
-	font-family:"bmitra";
-	font-weight: normal;
+	font-family:"bmitra" !important;
+	font-weight: normal !important;
 }
 .ltr{
 	direction:ltr;	

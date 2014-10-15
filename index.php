@@ -150,7 +150,7 @@
 						</ul>
 					</li>
 					<li>
-						<a href="javascript:void();">بالینی، جنسی و شخصیتی</a>
+						<a href="javascript:void();">کودک و نوجوان</a>
 						<ul class="sub-menu">
 							<li><a href="javascript:void();">بیش فعالی</a></li>
 							<li><a href="javascript:void();">شب ادراری</a></li>
@@ -189,7 +189,7 @@
 							<li><a href="javascript:void();">درمان زوجی (زوج درمانی)</a></li>
 							<li><a href="javascript:void();">درمان خانواده (خانواده درمانی)</a></li>
 							<li><a href="javascript:void();">سکس تراپی</a></li>
-							<li><a href="javascript:void();">درمان شناختی- رفتاری</a></li>
+							<li><a href="javascript:void();">درمان شناختی-رفتاری</a></li>
 							<li><a href="javascript:void();">واقعیت درمانی</a></li>
 							<li><a href="javascript:void();">هیپنوتیزم</a></li>
 							<li><a href="javascript:void();">روانکاوی و روانتحلیلی</a></li>
@@ -201,107 +201,93 @@
 			</div>
 		<div class="mobile_menu">
 			<select>
-				<option value="#" class="submenu menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-2408">HOME	</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/" selected="selected" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-5 current_page_item menu-item-2424">- Home Style 1</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/home-style-2/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2425">- Home Style 2</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/home-style-3/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2426">- Home Style 3</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/home-style-4/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2427">- Home Style 4</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/home-style-5/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2429">- Home Style 5</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/home-small-slider/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2430">- Home Small Slider</option>
-				<option value="#" class="submenu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2410">BLOG	</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/blog/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2431">- Blog		</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/blog/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2489">– Right sidebar</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/blog-with-left-sidebar/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2488">– Left sidebar</option>
-				<option value="#" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2411">- Blog 2 columns		</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/blog-2-columns-right-sidebar/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2432">– Right sidebar</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/blog-2-columns-left-sidebar/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2433">– Left sidebar</option>
-				<option value="#" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2490">- Blog simple		</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/blog-simple-right-sidebar/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2492">– Right sidebar</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/blog-simple-left-sidebar/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2491">– Left sidebar</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/2013/05/03/new-study-links-lutein-with-eye-health-benefits/" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-2434">- Single post</option>
-				<option value="#" class="submenu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2409">PAGES	</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/about/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2423">- About</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/ourdoctors/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2428">- Our Doctors		</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-2-columns/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2443">– 2 Columns			</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-2-columns/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2447">— Filterable</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-2-columns-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2446">— Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-2-columns-ajax-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2445">— Ajax Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-2-columns-carousel/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2460">— Carousel</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-2-columns-simple/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2444">— Simple</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-3-columns/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2448">– 3 Columns			</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-3-columns/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2449">— Filterable</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-3-columns-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2452">— Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-3-columns-ajax-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2451">— Ajax Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-3-columns-carousel/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2459">— Carousel</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-3-columns-simple/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2450">— Simple</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/ourdoctors/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2453">– 4 Columns			</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/ourdoctors/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2454">— Filterable</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-4-columns-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2457">— Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-4-columns-ajax-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2456">— Ajax Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-4-columns-carousel/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2458">— Carousel</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/our-doctors-4-columns-simple/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2455">— Simple</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/medical-care/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2435">- Medical Care</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/pricing-plans/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2440">- Pricing Plans		</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/pricing-plans/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2442">– Pricing Plans</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/sliding-pricing-plans/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2441">– Sliding Pricing Plans</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/shortcodes/" class="wide menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2439">- Shortcodes		</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/shortcodes/#features-style" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2414">– Features Styles</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/shortcodes/#carousel" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2415">– Carousel</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/shortcodes/#testimonials-announcement" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2416">– Testimonials &amp; Announcement</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/shortcodes/#accordiontab-notifications" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2417">– Accordion &amp; Notifications</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/shortcodes/#tabs-quote" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2418">– Tabs &amp; Quote</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/shortcodes/#lists" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2419">– Lists</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/shortcodes/#icons" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2422">– Icons</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/shortcodes/#buttons-headings" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2420">– Buttons &amp; Headings</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/shortcodes/#columns" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2421">– Columns &amp; Code</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/404" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2412">- 404 Not Found</option>
-				<option value="#" class="submenu wide menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2387">DEPARTMENTS	</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/departments/#primary-health-care-general" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2388">- Primary Health Care</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/departments/#laryngological-clinic" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2396">- Laryngological Clinic</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/departments/#pediatric-clinic" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2389">- Pediatric Clinic</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/departments/#ophthalmology-clinic" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2397">- Ophthalmology Clinic</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/departments/#outpatient-surgery" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2390">- Outpatient Surgery</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/departments/#dental-clinic" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2398">- Dental Clinic</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/departments/#gynaecological-clinic" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2394">- Gynaecological Clinic</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/departments/#outpatient-rehabilitation" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2399">- Outpatient Rehabilitation</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/departments/#cardiac-clinic" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2395">- Cardiac Clinic</option>
-				<option value="#" class="submenu wide timetable_submenu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2391">TIMETABLE	</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/timetable/#all-departments" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2393">- All Departments</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/timetable/#cardiac-clinic" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2407">- Cardiac Clinic</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/timetable/#primary-health-care" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2392">- Primary Health Care</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/timetable/#laryngological-clinic" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2400">- Laryngological Clinic</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/timetable/#pediatric-clinic" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2401">- Pediatric Clinic</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/timetable/#ophthalmology-clinic" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2402">- Ophthalmology Clinic</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/timetable/#outpatient-rehabilitation" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2403">- Outpatient Surgery</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/timetable/#dental-clinic" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2404">- Dental Clinic</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/timetable/#gynaecological-clinic" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2405">- Gynaecological Clinic</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/timetable/#outpatient-rehabilitation" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2406">- Outpatient Rehabilitation</option>
-				<option value="#" class="submenu gallery_menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-2413">GALLERY	</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-2-columns/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2436">- Gallery 2 Columns		</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-2-columns/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2462">– Filterable</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-2-columns-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2461">– Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-2-columns-ajax-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2465">– Ajax Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-2-columns-carousel/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2464">– Carousel</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-2-columns-simple/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2463">– Simple</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-3-columns/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2437">- Gallery 3 Columns		</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-3-columns/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2470">– Filterable</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-3-columns-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2469">– Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-3-columns-ajax-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2468">– Ajax Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-3-columns-carousel/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2467">– Carousel</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-3-columns-simple/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2466">– Simple</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-4-columns/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2438">- Gallery 4 Columns		</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-4-columns/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2473">– Filterable</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-4-columns-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2472">– Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-4-columns-ajax-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2471">– Ajax Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-4-columns-carousel/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2475">– Carousel</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-4-columns-simple/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2476">– Simple</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-with-sidebar/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2477">- Gallery With Sidebar		</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-with-sidebar/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2478">– Filterable</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-with-sidebar-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2479">– Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-with-sidebar-ajax-pagination/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2480">– Ajax Pagination</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-with-sidebar-carousel/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2481">– Carousel</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/gallery-with-sidebar-simple/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2482">– Simple</option>
-				<option value="http://quanticalabs.com/wp_themes/medicenter/contact/" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2474">CONTACT</option>
+				<option value="javascript:void();" selected="selected">صفحه اصلی</option>
+
+				<option value="javascript:void();">زوج و خانواده</option>
+					<option value="javascript:void();" class="submenu">-زوجین، زناشویی و آمیزشی</option>
+					<option value="javascript:void();" class="submenu">-پیش از ازدواج</option>
+					<option value="javascript:void();" class="submenu">-خانواده</option>
+
+				<option value="javascript:void();">بالینی، جنسی و شخصیتی</option>
+					<option value="javascript:void();">-اختلالات اضظرابی</option>
+						<option value="javascript:void();">--وسواس</option>
+						<option value="javascript:void();">--پانیک</option>
+						<option value="javascript:void();">--اضطراب فراگیر GAD</option>
+						<option value="javascript:void();">--فوبی اجتماعی (اضطراب در جمع)</option>
+						<option value="javascript:void();">--ترس از فضاهای بسته و هواپیما</option>
+						<option value="javascript:void();">--ترس از فضاهای باز و ارتفاع</option>
+						<option value="javascript:void();">--ترس از تاریکی، شبح و جن، خون و مرگ</option>
+					<option value="javascript:void();">-افسردگی و اختلالات خلقی</option>
+						<option value="javascript:void();">--افسردگی</option>
+						<option value="javascript:void();">--دوقطبی</option>
+						<option value="javascript:void();">--افسردگی پس از زایمان</option>
+						<option value="javascript:void();">--افسردگی مرتبط با قاعدگی PMS</option>
+					<option value="javascript:void();">-اختلالات جنسی زنان و مردان</option>
+						<option value="javascript:void();">--بی میلی جنسی و انزجار (سردمزاجی)</option>
+						<option value="javascript:void();">--ترس از رابطه زناشویی</option>
+						<option value="javascript:void();">--انقباض عضلانی هنگام رابطه زناشویی (واژینیسم)</option>
+						<option value="javascript:void();">--عدم برقراری رابطه زناشویی کامل (ازدواج وصال نیافته)</option>
+						<option value="javascript:void();">--انزال زودرس و سریع</option>
+						<option value="javascript:void();">--انزال دیررس یا دردناک</option>
+						<option value="javascript:void();">--اختلال در ایستایی آلت تناسلی (اختلال نعوظ)</option>
+						<option value="javascript:void();">--عدم برانگیختگی مناسب</option>
+						<option value="javascript:void();">--عدم توانایی دستیابی به ارگاسم</option>
+						<option value="javascript:void();">--درد در رابطه جنسی</option>
+						<option value="javascript:void();">--اختلال هویت جنسی TS</option>
+						<option value="javascript:void();">--میل جنسی زیاد و اعتیاد جنسی</option>
+						<option value="javascript:void();">--انحرافات جنسی (فتیشیسم، سادیسم، مازوخیسم...)</option>
+						<option value="javascript:void();">--نازایی</option>
+					<option value="javascript:void();">-اختلالات شخصیتی</option>
+						<option value="javascript:void();">--بدبینی و بددلی (پارانویا)</option>
+						<option value="javascript:void();">--خلق و رفتار بی ثبات (مرزی)</option>
+						<option value="javascript:void();">--پرخاشگری و از کوره در رفتن</option>
+						<option value="javascript:void();">--گوشه گیری و انزوا (اسکیزویید و اجتنابی)</option>
+						<option value="javascript:void();">--خودشیفتگی</option>
+						<option value="javascript:void();">--مضطرب و وسواسی</option>
+						<option value="javascript:void();">--وابسته</option>
+						<option value="javascript:void();">--نمایشی</option>
+					<option value="javascript:void();">-اختلالات سازشی و بحران های زندگی</option>
+						<option value="javascript:void();">--فوت و سوگ</option>
+						<option value="javascript:void();">--شکست عشقی</option>
+						<option value="javascript:void();">--مشکل در روابط عشقی</option>
+						<option value="javascript:void();">--ازدواج و بچه داری</option>
+
+				<option value="javascript:void();">کودک و نوجوان</option>
+					<option value="javascript:void();">-بیش فعالی</option>
+					<option value="javascript:void();">-شب ادراری</option>
+					<option value="javascript:void();">-ناخن جویدن</option>
+					<option value="javascript:void();">-تیک</option>
+					<option value="javascript:void();">-موکنی (کندن وسواسگونه موها)</option>
+					<option value="javascript:void();">-گوشه گیری</option>
+					<option value="javascript:void();">-پرخاشگری و مشکلات رفتاری</option>
+					<option value="javascript:void();">-بلوغ و مسایل جنسی</option>
+
+				<option value="javascript:void();">تحصیلی و شغلی</option>
+					<option value="javascript:void();">-روش های مطالعه</option>
+					<option value="javascript:void();">-انتخاب رشته</option>
+					<option value="javascript:void();">-مشکل در تمرکز</option>
+					<option value="javascript:void();">-استرس شغلی</option>
+					<option value="javascript:void();">-مشکلات ارتباطی در محیط کار</option>
+
+				<option value="javascript:void();">هوش و استعداد</option>
+					<option value="javascript:void();">-هوش</option>
+					<option value="javascript:void();">-استعداد</option>
+
+				<option value="javascript:void();">مشاورین و متخصصان</option>
+
+				<option value="javascript:void();">خدمات کلینیک</option>
+					<option value="javascript:void();">-مشاوره ازدواج</option>
+					<option value="javascript:void();">-درمان فردی</option>
+					<option value="javascript:void();">-درمان گروهی (گروه درمانی)</option>
+					<option value="javascript:void();">-درمان زوجی (زوج درمانی)</option>
+					<option value="javascript:void();">-درمان خانواده (خانواده درمانی)</option>
+					<option value="javascript:void();">-سکس تراپی</option>
+					<option value="javascript:void();">-درمان شناختی-رفتاری</option>
+					<option value="javascript:void();">-واقعیت درمانی</option>
+					<option value="javascript:void();">-هیپنوتیزم</option>
+					<option value="javascript:void();">-روانکاوی و روانتحلیلی</option>
+					<option value="javascript:void();">-درمان های نوین</option>
+					<option value="javascript:void();">-اجرای تست های هوش، شخصیت و سایر تستهای روانشناختی</option>
 			</select>
 		</div>
 	</div>
@@ -901,95 +887,7 @@
 	</div>
 </div>
 
-<link rel="stylesheet" type="text/css" href="./css/layout_picker.css" />
 
-<script type="text/javascript" src="./js/layout_picker.js"></script>
-
-<div class="layout_picker">
-	<a href="#" class="layout_picker_icon">&nbsp;</a>
-	<div class="layout_picker_content">
-		<h3 class="layout_picker_header">Layout</h3>
-		<ul class="layout_picker_layout_list">
-			<li>
-				<select name="layout_picker_layout">
-					<option value="layout_picker_wd" selected="selected">Wide</option>
-					<option value="layout_picker_bx">Boxed</option>
-					<option value="layout_picker_fw">Full width</option>
-				</select>
-			</li>
-		</ul>
-		<h3 class="layout_picker_header">Color Skin</h3>
-		<ul class="color_skin_list clearfix">
-			<li>
-				<a href="http://quanticalabs.com/wp_themes/medicenter/" class="mc_skin_blue selected"></a>
-			</li>
-			<li>
-				<a href="http://quanticalabs.com/wp_themes/medicenter-green/" class="mc_skin_green"></a>
-			</li>
-			<li class="last">
-				<a href="http://quanticalabs.com/wp_themes/medicenter-orange/" class="mc_skin_orange"></a>
-			</li>
-			<li>
-				<a href="http://quanticalabs.com/wp_themes/medicenter-red/" class="mc_skin_red"></a>
-			</li>
-			<li>
-				<a href="http://quanticalabs.com/wp_themes/medicenter-turquoise/" class="mc_skin_turquoise"></a>
-			</li>
-			<li class="last">
-				<a href="http://quanticalabs.com/wp_themes/medicenter-violet/" class="mc_skin_violet"></a>
-			</li>
-		</ul>
-		<h3 class="layout_picker_header">Header type</h3>
-		<ul class="layout_picker_layout_list">
-			<li>
-				<select name="layout_picker_header_type">
-					<option value="1" selected="selected">Type 1</option>
-					<option value="2">Type 2</option>
-					<option value="3">Type 3</option>
-					<option value="4">Type 4</option>
-				</select>
-			</li>
-		</ul>
-		<h3 class="layout_picker_header">Top sidebar</h3>
-		<ul class="layout_picker_layout_list">
-			<li>
-				<select name="layout_picker_header_sidebar">
-					<option value="0">No</option>
-					<option value="1">Yes</option>
-				</select>
-			</li>
-		</ul>
-		<div id="layout_picker_header_sidebar_right_container" style="display: none;">
-			<h3 class="layout_picker_header">2nd sidebar</h3>
-			<ul class="layout_picker_layout_list">
-				<li>
-					<select name="layout_picker_header_sidebar_right">
-						<option value="1" selected="selected">Yes</option>
-						<option value="0" selected="selected">No</option>
-					</select>
-				</li>
-			</ul>
-		</div>
-		<h3 class="layout_picker_header">Direction</h3>
-		<ul class="layout_picker_layout_list">
-			<li>
-				<select name="layout_picker_direction">
-					<option value="LTR">LTR</option>
-					<option value="RTL" selected="selected">RTL</option>
-				</select>
-			</li>
-		</ul>
-		<h3 class="layout_picker_header">Animations</h3>
-		<ul class="layout_picker_layout_list">
-			<li>
-				<select name="layout_picker_animations">
-					<option value="1">yes</option>
-					<option value="0" selected="selected">no</option>
-				</select>
-			</li>
-		</ul>
-	</div>
-</div>
 
 <!--custom style-->
 <style type="text/css">

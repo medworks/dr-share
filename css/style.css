@@ -539,9 +539,10 @@ h1.not_found
 .sf-menu li a, .sf-menu li a:visited
 {
 	font-family: 'arial';
+	font-size: 16px !important;
 	color: #888;
 	border: 1px solid #FFF;
-	padding: 15px;
+	padding: 16px;
 }
 .sf-menu li:hover a, .sf-menu li.selected a, .sf-menu li.current-menu-item a, .sf-menu li.current-menu-ancestor a
 {
