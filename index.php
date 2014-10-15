@@ -316,39 +316,41 @@
 	<ul class="home_box_container_list clearfix">
 		<li class="home_box_container clearfix animated_element animation-fadeIn duration-500" style="background-color: #42b3e5;">
 			<div class="home_box">
-				<h2>Emergency Case</h2>
+				<h2>موارد اورژانس</h2>
 				<div class="news clearfix">
 					<div class="text">	
-					If you need a doctor urgently outside of medicenter opening hours, call emergency appointment number for emergency service. 					</div>
-					<a style="color:#FFFFFF;background-color:transparent;" onmouseover="this.style.color='#000000';this.style.backgroundColor='#ffffff';this.style.borderColor='#ffffff';" onmouseout="this.style.color='#FFFFFF';this.style.backgroundColor='transparent';this.style.borderColor='#FFFFFF';" title="Read more" href="contact" target="_blank" class="mc_button more light icon_small_arrow margin_right_white">Read more</a>
+						راهای تماس با ما در موارد ضروری را در لینک زیر مشاهده نمایید
+					</div>
+					<a style="color:#FFFFFF;background-color:transparent;font-size:18px" onmouseover="this.style.color='#000000';this.style.backgroundColor='#ffffff';this.style.borderColor='#ffffff';" onmouseout="this.style.color='#FFFFFF';this.style.backgroundColor='transparent';this.style.borderColor='#FFFFFF';" title="Read more" href="javascript:void();" class="mc_button more light icon_small_arrow margin_right_white">مشاهده</a>
 				</div>
 			</div>
 		</li>
 		<li class="home_box_container clearfix animated_element animation-slideRight duration-800 delay-250" style="background-color: #0384ce;">
 			<div class="home_box">
-				<h2>Doctors Timetable</h2>
+				<h2>جدول زمانی ساعات کار پزشکان کلینیک</h2>
 				<div class="news clearfix">
 					<div class="text">	
-					Here at medicenter we have individual doctor's lists. Click read more below to see services and current timetable for our doctors.					</div>
-					<a style="color:#FFFFFF;background-color:transparent;" onmouseover="this.style.color='#000000';this.style.backgroundColor='#ffffff';this.style.borderColor='#ffffff';" onmouseout="this.style.color='#FFFFFF';this.style.backgroundColor='transparent';this.style.borderColor='#FFFFFF';" title="Read more" href="timetable" class="mc_button more light icon_small_arrow margin_right_white">Read more</a>
+						با کلیک برروی دکمه زیر لیست کامل ساعات کار پزشکان کلینیک رهیاب برای شما نمایش داده می شود
+					</div>
+					<a style="color:#FFFFFF;background-color:transparent;font-size:18px;" onmouseover="this.style.color='#000000';this.style.backgroundColor='#ffffff';this.style.borderColor='#ffffff';" onmouseout="this.style.color='#FFFFFF';this.style.backgroundColor='transparent';this.style.borderColor='#FFFFFF';" title="مشهاده" href="javascript:void();" class="mc_button more light icon_small_arrow margin_right_white">مشاهده</a>
 				</div>
 			</div>
 		</li>
 		<li class="home_box_container clearfix animated_element animation-slideRight200 duration-800 delay-500" style="background-color: #3156a3;">
 			<div class="home_box">
-				<h2>Opening Hours</h2>
+				<h2>ساعات کار کلینیک</h2>
 				<div class="news clearfix">
 					<div class="text">	
 						<ul class="items_list thin opening_hours clearfix">
 							<li class="clearfix clearfix">
-								<span>Monday - Friday</span><div class="value">8.00 - 17.00</div>
+								<span>شنبه - چهارشنبه</span><div class="value">8.00 - 17.00</div>
 							</li>
 							<li class="clearfix clearfix">
-								<span>Saturday</span>
+								<span>پنج شنبه</span>
 								<div class="value">9.30 - 17.30</div>
 							</li>
 							<li class="clearfix clearfix">
-								<span>Sunday</span>
+								<span>جمعه</span>
 								<div class="value">9.30 - 15.00</div>
 							</li>
 						</ul>

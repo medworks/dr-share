@@ -1225,6 +1225,8 @@ a.social_icon:hover, span.social_icon:hover
 {
 	padding: 0;
 	color: #FFF;
+	font-family: 'bmitra';
+	font-size: 18px;
 }
 .home_box .more
 {
@@ -1282,10 +1284,12 @@ a.social_icon:hover, span.social_icon:hover
 {
 	float: right;
 	color: #666;
+	font-family: 'bmitra';
 }
 .items_list.opening_hours li span, .items_list.opening_hours .value
 {
 	color: #FFF;
+	font-size: 18px;
 }
 .items_list.opening_hours li
 {
