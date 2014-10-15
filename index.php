@@ -468,11 +468,11 @@
 					<div class="wpb_widgetised_column wpb_content_element clearfix">
 						<div class="wpb_wrapper">
 							<div id="medicenter_departments-4" class="widget departments_widget sidebar_box">
-								<h3 class="box_header animation-slide">Departments</h3>
+								<h3 class="box_header animation-slide">دپارتمان</h3>
 								<style type="text/css">
 									#medicenter_departments-4 .accordion .ui-accordion-header h3
 									{
-										background-image: url(http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/accordion/blue/accordion_plus.png);
+										background-image: url(./images/accordion_plus.png);
 									}
 									#medicenter_departments-4 .accordion .ui-accordion-header.ui-state-hover h3
 									{
@@ -486,158 +486,180 @@
 								</style>
 								<ul class="accordion" data-active-tab="1">
 									<li>
-										<div id="accordion-primary-health-care">
-											<h3>Primary Health Care</h3>
+										<div id="accordion-health">
+											<h3>گروه درمانی</h3>
 										</div>
 										<div class="clearfix">
 											<div class="item_content clearfix">
-												<a class="thumb_image" href="http://quanticalabs.com/wp_themes/medicenter/departments/#primary-health-care" title="Primary Health Care">
-													<img width="96" height="96" src="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_081-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Primary Health Care" title="">
+												<a class="thumb_image" href="javascript:void();" title="Primary Health Care">
+													<img width="96" height="96" src="./images/others/image_081-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Primary Health Care" title="">
 												</a>
-												<p>Mauris adisciping fringila turpis intend tellus ornare etos pelim. Pulvunar est cardio neque vitae elit. Lorem vulputat paentra.</p>
+												<p>مشخصات کامل گروه درمانی کلینیک رهیاب را از لینک زیر مشاهده نمایید.</p>
 											</div>
 											<div class="item_footer clearfix">
-												<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/timetable/#primary-health-care" title="Timetable">Timetable</a>
-												<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/departments/#primary-health-care" title="Details">Details</a>
+												<a style="background-color:#3156a3;border-color:#3156a3;font-size:17px" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="javascript:void();" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
 											</div>
 										</div>
 									</li>
 									<li>
-										<div id="accordion-pediatric-clinic">
-											<h3>Pediatric Clinic</h3>
+										<div id="accordion-news">
+											<h3>اخبار و تازه ها</h3>
 										</div>
 										<div class="clearfix">
 											<div class="item_content clearfix">
-												<a class="thumb_image" href="http://quanticalabs.com/wp_themes/medicenter/departments/#pediatric-clinic" title="Pediatric Clinic">
-													<img width="96" height="96" src="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_051-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Pediatric Clinic" title="">
+												<a class="thumb_image" href="javascript:void();" title="Primary Health Care">
+													<img width="96" height="96" src="./images/others/image_081-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Primary Health Care" title="">
 												</a>
-												<p>Mauris adisciping fringila turpis intend tellus ornare etos pelim. Pulvunar est cardio neque vitae elit. Lorem vulputat paentra nunc gravida.</p>
+												<p>اخبار و تازه های کلینیک را از لینک زیر مشاهده نمایید.</p>
 											</div>
-										<div class="item_footer clearfix">
-											<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/timetable/#pediatric-clinic" title="Timetable">Timetable</a>
-											<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/departments/#pediatric-clinic" title="Details">Details</a>
+											<div class="item_footer clearfix">
+												<a style="background-color:#3156a3;border-color:#3156a3;font-size:17px" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="javascript:void();" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
+											</div>
 										</div>
-									</div>
-								</li>
-								<li>
-									<div id="accordion-outpatient-surgery">
-										<h3>Outpatient Surgery</h3>
-									</div>
-									<div class="clearfix">
-										<div class="item_content clearfix">
-											<a class="thumb_image" href="http://quanticalabs.com/wp_themes/medicenter/departments/#outpatient-surgery" title="Outpatient Surgery">
-												<img width="96" height="96" src="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_071-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Outpatient Surgery" title="">
-											</a>
-											<p>Mauris adisciping fringila turpis intend tellus ornare etos pelim. Pulvunar est cardio neque vitae elit. Lorem vulputat paentra.</p>
+									</li>
+									<li>
+										<div id="accordion-classes">
+											<h3>کلاسها و دوره های درمانی</h3>
 										</div>
-										<div class="item_footer clearfix">
-											<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/timetable/#outpatient-surgery" title="Timetable">Timetable</a>
-											<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/departments/#outpatient-surgery" title="Details">Details</a>
+										<div class="clearfix">
+											<div class="item_content clearfix">
+												<a class="thumb_image" href="javascript:void();" title="Primary Health Care">
+													<img width="96" height="96" src="./images/others/image_081-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Primary Health Care" title="">
+												</a>
+												<p>کلاسها و دوره های درمانی کلینیک رهیاب را از لینک زیر مشاهده نمایید.</p>
+											</div>
+											<div class="item_footer clearfix">
+												<a style="background-color:#3156a3;border-color:#3156a3;font-size:17px" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="javascript:void();" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
+											</div>
 										</div>
-									</div>
-								</li>
-								<li>
-									<div id="accordion-gynaecological-clinic">
-										<h3>Gynaecological Clinic</h3>
-									</div>
-									<div class="clearfix">
-										<div class="item_content clearfix">
-											<a class="thumb_image" href="http://quanticalabs.com/wp_themes/medicenter/departments/#gynaecological-clinic" title="Gynaecological Clinic">
-												<img width="96" height="96" src="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_011-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Gynaecological Clinic" title="">
-											</a>
-											<p>Mauris adisciping fringila turpis intend tellus ornare etos pelim. Pulvunar est cardio neque vitae elit. Lorem vulputat paentra.</p>
+									</li>
+									<li>
+										<div id="accordion-arrticles">
+											<h3>آرشیو مقالات</h3>
 										</div>
-										<div class="item_footer clearfix">
-											<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/timetable/#gynaecological-clinic" title="Timetable">Timetable</a>
-											<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/departments/#gynaecological-clinic" title="Details">Details</a>
+										<div class="clearfix">
+											<div class="item_content clearfix">
+												<a class="thumb_image" href="javascript:void();" title="Primary Health Care">
+													<img width="96" height="96" src="./images/others/image_081-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Primary Health Care" title="">
+												</a>
+												<p>آرشیو مقالات کلینیک رهیاب را از لینک زیر مشاهده نمایید.</p>
+											</div>
+											<div class="item_footer clearfix">
+												<a style="background-color:#3156a3;border-color:#3156a3;font-size:17px" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="javascript:void();" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
+											</div>
 										</div>
-									</div>
-								</li>
-								<li>
-									<div id="accordion-cardiac-clinic">
-										<h3>Cardiac Clinic</h3>
-									</div>
-									<div class="clearfix">
-										<div class="item_content clearfix">
-											<a class="thumb_image" href="http://quanticalabs.com/wp_themes/medicenter/departments/#cardiac-clinic" title="Cardiac Clinic">
-												<img width="96" height="96" src="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_041-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Cardiac Clinic" title="">
-											</a>
-											<p>Mauris adisciping fringila turpis intend tellus ornare etos pelim. Pulvunar est cardio neque vitae elit. Lorem vulputat paentra.</p>
+									</li>
+									<li>
+										<div id="accordion-gallery">
+											<h3>گالری تصاویر</h3>
 										</div>
-										<div class="item_footer clearfix">
-											<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/timetable/#cardiac-clinic" title="Timetable">Timetable</a>
-											<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/departments/#cardiac-clinic" title="Details">Details</a>
+										<div class="clearfix">
+											<div class="item_content clearfix">
+												<a class="thumb_image" href="javascript:void();" title="Primary Health Care">
+													<img width="96" height="96" src="./images/others/image_081-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Primary Health Care" title="">
+												</a>
+												<p>عکسهای همایشها و دوره های کلینیک رهیاب را از لینک زیر مشاهده نمایید.</p>
+											</div>
+											<div class="item_footer clearfix">
+												<a style="background-color:#3156a3;border-color:#3156a3;font-size:17px" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="javascript:void();" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
+											</div>
 										</div>
-									</div>
-								</li>
-								<li>
-									<div id="accordion-laryngological-clinic">
-										<h3>Laryngological Clinic</h3>
-									</div>
-									<div class="clearfix">
-										<div class="item_content clearfix">
-											<a class="thumb_image" href="http://quanticalabs.com/wp_themes/medicenter/departments/#laryngological-clinic" title="Laryngological Clinic">
-												<img width="96" height="96" src="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_081-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Laryngological Clinic" title="">
-											</a>
-											<p>Mauris adisciping fringila turpis intend tellus ornare etos pelim. Pulvunar est cardio neque vitae elit. Lorem vulputat paentra.</p>
+									</li>
+									<li>
+										<div id="accordion-test">
+											<h3>آزمون های روانشناختی</h3>
 										</div>
-										<div class="item_footer clearfix">
-											<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/timetable/#laryngological-clinic" title="Timetable">Timetable</a>
-											<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/departments/#laryngological-clinic" title="Details">Details</a>
+										<div class="clearfix">
+											<div class="item_content clearfix">
+												<a class="thumb_image" href="javascript:void();" title="Primary Health Care">
+													<img width="96" height="96" src="./images/others/image_081-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Primary Health Care" title="">
+												</a>
+												<p>از طریق لینک زیر در آزمونهای روانشناختی کلینیک رهیاب شرکت نمایید.</p>
+											</div>
+											<div class="item_footer clearfix">
+												<a style="background-color:#3156a3;border-color:#3156a3;font-size:17px" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="javascript:void();" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
+											</div>
 										</div>
-									</div>
-								</li>
-								<li>
-									<div id="accordion-ophthalmology-clinic">
-										<h3>Ophthalmology Clinic</h3>
-									</div>
-									<div class="clearfix">
-										<div class="item_content clearfix">
-											<a class="thumb_image" href="http://quanticalabs.com/wp_themes/medicenter/departments/#ophthalmology-clinic" title="Ophthalmology Clinic">
-												<img width="96" height="96" src="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_061-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Ophthalmology Clinic" title="">
-											</a>
-											<p>Mauris adisciping fringila turpis intend tellus ornare etos pelim. Pulvunar est cardio neque vitae elit. Lorem vulputat paentra.</p>
+									</li>
+									<li>
+										<div id="accordion-register">
+											<h3>عضویت</h3>
 										</div>
-										<div class="item_footer clearfix">
-											<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/timetable/#ophthalmology-clinic" title="Timetable">Timetable</a>
-											<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/departments/#ophthalmology-clinic" title="Details">Details</a>
+										<div class="clearfix">
+											<div class="item_content clearfix">
+												<a class="thumb_image" href="javascript:void();" title="Primary Health Care">
+													<img width="96" height="96" src="./images/others/image_081-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Primary Health Care" title="">
+												</a>
+												<p>برای عضویت در خبرنامه کلینیک رهیاب بروری لینک زیر کلیک نمایید.</p>
+											</div>
+											<div class="item_footer clearfix">
+												<a style="background-color:#3156a3;border-color:#3156a3;font-size:17px" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="javascript:void();" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
+											</div>
 										</div>
-									</div>
-								</li>
-								<li>
-									<div id="accordion-dental-clinic">
-										<h3>Dental Clinic</h3>
-									</div>
-									<div class="clearfix">
-										<div class="item_content clearfix">
-											<a class="thumb_image" href="http://quanticalabs.com/wp_themes/medicenter/departments/#dental-clinic" title="Dental Clinic">
-												<img width="96" height="96" src="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_031-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Dental Clinic" title="">
-											</a>
-											<p>Mauris adisciping fringila turpis intend tellus ornare etos pelim. Pulvunar est cardio neque vitae elit. Lorem vulputat paentra.</p>
+									</li>
+									<li>
+										<div id="accordion-conferences">
+											<h3>همایشها</h3>
 										</div>
-									<div class="item_footer clearfix">
-										<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/timetable/#dental-clinic" title="Timetable">Timetable</a>
-										<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/departments/#dental-clinic" title="Details">Details</a>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div id="accordion-outpatient-rehabilitation">
-									<h3>Outpatient Rehabilitation</h3>
-								</div>
-								<div class="clearfix">
-									<div class="item_content clearfix">
-										<a class="thumb_image" href="http://quanticalabs.com/wp_themes/medicenter/departments/#outpatient-rehabilitation" title="Outpatient Rehabilitation">
-											<img width="96" height="96" src="http://quanticalabs.com/wp_themes/medicenter/files/2013/02/image_051-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Outpatient Rehabilitation" title="">
-										</a>
-										<p>Mauris adisciping fringila turpis intend tellus ornare etos pelim. Pulvunar est cardio neque vitae elit. Lorem vulputat paentra.</p>
-									</div>
-									<div class="item_footer clearfix">
-										<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/timetable/#outpatient-rehabilitation" title="Timetable">Timetable</a>
-										<a style="background-color:#3156a3;border-color:#3156a3;" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="http://quanticalabs.com/wp_themes/medicenter/departments/#outpatient-rehabilitation" title="Details">Details</a>
-									</div>
-								</div>
-							</li>
+										<div class="clearfix">
+											<div class="item_content clearfix">
+												<a class="thumb_image" href="javascript:void();" title="Primary Health Care">
+													<img width="96" height="96" src="./images/others/image_081-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Primary Health Care" title="">
+												</a>
+												<p>برای شرکت در همایشهای کلینیک رهیاب برروی لینک زیر کلیک نمایید.</p>											</div>
+											<div class="item_footer clearfix">
+												<a style="background-color:#3156a3;border-color:#3156a3;font-size:17px" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="javascript:void();" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div id="accordion-usefulLinks">
+											<h3>پیوندهای مفید</h3>
+										</div>
+										<div class="clearfix">
+											<div class="item_content clearfix">
+												<a class="thumb_image" href="javascript:void();" title="Primary Health Care">
+													<img width="96" height="96" src="./images/others/image_081-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Primary Health Care" title="">
+												</a>
+												<p>پیوندهای مفید را از لینک زیر مشاهده نمایید.</p>
+											</div>
+											<div class="item_footer clearfix">
+												<a style="background-color:#3156a3;border-color:#3156a3;font-size:17px" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="javascript:void();" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div id="accordion-aboutUs">
+											<h3>درباره ما</h3>
+										</div>
+										<div class="clearfix">
+											<div class="item_content clearfix">
+												<a class="thumb_image" href="javascript:void();" title="Primary Health Care">
+													<img width="96" height="96" src="./images/others/image_081-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Primary Health Care" title="">
+												</a>
+												<p>اطلاعت مورد نیازتان با کلیک برروی لینک زیر بدسات آورید.</p>
+											</div>
+											<div class="item_footer clearfix">
+												<a style="background-color:#3156a3;border-color:#3156a3;font-size:17px" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="javascript:void();" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div id="accordion-contactUs">
+											<h3>ارتباط ما</h3>
+										</div>
+										<div class="clearfix">
+											<div class="item_content clearfix">
+												<a class="thumb_image" href="javascript:void();" title="Primary Health Care">
+													<img width="96" height="96" src="./images/others/image_081-96x96.jpg" class="attachment-medicenter-small-thumb wp-post-image" alt="Primary Health Care" title="">
+												</a>
+												<p>از راههای زیر میتوانید با ما در ارتباط باشید.</p>
+											</div>
+											<div class="item_footer clearfix">
+												<a style="background-color:#3156a3;border-color:#3156a3;font-size:17px" onmouseover="this.style.backgroundColor='#42b3e5';this.style.borderColor='#42b3e5';" onmouseout="this.style.backgroundColor='#3156a3';this.style.borderColor='#3156a3';" class="more blue icon_small_arrow margin_right_white" href="javascript:void();" title="اطلاعات بیشتر">اطلاعات بیشتر</a>
+											</div>
+										</div>
+									</li>
 								</ul>
 							</div>
 							<div id="medicenter_appointment-2" class="widget appointment_widget sidebar_box">

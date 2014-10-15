@@ -1969,6 +1969,7 @@ a.social_icon:hover, span.social_icon:hover
 .sidebar_box .accordion .item_content p
 {
 	padding: 0;
+	font-size: 18px;
 }
 /* --- categories --- */
 .widget_categories ul
