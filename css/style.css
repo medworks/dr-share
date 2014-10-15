@@ -3018,6 +3018,7 @@ ul.gallery_item_details_list.not_hidden
 	clear: none;
 	padding: 5px 0;
 	margin-left: 10px;
+	font-size: 17px;
 }
 /* --- footer banner box --- */
 .footer_banner_box_container
@@ -3163,6 +3164,7 @@ ul.gallery_item_details_list.not_hidden
 .appointment_widget .info
 {
 	padding-bottom: 0;
+	font-size: 18px;
 }
 .appointment_widget .column_left, .appointment_widget .column_right
 {

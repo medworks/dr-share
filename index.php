@@ -316,12 +316,12 @@
 	<ul class="home_box_container_list clearfix">
 		<li class="home_box_container clearfix animated_element animation-fadeIn duration-500" style="background-color: #42b3e5;">
 			<div class="home_box">
-				<h2>موارد اورژانس</h2>
+				<h2>وقت ملاقات</h2>
 				<div class="news clearfix">
 					<div class="text">	
-						راهای تماس با ما در موارد ضروری را در لینک زیر مشاهده نمایید
+						برای گرفتن وقت ملاقات از رهیاب از لینک زیر فرم مربوطه را پر نمایید
 					</div>
-					<a style="color:#FFFFFF;background-color:transparent;font-size:18px" onmouseover="this.style.color='#000000';this.style.backgroundColor='#ffffff';this.style.borderColor='#ffffff';" onmouseout="this.style.color='#FFFFFF';this.style.backgroundColor='transparent';this.style.borderColor='#FFFFFF';" title="Read more" href="javascript:void();" class="mc_button more light icon_small_arrow margin_right_white">مشاهده</a>
+					<a style="color:#FFFFFF;background-color:transparent;font-size:18px" onmouseover="this.style.color='#000000';this.style.backgroundColor='#ffffff';this.style.borderColor='#ffffff';" onmouseout="this.style.color='#FFFFFF';this.style.backgroundColor='transparent';this.style.borderColor='#FFFFFF';" title="Read more" href="javascript:void();" class="mc_button more light icon_small_arrow margin_right_white">فرم ملاقات</a>
 				</div>
 			</div>
 		</li>
@@ -459,7 +459,7 @@
 						</ul>
 					</div>
 					<div class="show_all clearfix">
-						<a href="blog" title="مشاهده اخبار &#8592;">مشاهده اخبار &#8592;</a>
+						<a href="javascript:void();" title="مشاهده اخبار &#8592;">مشاهده اخبار &#8592;</a>
 					</div>
 				</div> 
 			</div> 
@@ -468,7 +468,7 @@
 					<div class="wpb_widgetised_column wpb_content_element clearfix">
 						<div class="wpb_wrapper">
 							<div id="medicenter_departments-4" class="widget departments_widget sidebar_box">
-								<h3 class="box_header animation-slide">دپارتمان</h3>
+								<h3 class="box_header animation-slide">کلینیک</h3>
 								<style type="text/css">
 									#medicenter_departments-4 .accordion .ui-accordion-header h3
 									{
@@ -663,20 +663,20 @@
 								</ul>
 							</div>
 							<div id="medicenter_appointment-2" class="widget appointment_widget sidebar_box">
-								<h3 class="box_header animation-slide">Make An Appointment </h3>
-								<p class="info">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut volutpat rutrum eros sit amet sollicitudin.</p>
+								<h3 class="box_header animation-slide">وقت ملاقات</h3>
+								<p class="info">برای گرفتن وقت ملاقات میتوانید از روشهای زیر استفاده نمایید.</p>
 								<ul class="contact_data page_margin_top">
 									<li class="clearfix">
-										<span class="social_icon" style="background-image: url('http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/social_body/blue_light/phone.png');"></span>
-										<p class="value">by phone: <strong>1-800-643-4300</strong></p>\
+										<span class="social_icon" style="background-image: url('./images/phone.png');"></span>
+										<p class="value">بوسیله تلفن: <strong style="display:inline-block" class="ltr">+98-51-3 841 7740</strong></p>
 									</li>
 									<li class="clearfix">
-										<span class="social_icon" style="background-image: url('http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/social_body/blue_light/mail.png');"></span>
-										<p class="value">by e-mail: <a href="mailto:medicenter@mail.com">medicenter@mail.com</a></p>
+										<span class="social_icon" style="background-image: url('./images/mail.png');"></span>
+										<p class="value">بوسیله ایمیل: <a href="mailto:info@rahyab.com">info@rahyab.com</a></p>
 									</li>
 									<li class="clearfix">
-										<span class="social_icon" style="background-image: url('http://quanticalabs.com/wp_themes/medicenter/wp-content/themes/medicenter/images/social_body/blue_light/form.png');"></span>
-										<p class="value">or <a title="Contact form" href="contact">fill in the form</a> on contact page</p>
+										<span class="social_icon" style="background-image: url('./images/form.png');"></span>
+										<p class="value">یا <a title="Contact form" href="javascript:void();">پر کردن فرم در صفحه</a> تماس با ما</p>
 									</li>
 								</ul>
 							</div>
@@ -692,27 +692,27 @@
 		<ul class="footer_banner_box_container clearfix">
 			<li class="footer_banner_box animated_element animation-fadeIn duration-500" style="background-color: #42b3e5">
 				<h2>
-					<a href="http://quanticalabs.com/wp_themes/medicenter/pricing-plans/" title="Health Insurance ">Health Insurance </a>
+					<a href="javascript:void();" title="">فرم وقت ملاقات</a>
 				</h2>
-				<p>	
+				<!-- <p>	
 					<a class="icon_small_arrow right_white" href="http://quanticalabs.com/wp_themes/medicenter/pricing-plans/" title="Here in medicenter we have individual">Here in medicenter we have individual</a>
-				</p>
+				</p> -->
 			</li>
 			<li class="footer_banner_box animated_element animation-slideRight duration-800 delay-250" style="background-color: #0384ce">
 				<h2>
-					<a href="http://quanticalabs.com/wp_themes/medicenter/sliding-pricing-plans/" title="Medical Records">Medical Records</a>
+					<a href="javascript:void();" title="">درباره رهیاب</a>
 				</h2>
-				<p>	
+				<!-- <p>	
 					<a class="icon_small_arrow right_white" href="http://quanticalabs.com/wp_themes/medicenter/sliding-pricing-plans/" title="Here in medicenter we have individual">Here in medicenter we have individual</a>
-				</p>
+				</p> -->
 			</li>
 			<li class="footer_banner_box animated_element animation-slideRight200 duration-800 delay-500" style="background-color: #3156a3">
 				<h2>
-					<a href="http://quanticalabs.com/wp_themes/medicenter/pricing-plans/" title="Online Bill Pay ">Online Bill Pay </a>
+					<a href="javascript:void();" title="">تماس با رهیاب</a>
 				</h2>
-				<p>	
-					<a class="icon_small_arrow right_white" href="http://quanticalabs.com/wp_themes/medicenter/pricing-plans/" title="Here in medicenter we have individual">Here in medicenter we have individual</a>
-				</p>
+				<!-- <p>	
+					<a class="icon_small_arrow right_white" href="javascript:void();" title="Here in medicenter we have individual">Here in medicenter we have individual</a>
+				</p> -->
 			</li>
 		</ul>
 			<div class="footer_box_container clearfix">
