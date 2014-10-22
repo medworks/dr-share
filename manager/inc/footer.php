@@ -1,18 +1,3 @@
-    <div id="change-color">
-        <div id="change-color-control">
-            <a href="javascript:void(0)"><i class="fa fa-magic"></i></a>
-        </div>
-        <div class="change-color-box">
-            <ul>
-                <li class="default active"></li>
-                <li class="red-color"></li>
-                <li class="blue-color"></li>
-                <li class="light-green-color"></li>
-                <li class="black-color"></li>
-                <li class="deep-blue-color"></li>
-            </ul>
-        </div>
-    </div>
 </section>
 <!--Layout Script start -->
 <script type="text/javascript" src="./js/color.js"></script>
@@ -53,8 +38,6 @@
 <script type="text/javascript" src="./js/layout.js"></script>
 <!--Layout Script End -->
 
-<script src="./js/countUp.min.js"></script>
-
 <!-- skycons script start -->
 <script src="./js/skycons.js"></script>
 <!-- skycons script end   -->
@@ -67,7 +50,6 @@
 <!--AmaranJS library script Start -->
 <script src="./js/jquery.amaran.js"></script>
 <!--AmaranJS library script End   -->
-<script src="./js/dashboard.js"></script>
 
 </body>
 </html>
