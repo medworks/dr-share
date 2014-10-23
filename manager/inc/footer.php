@@ -51,6 +51,7 @@
 <script src="./js/jquery.amaran.js"></script>
 <!--AmaranJS library script End   -->
 <script src="./js/summernote.min.js"></script>
+<script src="./js/editor.js"></script>
 
 </body>
 </html>
