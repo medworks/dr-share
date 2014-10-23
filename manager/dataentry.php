@@ -701,21 +701,21 @@
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">Upload Ui</h3>
+                                    <h3 class="panel-title">انتخاب عکس</h3>
                                 </div>
                                 <div class="panel-body">
                                     <form action="" class="form-horizontal ls_form" enctype="multipart/form-data">
-                                        <div class="row ls_divider">
+                                        <!-- <div class="row ls_divider">
                                             <div class="form-group">
-                                                <label class="col-md-2 control-label">Default Upload</label>
+                                                <label class="col-md-2 control-label">انتخاب عکس</label>
                                                 <div class="col-md-10 ls-group-input">
                                                     <input type="file" name="filename" value="Browse">
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                         <div class="row ls_divider last">
                                             <div class="form-group">
-                                                <label class="col-md-2 control-label">Advance Upload</label>
+                                                <label class="col-md-2 control-label">انتخاب عکس</label>
                                                 <div class="col-md-10 ls-group-input">
                                                     <div class="file-input file-input-new">
                                                         <input type="hidden">
@@ -726,7 +726,7 @@
                                                            <div class="clearfix"></div>
                                                         </div>
                                                         <button type="button" class="btn btn-default fileinput-remove fileinput-remove-button"><i class="glyphicon glyphicon-ban-circle"></i> Remove</button>
-                                                        <div class="btn btn-ls btn-file"> <i class="glyphicon glyphicon-folder-open"></i> &nbsp;Browse … <input id="file-3" type="file" multiple="true"></div>
+                                                        <div class="btn btn-ls btn-file"><i class="glyphicon glyphicon-folder-open"></i> &nbsp;انتخاب فایل … <input id="file-3" type="file" multiple="true"></div>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-10  col-md-offset-2 ls-group-input">
