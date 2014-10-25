@@ -171,7 +171,7 @@
                 </a>
                 <ul>
                     <li><a href="dataentry.php">ثبت اطلاعات</a></li>
-                    <li><a href="dataenryedit.php">ویرایش اطلاعات</a></li>
+                    <li><a href="editdata.php">ویرایش اطلاعات</a></li>
                 </ul>
             </li>
             <li>
