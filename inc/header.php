@@ -59,14 +59,18 @@
 	</div>
 	<!-- Header -->
 	<div class="header_container">
-		<div class="header clearfix layout_1">
+		<div class="header clearfix layout_2">
 			<div class="header_left">
 				<a href="./" title="کلینیک رهیاب">
 					<img src="./images/header_logo.png" alt="logo">
 					<h1 class="logo bmitra">مرکز مشاوره و کلینیک تخصصی رهیاب</h1>
 				</a>
 			</div>
-			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="header_separator padding_top_15"></div>
+	<div class="header_container">
+		<div class="header clearfix padding_top_0 layout_2">
 			<div class="menu-main-menu-container">
 				<ul id="menu-main-menu" class="sf-menu header_right">
 					<li class="current-menu-ancestor">
@@ -197,97 +201,97 @@
 					</li>
 				</ul>
 			</div>
-		<div class="mobile_menu">
-			<select>
-				<option value="javascript:void();" selected="selected">صفحه اصلی</option>
+			<div class="mobile_menu">
+				<select>
+					<option value="javascript:void();" selected="selected">صفحه اصلی</option>
 
-				<option value="javascript:void();">زوج و خانواده</option>
-					<option value="javascript:void();" class="submenu">-زوجین، زناشویی و آمیزشی</option>
-					<option value="javascript:void();" class="submenu">-پیش از ازدواج</option>
-					<option value="javascript:void();" class="submenu">-خانواده</option>
+					<option value="javascript:void();">زوج و خانواده</option>
+						<option value="javascript:void();" class="submenu">-زوجین، زناشویی و آمیزشی</option>
+						<option value="javascript:void();" class="submenu">-پیش از ازدواج</option>
+						<option value="javascript:void();" class="submenu">-خانواده</option>
 
-				<option value="javascript:void();">بالینی، جنسی و شخصیتی</option>
-					<option value="javascript:void();">-اختلالات اضظرابی</option>
-						<option value="javascript:void();">--وسواس</option>
-						<option value="javascript:void();">--پانیک</option>
-						<option value="javascript:void();">--اضطراب فراگیر GAD</option>
-						<option value="javascript:void();">--فوبی اجتماعی (اضطراب در جمع)</option>
-						<option value="javascript:void();">--ترس از فضاهای بسته و هواپیما</option>
-						<option value="javascript:void();">--ترس از فضاهای باز و ارتفاع</option>
-						<option value="javascript:void();">--ترس از تاریکی، شبح و جن، خون و مرگ</option>
-					<option value="javascript:void();">-افسردگی و اختلالات خلقی</option>
-						<option value="javascript:void();">--افسردگی</option>
-						<option value="javascript:void();">--دوقطبی</option>
-						<option value="javascript:void();">--افسردگی پس از زایمان</option>
-						<option value="javascript:void();">--افسردگی مرتبط با قاعدگی PMS</option>
-					<option value="javascript:void();">-اختلالات جنسی زنان و مردان</option>
-						<option value="javascript:void();">--بی میلی جنسی و انزجار (سردمزاجی)</option>
-						<option value="javascript:void();">--ترس از رابطه زناشویی</option>
-						<option value="javascript:void();">--انقباض عضلانی هنگام رابطه زناشویی (واژینیسم)</option>
-						<option value="javascript:void();">--عدم برقراری رابطه زناشویی کامل (ازدواج وصال نیافته)</option>
-						<option value="javascript:void();">--انزال زودرس و سریع</option>
-						<option value="javascript:void();">--انزال دیررس یا دردناک</option>
-						<option value="javascript:void();">--اختلال در ایستایی آلت تناسلی (اختلال نعوظ)</option>
-						<option value="javascript:void();">--عدم برانگیختگی مناسب</option>
-						<option value="javascript:void();">--عدم توانایی دستیابی به ارگاسم</option>
-						<option value="javascript:void();">--درد در رابطه جنسی</option>
-						<option value="javascript:void();">--اختلال هویت جنسی TS</option>
-						<option value="javascript:void();">--میل جنسی زیاد و اعتیاد جنسی</option>
-						<option value="javascript:void();">--انحرافات جنسی (فتیشیسم، سادیسم، مازوخیسم...)</option>
-						<option value="javascript:void();">--نازایی</option>
-					<option value="javascript:void();">-اختلالات شخصیتی</option>
-						<option value="javascript:void();">--بدبینی و بددلی (پارانویا)</option>
-						<option value="javascript:void();">--خلق و رفتار بی ثبات (مرزی)</option>
-						<option value="javascript:void();">--پرخاشگری و از کوره در رفتن</option>
-						<option value="javascript:void();">--گوشه گیری و انزوا (اسکیزویید و اجتنابی)</option>
-						<option value="javascript:void();">--خودشیفتگی</option>
-						<option value="javascript:void();">--مضطرب و وسواسی</option>
-						<option value="javascript:void();">--وابسته</option>
-						<option value="javascript:void();">--نمایشی</option>
-					<option value="javascript:void();">-اختلالات سازشی و بحران های زندگی</option>
-						<option value="javascript:void();">--فوت و سوگ</option>
-						<option value="javascript:void();">--شکست عشقی</option>
-						<option value="javascript:void();">--مشکل در روابط عشقی</option>
-						<option value="javascript:void();">--ازدواج و بچه داری</option>
+					<option value="javascript:void();">بالینی، جنسی و شخصیتی</option>
+						<option value="javascript:void();">-اختلالات اضظرابی</option>
+							<option value="javascript:void();">--وسواس</option>
+							<option value="javascript:void();">--پانیک</option>
+							<option value="javascript:void();">--اضطراب فراگیر GAD</option>
+							<option value="javascript:void();">--فوبی اجتماعی (اضطراب در جمع)</option>
+							<option value="javascript:void();">--ترس از فضاهای بسته و هواپیما</option>
+							<option value="javascript:void();">--ترس از فضاهای باز و ارتفاع</option>
+							<option value="javascript:void();">--ترس از تاریکی، شبح و جن، خون و مرگ</option>
+						<option value="javascript:void();">-افسردگی و اختلالات خلقی</option>
+							<option value="javascript:void();">--افسردگی</option>
+							<option value="javascript:void();">--دوقطبی</option>
+							<option value="javascript:void();">--افسردگی پس از زایمان</option>
+							<option value="javascript:void();">--افسردگی مرتبط با قاعدگی PMS</option>
+						<option value="javascript:void();">-اختلالات جنسی زنان و مردان</option>
+							<option value="javascript:void();">--بی میلی جنسی و انزجار (سردمزاجی)</option>
+							<option value="javascript:void();">--ترس از رابطه زناشویی</option>
+							<option value="javascript:void();">--انقباض عضلانی هنگام رابطه زناشویی (واژینیسم)</option>
+							<option value="javascript:void();">--عدم برقراری رابطه زناشویی کامل (ازدواج وصال نیافته)</option>
+							<option value="javascript:void();">--انزال زودرس و سریع</option>
+							<option value="javascript:void();">--انزال دیررس یا دردناک</option>
+							<option value="javascript:void();">--اختلال در ایستایی آلت تناسلی (اختلال نعوظ)</option>
+							<option value="javascript:void();">--عدم برانگیختگی مناسب</option>
+							<option value="javascript:void();">--عدم توانایی دستیابی به ارگاسم</option>
+							<option value="javascript:void();">--درد در رابطه جنسی</option>
+							<option value="javascript:void();">--اختلال هویت جنسی TS</option>
+							<option value="javascript:void();">--میل جنسی زیاد و اعتیاد جنسی</option>
+							<option value="javascript:void();">--انحرافات جنسی (فتیشیسم، سادیسم، مازوخیسم...)</option>
+							<option value="javascript:void();">--نازایی</option>
+						<option value="javascript:void();">-اختلالات شخصیتی</option>
+							<option value="javascript:void();">--بدبینی و بددلی (پارانویا)</option>
+							<option value="javascript:void();">--خلق و رفتار بی ثبات (مرزی)</option>
+							<option value="javascript:void();">--پرخاشگری و از کوره در رفتن</option>
+							<option value="javascript:void();">--گوشه گیری و انزوا (اسکیزویید و اجتنابی)</option>
+							<option value="javascript:void();">--خودشیفتگی</option>
+							<option value="javascript:void();">--مضطرب و وسواسی</option>
+							<option value="javascript:void();">--وابسته</option>
+							<option value="javascript:void();">--نمایشی</option>
+						<option value="javascript:void();">-اختلالات سازشی و بحران های زندگی</option>
+							<option value="javascript:void();">--فوت و سوگ</option>
+							<option value="javascript:void();">--شکست عشقی</option>
+							<option value="javascript:void();">--مشکل در روابط عشقی</option>
+							<option value="javascript:void();">--ازدواج و بچه داری</option>
 
-				<option value="javascript:void();">کودک و نوجوان</option>
-					<option value="javascript:void();">-بیش فعالی</option>
-					<option value="javascript:void();">-شب ادراری</option>
-					<option value="javascript:void();">-ناخن جویدن</option>
-					<option value="javascript:void();">-تیک</option>
-					<option value="javascript:void();">-موکنی (کندن وسواسگونه موها)</option>
-					<option value="javascript:void();">-گوشه گیری</option>
-					<option value="javascript:void();">-پرخاشگری و مشکلات رفتاری</option>
-					<option value="javascript:void();">-بلوغ و مسایل جنسی</option>
+					<option value="javascript:void();">کودک و نوجوان</option>
+						<option value="javascript:void();">-بیش فعالی</option>
+						<option value="javascript:void();">-شب ادراری</option>
+						<option value="javascript:void();">-ناخن جویدن</option>
+						<option value="javascript:void();">-تیک</option>
+						<option value="javascript:void();">-موکنی (کندن وسواسگونه موها)</option>
+						<option value="javascript:void();">-گوشه گیری</option>
+						<option value="javascript:void();">-پرخاشگری و مشکلات رفتاری</option>
+						<option value="javascript:void();">-بلوغ و مسایل جنسی</option>
 
-				<option value="javascript:void();">تحصیلی و شغلی</option>
-					<option value="javascript:void();">-روش های مطالعه</option>
-					<option value="javascript:void();">-انتخاب رشته</option>
-					<option value="javascript:void();">-مشکل در تمرکز</option>
-					<option value="javascript:void();">-استرس شغلی</option>
-					<option value="javascript:void();">-مشکلات ارتباطی در محیط کار</option>
+					<option value="javascript:void();">تحصیلی و شغلی</option>
+						<option value="javascript:void();">-روش های مطالعه</option>
+						<option value="javascript:void();">-انتخاب رشته</option>
+						<option value="javascript:void();">-مشکل در تمرکز</option>
+						<option value="javascript:void();">-استرس شغلی</option>
+						<option value="javascript:void();">-مشکلات ارتباطی در محیط کار</option>
 
-				<option value="javascript:void();">هوش و استعداد</option>
-					<option value="javascript:void();">-هوش</option>
-					<option value="javascript:void();">-استعداد</option>
+					<option value="javascript:void();">هوش و استعداد</option>
+						<option value="javascript:void();">-هوش</option>
+						<option value="javascript:void();">-استعداد</option>
 
-				<option value="javascript:void();">مشاورین و متخصصان</option>
+					<option value="javascript:void();">مشاورین و متخصصان</option>
 
-				<option value="javascript:void();">خدمات کلینیک</option>
-					<option value="javascript:void();">-مشاوره ازدواج</option>
-					<option value="javascript:void();">-درمان فردی</option>
-					<option value="javascript:void();">-درمان گروهی (گروه درمانی)</option>
-					<option value="javascript:void();">-درمان زوجی (زوج درمانی)</option>
-					<option value="javascript:void();">-درمان خانواده (خانواده درمانی)</option>
-					<option value="javascript:void();">-سکس تراپی</option>
-					<option value="javascript:void();">-درمان شناختی-رفتاری</option>
-					<option value="javascript:void();">-واقعیت درمانی</option>
-					<option value="javascript:void();">-هیپنوتیزم</option>
-					<option value="javascript:void();">-روانکاوی و روانتحلیلی</option>
-					<option value="javascript:void();">-درمان های نوین</option>
-					<option value="javascript:void();">-اجرای تست های هوش، شخصیت و سایر تستهای روانشناختی</option>
-			</select>
+					<option value="javascript:void();">خدمات کلینیک</option>
+						<option value="javascript:void();">-مشاوره ازدواج</option>
+						<option value="javascript:void();">-درمان فردی</option>
+						<option value="javascript:void();">-درمان گروهی (گروه درمانی)</option>
+						<option value="javascript:void();">-درمان زوجی (زوج درمانی)</option>
+						<option value="javascript:void();">-درمان خانواده (خانواده درمانی)</option>
+						<option value="javascript:void();">-سکس تراپی</option>
+						<option value="javascript:void();">-درمان شناختی-رفتاری</option>
+						<option value="javascript:void();">-واقعیت درمانی</option>
+						<option value="javascript:void();">-هیپنوتیزم</option>
+						<option value="javascript:void();">-روانکاوی و روانتحلیلی</option>
+						<option value="javascript:void();">-درمان های نوین</option>
+						<option value="javascript:void();">-اجرای تست های هوش، شخصیت و سایر تستهای روانشناختی</option>
+				</select>
+			</div>
 		</div>
 	</div>
-</div>
-<!-- /Header -->
+	<!-- /Header -->

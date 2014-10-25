@@ -133,6 +133,7 @@ a img.alignleft
 .logo
 {
 	float: right;
+	margin-top: 20px;
 }
 .header.layout_2 .sf-menu li
 {
