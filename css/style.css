@@ -367,7 +367,7 @@ h1.not_found
 .header_left
 {
 	float: left;
-	width: 320px;
+	width: 990px;
 }
 .header_right
 {
@@ -531,7 +531,7 @@ h1.not_found
 	font-size: 16px !important;
 	color: #888;
 	border: 1px solid #FFF;
-	padding: 16px;
+	padding: 17px;
 }
 .sf-menu li:hover a, .sf-menu li.selected a, .sf-menu li.current-menu-item a, .sf-menu li.current-menu-ancestor a
 {
@@ -823,7 +823,7 @@ ul.sf-menu li li li:hover ul, ul.sf-menu li li li.sfHover ul
 /* --- footer --- */
 .footer_container
 {
-	background-color: #202020;
+	background-color: #505050;
 }
 .footer
 {
@@ -1328,7 +1328,7 @@ a.social_icon:hover, span.social_icon:hover
 }
 .footer .scrolling_list li a
 {
-	color: #D5D5D5;
+	color: #fff;
 }
 .scrolling_list.latest_tweets li a
 {
@@ -3102,6 +3102,7 @@ ul.gallery_item_details_list.not_hidden
 {
 	clear: both;
 	padding-top: 5px;
+	color: #fff;
 }
 .footer_contact_info_row:first-child
 {
@@ -3111,6 +3112,7 @@ ul.gallery_item_details_list.not_hidden
 {
 	float: left;
 	width: 150px;
+	color: #fff;
 }
 .footer_contact_info_right
 {
@@ -3131,10 +3133,10 @@ ul.gallery_item_details_list.not_hidden
 /* --- copyright area --- */
 .copyright_area
 {
-	border-top: 1px solid #353535;
+	border-top: 1px solid #555555;
 	padding: 15px 0;
 	font-size: 11px;
-	color: #909090;
+	color: #fff;
 	margin-top: 15px;
 }
 .copyright_left
