@@ -13,7 +13,7 @@
                         <!--Top breadcrumb start -->
                         <ol class="breadcrumb">
                             <li><a href="admin.php"><i class="fa fa-home"></i></a></li>
-                            <li class="active">ثبت اطلاعات</li>
+                            <li class="active">ورود اطلاعات</li>
                         </ol>
                         <!--Top breadcrumb start -->
                     </div>
@@ -42,7 +42,6 @@
                                         <option value="">Default select</option>
                                         <option value="">Default select</option>
                                     </select>
-                                    <button type="submit" class="btn btn-default">ثبت</button>
                                 </form>
                             </div>
                         </div>
@@ -698,71 +697,61 @@
                     </div>
                 </div>
                 <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">انتخاب عکس</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <form action="" class="form-horizontal ls_form" enctype="multipart/form-data">
-                                        <!-- <div class="row ls_divider">
-                                            <div class="form-group">
-                                                <label class="col-md-2 control-label">انتخاب عکس</label>
-                                                <div class="col-md-10 ls-group-input">
-                                                    <input type="file" name="filename" value="Browse">
-                                                </div>
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">انتخاب عکس</h3>
+                            </div>
+                            <div class="panel-body">
+                                <form action="" class="form-horizontal ls_form" enctype="multipart/form-data">
+                                    <!-- <div class="row ls_divider">
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">انتخاب عکس</label>
+                                            <div class="col-md-10 ls-group-input">
+                                                <input type="file" name="filename" value="Browse">
                                             </div>
-                                        </div> -->
-                                        <div class="row ls_divider last">
-                                            <div class="form-group">
-                                                <label class="col-md-2 control-label">انتخاب عکس</label>
-                                                <div class="col-md-10 ls-group-input">
-                                                    <div class="file-input file-input-new">
-                                                        <input type="hidden">
-                                                        <div class="file-preview ">
-                                                           <div class="file-preview-status text-center text-success"></div>
-                                                           <div class="close fileinput-remove text-right">×</div>
-                                                           <div class="file-preview-thumbnails"></div>
-                                                           <div class="clearfix"></div>
-                                                        </div>
-                                                        <button type="button" class="btn btn-default fileinput-remove fileinput-remove-button"><i class="glyphicon glyphicon-ban-circle"></i> Remove</button>
-                                                        <div class="btn btn-ls btn-file"><i class="glyphicon glyphicon-folder-open"></i> &nbsp;انتخاب فایل … <input id="file-3" type="file" multiple="true"></div>
+                                        </div>
+                                    </div> -->
+                                    <div class="row ls_divider last">
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">انتخاب عکس</label>
+                                            <div class="col-md-10 ls-group-input">
+                                                <div class="file-input file-input-new">
+                                                    <input type="hidden" />
+                                                    <div class="file-preview ">
+                                                       <div class="file-preview-status text-center text-success"></div>
+                                                       <div class="close fileinput-remove text-right">×</div>
+                                                       <div class="file-preview-thumbnails"></div>
+                                                       <div class="clearfix"></div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-10  col-md-offset-2 ls-group-input">
-                                                    <div class="file-input file-input-new">
-                                                        <input type="hidden">
-                                                        <div class="file-preview ">
-                                                           <div class="file-preview-status text-center text-success"></div>
-                                                           <div class="close fileinput-remove text-right">×</div>
-                                                           <div class="file-preview-thumbnails"></div>
-                                                           <div class="clearfix"></div>
-                                                        </div>
-                                                        <div class="input-group ">
-                                                           <div class="form-control file-caption ">
-                                                                <span class="glyphicon glyphicon-file"></span>
-                                                                <span class="file-caption-name"></span>
-                                                            </div>
-                                                           <div class="input-group-btn">
-                                                               <button type="button" class="btn btn-default fileinput-remove fileinput-remove-button"><i class="glyphicon glyphicon-ban-circle"></i> Remove</button>
-                                                               <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-upload"></i> Upload</button>
-                                                               <div class="btn btn-primary btn-file"> <i class="glyphicon glyphicon-folder-open"></i> &nbsp;Browse … <input id="file-1" type="file" class="file" multiple="true" data-preview-file-type="any"></div>
-                                                           </div>
-                                                        </div>
-                                                    </div>
+                                                    <button type="button" class="btn btn-default fileinput-remove fileinput-remove-button"><i class="glyphicon glyphicon-ban-circle"></i> Remove</button>
+                                                    <div class="btn btn-ls btn-file"><i class="glyphicon glyphicon-folder-open"></i> &nbsp;انتخاب فایل … <input id="file-3" type="file" multiple="true"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </div>            
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">ثبت اطلاعات</h3>
+                            </div>
+                            <div class="panel-body">
+                                <button type="submit" class="btn btn-default">ثبت</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>            
                 <!-- Main Content Element  End-->
             </div>
         </div>
     </section>
-        <!--Page main section end -->
+    <!--Page main section end -->
 <?php
     include_once("./inc/footer.php")
 ?>

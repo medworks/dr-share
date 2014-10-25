@@ -53,7 +53,6 @@
 <script src="./js/summernote.min.js"></script>
 <script src="./js/editor.js"></script>
 
-<script src="./js/sampleForm.js"></script>
 <script src="./js/fileinput.min.js"></script>
 
 </body>
