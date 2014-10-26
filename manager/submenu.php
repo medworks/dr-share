@@ -48,6 +48,9 @@
                             <div class="panel-body">
                                 <!--Table Wrapper Start-->
                                 <div class="table-responsive ls-table">
+                                    <div id="ls-editable-table_filter" class="dataTables_filter">
+                                        <label>جستجو:<input type="search" class="" aria-controls="ls-editable-table"></label>
+                                    </div>
                                     <table class="table table-bordered table-striped">
                                         <thead>
                                         <tr>
