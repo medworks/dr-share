@@ -37,7 +37,7 @@
                                     </div>
                                     <div class="row ls_divider">
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">آدر RSS</label>
+                                            <label class="col-md-2 control-label">آدرس RSS</label>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" name="help_text" />
                                                 <span class="help_text">

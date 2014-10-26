@@ -214,11 +214,11 @@
             <li>
                 <a href="#">
                     <i class="fa fa-cloud-upload"></i>
-                    <span>آپلود عکسها</span>
+                    <span>آپلود تصاویر</span>
                 </a>
                 <ul>
-                    <li><a href="button-switch.html">آپلود عکس جدید</a></li>
-                    <li><a href="checkbox-radio.html">ویرایش عکسهای آپلود شده</a></li>
+                    <li><a href="button-switch.html">آپلود تصویر جدید</a></li>
+                    <li><a href="checkbox-radio.html">ویرایش تصاویر آپلود شده</a></li>
                 </ul>
             </li>
             <li>
