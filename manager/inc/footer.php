@@ -55,7 +55,5 @@
 
 <script src="./js/fileinput.min.js"></script>
 
-<script src="./js/jquery.autosize.js"></script>
-
 </body>
 </html>
