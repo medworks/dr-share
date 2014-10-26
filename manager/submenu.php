@@ -48,49 +48,63 @@
                             <div class="panel-body">
                                 <!--Table Wrapper Start-->
                                 <div class="table-responsive ls-table">
-                                    <table class="table">
+                                    <table class="table table-bordered table-striped">
                                         <thead>
-                                            <tr>
-                                                <th>ردیف</th>
-                                                <th>نام زیر منو</th>
-                                                <th>نام منو</th>
-                                                <th>ترتیب</th>
-                                                <th>عملیات</th>
-                                            </tr>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>نام زیرمنو</th>
+                                            <th>منو و زیر منو</th>
+                                            <th class="text-center">عملیات</th>
+                                        </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Mark</td>
-                                                <td>خانواده > ازدواج</td>
-                                                <td>Otto</td>
-                                                <td>
-                                                    <ul class="ls-glyphicons-list">
-                                                        <li>
-                                                            <a href="#" title="پاک کردن" style="margin-left:5px"><span class="glyphicon glyphicon-remove"></span></a>
-                                                            <a href="#" title="ویرایش"><span class="glyphicon glyphicon-edit"></span></a>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Mark</td>
-                                                <td>خانواده</td>
-                                                <td>Otto</td>
-                                                <td>
-                                                    <ul class="ls-glyphicons-list">
-                                                        <li>
-                                                            <a href="#" title="پاک کردن" style="margin-left:5px"><span class="glyphicon glyphicon-remove"></span></a>
-                                                            <a href="#" title="ویرایش"><span class="glyphicon glyphicon-edit"></span></a>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>PSD Design</td>
+                                            <td>
+                                                <span class="label label-success">خانواده</span>
+                                                <span class="label label-info">ازدواج</span>
+                                                <span class="label label-warning">مشکلات ازدواج</span>
+                                                <span class="label label-danger">مشکلات...</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
+                                                <button class="btn btn-xs btn-danger" title="پاک کردن"><i class="fa fa-minus"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>PSD</td>
+                                            <td>
+                                                <span class="label label-success">خانواده</span>
+                                                <span class="label label-info">ازدواج</span>
+                                                <span class="label label-warning">مشکلات ازدواج</span>
+                                                <span class="label label-danger">مشکلات...</span>
+                                            </td>
+                                            <td class="text-center">
+                                                <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
+                                                <button class="btn btn-xs btn-danger" title="پاک کردن"><i class="fa fa-minus"></i></button>
+                                            </td>
+                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <!--Table Wrapper Finish-->
+                                <div class="dataTables_paginate paging_full_numbers" id="ls-editable-table_paginate">
+                                    <a class="paginate_button first disabled" aria-controls="ls-editable-table" tabindex="0" id="ls-editable-table_first">اولین</a>
+                                    <a class="paginate_button previous disabled" aria-controls="ls-editable-table" tabindex="0" id="ls-editable-table_previous">قبلی</a>
+                                    <span>
+                                        <a class="paginate_button current" aria-controls="ls-editable-table" tabindex="0">1</a>
+                                        <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">2</a>
+                                        <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">3</a>
+                                        <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">4</a>
+                                        <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">5</a>
+                                        <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">6</a>
+                                    </span>
+                                    <a class="paginate_button next" aria-controls="ls-editable-table" tabindex="0" id="ls-editable-table_next">بعدی</a>
+                                    <a class="paginate_button last" aria-controls="ls-editable-table" tabindex="0" id="ls-editable-table_last">آخرین</a>
+                                </div>
+                                <div class="dataTables_info" id="ls-editable-table_info" role="alert" aria-live="polite" aria-relevant="all">نمایش 1 تا 10 از 577 فیلد</div>
                             </div>
                         </div>
                     </div>
