@@ -27,7 +27,7 @@
     <!-- TODO: Add a favicon -->
     <link rel="shortcut icon" href="./images/fab.ico" />
     
-    <title>Mediateq.ir||Rahyab clinic CMS</title>
+    <title>Rahyab clinic||Mediateq.ir</title>
     
     <!--Page loading plugin Start -->
     <link rel="stylesheet" href="./css/pace-rtl.css" />
@@ -187,8 +187,8 @@
                     <!-- <span class="badge badge-red">New</span> -->
                 </a>
                 <ul>
-                    <li><a href="button-switch.html">ثبت خبر</a></li>
-                    <li><a href="checkbox-radio.html">ویرایش خبر</a></li>
+                    <li><a href="addnews.php">ثبت خبر</a></li>
+                    <li><a href="editnews.php">ویرایش خبر</a></li>
                 </ul>
             </li>
             <li>
@@ -197,8 +197,8 @@
                     <span>مقالات</span>
                 </a>
                 <ul>
-                    <li><a href="button-switch.html">ثبت مقاله</a></li>
-                    <li><a href="checkbox-radio.html">ویرایش مقالات</a></li>
+                    <li><a href="addarticle.php">ثبت مقاله</a></li>
+                    <li><a href="editarticle.php">ویرایش مقالات</a></li>
                 </ul>
             </li>
             <li>
