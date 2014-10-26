@@ -244,18 +244,11 @@
                     <i class="fa fa-gear"></i>
                     <span>تنظیمات</span>
                 </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-phone"></i>
-                    <span>تماس با ما</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-user"></i>
-                    <span>درباره ما</span>
-                </a>
+                <ul>
+                    <li><a href="settinginfo.php">اطلاعات سایت</a></li>
+                    <li><a href="contactinfo.php">تماس با ما</a></li>
+                    <li><a href="aboutinfo.php">درباره ما</a></li>
+                </ul>
             </li>
         </ul>
         <!--Left navigation end-->
