@@ -155,6 +155,12 @@
                 </ul>
             </li> -->
             <li>
+                <a href="group.php">
+                    <i class="fa fa-users"></i>
+                    <span>دسته بندی گروه ها</span>
+                </a>
+            </li>
+            <li>
                 <a href="#">
                     <i class="fa fa-navicon"></i>
                     <span>دسته بندی منوها</span>
