@@ -1,3 +1,34 @@
+<?php
+ //header('Content-Type: text/html; charset=UTF-8');
+include_once("../config.php");
+include_once("../classes/database.php");
+include_once("../classes/session.php");
+include_once("../classes/login.php");
+include_once("../classes/messages.php");
+
+$login=Login::GetLogin();
+$msg=Message::GetMessage();
+$msgs = "";
+if ($login->IsLogged())
+{	
+		header("Location: ../manager/admin.php?act=ord");
+} 
+else
+{
+	if (isset ($_POST["mark"]) AND $_POST["mark"] == "login")
+	{
+		if ($login->AdminLogin($_POST['username'],$_POST['password']))
+		{		 
+		header("location:admin.php?act=ord");	
+		}	
+		else
+		{ 
+			$msgs = $msg->ShowError("نام کاربری یا کلمه عبور اشتباه می باشد !");			
+		}	
+	}   
+
+
+$html=<<<cd
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -92,16 +123,17 @@
                     </div>
 
                     <div class="login-form">
-                        <form id="form-login" action="#" class="form-horizontal ls_form">
+                        <form id="frmlogin" action=""  method="post" class="form-horizontal ls_form">
+						
                             <div class="input-group ls-group-input">
-                                <input class="form-control" type="text" placeholder="Username">
+                                <input name="username" class="form-control" type="text" placeholder="Username">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                             </div>
 
 
                             <div class="input-group ls-group-input">
 
-                                <input type="password" placeholder="Password" name="password" class="form-control" value="">
+                                <input name="password" type="password" placeholder="Password" name="password" class="form-control" value="">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                             </div>
 
@@ -111,11 +143,13 @@
                             </div>
                             <div class="input-group ls-group-input login-btn-box">
                                 <button class="btn ls-dark-btn ladda-button col-md-12 col-sm-12 col-xs-12" data-style="slide-down">
-                                    <span class="ladda-label"><i class="fa fa-key"></i></span>
+                                    <span class="ladda-label">
+									<i class="fa fa-key"></i></span>
                                 <span class="ladda-spinner"></span></button>
 
                                 <a class="forgot-password" href="javascript:void(0)">Forgot password</a>
                             </div>
+							<input type="hidden" name="mark" value="login" /> 
                         </form>
                     </div>
                     <div class="forgot-pass-box">
@@ -158,3 +192,7 @@
 <script src="./js/pages/login.js"></script>
 </body>
 </html>
+cd;
+	echo $html;
+	}
+?>
