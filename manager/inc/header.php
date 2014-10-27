@@ -97,7 +97,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="login.html">
+                    <a href="admin.php?act=logout">
                         <i class="fa fa-power-off"></i>
                     </a>
                 </li>
