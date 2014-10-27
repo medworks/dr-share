@@ -19,7 +19,7 @@ else
 	{
 		if ($login->AdminLogin($_POST['username'],$_POST['password']))
 		{		 
-		header("location:admin.php?act=ord");	
+			header("location:admin.php");	
 		}	
 		else
 		{ 
@@ -142,11 +142,14 @@ $html=<<<cd
                                 <span>Remember me</span>
                             </div>
                             <div class="input-group ls-group-input login-btn-box">
+							 <input type="submit" class="btn ls-dark-btn ladda-button col-md-12 col-sm-12 col-xs-12" 
+							 data-style="slide-down"/>
+							 <!--
                                 <button class="btn ls-dark-btn ladda-button col-md-12 col-sm-12 col-xs-12" data-style="slide-down">
                                     <span class="ladda-label">
 									<i class="fa fa-key"></i></span>
                                 <span class="ladda-spinner"></span></button>
-
+							-->
                                 <a class="forgot-password" href="javascript:void(0)">Forgot password</a>
                             </div>
 							<input type="hidden" name="mark" value="login" /> 
