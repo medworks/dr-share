@@ -19,14 +19,14 @@
                     </div>
                 </div>
                 <!-- Main Content Element  Start-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">تعریف منو</h3>
-                            </div>
-                            <div class="panel-body">
-                                <form class="form-inline ls_form" role="form">
+                <form class="form-inline ls_form" role="form">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">تعریف منو</h3>
+                                </div>
+                                <div class="panel-body">
                                     <div class="form-group">
                                         <input type="text" class="form-control" placeholder="اسم منو" />
                                     </div>
@@ -34,64 +34,64 @@
                                         <input type="text" class="form-control" placeholder="ترتیب" />
                                     </div>
                                     <button type="submit" class="btn btn-default">ثبت</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">ویرایش منوها</h3>
-                            </div>
-                            <div class="panel-body">
-                                <!--Table Wrapper Start-->
-                                <div class="table-responsive ls-table">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>ردیف</th>
-                                                <th>نام منو</th>
-                                                <th>ترتیب</th>
-                                                <th>عملیات</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>
-                                                    <ul class="ls-glyphicons-list">
-                                                        <li>
-                                                            <a href="#" title="پاک کردن" style="margin-left:5px"><span class="glyphicon glyphicon-remove"></span></a>
-                                                            <a href="#" title="ویرایش"><span class="glyphicon glyphicon-edit"></span></a>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Mark</td>
-                                                <td>Otto</td>
-                                                <td>
-                                                    <ul class="ls-glyphicons-list">
-                                                        <li>
-                                                            <a href="#" title="پاک کردن" style="margin-left:5px"><span class="glyphicon glyphicon-remove"></span></a>
-                                                            <a href="#" title="ویرایش"><span class="glyphicon glyphicon-edit"></span></a>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </div>
-                                <!--Table Wrapper Finish-->
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">ویرایش منوها</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <!--Table Wrapper Start-->
+                                    <div class="table-responsive ls-table">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>ردیف</th>
+                                                    <th>نام منو</th>
+                                                    <th>ترتیب</th>
+                                                    <th>عملیات</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>
+                                                        <ul class="ls-glyphicons-list">
+                                                            <li>
+                                                                <a href="#" title="پاک کردن" style="margin-left:5px"><span class="glyphicon glyphicon-remove"></span></a>
+                                                                <a href="#" title="ویرایش"><span class="glyphicon glyphicon-edit"></span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>
+                                                        <ul class="ls-glyphicons-list">
+                                                            <li>
+                                                                <a href="#" title="پاک کردن" style="margin-left:5px"><span class="glyphicon glyphicon-remove"></span></a>
+                                                                <a href="#" title="ویرایش"><span class="glyphicon glyphicon-edit"></span></a>
+                                                            </li>
+                                                        </ul>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!--Table Wrapper Finish-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
                 <!-- Main Content Element  End-->
             </div>
         </div>
