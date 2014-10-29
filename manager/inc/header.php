@@ -155,7 +155,7 @@
                 </ul>
             </li> -->
             <li>
-                <a href="categories.php">
+                <a href="categories.php?act=new">
                     <i class="fa fa-users"></i>
                     <span>دسته بندی گروه ها</span>
                 </a>
