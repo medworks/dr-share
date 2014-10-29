@@ -1,6 +1,61 @@
 <?php
-    include_once("./inc/header.php")
-?>
+	include_once("../config.php");
+	include_once("../classes/functions.php");
+  	include_once("../classes/messages.php");
+  	include_once("../classes/session.php");	
+  	include_once("../classes/security.php");
+  	include_once("../classes/database.php");	
+	include_once("../classes/login.php");
+    include_once("../lib/persiandate.php"); 
+
+	$login = Login::GetLogin();
+    if (!$login->IsLogged())
+	{
+		header("Location: ../index.php");
+		die(); // solve a security bug
+	}
+	$db = Database::GetDatabase();
+	if ($_POST["mark"]=="savemenu")
+	{
+		$fields = array("`name`","`pos`");		
+		$values = array("'{$_POST[edtname]}'","'{$_POST[edtpos]}'");	
+		if (!$db->InsertQuery('menues',$fields,$values)) 
+		{			
+			header('location:menu.php?act=new&msg=2');			
+		} 	
+		else 
+		{  										
+			header('location:menu.php?act=new&msg=1');
+		}  		
+	}
+	else
+	if ($_POST["mark"]=="editmenu")
+	{			    
+		$values = array("`name`"=>"'{$_POST[edtname]}'",
+		                "`pos`"=>"'{$_POST[edtpos]}'");
+        $db->UpdateQuery("menues",$values,array("id='{$_GET["mid"]}'"));		
+		header('location:menu.php?act=new&msg=1');
+	}	
+	if ($_GET['act']=="new")
+	{
+		$insertoredit = "
+			<button type='submit' class='btn btn-default'>ثبت</button>
+			<input type='hidden' name='mark' value='savemenu' /> ";
+	}
+	if ($_GET['act']=="edit")
+	{
+	    $row=$db->Select("menues","*","id='{$_GET["mid"]}'",NULL);		
+		$insertoredit = "
+			<button type='submit' class='btn btn-default'>ویرایش</button>
+			<input type='hidden' name='mark' value='editmenu' /> ";
+	}
+	if ($_GET['act']=="del")
+	{
+		$db->Delete("menues"," id",$_GET["mid"]);		
+		header('location:menu.php?act=new');	
+	}	
+$msgs = GetMessage($_GET['msg']);
+$html.=<<<cd
     <!--Page main section start-->
     <section id="min-wrapper">
         <div id="main-content">
@@ -19,7 +74,7 @@
                     </div>
                 </div>
                 <!-- Main Content Element  Start-->
-                <form class="form-inline ls_form" role="form">
+                <form action="" method="post" id="frmmenu" class="form-inline ls_form" role="form">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
@@ -28,21 +83,22 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="اسم منو" />
+                                        <input id="edtname" name="edtname" type="text" class="form-control" placeholder="اسم منو" value="{$row['name']}"/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="ترتیب" />
+                                        <input id="edtpos" name="edtpos"  type="text" class="form-control" placeholder="ترتیب" value="{$row['pos']}" />
                                     </div>
-                                    <button type="submit" class="btn btn-default">ثبت</button>
+                                    {$insertoredit}
                                 </div>
                             </div>
                         </div>
                     </div>
+					</form>
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">ویرایش منوها</h3>
+                                    <h3 class="panel-title">لیست منو ها</h3>
                                 </div>
                                 <div class="panel-body">
                                     <!--Table Wrapper Start-->
@@ -57,46 +113,43 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>
-                                                        <ul class="ls-glyphicons-list">
-                                                            <li>
-                                                                <a href="#" title="پاک کردن" style="margin-left:5px"><span class="glyphicon glyphicon-remove"></span></a>
-                                                                <a href="#" title="ویرایش"><span class="glyphicon glyphicon-edit"></span></a>
-                                                            </li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>2</td>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td>
-                                                        <ul class="ls-glyphicons-list">
-                                                            <li>
-                                                                <a href="#" title="پاک کردن" style="margin-left:5px"><span class="glyphicon glyphicon-remove"></span></a>
-                                                                <a href="#" title="ویرایش"><span class="glyphicon glyphicon-edit"></span></a>
-                                                            </li>
-                                                        </ul>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <!--Table Wrapper Finish-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <!-- Main Content Element  End-->
-            </div>
-        </div>
-    </section>
+cd;
+$rows = $db->SelectAll("menues","*",NULL,"id ASC");
+for($i = 0; $i < Count($rows); $i++)
+{
+$rownumber = $i+1;
+$html.=<<<cd
+<tr>
+	<td>{$rownumber}</td>
+	<td>{$rows[$i]["name"]}</td>
+	<td>{$rows[$i]["pos"]}</td>
+	<td>
+		<ul class="ls-glyphicons-list">
+			<li>
+				<a href="?act=del&mid={$rows[$i]["id"]}" title="پاک کردن" style="margin-left:5px"><span class="glyphicon glyphicon-remove"></span></a>
+				<a href="?act=edit&mid={$rows[$i]["id"]}" title="ویرایش"><span class="glyphicon glyphicon-edit"></span></a>
+			</li>
+		</ul>
+	</td>
+</tr>
+cd;
+}
+$html.=<<<cd
+</tbody>
+</table>
+</div>
+<!--Table Wrapper Finish-->
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Element  End-->
+</div>
+</div>
+</section>
     <!--Page main section end -->
-<?php
-    include_once("./inc/footer.php")
+cd;
+    include_once("./inc/header.php");
+	echo $html;
+    include_once("./inc/footer.php");
 ?>
