@@ -55,7 +55,7 @@ $html=<<<cd
     <!-- TODO: Add a favicon -->
     <link rel="shortcut icon" href="./images/fab.ico" />
 
-    <title>Rahyab cms||MEdiateq.ir</title>
+    <title>Rahyab cms||Mediateq.ir</title>
 
     <!--Page loading plugin Start -->
     <link rel="stylesheet" href="./css/pace-rtl.css" />
@@ -98,12 +98,11 @@ $html=<<<cd
         <div class="row">
             <div class="col-md-12">
                 <div class="login-box">
-                    <div class="login-content">
+                     <div class="login-content">
                         <div class="login-user-icon">
                             <i class="glyphicon glyphicon-user"></i>
-
                         </div>
-                        <h3>Identify Yourself</h3>
+                        <!-- <h3>Identify Yourself</h3>
                         <div class="social-btn-login">
                             <ul>
                                 <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
@@ -113,36 +112,35 @@ $html=<<<cd
                                 <li><a href="javascript:void(0)"><i class="fa fa-github"></i></a></li>
                                 <li><a href="javascript:void(0)"><i class="fa fa-bitbucket"></i></a></li>
                             </ul>
-                            <!--<button class="btn ls-dark-btn rounded"><i class="fa fa-facebook"></i></button>
+                            <button class="btn ls-dark-btn rounded"><i class="fa fa-facebook"></i></button>
                             <button class="btn ls-dark-btn rounded"><i class="fa fa-twitter"></i></button>
                             <button class="btn ls-dark-btn rounded"><i class="fa fa-linkedin"></i></button>
                             <button class="btn ls-dark-btn rounded"><i class="fa fa-google-plus"></i></button>
                             <button class="btn ls-dark-btn rounded"><i class="fa fa-github"></i></button>
-                            <button class="btn ls-dark-btn rounded"><i class="fa fa-bitbucket"></i></button>-->
-                        </div>
-                    </div>
+                            <button class="btn ls-dark-btn rounded"><i class="fa fa-bitbucket"></i></button>
+                        </div> -->
+                    </div> 
 
                     <div class="login-form">
                         <form id="frmlogin" action=""  method="post" class="form-horizontal ls_form">
 						
                             <div class="input-group ls-group-input">
-                                <input name="username" class="form-control" type="text" placeholder="Username">
+                                <input name="username" class="form-control" type="text" placeholder="نام کاربری">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                             </div>
 
 
                             <div class="input-group ls-group-input">
-
-                                <input name="password" type="password" placeholder="Password" name="password" class="form-control" value="">
+                                <input name="password" type="password" placeholder="رمز عبور" name="password" class="form-control" value="">
                                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                             </div>
 
-                            <div class="remember-me">
+                            <!-- <div class="remember-me">
                                 <div class="bootstrap-switch bootstrap-switch-wrapper bootstrap-switch-on bootstrap-switch-mini bootstrap-switch-animate"><div class="bootstrap-switch-container"><span class="bootstrap-switch-handle-on bootstrap-switch-primary"><i class="fa fa-check"><i></i></i></span><label class="bootstrap-switch-label">&nbsp;</label><span class="bootstrap-switch-handle-off bootstrap-switch-default"><i class="fa fa-times"><i></i></i></span><input class="switchCheckBox" type="checkbox" checked="" data-size="mini" data-on-text="<i class='fa fa-check'><i>" data-off-text="<i class='fa fa-times'><i>"></div></div>
                                 <span>Remember me</span>
-                            </div>
+                            </div> -->
                             <div class="input-group ls-group-input login-btn-box">
-							 <input type="submit" class="btn ls-dark-btn ladda-button col-md-12 col-sm-12 col-xs-12" 
+							 <input type="submit" value="ثبت نام" class="btn ls-dark-btn ladda-button col-md-12 col-sm-12 col-xs-12" 
 							 data-style="slide-down"/>
 							 <!--
                                 <button class="btn ls-dark-btn ladda-button col-md-12 col-sm-12 col-xs-12" data-style="slide-down">
@@ -150,7 +148,7 @@ $html=<<<cd
 									<i class="fa fa-key"></i></span>
                                 <span class="ladda-spinner"></span></button>
 							-->
-                                <a class="forgot-password" href="javascript:void(0)">Forgot password</a>
+                                <!-- <a class="forgot-password" href="javascript:void(0)">Forgot password</a> -->
                             </div>
 							<input type="hidden" name="mark" value="login" /> 
                         </form>
@@ -177,7 +175,7 @@ $html=<<<cd
         </div>
     </div>
     <p class="copy-right big-screen hidden-xs hidden-sm">
-        <span>©</span> Fickle <span class="footer-year">2014</span>
+        <a href="http://www.mediateq.ir" target="_blank"> Mediateq.ir<span>©</span></a>
     </p>
 </section>
 
