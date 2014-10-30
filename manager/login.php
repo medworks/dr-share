@@ -140,7 +140,7 @@ $html=<<<cd
                                 <span>Remember me</span>
                             </div> -->
                             <div class="input-group ls-group-input login-btn-box">
-							 <input type="submit" value="ثبت نام" class="btn ls-dark-btn ladda-button col-md-12 col-sm-12 col-xs-12" 
+							 <input type="submit" value="ورود" class="btn ls-dark-btn ladda-button col-md-12 col-sm-12 col-xs-12" 
 							 data-style="slide-down"/>
 							 <!--
                                 <button class="btn ls-dark-btn ladda-button col-md-12 col-sm-12 col-xs-12" data-style="slide-down">
