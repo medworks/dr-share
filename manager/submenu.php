@@ -47,11 +47,27 @@
 	}
 	else
 	if ($_POST["mark"]=="editsubmenu")
-	{			    
+	{		
+		if (isset($_POST["cbsm2"]) and $_POST["cbsm2"]!= -1) 
+		{
+			$pid = $_POST["cbsm2"];
+			$level = 3;
+		}
+		else
+		if (isset($_POST["cbsm1"]) and $_POST["cbsm1"]!= -1) 
+		{
+			$pid = $_POST["cbsm1"];
+			$level = 2;
+		}
+		else
+		{
+			$pid = 0;
+			$level = 1;
+		}
 		$values = array("`mid`"=>"'{$_POST[cbmenu]}'",
-						"`pid`"=>"'0'",
+						"`pid`"=>"'{$pid}'",
 						"`name`"=>"'{$_POST[edtname]}'",
-		                "`level`"=>"'0'");
+		                "`level`"=>"'{$level}'");
         $db->UpdateQuery("submenues",$values,array("id='{$_GET["smid"]}'"));		
 		header('location:submenu.php?act=new&msg=1');
 	}	
@@ -60,6 +76,8 @@
 		$insertoredit = "
 			<button type='submit' class='btn btn-default'>ثبت</button>
 			<input type='hidden' name='mark' value='savesubmenu' /> ";
+			$menues = $db->SelectAll("menues","*");	
+			$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
 	}
 	if ($_GET['act']=="edit")
 	{
@@ -67,16 +85,27 @@
 		$insertoredit = "
 			<button type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editsubmenu' /> ";
+		$menues = $db->SelectAll("menues","*");	
+		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row['mid']}",NULL,"form-control",NULL,"  منو  ");
+		if ($row["pid"]!= 0)
+		{
+			$menues = $db->SelectAll("submenues","*","id={$row['pid']}");	
+			$cbsm1 = DbSelectOptionTag("cbsm1",$menues,"name","{$row['pid']}",NULL,"form-control",NULL,"زیر منو");
+			if ($menues["pid"]!=0)
+			{
+				$menues = $db->SelectAll("submenues","*","id={$menues['pid']}");	
+				$cbsm2 = DbSelectOptionTag("cbsm2",$menues,"name","{$menues['pid']}",NULL,"form-control",NULL,"زیر منو");
+			}
+		}
 	}
 	if ($_GET['act']=="del")
 	{
 		$db->Delete("submenues"," id",$_GET["smid"]);		
-		header('location:menu.php?act=new');	
+		header('location:submenu.php?act=new');	
 	}	
 	$msgs = GetMessage($_GET['msg']);
 	
-	$menues = $db->SelectAll("menues","*");	
-	$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
+	
 $html.=<<<cd
     <!--Page main section start-->
     <section id="min-wrapper">
@@ -106,13 +135,16 @@ $html.=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edtname" name="edtname" type="text" class="form-control" placeholder="اسم زیر منو" />
+                                        <input id="edtname" name="edtname" type="text" 
+										class="form-control" placeholder="اسم زیر منو" value="{$row['name']}"/>
                                     </div>
                                     <div class="panel-body">
                                         {$cbmenu}
 										<div id="sm1">
+											{$cbsm1}
 										</div>
                                         <div id="sm2">
+											{$cbsm2}
 										</div>
                                         {$insertoredit}
                                     </div>
