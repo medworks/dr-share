@@ -137,8 +137,8 @@
         <!--Phone Navigation Menu icon start-->
         <!--Left navigation start-->
         <ul class="mainNav">
-            <li class="active">
-                <a class="active" href="./admin.php">
+            <li>
+                <a href="admin.php">
                     <i class="fa fa-dashboard"></i>
                     <span>داشبورد</span>
                 </a>

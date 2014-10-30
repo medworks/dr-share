@@ -39,21 +39,23 @@
 <!--Layout Script End -->
 
 <!-- skycons script start -->
-<script src="./js/skycons.js"></script>
+<script type="text/javascript" src="./js/skycons.js"></script>
 <!-- skycons script end   -->
 
 <!--Vector map library start-->
-<script src="./js/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="./js/jquery-jvectormap-world-mill-en.js"></script>
+<script type="text/javascript" src="./js/jquery-jvectormap-1.2.2.min.js"></script>
+<script type="text/javascript" src="./js/jquery-jvectormap-world-mill-en.js"></script>
 <!--Vector map library end-->
 
 <!--AmaranJS library script Start -->
-<script src="./js/jquery.amaran.js"></script>
+<script type="text/javascript" src="./js/jquery.amaran.js"></script>
 <!--AmaranJS library script End   -->
-<script src="./js/summernote.min.js"></script>
-<script src="./js/editor.js"></script>
+<script type="text/javascript" src="./js/summernote.min.js"></script>
+<script type="text/javascript" src="./js/editor.js"></script>
 
-<script src="./js/fileinput.min.js"></script>
+<script type="text/javascript" src="./js/fileinput.min.js"></script>
+
+<script type="text/javascript" src="./js/custome.js"></script>
 
 </body>
 </html>
