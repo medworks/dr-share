@@ -114,7 +114,7 @@ $html.=<<<cd
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">ویرایش زیر منو</h3>
+                                    <h3 class="panel-title">لیست زیر منوها</h3>
                                 </div>
                                 <div class="panel-body">
                                     <!--Table Wrapper Start-->
@@ -125,41 +125,40 @@ $html.=<<<cd
                                         <table class="table table-bordered table-striped">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+                                                <th>ردیف</th>
                                                 <th>نام زیرمنو</th>
                                                 <th>منو و زیر منو</th>
                                                 <th class="text-center">عملیات</th>
                                             </tr>
                                             </thead>
                                             <tbody>
+cd;
+$rows = $db->SelectAll("submenues","*",NULL,"id ASC");
+for($i = 0; $i < Count($rows); $i++)
+{
+$rownumber = $i+1;
+$html.=<<<cd
                                             <tr>
-                                                <td>1</td>
-                                                <td>PSD Design</td>
+                                                <td>{$rownumber}</td>
+                                                <td>{$rows[$i]["name"]}</td>
                                                 <td>
                                                     <span class="label label-success">خانواده</span>
                                                     <span class="label label-info">ازدواج</span>
                                                     <span class="label label-warning">مشکلات ازدواج</span>
                                                     <span class="label label-danger">مشکلات...</span>
                                                 </td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
-                                                    <button class="btn btn-xs btn-danger" title="پاک کردن"><i class="fa fa-minus"></i></button>
+                                                <td class="text-center">													
+												   <a href="?act=edit&smid={$rows[$i]["id"]}"  >
+                                                    <button type="button" class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
+												   </a>
+												   <a href="?act=del&smid={$rows[$i]["id"]}"  >
+                                                    <button type="button" class="btn btn-xs btn-danger" title="پاک کردن"><i class="fa fa-minus"></i></button>
+												   </a>	
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>PSD</td>
-                                                <td>
-                                                    <span class="label label-success">خانواده</span>
-                                                    <span class="label label-info">ازدواج</span>
-                                                    <span class="label label-warning">مشکلات ازدواج</span>
-                                                    <span class="label label-danger">مشکلات...</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
-                                                    <button class="btn btn-xs btn-danger" title="پاک کردن"><i class="fa fa-minus"></i></button>
-                                                </td>
-                                            </tr>
+cd;
+}
+$html.=<<<cd
                                             </tbody>
                                         </table>
                                     </div>
