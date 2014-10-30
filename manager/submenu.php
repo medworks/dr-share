@@ -141,11 +141,34 @@ $html.=<<<cd
                                             <tr>
                                                 <td>{$rownumber}</td>
                                                 <td>{$rows[$i]["name"]}</td>
-                                                <td>
-                                                    <span class="label label-success">خانواده</span>
-                                                    <span class="label label-info">ازدواج</span>
-                                                    <span class="label label-warning">مشکلات ازدواج</span>
-                                                    <span class="label label-danger">مشکلات...</span>
+												<td>
+cd;
+$vals = array();
+if ($rows[$i]['pid'] <> 0)
+{
+	$row = $db->Select("submenues","*","id={$rows[$i]['pid']}","id ASC");	
+	$vals[] = $row["name"];
+	
+	while($row["pid"] <> 0)
+	{
+		$row = $db->Select("submenues","*","id={$rows[$i]['pid']}","id ASC");
+		$vals[] = $row["name"];
+	}	
+}
+else
+{
+		$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
+		$vals[] = $row["name"];
+}	
+$html.=<<<cd
+            
+                                                    <span class="label label-success">{$vals[0]}</span>
+                                                    <span class="label label-info">{$vals[1]}</span>
+                                                    <span class="label label-warning">{$vals[2]}</span> 
+cd;
+
+
+$html.=<<<cd
                                                 </td>
                                                 <td class="text-center">													
 												   <a href="?act=edit&smid={$rows[$i]["id"]}"  >
