@@ -8,18 +8,34 @@
 	include_once("../classes/login.php");
     include_once("../lib/persiandate.php"); 
 	
-	$db = Database::GetDatabase();
-	
+		
 	$login = Login::GetLogin();
     if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");
 		die(); // solve a security bug
-	}
+	} 
+	$db = Database::GetDatabase(); 
 	if ($_POST["mark"]=="savesubmenu")
 	{
 		$fields = array("`mid`","`pid`","`name`","`level`");		
-		$values = array("'{$_POST[cbmenu]}'","'0'","'{$_POST[edtname]}'","'0'");	
+		if (isset($_POST["cbsm2"]) and $_POST["cbsm2"]!= -1) 
+		{
+			$pid = $_POST["cbsm2"];
+			$level = 3;
+		}
+		else
+		if (isset($_POST["cbsm1"]) and $_POST["cbsm1"]!= -1) 
+		{
+			$pid = $_POST["cbsm1"];
+			$level = 2;
+		}
+		else
+		{
+			$pid = 0;
+			$level = 1;
+		}
+		$values = array("'{$_POST[cbmenu]}'","'{$pid}'","'{$_POST[edtname]}'","'{$level}'");	
 		if (!$db->InsertQuery('submenues',$fields,$values)) 
 		{			
 			header('location:submenu.php?act=new&msg=2');			
@@ -60,7 +76,7 @@
 	$msgs = GetMessage($_GET['msg']);
 	
 	$menues = $db->SelectAll("menues","*");	
-	$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"منو");
+	$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
 $html.=<<<cd
     <!--Page main section start-->
     <section id="min-wrapper">
@@ -94,16 +110,10 @@ $html.=<<<cd
                                     </div>
                                     <div class="panel-body">
                                         {$cbmenu}
-                                        <select class="form-control">
-                                            <option value="">زیر منو</option>
-                                            <option value="">Default select</option>
-                                            <option value="">Default select</option>
-                                        </select>
-                                        <select class="form-control">
-                                            <option value="">زیر منو</option>
-                                            <option value="">Default select</option>
-                                            <option value="">Default select</option>
-                                        </select>
+										<div id="sm1">
+										</div>
+                                        <div id="sm2">
+										</div>
                                         {$insertoredit}
                                     </div>
                                 </div>
@@ -134,37 +144,45 @@ $html.=<<<cd
                                             <tbody>
 cd;
 $rows = $db->SelectAll("submenues","*",NULL,"id ASC");
+$vals = array();
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;
 $html.=<<<cd
-                                            <tr>
-                                                <td>{$rownumber}</td>
-                                                <td>{$rows[$i]["name"]}</td>
-												<td>
+							<tr>
+								<td>{$rownumber}</td>
+								<td>{$rows[$i]["name"]}</td>
+								<td>
 cd;
-$vals = array();
-if ($rows[$i]['pid'] <> 0)
+$vals = "";
+if ($rows[$i]['pid']!=0)
 {
 	$row = $db->Select("submenues","*","id={$rows[$i]['pid']}","id ASC");	
+	if ($row["pid"]==0) {$vals[] = "";}
 	$vals[] = $row["name"];
 	
-	while($row["pid"] <> 0)
+	
+	while($row["pid"]!=0)
 	{
-		$row = $db->Select("submenues","*","id={$rows[$i]['pid']}","id ASC");
+		$row = $db->Select("submenues","*","id={$row['pid']}","id ASC");
 		$vals[] = $row["name"];
-	}	
+	}
+    
+	$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
+	$vals[] = $row["name"];
 }
 else
 {
 		$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
+		$vals[] = "";
+		$vals[] = "";
 		$vals[] = $row["name"];
 }	
 $html.=<<<cd
             
-                                                    <span class="label label-success">{$vals[0]}</span>
+                                                    <span class="label label-success">{$vals[2]}</span>
                                                     <span class="label label-info">{$vals[1]}</span>
-                                                    <span class="label label-warning">{$vals[2]}</span> 
+                                                    <span class="label label-warning">{$vals[0]}</span> 
 cd;
 
 
@@ -211,6 +229,26 @@ $html.=<<<cd
         </div>
     </section>
     <!--Page main section end -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#cbmenu").change(function(){
+				var id= $(this).val();
+				$.get('./ajaxcommand.php?smid='+id,function(data) {			
+						$('#sm1').html(data);
+						
+						$("#cbsm1").change(function(){
+							alert("test");
+							var id= $(this).val();
+							$.get('./ajaxcommand.php?smid2='+id,function(data) {			
+								$('#sm2').html(data);
+							});
+						});			
+				});
+			});			
+		
+			
+		});
+	</script>
 cd;
 	include_once("./inc/header.php");
 	echo $html;

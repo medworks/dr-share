@@ -69,6 +69,7 @@
     <script src="./js/html5shiv.js"></script>
     <script src="./js/respond.min.js"></script>
     <![endif]-->
+	<script type="text/javascript" src="./js/jquery-1.11.min.js"></script>
 </head>
 <body>
 <!--Navigation Top Bar Start-->
