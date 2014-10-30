@@ -202,27 +202,19 @@
                 </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="gallery.php">
                     <i class="fa fa-image"></i>
                     <span>گالری تصاویر</span>
                 </a>
-                <ul>
-                    <li><a href="button-switch.html">ثبت عکس در گالری</a></li>
-                    <li><a href="checkbox-radio.html">ویرایش عکس ها</a></li>
-                </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="editpic.php">
                     <i class="fa fa-cloud-upload"></i>
-                    <span>آپلود تصاویر</span>
+                    <span>ویرایش تصاویر</span>
                 </a>
-                <ul>
-                    <li><a href="button-switch.html">آپلود تصویر جدید</a></li>
-                    <li><a href="checkbox-radio.html">ویرایش تصاویر آپلود شده</a></li>
-                </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="sendnews.php">
                     <i class="fa fa-send-o"></i>
                     <span>ارسال خبر به اعضاء</span>
                 </a>

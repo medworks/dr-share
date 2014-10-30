@@ -8,22 +8,23 @@
                 <div class="row">
                     <div class="col-md-12">
                         <!--Top header start-->
-                        <h3 class="ls-top-header">ویرایش اخبار</h3>
+                        <h3 class="ls-top-header">ویرایش تصاویر</h3>
                         <!--Top header end -->
                         <!--Top breadcrumb start -->
                         <ol class="breadcrumb">
                             <li><a href="admin.php"><i class="fa fa-home"></i></a></li>
-                            <li class="active">ویرایش اخبار</li>
+                            <li class="active">ویرایش تصاویر</li>
                         </ol>
                         <!--Top breadcrumb start -->
                     </div>
                 </div>
                 <!-- Main Content Element  Start-->
-                <div class="row">
+                <form class="form-inline ls_form" role="form">
+                    <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title">جدول اخبار</h3>
+                                <h3 class="panel-title">جدول عکسهای آپلود شده</h3>
                             </div>
                             <div class="panel-body">
                                 <!--Table Wrapper Start-->
@@ -35,8 +36,7 @@
                                         <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>عنوان خبر</th>
-                                            <th>متن خبر</th>
+                                            <th>عنوان عکس</th>
                                             <th>منو و زیر منو</th>
                                             <th>گروه</th>
                                             <th class="text-center">عملیات</th>
@@ -45,7 +45,6 @@
                                         <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td>PSD Design</td>
                                             <td>Lorem ipsum dolor sit amet</td>
                                             <td>
                                                 
@@ -54,14 +53,11 @@
                                                 <span class="label label-success">خانواده</span>
                                             </td>
                                             <td class="text-center">
-                                                <button class="btn btn-xs btn-success" title="مشاهده"><i class="fa fa-eye"></i></button>
-                                                <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
                                                 <button class="btn btn-xs btn-danger" title="پاک کردن"><i class="fa fa-minus"></i></button>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td>PSD</td>
                                             <td>Lorem ipsum dolor sit amet</td>
                                             <td>
                                                 <span class="label label-success">خانواده</span>
@@ -72,8 +68,6 @@
                                             <td>
                                             </td>
                                             <td class="text-center">
-                                                <button class="btn btn-xs btn-success" title="مشاهده"><i class="fa fa-eye"></i></button>
-                                                <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
                                                 <button class="btn btn-xs btn-danger" title="پاک کردن"><i class="fa fa-minus"></i></button>
                                             </td>
                                         </tr>
@@ -99,7 +93,8 @@
                             </div>
                         </div>
                     </div>
-                </div>           
+                </div> 
+                </form>               
                 <!-- Main Content Element  End-->
             </div>
         </div>
