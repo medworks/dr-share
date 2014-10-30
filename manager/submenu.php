@@ -237,7 +237,6 @@ $html.=<<<cd
 						$('#sm1').html(data);
 						
 						$("#cbsm1").change(function(){
-							alert("test");
 							var id= $(this).val();
 							$.get('./ajaxcommand.php?smid2='+id,function(data) {			
 								$('#sm2').html(data);
