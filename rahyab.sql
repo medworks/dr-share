@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2014 at 12:18 PM
+-- Generation Time: Oct 29, 2014 at 04:47 PM
 -- Server version: 5.6.11
 -- PHP Version: 5.5.3
 
@@ -32,7 +32,17 @@ CREATE TABLE IF NOT EXISTS `categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`id`, `name`) VALUES
+(3, 'اخبار و تازه ها'),
+(4, 'مقالات'),
+(5, 'دوره های آموزشی'),
+(6, 'گالری تصاویر');
 
 -- --------------------------------------------------------
 
@@ -42,11 +52,19 @@ CREATE TABLE IF NOT EXISTS `categories` (
 
 CREATE TABLE IF NOT EXISTS `menues` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `pid` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `level` tinyint(3) unsigned NOT NULL,
+  `pos` tinyint(3) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `menues`
+--
+
+INSERT INTO `menues` (`id`, `name`, `pos`) VALUES
+(1, 'اخلاق', 1),
+(3, 'مرام ', 2),
+(4, 'منش', 3);
 
 -- --------------------------------------------------------
 

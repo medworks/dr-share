@@ -155,7 +155,7 @@
                 </ul>
             </li> -->
             <li>
-                <a href="categories.php">
+                <a href="categories.php?act=new">
                     <i class="fa fa-users"></i>
                     <span>دسته بندی گروه ها</span>
                 </a>
@@ -166,8 +166,8 @@
                     <span>دسته بندی منوها</span>
                 </a>
                 <ul>
-                    <li><a href="menu.php">تعریف منو</a></li>
-                    <li><a href="submenu.php">تعریف زیر منو</a></li>
+                    <li><a href="menu.php?act=new">تعریف منو</a></li>
+                    <li><a href="submenu.php?act=new">تعریف زیر منو</a></li>
                 </ul>
             </li>
             <li>

@@ -16,9 +16,45 @@
 	}
 	$db = Database::GetDatabase();	
 	
-	if ($_POST["mark"]=="saveact")
+	if ($_POST["mark"]=="savegroup")
 	{
+		$fields = array("`name`");		
+		$values = array("'{$_POST[edtgroup]}'");	
+		if (!$db->InsertQuery('categories',$fields,$values)) 
+		{			
+			header('location:categories.php?act=new&msg=2');			
+		} 	
+		else 
+		{  										
+			header('location:categories.php?act=new&msg=1');
+		}  		
 	}
+	else
+	if ($_POST["mark"]=="editgroup")
+	{			    
+		$values = array("`name`"=>"'{$_POST[edtgroup]}'");
+        $db->UpdateQuery("categories",$values,array("id='{$_GET[gid]}'"));		
+		header('location:categories.php?act=new&msg=1');
+	}	
+	if ($_GET['act']=="new")
+	{
+		$insertoredit = "
+			<button type='submit' class='btn btn-default'>ثبت</button>
+			<input type='hidden' name='mark' value='savegroup' /> ";
+	}
+	if ($_GET['act']=="edit")
+	{
+	    $row=$db->Select("categories","*","id='{$_GET["gid"]}'",NULL);		
+		$insertoredit = "
+			<button type='submit' class='btn btn-default'>ویرایش</button>
+			<input type='hidden' name='mark' value='editgroup' /> ";
+	}
+	if ($_GET['act']=="del")
+	{
+		$db->Delete("categories"," id",$_GET["gid"]);		
+		header('location:categories.php?act=new');	
+	}	
+$msgs = GetMessage($_GET['msg']);
 
 $html=<<<cd
     <!--Page main section start-->
@@ -46,12 +82,11 @@ $html=<<<cd
                                 <h3 class="panel-title">تعریف گروه</h3>
                             </div>
                             <div class="panel-body">
-                                <form class="form-inline ls_form" role="form">
+                                <form name="frmcat" action="" method="post" class="form-inline ls_form" role="form">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="اسم گروه" />
+                                        <input id="edtgroup" name="edtgroup" type="text" class="form-control" placeholder="اسم گروه" value="{$row['name']}"/>
                                     </div>
-                                    <button type="submit" class="btn btn-default">ثبت</button>
-									<input type="hidden" name="mark" value="savecat" />
+                                    {$insertoredit}
                                 </form>
                             </div>
                         </div>
@@ -60,56 +95,53 @@ $html=<<<cd
                 <div class="row">
                     <div class="col-md-12">
                         <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title">ویرایش گروه ها</h3>
+							<div class="panel-heading">
+                                <h3 class="panel-title">لیست گروه ها</h3>
                             </div>
-                            <div class="panel-body">
-                                <!--Table Wrapper Start-->
-                                <div class="table-responsive ls-table">
-                                    <table class="table">
-                                        <thead>
-                                            <tr>
-                                                <th>ردیف</th>
-                                                <th>نام گروه</th>
-                                                <th>عملیات</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Mark</td>
-                                                <td>
-                                                    <ul class="ls-glyphicons-list">
-                                                        <li>
-                                                            <a href="#" title="پاک کردن" style="margin-left:5px"><span class="glyphicon glyphicon-remove"></span></a>
-                                                            <a href="#" title="ویرایش"><span class="glyphicon glyphicon-edit"></span></a>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Mark</td>
-                                                <td>
-                                                    <ul class="ls-glyphicons-list">
-                                                        <li>
-                                                            <a href="#" title="پاک کردن" style="margin-left:5px"><span class="glyphicon glyphicon-remove"></span></a>
-                                                            <a href="#" title="ویرایش"><span class="glyphicon glyphicon-edit"></span></a>
-                                                        </li>
-                                                    </ul>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!--Table Wrapper Finish-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Main Content Element  End-->
-            </div>
-        </div>
+							 <div class="panel-body">
+							 <!--Table Wrapper Start-->
+							 <div class="table-responsive ls-table">
+							 <table class="table">
+								<thead>
+									<tr>
+										<th>ردیف</th>
+										<th>نام گروه</th>
+										<th>عملیات</th>
+									</tr>
+								</thead>
+								<tbody>
+								<tr>
+cd;
+$rows = $db->SelectAll("categories","*",NULL,"id ASC");
+for($i = 0; $i < Count($rows); $i++)
+{
+$rownumber = $i+1;
+$html.=<<<cd
+	<td>{$rownumber}</td>
+	<td>{$rows[$i]["name"]}</td>
+	<td>
+		<ul class="ls-glyphicons-list">
+			<li>
+				<a href="?act=del&gid={$rows[$i]["id"]}" title="پاک کردن" style="margin-left:5px"><span class="glyphicon glyphicon-remove"></span></a>
+				<a href="?act=edit&gid={$rows[$i]["id"]}" title="ویرایش"><span class="glyphicon glyphicon-edit"></span></a>
+			</li>
+		</ul>
+	</td>
+</tr>
+cd;
+}
+$html.=<<<cd
+</tbody>
+</table>
+</div>
+<!--Table Wrapper Finish-->
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content Element  End-->
+</div>
+</div>
     </section>
     <!--Page main section end -->
 cd;
