@@ -1,6 +1,67 @@
-<?php
-    include_once("./inc/header.php")
-?>
+<?php    
+	include_once("../config.php");
+	include_once("../classes/functions.php");
+  	include_once("../classes/messages.php");
+  	include_once("../classes/session.php");	
+  	include_once("../classes/security.php");
+  	include_once("../classes/database.php");	
+	include_once("../classes/login.php");
+    include_once("../lib/persiandate.php"); 
+	
+	$db = Database::GetDatabase();
+	
+	$login = Login::GetLogin();
+    if (!$login->IsLogged())
+	{
+		header("Location: ../index.php");
+		die(); // solve a security bug
+	}
+	if ($_POST["mark"]=="savesubmenu")
+	{
+		$fields = array("`mid`","`pid`","`name`","`level`");		
+		$values = array("'{$_POST[cbmenu]}'","'0'","'{$_POST[edtname]}'","'0'");	
+		if (!$db->InsertQuery('submenues',$fields,$values)) 
+		{			
+			header('location:submenu.php?act=new&msg=2');			
+		} 	
+		else 
+		{  										
+			header('location:submenu.php?act=new&msg=1');
+		}  		
+	}
+	else
+	if ($_POST["mark"]=="editsubmenu")
+	{			    
+		$values = array("`mid`"=>"'{$_POST[cbmenu]}'",
+						"`pid`"=>"'0'",
+						"`name`"=>"'{$_POST[edtname]}'",
+		                "`level`"=>"'0'");
+        $db->UpdateQuery("submenues",$values,array("id='{$_GET["smid"]}'"));		
+		header('location:submenu.php?act=new&msg=1');
+	}	
+	if ($_GET['act']=="new")
+	{
+		$insertoredit = "
+			<button type='submit' class='btn btn-default'>ثبت</button>
+			<input type='hidden' name='mark' value='savesubmenu' /> ";
+	}
+	if ($_GET['act']=="edit")
+	{
+	    $row=$db->Select("submenues","*","id='{$_GET["smid"]}'",NULL);		
+		$insertoredit = "
+			<button type='submit' class='btn btn-default'>ویرایش</button>
+			<input type='hidden' name='mark' value='editsubmenu' /> ";
+	}
+	if ($_GET['act']=="del")
+	{
+		$db->Delete("submenues"," id",$_GET["smid"]);		
+		header('location:menu.php?act=new');	
+	}	
+	$msgs = GetMessage($_GET['msg']);
+	
+	$menues = $db->SelectAll("menues","*");	
+	$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"منو");
+$html.=<<<cd
     <!--Page main section start-->
     <section id="min-wrapper">
         <div id="main-content">
@@ -19,7 +80,8 @@
                     </div>
                 </div>
                 <!-- Main Content Element  Start-->
-                <form class="form-inline ls_form" role="form">
+                <form id="frmsubmenu" name="frmsubmenu" action="" method="post" 
+				class="form-inline ls_form" role="form">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
@@ -28,14 +90,10 @@
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="اسم زیر منو" />
+                                        <input id="edtname" name="edtname" type="text" class="form-control" placeholder="اسم زیر منو" />
                                     </div>
                                     <div class="panel-body">
-                                        <select class="form-control">
-                                            <option value="">منو</option>
-                                            <option value="">Default select</option>
-                                            <option value="">Default select</option>
-                                        </select>
+                                        {$cbmenu}
                                         <select class="form-control">
                                             <option value="">زیر منو</option>
                                             <option value="">Default select</option>
@@ -46,7 +104,7 @@
                                             <option value="">Default select</option>
                                             <option value="">Default select</option>
                                         </select>
-                                        <button type="submit" class="btn btn-default">ثبت</button>
+                                        {$insertoredit}
                                     </div>
                                 </div>
                             </div>
@@ -131,6 +189,8 @@
         </div>
     </section>
     <!--Page main section end -->
-<?php
-    include_once("./inc/footer.php")
+cd;
+	include_once("./inc/header.php");
+	echo $html;
+    include_once("./inc/footer.php");
 ?>
