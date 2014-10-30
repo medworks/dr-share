@@ -694,29 +694,10 @@
                                     <h3 class="panel-title">انتخاب عکس</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <!-- <div class="row ls_divider">
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">انتخاب عکس</label>
-                                            <div class="col-md-10 ls-group-input">
-                                                <input type="file" name="filename" value="Browse">
-                                            </div>
-                                        </div>
-                                    </div> -->
                                     <div class="row ls_divider last">
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">انتخاب عکس</label>
-                                            <div class="col-md-10 ls-group-input">
-                                                <div class="file-input file-input-new">
-                                                    <input type="hidden" />
-                                                    <div class="file-preview ">
-                                                       <div class="file-preview-status text-center text-success"></div>
-                                                       <div class="close fileinput-remove text-right">×</div>
-                                                       <div class="file-preview-thumbnails"></div>
-                                                       <div class="clearfix"></div>
-                                                    </div>
-                                                    <button type="button" class="btn btn-default fileinput-remove fileinput-remove-button"><i class="glyphicon glyphicon-ban-circle"></i> Remove</button>
-                                                    <div class="btn btn-ls btn-file"><i class="glyphicon glyphicon-folder-open"></i> &nbsp;انتخاب فایل … <input id="file-3" type="file" multiple="true"></div>
-                                                </div>
+                                            <div class="col-md-10 col-md-offset-2 ls-group-input">
+                                                <input kl_virtual_keyboard_secure_input="on" id="file-1" class="file" multiple="true" data-preview-file-type="any" type="file" />
                                             </div>
                                         </div>
                                     </div>
