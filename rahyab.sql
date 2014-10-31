@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.1.6
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2014 at 04:47 PM
--- Server version: 5.6.11
--- PHP Version: 5.5.3
+-- Generation Time: Oct 31, 2014 at 09:22 AM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `rahyab`
 --
-CREATE DATABASE IF NOT EXISTS `rahyab` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `rahyab`;
 
 -- --------------------------------------------------------
 
@@ -124,6 +122,32 @@ INSERT INTO `settings` (`id`, `key`, `value`) VALUES
 (38, 'Is_Send_Order_Sms_For_Admin', '1'),
 (39, 'Admin_Mobile_Number', ''),
 (40, 'Admin_Sms_Text', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `submenues`
+--
+
+CREATE TABLE IF NOT EXISTS `submenues` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mid` int(11) NOT NULL,
+  `pid` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `level` tinyint(4) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `submenues`
+--
+
+INSERT INTO `submenues` (`id`, `mid`, `pid`, `name`, `level`) VALUES
+(1, 1, 0, 'اخلاق 1', 0),
+(2, 3, 0, 'مرام 1', 0),
+(3, 4, 0, 'منش 1', 0),
+(4, 1, 1, 'اخلاق 2-1', 2),
+(5, 1, 4, 'اخلاق 3-1', 3);
 
 -- --------------------------------------------------------
 
