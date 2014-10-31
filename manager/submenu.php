@@ -81,22 +81,39 @@
 	}
 	if ($_GET['act']=="edit")
 	{
-	    $row=$db->Select("submenues","*","id='{$_GET["smid"]}'",NULL);		
+	    $row=$db->Select("submenues","*","id='{$_GET["smid"]}'",NULL);
 		$insertoredit = "
 			<button type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editsubmenu' /> ";
-		$menues = $db->SelectAll("menues","*");	
-		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row['mid']}",NULL,"form-control",NULL,"  منو  ");
-		if ($row["pid"]!= 0)
+		if ($row["pid"] == 0)	
 		{
-			$menues = $db->SelectAll("submenues","*","id={$row['pid']}");	
-			$cbsm1 = DbSelectOptionTag("cbsm1",$menues,"name","{$row['pid']}",NULL,"form-control",NULL,"زیر منو");
-			if ($menues["pid"]!=0)
-			{
-				$menues = $db->SelectAll("submenues","*","id={$menues['pid']}");	
-				$cbsm2 = DbSelectOptionTag("cbsm2",$menues,"name","{$menues['pid']}",NULL,"form-control",NULL,"زیر منو");
-			}
+			$m = $row["mid"];
+			$m1 = 0;
+			$m2 = 0;
 		}
+		else
+		{
+			$row2 = $db->Select("submenues","*","id='{$row["pid"]}'",NULL);
+			$m = $row["mid"];
+			$m2 = $row["pid"];
+			if ($row2["pid"] == 0)
+			{
+				$m1 = $row["pid"];
+				$m2 = 0;
+			}
+			else
+			{
+				$m1 = $row2["pid"];
+			}	
+		}
+		$menues = $db->SelectAll("menues","*");	
+		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$m}",NULL,"form-control",NULL,"  منو  ");
+		
+		$menues = $db->SelectAll("submenues","*","pid = 0");	
+		$cbsm1 = DbSelectOptionTag("cbsm1",$menues,"name","{$m1}",NULL,"form-control",NULL,"زیر منو");		
+		$menues = $db->SelectAll("submenues","*","pid <> 0");	
+		$cbsm2 = DbSelectOptionTag("cbsm2",$menues,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");
+		
 	}
 	if ($_GET['act']=="del")
 	{
