@@ -1,6 +1,22 @@
 <?php
-    include_once("./inc/header.php")
-?>
+	include_once("../config.php");
+	include_once("../classes/functions.php");
+  	include_once("../classes/messages.php");
+  	include_once("../classes/session.php");	
+  	include_once("../classes/security.php");
+  	include_once("../classes/database.php");	
+	include_once("../classes/login.php");
+    include_once("../lib/persiandate.php"); 
+
+	$login = Login::GetLogin();
+    if (!$login->IsLogged())
+	{
+		header("Location: ../index.php");
+		die(); // solve a security bug
+	}
+	$db = Database::GetDatabase();	  
+	
+$html=<<<cd
     <!--Page main section start-->
     <section id="min-wrapper">
         <div id="main-content">
@@ -723,6 +739,9 @@
         </div>
     </section>
     <!--Page main section end -->
-<?php
-    include_once("./inc/footer.php")
+cd;
+
+	include_once("./inc/header.php");
+	echo $html;
+    include_once("./inc/footer.php");
 ?>
