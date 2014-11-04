@@ -177,8 +177,8 @@
                     <span>ورود اطلاعات</span>
                 </a>
                 <ul>
-                    <li><a href="dataentry.php">ثبت اطلاعات</a></li>
-                    <li><a href="editdata.php">ویرایش اطلاعات</a></li>
+                    <li><a href="dataentry.php?act=new">ثبت اطلاعات</a></li>
+                    <li><a href="editdata.php?act=edit">ویرایش اطلاعات</a></li>
                 </ul>
             </li>
             <li>

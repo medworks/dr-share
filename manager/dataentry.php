@@ -16,6 +16,64 @@
 	}
 	$db = Database::GetDatabase();	  
 	
+	if ($_POST["mark"]=="savedata")
+	{
+		if (isset($_POST["cbsm2"]) and $_POST["cbsm2"]!=0)
+		{
+			$sm = $_POST["cbsm2"];
+		}
+		else
+		if (isset($_POST["cbsm1"]) and $_POST["cbsm1"]!=0)
+		{
+			$sm = $_POST["cbsm1"];
+		}
+		
+		$fields = array("`mid`","`smid`","`text`","`picid`");		
+		$values = array("'{$_POST[cbmenu]}'","'{$sm}'","'{$_POST[edtsubject]}'","'0'");	
+		if (!$db->InsertQuery('menusubjects',$fields,$values)) 
+		{			
+			header('location:dataentry.php?act=new&msg=2');			
+		} 	
+		else 
+		{  										
+			header('location:dataentry.php?act=new&msg=1');
+		}  		
+	}
+	else
+	if ($_POST["mark"]=="editdata")
+	{			    
+		$values = array("`name`"=>"'{$_POST[edtgroup]}'");
+        $db->UpdateQuery("menusubjects",$values,array("id='{$_GET[gid]}'"));		
+		header('location:dataentry.php?act=new&msg=1');
+	}
+	if ($_GET['act']=="new")
+	{
+		$insertoredit = "
+			<button type='submit' class='btn btn-default'>ثبت</button>
+			<input type='hidden' name='mark' value='savedata' /> ";
+	}
+	if ($_GET['act']=="edit")
+	{
+	    $row=$db->Select("categories","*","id='{$_GET["gid"]}'",NULL);		
+		$insertoredit = "
+			<button type='submit' class='btn btn-default'>ویرایش</button>
+			<input type='hidden' name='mark' value='editdata' /> ";
+	}
+	if ($_GET['act']=="del")
+	{
+		$db->Delete("categories"," id",$_GET["gid"]);		
+		header('location:categories.php?act=new');	
+	}		
+	
+	$menues = $db->SelectAll("menues","*");	
+	$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
+	
+//	$sm1 = $db->SelectAll("submenues","*","pid = 0");	
+//	$cbsm1 = DbSelectOptionTag("cbsm1",$sm1,"name",NULL,NULL,"form-control",NULL,"زیر منو");	
+
+	//$sm2 = $db->SelectAll("submenues","*","pid <> 0");	
+	//$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name",NULL,NULL,"form-control",NULL,"زیر منو");	
+	
 $html=<<<cd
     <!--Page main section start-->
     <section id="min-wrapper">
@@ -35,7 +93,7 @@ $html=<<<cd
                     </div>
                 </div>
                 <!-- Main Content Element  Start-->
-                <form class="form-inline ls_form" role="form">
+                <form id="frmdata" name="frmdata" action="" method="post" class="form-inline ls_form" role="form">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
@@ -43,21 +101,13 @@ $html=<<<cd
                                     <h3 class="panel-title">انتخاب منو و زیر منو</h3>
                                 </div>
                                 <div class="panel-body">
-                                    <select class="form-control">
-                                        <option value="">منو</option>
-                                        <option value="">Default select</option>
-                                        <option value="">Default select</option>
-                                    </select>
-                                    <select class="form-control">
-                                        <option value="">زیر منو</option>
-                                        <option value="">Default select</option>
-                                        <option value="">Default select</option>
-                                    </select>
-                                    <select class="form-control">
-                                        <option value="">زیر منو</option>
-                                        <option value="">Default select</option>
-                                        <option value="">Default select</option>
-                                    </select>
+                                    {$cbmenu}
+									<div id="sm1">
+											{$cbsm1}
+										</div>
+                                        <div id="sm2">
+											{$cbsm2}
+										</div>                                    
                                 </div>
                             </div>
                         </div>
@@ -68,9 +118,12 @@ $html=<<<cd
                                 <div class="panel-heading">
                                     <h3 class="panel-title">متن مورد نظر</h3>
                                     <ul class="panel-control">
-                                        <li><a class="minus" href="javascript:void(0)"><i class="fa fa-minus"></i></a></li>
-                                        <!-- <li><a class="refresh" href="javascript:void(0)"><i class="fa fa-refresh"></i></a></li>
-                                        <li><a class="close-panel" href="javascript:void(0)"><i class="fa fa-times"></i></a></li> -->
+                                        <li><a class="minus" href="javascript:void(0)">
+										<i class="fa fa-minus"></i></a></li>
+                                        <!-- <li><a class="refresh" href="javascript:void(0)">
+										<i class="fa fa-refresh"></i></a></li>
+                                        <li><a class="close-panel" href="javascript:void(0)">
+										<i class="fa fa-times"></i></a></li> -->
                                     </ul>
                                 </div>
                                 <div class="panel-body no-padding">
@@ -688,7 +741,7 @@ $html=<<<cd
                                             </div> -->
                                         </div>
                                         <textarea class="note-codable"></textarea>
-                                        <div class="note-editable" contenteditable="true" style="height: 150px;">
+                                        <div name="edtsubject" id="edtsubject" class="note-editable" contenteditable="true" style="height: 150px;">
                                             
                                         </div>
                                         <div class="note-statusbar">
@@ -727,9 +780,7 @@ $html=<<<cd
                                 <div class="panel-heading">
                                     <h3 class="panel-title">ثبت اطلاعات</h3>
                                 </div>
-                                <div class="panel-body">
-                                    <button type="submit" class="btn btn-default">ثبت</button>
-                                </div>
+                                {$insertoredit}
                             </div>
                         </div>
                     </div>
@@ -739,6 +790,25 @@ $html=<<<cd
         </div>
     </section>
     <!--Page main section end -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#cbmenu").change(function(){
+				var id= $(this).val();
+				$.get('./ajaxcommand.php?smid='+id,function(data) {			
+						$('#sm1').html(data);
+						
+						$("#cbsm1").change(function(){
+							var id= $(this).val();
+							$.get('./ajaxcommand.php?smid2='+id,function(data) {			
+								$('#sm2').html(data);
+							});
+						});			
+				});
+			});			
+		
+			
+		});
+	</script>
 cd;
 
 	include_once("./inc/header.php");
