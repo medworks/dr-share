@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2014 at 09:22 AM
--- Server version: 5.6.16
--- PHP Version: 5.5.9
+-- Generation Time: Nov 04, 2014 at 03:29 PM
+-- Server version: 5.6.11
+-- PHP Version: 5.5.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `rahyab`
 --
+CREATE DATABASE IF NOT EXISTS `rahyab` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `rahyab`;
 
 -- --------------------------------------------------------
 
@@ -63,6 +65,30 @@ INSERT INTO `menues` (`id`, `name`, `pos`) VALUES
 (1, 'اخلاق', 1),
 (3, 'مرام ', 2),
 (4, 'منش', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menusubjects`
+--
+
+CREATE TABLE IF NOT EXISTS `menusubjects` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `mid` int(11) NOT NULL,
+  `smid` int(11) NOT NULL,
+  `text` text NOT NULL,
+  `picid` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `menusubjects`
+--
+
+INSERT INTO `menusubjects` (`id`, `mid`, `smid`, `text`, `picid`) VALUES
+(1, 1, 4, '', 0),
+(2, 3, 2, '', 0),
+(3, 4, 3, '', 0);
 
 -- --------------------------------------------------------
 
