@@ -14,7 +14,35 @@
 		header("Location: ../index.php");
 		die(); // solve a security bug
 	}
-	$db = Database::GetDatabase();	  
+	$db = Database::GetDatabase();
+	function upload($db,$did)
+	{
+		if(is_uploaded_file($_FILES['userfile']['tmp_name']) && getimagesize($_FILES['userfile']['tmp_name']) != false)
+		{    
+			$size = getimagesize($_FILES['userfile']['tmp_name']);		
+			$type = $size['mime'];
+			$imgfp = fopen($_FILES['userfile']['tmp_name'], 'rb');
+			$size = $size[3];
+			$name = $_FILES['userfile']['name'];
+			$maxsize = 2097152;
+			//$db = Database::GetDatabase();
+			if($_FILES['userfile']['size'] < $maxsize )
+			{    
+				//tid 1 is for menu pics, 2 for group pics
+				$fields = array("`tid`","`sid`","`itype`","`img`","`iname`","`isize`");		
+				$values = array("'1'","'{$did}'","'{$type}'","'{$imgfp}'","'{$name}'","'{$size}'");	
+				$db->InsertQuery('pics',$fields,$values);
+			}
+			else
+			{        
+				throw new Exception("File Size Error");
+			}
+		}
+		else
+		{		
+			throw new Exception("Unsupported Image Format!");
+		}
+	}	
 	
 	if ($_POST["mark"]=="savedata")
 	{
@@ -35,7 +63,19 @@
 			header('location:dataentry.php?act=new&msg=2');			
 		} 	
 		else 
-		{  										
+		{  					
+            $did = $db->InsertId();
+			if(isset($_FILES['userfile']))			
+			{
+				try
+				{
+					upload($db,$did);										
+				}
+				catch(Exception $e)
+				{
+					echo '<h4>'.$e->getMessage().'</h4>';
+				}
+			}	
 			header('location:dataentry.php?act=new&msg=1');
 		}  		
 	}
@@ -49,14 +89,14 @@
 	if ($_GET['act']=="new")
 	{
 		$insertoredit = "
-			<button type='submit' class='btn btn-default'>ثبت</button>
+			<button id='submit' type='submit' class='btn btn-default'>ثبت</button>
 			<input type='hidden' name='mark' value='savedata' /> ";
 	}
 	if ($_GET['act']=="edit")
 	{
 	    $row=$db->Select("menusubjects","*","id='{$_GET["gid"]}'",NULL);		
 		$insertoredit = "
-			<button type='submit' class='btn btn-default'>ویرایش</button>
+			<button id='submit' type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editdata' /> ";
 	}
 	if ($_GET['act']=="del")
@@ -93,7 +133,7 @@ $html=<<<cd
                     </div>
                 </div>
                 <!-- Main Content Element  Start-->
-                <form id="frmdata" name="frmdata" action="" method="post" class="form-inline ls_form" role="form">
+                <form id="frmdata" name="frmdata" enctype="multipart/form-data" action="" method="post" class="form-inline ls_form" role="form">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
@@ -740,9 +780,9 @@ $html=<<<cd
                                                 <button type="button" class="btn btn-default btn-sm btn-small" title="" data-event="showHelpDialog" tabindex="-1" data-original-title="Help"><i class="fa fa-question icon-question"></i></button>
                                             </div> -->
                                         </div>
-                                        <textarea class="note-codable"></textarea>
-                                        <div name="edtsubject" id="edtsubject" class="note-editable" contenteditable="true" style="height: 150px;">
-                                            
+                                        <textarea name="tasubject" id="tasubject" class="note-codable"></textarea>
+										<input type="hidden" name="edtsubject" id="edtsubject" />
+                                        <div name="dvsubject" id="dvsubject" class="note-editable" contenteditable="true" style="height: 150px;">                                         
                                         </div>
                                         <div class="note-statusbar">
                                             <div class="note-resizebar">
@@ -766,7 +806,8 @@ $html=<<<cd
                                     <div class="row ls_divider last">
                                         <div class="form-group">
                                             <div class="col-md-10 col-md-offset-2 ls-group-input">
-                                                <input kl_virtual_keyboard_secure_input="on" id="file-1" class="file" multiple="true" data-preview-file-type="any" type="file" />
+                                                <input kl_virtual_keyboard_secure_input="on" id="userfile" name="userfile" class="file" multiple="true" data-preview-file-type="any" type="file" />
+												<input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
                                             </div>
                                         </div>
                                     </div>
@@ -806,7 +847,10 @@ $html=<<<cd
 				});
 			});			
 		
-			
+		$("#submit").click(function() {
+			//alert("test");
+			$("#edtsubject").val($("#dvsubject").text());
+				});
 		});
 	</script>
 cd;
