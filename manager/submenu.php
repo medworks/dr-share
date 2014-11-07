@@ -292,13 +292,14 @@ $html.=<<<cd
 				var id= $(this).val();
 				$.get('./ajaxcommand.php?smid='+id,function(data) {			
 						$('#sm1').html(data);
-						
+						/*
 						$("#cbsm1").change(function(){
 							var id= $(this).val();
 							$.get('./ajaxcommand.php?smid2='+id,function(data) {			
 								$('#sm2').html(data);
 							});
-						});			
+						});	
+						*/						
 				});
 			});			
 		

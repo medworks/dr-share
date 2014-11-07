@@ -21,17 +21,21 @@
 		{    
 			$size = getimagesize($_FILES['userfile']['tmp_name']);		
 			$type = $size['mime'];
-			$imgfp = fopen($_FILES['userfile']['tmp_name'], 'rb');
+			$imgfp = mysql_real_escape_string(file_get_contents($_FILES['userfile']['tmp_name']));
+			//echo $imgfp;
 			$size = $size[3];
 			$name = $_FILES['userfile']['name'];
-			$maxsize = 2097152;
+			$maxsize = 5120000000;//512 kb
 			//$db = Database::GetDatabase();
+			//echo $db->cmd;
 			if($_FILES['userfile']['size'] < $maxsize )
 			{    
+				//echo "my1";
 				//tid 1 is for menu pics, 2 for group pics
 				$fields = array("`tid`","`sid`","`itype`","`img`","`iname`","`isize`");		
 				$values = array("'1'","'{$did}'","'{$type}'","'{$imgfp}'","'{$name}'","'{$size}'");	
 				$db->InsertQuery('pics',$fields,$values);
+				//echo $db->cmd;
 			}
 			else
 			{        
@@ -65,17 +69,7 @@
 		else 
 		{  					
             $did = $db->InsertId();
-			if(isset($_FILES['userfile']))			
-			{
-				try
-				{
-					upload($db,$did);										
-				}
-				catch(Exception $e)
-				{
-					echo '<h4>'.$e->getMessage().'</h4>';
-				}
-			}	
+			upload($db,$did);
 			header('location:dataentry.php?act=new&msg=1');
 		}  		
 	}
@@ -83,7 +77,7 @@
 	if ($_POST["mark"]=="editdata")
 	{			    
 		$values = array("`name`"=>"'{$_POST[edtgroup]}'");
-        $db->UpdateQuery("menusubjects",$values,array("id='{$_GET[gid]}'"));		
+        $db->UpdateQuery("menusubjects",$values,array("id='{$_GET[did]}'"));		
 		header('location:dataentry.php?act=new&msg=1');
 	}
 	if ($_GET['act']=="new")
@@ -91,24 +85,62 @@
 		$insertoredit = "
 			<button id='submit' type='submit' class='btn btn-default'>ثبت</button>
 			<input type='hidden' name='mark' value='savedata' /> ";
+		$menues = $db->SelectAll("menues","*");	
+		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");	
 	}
+	$javas = "";
 	if ($_GET['act']=="edit")
 	{
-	    $row=$db->Select("menusubjects","*","id='{$_GET["gid"]}'",NULL);		
+	    $row=$db->Select("menusubjects","*","id='{$_GET["did"]}'",NULL);		
 		$insertoredit = "
 			<button id='submit' type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editdata' /> ";
+$javas =<<<cd
+	<script type="text/javascript">
+		$(document).ready(function(){					
+			$("#dvsubject").html(" {$row['text']} ");
+		});
+	</script>
+cd;
+		$menues = $db->SelectAll("menues","*");	
+		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
+		
+		$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
+		if ($srow["pid"] == 0)	
+		{
+			$m = $srow["mid"];
+			$m1 = $srow["id"];
+			$m2 = 0;
+		}
+		else
+		{			
+			$srow2 = $db->Select("submenues","*","id='{$srow["pid"]}'",NULL);
+			if ($srow2["pid"] == 0)
+			{
+				$m1 = $srow["pid"];
+				$m2 = $srow["id"];
+			}
+			else
+			{
+				$m1 = 0;
+				$m2 = 0;
+			}	
+		}
+		
+		$sm1 = $db->SelectAll("submenues","*","pid = 0");	
+		$cbsm1 = DbSelectOptionTag("cbsm1",$sm1,"name","{$m1}",NULL,"form-control",NULL,"زیر منو");	
+
+		$sm2 = $db->SelectAll("submenues","*","pid <> 0");	
+		$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");	
+		
+		$pic = $db->Select("pics","*","sid='{$_GET["did"]}'",NULL);
+		$imgload = "<img  src='img.php?did={$_GET[did]}'  width='200px' height='180px' />";
 	}
 	
 	
-	$menues = $db->SelectAll("menues","*");	
-	$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
 	
-//	$sm1 = $db->SelectAll("submenues","*","pid = 0");	
-//	$cbsm1 = DbSelectOptionTag("cbsm1",$sm1,"name",NULL,NULL,"form-control",NULL,"زیر منو");	
+	
 
-	//$sm2 = $db->SelectAll("submenues","*","pid <> 0");	
-	//$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name",NULL,NULL,"form-control",NULL,"زیر منو");	
 	
 $html=<<<cd
     <!--Page main section start-->
@@ -803,10 +835,12 @@ $html=<<<cd
                                         <div class="form-group">
                                             <div class="col-md-10 col-md-offset-2 ls-group-input">
                                                 <input kl_virtual_keyboard_secure_input="on" id="userfile" name="userfile" class="file" multiple="true" data-preview-file-type="any" type="file" />
-												<input type="hidden" name="MAX_FILE_SIZE" value="2097152" />
+												<input type="hidden" name="MAX_FILE_SIZE" value="512000" />
                                             </div>
                                         </div>
+										
                                     </div>
+									{$imgload}
                                 </div>
                             </div>
                         </div>
@@ -849,6 +883,7 @@ $html=<<<cd
 				});
 		});
 	</script>
+	{$javas}
 cd;
 
 	include_once("./inc/header.php");

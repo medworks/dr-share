@@ -4,7 +4,7 @@ class Database
   {
     
  private static $me;
- private $link;
+ public $link;
  public $cmd;
  
  function __construct()
@@ -24,7 +24,7 @@ public static function GetDatabase()
 public function RunSQL()
 {              
    $security = Security::GetSecurity ();
-   $this->cmd = $security->Xss_Clean($this->cmd);
+  // $this->cmd = $security->Xss_Clean($this->cmd);
    //echo $this->cmd;
    //var_dump(mysqli_error());
    $result =  mysqli_query($this->link,$this->cmd);          
