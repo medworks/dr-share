@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.1.6
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2014 at 03:29 PM
--- Server version: 5.6.11
--- PHP Version: 5.5.3
+-- Generation Time: Nov 07, 2014 at 10:44 AM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `rahyab`
 --
-CREATE DATABASE IF NOT EXISTS `rahyab` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `rahyab`;
 
 -- --------------------------------------------------------
 
@@ -76,19 +74,62 @@ CREATE TABLE IF NOT EXISTS `menusubjects` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `mid` int(11) NOT NULL,
   `smid` int(11) NOT NULL,
+  `subject` varchar(100) NOT NULL,
   `text` text NOT NULL,
   `picid` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `menusubjects`
 --
 
-INSERT INTO `menusubjects` (`id`, `mid`, `smid`, `text`, `picid`) VALUES
-(1, 1, 4, '', 0),
-(2, 3, 2, '', 0),
-(3, 4, 3, '', 0);
+INSERT INTO `menusubjects` (`id`, `mid`, `smid`, `subject`, `text`, `picid`) VALUES
+(1, 1, 4, '', '', 0),
+(2, 3, 2, '', '', 0),
+(3, 4, 3, '', '', 0),
+(4, 1, 4, '', '', 0),
+(5, 1, 4, '', '', 0),
+(6, 1, 4, '', '', 0),
+(7, 0, 0, '', '\r\n                                         <input type="hidden" name="edtsubject" id="edtsubject">\r\n                                        ', 0),
+(8, 1, 4, '', 'gjhgjhgjhgjjh<input type="hidden" name="edtsubject" id="edtsubject">', 0),
+(9, 3, 2, '', '', 0),
+(10, 1, 4, '', 'test<div>gjhgggj</div><div>hjgjgj</div><div>hjkj</div>', 0),
+(11, 4, 3, '', 'testttghjhgjgjhgjhgjhgjhgjhhgkj', 0),
+(12, 1, 4, '', '4654654464644645664654446اتناتناننتاتن', 0),
+(13, 1, 4, '', 'انتانتاننتتاناتناناانتانت', 0),
+(14, 1, 4, '', 'انتانتاننتتاناتناناانتانت', 0),
+(15, 1, 4, '', 'انتانتاننتتاناتناناانتانت', 0),
+(16, 1, 4, '', 'jkljkljljjkljkl', 0),
+(17, 3, 2, '', 'l;l;l;jklhk', 0),
+(18, 1, 0, '', 'gbjhgjhghgj', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pics`
+--
+
+CREATE TABLE IF NOT EXISTS `pics` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tid` int(11) NOT NULL,
+  `sid` int(11) NOT NULL,
+  `itype` varchar(25) NOT NULL,
+  `img` blob NOT NULL,
+  `iname` varchar(50) NOT NULL,
+  `isize` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `pics`
+--
+
+INSERT INTO `pics` (`id`, `tid`, `sid`, `itype`, `img`, `iname`, `isize`) VALUES
+(1, 1, 0, 'image/jpeg', 0x5265736f7572636520696420233135, 'image_081-96x96.jpg', '0'),
+(2, 1, 0, 'image/jpeg', 0x5265736f7572636520696420233135, 'image_081-96x96.jpg', '0'),
+(3, 1, 17, 'image/jpeg', 0x5265736f7572636520696420233135, 'image_081-96x96.jpg', '0'),
+(4, 1, 18, 'image/jpeg', 0x5265736f7572636520696420233135, 'image_081-96x96.jpg', 'width="96" height="96"');
 
 -- --------------------------------------------------------
 
