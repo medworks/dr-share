@@ -15,6 +15,11 @@
 		die(); // solve a security bug
 	} 
 	$db = Database::GetDatabase(); 
+	if ($_GET['act']=="del")
+	{
+		$db->Delete("menusubjects"," id",$_GET["did"]);		
+		header('location:editdata.php?act=new');	
+	}		
     
 $html.=<<<cd
     <!--Page main section start-->
@@ -65,7 +70,31 @@ for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;
 $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
-$rows[$i]["subject"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
+$rows[$i]["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
+$vals = "";
+if ($rows[$i]['pid']!=0)
+{
+	$row = $db->Select("submenues","*","id={$rows[$i]['pid']}","id ASC");	
+	if ($row["pid"]==0) {$vals[] = "";}
+	$vals[] = $row["name"];
+	
+	
+	while($row["pid"]!=0)
+	{
+		$row = $db->Select("submenues","*","id={$row['pid']}","id ASC");
+		$vals[] = $row["name"];
+	}
+    
+	$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
+	$vals[] = $row["name"];
+}
+else
+{
+		$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
+		$vals[] = "";
+		$vals[] = "";
+		$vals[] = $row["name"];
+}	
 $html.=<<<cd
 
                                                 
@@ -74,15 +103,20 @@ $html.=<<<cd
                                                 <td>{$rows[$i]["subject"]}</td>
                                                 <td>{$rows[$i]["text"]}</td>
                                                 <td>
-                                                    <span class="label label-success">خانواده</span>
-                                                    <span class="label label-info">ازدواج</span>
-                                                    <span class="label label-warning">مشکلات ازدواج</span>
-                                                    <span class="label label-danger">مشکلات...</span>
+                                                    <span class="label label-success">{$vals[2]}</span>
+                                                    <span class="label label-info">{$vals[1]}</span>
+                                                    <span class="label label-warning">{$vals[0]}</span>                        
                                                 </td>
                                                 <td class="text-center">
+												<a href="?act=view&did={$rows[$i]["id"]}"  >
                                                     <button class="btn btn-xs btn-success" title="مشاهده"><i class="fa fa-eye"></i></button>
+												</a>
+												<a href="dataentry.php?act=edit&did={$rows[$i]["id"]}"  >					
                                                     <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
+												</a>
+												<a href="?act=del&did={$rows[$i]["id"]}"  >												
                                                     <button class="btn btn-xs btn-danger" title="پاک کردن"><i class="fa fa-minus"></i></button>
+												</a>	
                                                 </td>
                                             </tr>
 cd;

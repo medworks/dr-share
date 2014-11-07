@@ -99,11 +99,7 @@
 			<button id='submit' type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editdata' /> ";
 	}
-	if ($_GET['act']=="del")
-	{
-		$db->Delete("menusubjects"," id",$_GET["gid"]);		
-		header('location:dataentry.php?act=new');	
-	}		
+	
 	
 	$menues = $db->SelectAll("menues","*");	
 	$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
