@@ -47,7 +47,7 @@ class Zebra_Pagination
         'method'                    =>  'get',
 
         // string for "next page"
-        'next'                      =>  'Next page',
+        'next'                      =>  'صفحه بعد',
 
         // by default, prefix page number with zeroes
         'padding'                   =>  true,
@@ -64,7 +64,7 @@ class Zebra_Pagination
         'preserve_query_string'     =>  0,
 
         // string for "previous page"
-        'previous'                  =>  'Previous page',
+        'previous'                  =>  'صفحه قبل',
 
         // by default, we assume there are no records
         // we expect this number to be set after the class is instantiated

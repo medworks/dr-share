@@ -67,10 +67,10 @@ $html.=<<<cd
                                             <tbody>
 cd;
 
-$records_per_page = 10;
-$pagination = new Zebra_Pagination();
+	$records_per_page = 10;
+	$pagination = new Zebra_Pagination();
 
-$pagination->navigation_position("right");
+	$pagination->navigation_position("right");
 
 	$reccount = $db->CountAll("menusubjects");
 	$pagination->records($reccount); 
@@ -143,13 +143,13 @@ $html.=<<<cd
 cd;
 }
 
-	$pgcode = $pagination->render(true);
+	$pgcodes = $pagination->render(true);
 	//var_dump($pagination);
 $html.=<<<cd
                                             </tbody>
                                         </table>
                                     </div>
-									{$pgcode}
+									{$pgcodes}
                                     <!--Table Wrapper Finish-->                                    
                                 </div>
                             </div>

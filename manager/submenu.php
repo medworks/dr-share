@@ -7,6 +7,7 @@
   	include_once("../classes/database.php");	
 	include_once("../classes/login.php");
     include_once("../lib/persiandate.php"); 
+	include_once("../lib/Zebra_Pagination.php"); 
 	
 		
 	$login = Login::GetLogin();
@@ -192,7 +193,25 @@ $html.=<<<cd
                                             </thead>
                                             <tbody>
 cd;
-$rows = $db->SelectAll("submenues","*",NULL,"id ASC");
+
+	$records_per_page = 10;
+	$pagination = new Zebra_Pagination();
+
+	$pagination->navigation_position("right");
+
+	$reccount = $db->CountAll("submenues");
+	$pagination->records($reccount); 
+	
+    $pagination->records_per_page($records_per_page);	
+
+$rows = $db->SelectAll(
+				"submenues",
+				"*",
+				NULL,
+				"id ASC",
+				($pagination->get_page() - 1) * $records_per_page,
+				$records_per_page);
+				
 $vals = array();
 for($i = 0; $i < Count($rows); $i++)
 {
@@ -248,26 +267,15 @@ $html.=<<<cd
                                             </tr>
 cd;
 }
+
+	$pgcodes = $pagination->render(true);
+	
 $html.=<<<cd
                                             </tbody>
                                         </table>
                                     </div>
                                     <!--Table Wrapper Finish-->
-                                    <div class="dataTables_paginate paging_full_numbers" id="ls-editable-table_paginate">
-                                        <a class="paginate_button first disabled" aria-controls="ls-editable-table" tabindex="0" id="ls-editable-table_first">اولین</a>
-                                        <a class="paginate_button previous disabled" aria-controls="ls-editable-table" tabindex="0" id="ls-editable-table_previous">قبلی</a>
-                                        <span>
-                                            <a class="paginate_button current" aria-controls="ls-editable-table" tabindex="0">1</a>
-                                            <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">2</a>
-                                            <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">3</a>
-                                            <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">4</a>
-                                            <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">5</a>
-                                            <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">6</a>
-                                        </span>
-                                        <a class="paginate_button next" aria-controls="ls-editable-table" tabindex="0" id="ls-editable-table_next">بعدی</a>
-                                        <a class="paginate_button last" aria-controls="ls-editable-table" tabindex="0" id="ls-editable-table_last">آخرین</a>
-                                    </div>
-                                    <div class="dataTables_info" id="ls-editable-table_info" role="alert" aria-live="polite" aria-relevant="all">نمایش 1 تا 10 از 577 فیلد</div>
+                                    {$pgcodes}
                                 </div>
                             </div>
                         </div>
