@@ -1,6 +1,22 @@
 <?php
-    include_once("./inc/header.php")
-?>
+	include_once("../config.php");
+	include_once("../classes/functions.php");
+  	include_once("../classes/messages.php");
+  	include_once("../classes/session.php");	
+  	include_once("../classes/security.php");
+  	include_once("../classes/database.php");	
+	include_once("../classes/login.php");
+    include_once("../lib/persiandate.php"); 
+	
+	$login = Login::GetLogin();
+    if (!$login->IsLogged())
+	{
+		header("Location: ../index.php");
+		die(); // solve a security bug
+	} 
+	$db = Database::GetDatabase(); 
+    
+$html.=<<<cd
     <!--Page main section start-->
     <section id="min-wrapper">
         <div id="main-content">
@@ -23,7 +39,7 @@
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">جدول اطلاعات</h3>
+                                    <h3 class="panel-title">لیست اطلاعات</h3>
                                 </div>
                                 <div class="panel-body">
                                     <!--Table Wrapper Start-->
@@ -34,7 +50,7 @@
                                         <table class="table table-bordered table-striped">
                                             <thead>
                                             <tr>
-                                                <th>#</th>
+											<th>#</th>
                                                 <th>عنوان</th>
                                                 <th>متن</th>
                                                 <th>منو و زیر منو</th>
@@ -42,10 +58,21 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+cd;
+$rows = $db->SelectAll("menusubjects","*",NULL,"id ASC");
+$vals = array();
+for($i = 0; $i < Count($rows); $i++)
+{
+$rownumber = $i+1;
+$rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
+$rows[$i]["subject"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
+$html.=<<<cd
+
+                                                
                                             <tr>
-                                                <td>1</td>
-                                                <td>PSD Design</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
+                                                <td>{$rownumber}</td>
+                                                <td>{$rows[$i]["subject"]}</td>
+                                                <td>{$rows[$i]["text"]}</td>
                                                 <td>
                                                     <span class="label label-success">خانواده</span>
                                                     <span class="label label-info">ازدواج</span>
@@ -58,22 +85,9 @@
                                                     <button class="btn btn-xs btn-danger" title="پاک کردن"><i class="fa fa-minus"></i></button>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>PSD</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                                <td>
-                                                    <span class="label label-success">خانواده</span>
-                                                    <span class="label label-info">ازدواج</span>
-                                                    <span class="label label-warning">مشکلات ازدواج</span>
-                                                    <span class="label label-danger">مشکلات...</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-xs btn-success" title="مشاهده"><i class="fa fa-eye"></i></button>
-                                                    <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
-                                                    <button class="btn btn-xs btn-danger" title="پاک کردن"><i class="fa fa-minus"></i></button>
-                                                </td>
-                                            </tr>
+cd;
+}
+$html.=<<<cd
                                             </tbody>
                                         </table>
                                     </div>
@@ -102,6 +116,8 @@
         </div>
     </section>
     <!--Page main section end -->
-<?php
-    include_once("./inc/footer.php")
+cd;
+	include_once("./inc/header.php");
+	echo $html;
+    include_once("./inc/footer.php");
 ?>
