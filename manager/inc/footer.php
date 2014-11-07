@@ -55,6 +55,7 @@
 <script type="text/javascript" src="./js/fileinput.min.js"></script>
 
 <script type="text/javascript" src="./js/custome.js"></script>
+<script type="text/javascript" src="./js/zebra_pagination.js"></script>
 
 </body>
 </html>

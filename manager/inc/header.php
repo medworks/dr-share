@@ -28,6 +28,8 @@
     <link rel="shortcut icon" href="./images/fab.ico" />
     
     <title>Rahyab clinic||Mediateq.ir</title>
+	
+	<link href="./css/zebra_pagination.css" rel="stylesheet" />
     
     <!--Page loading plugin Start -->
     <link rel="stylesheet" href="./css/pace-rtl.css" />
@@ -70,6 +72,7 @@
     <script src="./js/respond.min.js"></script>
     <![endif]-->
 	<script type="text/javascript" src="./js/jquery-1.11.min.js"></script>
+    
 </head>
 <body>
 <!--Navigation Top Bar Start-->
