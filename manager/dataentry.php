@@ -15,7 +15,7 @@
 		die(); // solve a security bug
 	}
 	$db = Database::GetDatabase();
-	function upload($db,$did)
+	function upload($db,$did,$mode)
 	{
 		if(is_uploaded_file($_FILES['userfile']['tmp_name']) && getimagesize($_FILES['userfile']['tmp_name']) != false)
 		{    
@@ -25,16 +25,30 @@
 			//echo $imgfp;
 			$size = $size[3];
 			$name = $_FILES['userfile']['name'];
-			$maxsize = 5120000000;//512 kb
+			$maxsize = 512000;//512 kb
 			//$db = Database::GetDatabase();
 			//echo $db->cmd;
 			if($_FILES['userfile']['size'] < $maxsize )
 			{    
 				//echo "my1";
 				//tid 1 is for menu pics, 2 for group pics
-				$fields = array("`tid`","`sid`","`itype`","`img`","`iname`","`isize`");		
-				$values = array("'1'","'{$did}'","'{$type}'","'{$imgfp}'","'{$name}'","'{$size}'");	
-				$db->InsertQuery('pics',$fields,$values);
+				if ($mode == "insert")
+				{
+					$fields = array("`tid`","`sid`","`itype`","`img`","`iname`","`isize`");		
+					$values = array("'1'","'{$did}'","'{$type}'","'{$imgfp}'","'{$name}'","'{$size}'");	
+					$db->InsertQuery('pics',$fields,$values);
+				}
+				else
+				{
+					$imgrow =$db->Select("pics","*","sid='{$did}'");
+				  if ($imgfp != $imgrow["img"])
+				  {
+					$values = array("`tid`"=>"'1'","`sid`"=>"'{$did}'",
+						"`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
+						"`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
+					$db->UpdateQuery("pics",$values,array("sid='{$did}'"));	
+				  }	
+				}	
 				//echo $db->cmd;
 			}
 			else
@@ -69,17 +83,30 @@
 		else 
 		{  					
             $did = $db->InsertId();
-			upload($db,$did);
+			upload($db,$did,"insert");
 			header('location:dataentry.php?act=new&msg=1');
 		}  		
 	}
 	else
 	if ($_POST["mark"]=="editdata")
-	{			    
-		$values = array("`name`"=>"'{$_POST[edtgroup]}'");
-        $db->UpdateQuery("menusubjects",$values,array("id='{$_GET[did]}'"));		
+	{		
+		if (isset($_POST["cbsm2"]) and $_POST["cbsm2"]!=0)
+		{
+			$sm = $_POST["cbsm2"];
+		}
+		else
+		if (isset($_POST["cbsm1"]) and $_POST["cbsm1"]!=0)
+		{
+			$sm = $_POST["cbsm1"];
+		}
+		
+		$values = array("`mid`"=>"'{$_POST[cbmenu]}'","`smid`"=>"'{$sm}'",
+						"`text`"=>"'{$_POST[edtsubject]}'","`picid`"=>"'0'");
+        $db->UpdateQuery("menusubjects",$values,array("id='{$_GET[did]}'"));
+		upload($db,$_GET["did"],"edit");	
 		header('location:dataentry.php?act=new&msg=1');
 	}
+	
 	if ($_GET['act']=="new")
 	{
 		$insertoredit = "
@@ -89,6 +116,51 @@
 		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");	
 	}
 	$javas = "";
+	if ($_GET['act']=="view")
+	{
+	    $row=$db->Select("menusubjects","*","id='{$_GET["did"]}'",NULL);
+		$javas =<<<cd
+	<script type="text/javascript">
+		$(document).ready(function(){					
+			$("#dvsubject").html(" {$row['text']} ");
+		});
+	</script>
+cd;
+		$menues = $db->SelectAll("menues","*");	
+		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
+		
+		$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
+		if ($srow["pid"] == 0)	
+		{
+			$m = $srow["mid"];
+			$m1 = $srow["id"];
+			$m2 = 0;
+		}
+		else
+		{			
+			$srow2 = $db->Select("submenues","*","id='{$srow["pid"]}'",NULL);
+			if ($srow2["pid"] == 0)
+			{
+				$m1 = $srow["pid"];
+				$m2 = $srow["id"];
+			}
+			else
+			{
+				$m1 = 0;
+				$m2 = 0;
+			}	
+		}
+		
+		$sm1 = $db->SelectAll("submenues","*","pid = 0");	
+		$cbsm1 = DbSelectOptionTag("cbsm1",$sm1,"name","{$m1}",NULL,"form-control",NULL,"زیر منو");	
+
+		$sm2 = $db->SelectAll("submenues","*","pid <> 0");	
+		$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");	
+		
+		$pic = $db->Select("pics","*","sid='{$_GET["did"]}'",NULL);
+		$imgload = "<img  src='img.php?did={$_GET[did]}'  width='200px' height='180px' />";
+	}
+	
 	if ($_GET['act']=="edit")
 	{
 	    $row=$db->Select("menusubjects","*","id='{$_GET["did"]}'",NULL);		
