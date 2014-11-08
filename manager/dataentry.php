@@ -40,7 +40,7 @@
 				}
 				else
 				{
-					$imgrow =$db->Select("pics","*","sid='{$did}'");
+				  $imgrow =$db->Select("pics","*","sid='{$did}'");
 				  if ($imgfp != $imgrow["img"])
 				  {
 					$values = array("`tid`"=>"'1'","`sid`"=>"'{$did}'",
@@ -194,8 +194,8 @@ cd;
 			}
 			else
 			{
-				$m1 = 0;
-				$m2 = 0;
+				$m1 = $srow["id"];
+				$m2 = $srow2["pid"];
 			}	
 		}
 		
