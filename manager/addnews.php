@@ -7,6 +7,107 @@
   	include_once("../classes/database.php");	
 	include_once("../classes/login.php");
     include_once("../lib/persiandate.php");
+	
+	$login = Login::GetLogin();
+    if (!$login->IsLogged())
+	{
+		header("Location: ../index.php");
+		die(); // solve a security bug
+	}
+	$db = Database::GetDatabase();
+	
+	if ($_GET['act']=="new")
+	{
+		$insertoredit = "
+			<button id='submit' type='submit' class='btn btn-default'>ثبت</button>
+			<input type='hidden' name='mark' value='savenews' /> ";
+		$menues = $db->SelectAll("menues","*");	
+		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
+			
+		$group = $db->SelectAll("categories","*");	
+		$cbgroup = DbSelectOptionTag("categories",$group,"name",NULL,NULL,"form-control",NULL,"  منو  ");	
+	}
+
+	if ($_GET['act']=="view")
+	{
+	    $row=$db->Select("news","*","id='{$_GET["did"]}'",NULL);
+		
+		$menues = $db->SelectAll("menues","*");	
+		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
+		
+		$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
+		if ($srow["pid"] == 0)	
+		{
+			$m = $srow["mid"];
+			$m1 = $srow["id"];
+			$m2 = 0;
+		}
+		else
+		{			
+			$srow2 = $db->Select("submenues","*","id='{$srow["pid"]}'",NULL);
+			if ($srow2["pid"] == 0)
+			{
+				$m1 = $srow["pid"];
+				$m2 = $srow["id"];
+			}
+			else
+			{
+				$m1 = 0;
+				$m2 = 0;
+			}	
+		}
+		
+		$sm1 = $db->SelectAll("submenues","*","pid = 0");	
+		$cbsm1 = DbSelectOptionTag("cbsm1",$sm1,"name","{$m1}",NULL,"form-control",NULL,"زیر منو");	
+
+		$sm2 = $db->SelectAll("submenues","*","pid <> 0");	
+		$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");	
+		
+		$pic = $db->Select("pics","*","sid='{$_GET["did"]}'",NULL);
+		$imgload = "<img  src='img.php?did={$_GET[did]}'  width='200px' height='180px' />";
+	}
+	
+	if ($_GET['act']=="edit")
+	{
+	    $row=$db->Select("menusubjects","*","id='{$_GET["did"]}'",NULL);		
+		$insertoredit = "
+			<button id='submit' type='submit' class='btn btn-default'>ویرایش</button>
+			<input type='hidden' name='mark' value='editdata' /> ";
+
+			$menues = $db->SelectAll("menues","*");	
+		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
+		
+		$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
+		if ($srow["pid"] == 0)	
+		{
+			$m = $srow["mid"];
+			$m1 = $srow["id"];
+			$m2 = 0;
+		}
+		else
+		{			
+			$srow2 = $db->Select("submenues","*","id='{$srow["pid"]}'",NULL);
+			if ($srow2["pid"] == 0)
+			{
+				$m1 = $srow["pid"];
+				$m2 = $srow["id"];
+			}
+			else
+			{
+				$m1 = $srow["id"];
+				$m2 = $srow2["pid"];
+			}	
+		}
+		
+		$sm1 = $db->SelectAll("submenues","*","pid = 0");	
+		$cbsm1 = DbSelectOptionTag("cbsm1",$sm1,"name","{$m1}",NULL,"form-control",NULL,"زیر منو");	
+
+		$sm2 = $db->SelectAll("submenues","*","pid <> 0");	
+		$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");	
+		
+		$pic = $db->Select("pics","*","sid='{$_GET["did"]}'",NULL);
+		$imgload = "<img  src='img.php?did={$_GET[did]}'  width='200px' height='180px' />";
+	}
   
 $html.=<<<cd
     <!--Page main section start-->
@@ -41,21 +142,15 @@ $html.=<<<cd
                                             انتخاب بر اساس منو
                                         </label>
                                     </div>
-                                    <select class="form-control">
-                                        <option value="">منو</option>
-                                        <option value="">Default select</option>
-                                        <option value="">Default select</option>
-                                    </select>
-                                    <select class="form-control">
-                                        <option value="">زیر منو</option>
-                                        <option value="">Default select</option>
-                                        <option value="">Default select</option>
-                                    </select>
-                                    <select class="form-control">
-                                        <option value="">زیر منو</option>
-                                        <option value="">Default select</option>
-                                        <option value="">Default select</option>
-                                    </select>
+                                    
+									{$cbmenu}
+									<div id="sm1">
+											{$cbsm1}
+									</div>
+                                     <div id="sm2">
+											{$cbsm2}
+									</div>                                    
+									
                                 </div>
                             </div>
                         </div>
@@ -73,11 +168,7 @@ $html.=<<<cd
                                             انتخاب بر اساس گروه
                                         </label>
                                     </div>
-                                    <select class="form-control">
-                                        <option value="">گروه</option>
-                                        <option value="">Default select</option>
-                                        <option value="">Default select</option>
-                                    </select>
+                                    {$cbgroup}
                                 </div>
                             </div>
                         </div>
@@ -148,6 +239,24 @@ $html.=<<<cd
         </div>
     </section>
     <!--Page main section end -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#cbmenu").change(function(){
+				var id= $(this).val();
+				$.get('./ajaxcommand.php?smid='+id,function(data) {			
+						$('#sm1').html(data);
+						
+						$("#cbsm1").change(function(){
+							var id= $(this).val();
+							$.get('./ajaxcommand.php?smid2='+id,function(data) {			
+								$('#sm2').html(data);
+							});
+						});			
+				});
+			});			
+		
+		});
+	</script>
 cd;
 	include_once("./inc/header.php");
 	echo $html;

@@ -116,7 +116,7 @@
 		$menues = $db->SelectAll("menues","*");	
 		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");	
 	}
-	$javas = "";
+
 	if ($_GET['act']=="view")
 	{
 	    $row=$db->Select("menusubjects","*","id='{$_GET["did"]}'",NULL);
