@@ -251,6 +251,20 @@ $html=<<<cd
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">عنوان</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <input id="" name="" type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div> 
                     <div class="row">
                         <div class="col-md-12">
