@@ -17,7 +17,7 @@
 	$db = Database::GetDatabase();
 	
 	function upload($db,$did,$mode)
-	{
+	{		
 		if(is_uploaded_file($_FILES['userfile']['tmp_name']) && getimagesize($_FILES['userfile']['tmp_name']) != false)
 		{    
 			$size = getimagesize($_FILES['userfile']['tmp_name']);		
@@ -43,7 +43,7 @@
 				  $imgrow =$db->Select("pics","*","sid='{$did}'");
 				  if ($imgfp != $imgrow["img"])
 				  {
-					$values = array("`tid`"=>"'1'","`sid`"=>"'{$did}'",
+					$values = array("`tid`"=>"'2'","`sid`"=>"'{$did}'",
 						"`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
 						"`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
 					$db->UpdateQuery("pics",$values,array("sid='{$did}'"));	
@@ -113,9 +113,13 @@
 		$values = array("`gid`"=>"'{$_POST[cbgroup]}'","`smid`"=>"'{$sm}'",
 						"`subject`"=>"'{$_POST[edtsubject]}'","`text`"=>"'{$_POST[edttext]}'",
 						"`picid`"=>"'0'");
-        $db->UpdateQuery("menusubjects",$values,array("id='{$_GET[did]}'"));
-		upload($db,$_GET["did"],"edit");	
-		header('location:dataentry.php?act=new&msg=1');
+        $db->UpdateQuery("news",$values,array("id='{$_GET[did]}'"));
+		if ($_FILES['userfile']['tmp_name']!="")
+		{
+			upload($db,$_GET["did"],"edit");
+			//var_dump($_FILES['userfile']);
+		}		
+		//header('location:dataentry.php?act=new&msg=1');
 	}
 	
 	
@@ -192,8 +196,8 @@
 		}
 		
 		
-		$pic = $db->Select("pics","*","sid='{$_GET["did"]}'",NULL);
-		$imgload = "<img  src='img.php?did={$_GET[did]}'  width='200px' height='180px' />";
+		//$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 2",NULL);
+		$imgload = "<img  src='img.php?did={$_GET[did]}&tid=2'  width='200px' height='180px' />";
 	}
 	
 	if ($_GET['act']=="edit")
@@ -203,39 +207,62 @@
 			<button id='submit' type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editnews' /> ";
 
-		$menues = $db->SelectAll("menues","*");	
-		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
-		
-		$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
-		if ($srow["pid"] == 0)	
+		if($row["gid"]!="0")
 		{
-			$m = $srow["mid"];
-			$m1 = $srow["id"];
-			$m2 = 0;
+			//=========================== load default menu =======================
+			$menues = $db->SelectAll("menues","*");	
+			$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
+			//=====================================================================
+			$group = $db->SelectAll("categories","*");	
+			$cbgroup = DbSelectOptionTag("cbgroup",$group,"name",$row["gid"],NULL,"form-control",NULL,"  منو  ");	
+			
+			$rbmchecked = "";
+			$rbgchecked = "checked";
 		}
 		else
-		{			
-			$srow2 = $db->Select("submenues","*","id='{$srow["pid"]}'",NULL);
-			if ($srow2["pid"] == 0)
+		{
+			//====================== load default group=====================
+			$group = $db->SelectAll("categories","*");	
+			$cbgroup = DbSelectOptionTag("cbgroup",$group,"name",NULL,NULL,"form-control",NULL,"  منو  ");	
+			//==============================================================
+			$mrow = $db->Select("submenues","*","id='{$row["smid"]}'",NULL);
+			$menues = $db->SelectAll("menues","*");	
+			$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$mrow[mid]}",NULL,"form-control",NULL,"  منو  ");
+		
+			$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
+			if ($srow["pid"] == 0)	
 			{
-				$m1 = $srow["pid"];
-				$m2 = $srow["id"];
+				$m = $srow["mid"];
+				$m1 = $srow["id"];
+				$m2 = 0;
 			}
 			else
-			{
-				$m1 = $srow["id"];
-				$m2 = $srow2["pid"];
-			}	
+			{			
+				$srow2 = $db->Select("submenues","*","id='{$srow["pid"]}'",NULL);
+				if ($srow2["pid"] == 0)
+				{
+					$m1 = $srow["pid"];
+					$m2 = $srow["id"];
+				}
+				else
+				{
+					$m1 = $srow["id"];
+					$m2 = $srow2["pid"];
+				}	
+			}
+		
+			$sm1 = $db->SelectAll("submenues","*","pid = 0");	
+			$cbsm1 = DbSelectOptionTag("cbsm1",$sm1,"name","{$m1}",NULL,"form-control",NULL,"زیر منو");	
+
+			$sm2 = $db->SelectAll("submenues","*","pid <> 0");	
+			$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");	
+			
+			$rbmchecked = "checked";
+			$rbgchecked = "";
 		}
 		
-		$sm1 = $db->SelectAll("submenues","*","pid = 0");	
-		$cbsm1 = DbSelectOptionTag("cbsm1",$sm1,"name","{$m1}",NULL,"form-control",NULL,"زیر منو");	
-
-		$sm2 = $db->SelectAll("submenues","*","pid <> 0");	
-		$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");	
-		
-		$pic = $db->Select("pics","*","sid='{$_GET["did"]}'",NULL);
-		$imgload = "<img  src='img.php?did={$_GET[did]}'  width='200px' height='180px' />";
+		//$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 2",NULL);
+		$imgload = "<img  src='img.php?did={$_GET[did]}&tid=2'  width='200px' height='180px' />";
 	}
   
 $html.=<<<cd
@@ -346,6 +373,7 @@ $html.=<<<cd
                                             </div>
                                         </div>
                                     </div>
+									{$imgload}
                                 </div>
                             </div>
                         </div>

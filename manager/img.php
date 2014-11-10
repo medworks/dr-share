@@ -11,7 +11,7 @@
 	//{
 	//	$img = $row["img1"];
 	//}
-    $pic = $db->Select("pics","*","`sid`='{$_GET[did]}'",NULL);
+    $pic = $db->Select("pics","*","`sid`='{$_GET[did]}' AND tid='{$_GET[tid]}'",NULL);
 	//echo $db->cmd;
 	header("Content-type: {$pic['itype']}");
 	//{$pic['itype']}
