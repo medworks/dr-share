@@ -191,8 +191,8 @@
                     <!-- <span class="badge badge-red">New</span> -->
                 </a>
                 <ul>
-                    <li><a href="addnews.php">ثبت خبر</a></li>
-                    <li><a href="editnews.php">ویرایش خبر</a></li>
+                    <li><a href="addnews.php?act=new">ثبت خبر</a></li>
+                    <li><a href="editnews.php?act=edit">ویرایش خبر</a></li>
                 </ul>
             </li>
             <li>
