@@ -31,7 +31,7 @@
 			if($_FILES['userfile']['size'] < $maxsize )
 			{    
 				//echo "my1";
-				//tid 1 is for menu pics, 2 for group pics
+				//tid 1 is for menu pics, 2 for news pics, 3 for maghalat pics
 				if ($mode == "insert")
 				{
 					$fields = array("`tid`","`sid`","`itype`","`img`","`iname`","`isize`");		
@@ -75,7 +75,7 @@
 		}
 		
 		$fields = array("`mid`","`smid`","`subject`","`text`","`picid`");		
-		$values = array("'{$_POST[cbmenu]}'","'{$sm}'","'{$_POST[subject]}'","'{$_POST[edttext]}'","'0'");	
+		$values = array("'{$_POST[cbmenu]}'","'{$sm}'","'{$_POST[edtsubject]}'","'{$_POST[edttext]}'","'0'");	
 		if (!$db->InsertQuery('menusubjects',$fields,$values)) 
 		{			
 			header('location:dataentry.php?act=new&msg=2');			
