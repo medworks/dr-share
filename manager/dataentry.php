@@ -275,7 +275,9 @@ $html=<<<cd
                                 <div class="panel-body">
                                     <div class="row ls_divider last">
                                         <div class="col-md-10 ls-group-input">
-                                            <textarea class="animatedTextArea form-control " id="bio" name="bio"></textarea>
+                                            <textarea id="edtsubject" name="edtsubject" class="animatedTextArea form-control " >
+												{$row["text"]}
+											</textarea>
                                         </div>
                                     </div>
                                 </div>
