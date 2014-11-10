@@ -139,6 +139,10 @@
 		
 		if($row["gid"]!="0")
 		{
+			//=========================== load default menu =======================
+			$menues = $db->SelectAll("menues","*");	
+			$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
+			//=====================================================================
 			$group = $db->SelectAll("categories","*");	
 			$cbgroup = DbSelectOptionTag("cbgroup",$group,"name",$row["gid"],NULL,"form-control",NULL,"  منو  ");	
 			
@@ -147,36 +151,41 @@
 		}
 		else
 		{
+			//====================== load default group=====================
+			$group = $db->SelectAll("categories","*");	
+			$cbgroup = DbSelectOptionTag("cbgroup",$group,"name",NULL,NULL,"form-control",NULL,"  منو  ");	
+			//==============================================================
+			$mrow = $db->Select("submenues","*","id='{$row["smid"]}'",NULL);
+			$menues = $db->SelectAll("menues","*");	
+			$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$mrow[mid]}",NULL,"form-control",NULL,"  منو  ");
+		
+			$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
+			if ($srow["pid"] == 0)	
+			{
+				$m = $srow["mid"];
+				$m1 = $srow["id"];
+				$m2 = 0;
+			}
+			else
+			{			
+				$srow2 = $db->Select("submenues","*","id='{$srow["pid"]}'",NULL);
+				if ($srow2["pid"] == 0)
+				{
+					$m1 = $srow["pid"];
+					$m2 = $srow["id"];
+				}
+				else
+				{
+					$m1 = $srow["id"];
+					$m2 = $srow2["pid"];
+				}	
+			}
+		
 			$sm1 = $db->SelectAll("submenues","*","pid = 0");	
 			$cbsm1 = DbSelectOptionTag("cbsm1",$sm1,"name","{$m1}",NULL,"form-control",NULL,"زیر منو");	
 
 			$sm2 = $db->SelectAll("submenues","*","pid <> 0");	
 			$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");	
-				
-			$menues = $db->SelectAll("menues","*");	
-		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
-		
-		$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
-		if ($srow["pid"] == 0)	
-		{
-			$m = $srow["mid"];
-			$m1 = $srow["id"];
-			$m2 = 0;
-		}
-		else
-		{			
-			$srow2 = $db->Select("submenues","*","id='{$srow["pid"]}'",NULL);
-			if ($srow2["pid"] == 0)
-			{
-				$m1 = $srow["pid"];
-				$m2 = $srow["id"];
-			}
-			else
-			{
-				$m1 = 0;
-				$m2 = 0;
-			}	
-		}	
 			
 			$rbmchecked = "checked";
 			$rbgchecked = "";
