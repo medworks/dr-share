@@ -74,8 +74,8 @@
 			$sm = $_POST["cbsm1"];
 		}
 		
-		$fields = array("`mid`","`smid`","`text`","`picid`");		
-		$values = array("'{$_POST[cbmenu]}'","'{$sm}'","'{$_POST[edtsubject]}'","'0'");	
+		$fields = array("`mid`","`smid`","`subject`","`text`","`picid`");		
+		$values = array("'{$_POST[cbmenu]}'","'{$sm}'","'{$_POST[subject]}'","'{$_POST[edttext]}'","'0'");	
 		if (!$db->InsertQuery('menusubjects',$fields,$values)) 
 		{			
 			header('location:dataentry.php?act=new&msg=2');			
@@ -101,7 +101,8 @@
 		}
 		
 		$values = array("`mid`"=>"'{$_POST[cbmenu]}'","`smid`"=>"'{$sm}'",
-						"`text`"=>"'{$_POST[edtsubject]}'","`picid`"=>"'0'");
+						"`subject`"=>"'{$_POST[edtsubject]}'","`text`"=>"'{$_POST[edttext]}'",
+						"`picid`"=>"'0'");
         $db->UpdateQuery("menusubjects",$values,array("id='{$_GET[did]}'"));
 		upload($db,$_GET["did"],"edit");	
 		header('location:dataentry.php?act=new&msg=1');
@@ -119,13 +120,7 @@
 	if ($_GET['act']=="view")
 	{
 	    $row=$db->Select("menusubjects","*","id='{$_GET["did"]}'",NULL);
-		$javas =<<<cd
-	<script type="text/javascript">
-		$(document).ready(function(){					
-			$("#dvsubject").html(" {$row['text']} ");
-		});
-	</script>
-cd;
+		
 		$menues = $db->SelectAll("menues","*");	
 		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
 		
@@ -167,14 +162,8 @@ cd;
 		$insertoredit = "
 			<button id='submit' type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editdata' /> ";
-$javas =<<<cd
-	<script type="text/javascript">
-		$(document).ready(function(){					
-			$("#dvsubject").html(" {$row['text']} ");
-		});
-	</script>
-cd;
-		$menues = $db->SelectAll("menues","*");	
+
+			$menues = $db->SelectAll("menues","*");	
 		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
 		
 		$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
@@ -260,7 +249,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="" name="" type="text" class="form-control" />
+                                        <input id="edtsubject" name="edtsubject" type="text" class="form-control" value="{$row["subject"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -275,7 +264,7 @@ $html=<<<cd
                                 <div class="panel-body">
                                     <div class="row ls_divider last">
                                         <div class="col-md-10 ls-group-input">
-                                            <textarea id="edtsubject" name="edtsubject" class="animatedTextArea form-control " >
+                                            <textarea id="edttext" name="edttext" class="animatedTextArea form-control " >
 												{$row["text"]}
 											</textarea>
                                         </div>
@@ -337,13 +326,8 @@ $html=<<<cd
 				});
 			});			
 		
-		$("#submit").click(function() {
-			//alert("test");
-			$("#edtsubject").val($("#dvsubject").text());
-				});
 		});
 	</script>
-	{$javas}
 cd;
 
 	include_once("./inc/header.php");
