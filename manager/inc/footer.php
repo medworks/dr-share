@@ -57,5 +57,7 @@
 <script type="text/javascript" src="./js/custome.js"></script>
 <script type="text/javascript" src="./js/zebra_pagination.js"></script>
 
+<script type="text/javascript" src="./js/jquery.autosize.js"></script>
+
 </body>
 </html>
