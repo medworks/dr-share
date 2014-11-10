@@ -8,6 +8,12 @@ $(document).ready(function(){
 		  $(this).addClass("active");
 			  $(this).parents("ul.mainNav li").addClass("active");
 		}
-     })
+     });
+
+//*****************textarea animate
+
+    $(document).ready(function(){
+	    $('textarea.animatedTextArea').autosize();    
+	});
 
 });
