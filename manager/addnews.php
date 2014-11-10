@@ -130,12 +130,30 @@
 		$group = $db->SelectAll("categories","*");	
 		$cbgroup = DbSelectOptionTag("cbgroup",$group,"name",NULL,NULL,"form-control",NULL,"  منو  ");	
 	}
-
+	
+	$rbmchecked = "";
+	$rbgchecked = "";
 	if ($_GET['act']=="view")
 	{
 	    $row=$db->Select("news","*","id='{$_GET["did"]}'",NULL);
 		
-		$menues = $db->SelectAll("menues","*");	
+		if($row["gid"]!="0")
+		{
+			$group = $db->SelectAll("categories","*");	
+			$cbgroup = DbSelectOptionTag("cbgroup",$group,"name",$row["gid"],NULL,"form-control",NULL,"  منو  ");	
+			
+			$rbmchecked = "";
+			$rbgchecked = "checked";
+		}
+		else
+		{
+			$sm1 = $db->SelectAll("submenues","*","pid = 0");	
+			$cbsm1 = DbSelectOptionTag("cbsm1",$sm1,"name","{$m1}",NULL,"form-control",NULL,"زیر منو");	
+
+			$sm2 = $db->SelectAll("submenues","*","pid <> 0");	
+			$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");	
+				
+			$menues = $db->SelectAll("menues","*");	
 		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
 		
 		$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
@@ -158,13 +176,12 @@
 				$m1 = 0;
 				$m2 = 0;
 			}	
+		}	
+			
+			$rbmchecked = "checked";
+			$rbgchecked = "";
 		}
 		
-		$sm1 = $db->SelectAll("submenues","*","pid = 0");	
-		$cbsm1 = DbSelectOptionTag("cbsm1",$sm1,"name","{$m1}",NULL,"form-control",NULL,"زیر منو");	
-
-		$sm2 = $db->SelectAll("submenues","*","pid <> 0");	
-		$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");	
 		
 		$pic = $db->Select("pics","*","sid='{$_GET["did"]}'",NULL);
 		$imgload = "<img  src='img.php?did={$_GET[did]}'  width='200px' height='180px' />";
@@ -177,7 +194,7 @@
 			<button id='submit' type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editnews' /> ";
 
-			$menues = $db->SelectAll("menues","*");	
+		$menues = $db->SelectAll("menues","*");	
 		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
 		
 		$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
@@ -241,7 +258,7 @@ $html.=<<<cd
                                 <div class="panel-body">
                                     <div class="radio-inline">
                                         <label class="radio-inline">
-                                            <input type="radio" name="rbselect" id="rbselect" value="rbm" checked="" />
+                                            <input type="radio" name="rbselect" id="rbselect" value="rbm" {$rbmchecked} />
                                             انتخاب بر اساس منو
                                         </label>
                                     </div>
@@ -267,7 +284,7 @@ $html.=<<<cd
                                 <div class="panel-body">
                                     <div class="radio-inline">
                                         <label class="radio-inline">
-                                            <input type="radio" name="rbselect" id="rbselect" value="rbg" />
+                                            <input type="radio" name="rbselect" id="rbselect" value="rbg" {$rbgchecked}/>
                                             انتخاب بر اساس گروه
                                         </label>
                                     </div>
