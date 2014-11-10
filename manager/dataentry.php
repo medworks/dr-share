@@ -300,7 +300,9 @@ $html=<<<cd
                                 <div class="panel-heading">
                                     <h3 class="panel-title">ثبت اطلاعات</h3>
                                 </div>
-                                {$insertoredit}
+                                <div class="panel-body">
+                                	{$insertoredit}
+                                </div>
                             </div>
                         </div>
                     </div>
