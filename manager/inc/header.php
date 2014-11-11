@@ -201,8 +201,8 @@
                     <span>مقالات</span>
                 </a>
                 <ul>
-                    <li><a href="addarticle.php">ثبت مقاله</a></li>
-                    <li><a href="editarticle.php">ویرایش مقالات</a></li>
+                    <li><a href="addarticle.php?act=new">ثبت مقاله</a></li>
+                    <li><a href="editarticle.php?act=edit">ویرایش مقالات</a></li>
                 </ul>
             </li>
             <li>

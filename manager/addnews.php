@@ -122,7 +122,8 @@
 		//header('location:dataentry.php?act=new&msg=1');
 	}
 	
-	
+	$rbmchecked = "";
+	$rbgchecked = "";
 	if ($_GET['act']=="new")
 	{
 		$insertoredit = "
@@ -133,10 +134,11 @@
 			
 		$group = $db->SelectAll("categories","*");	
 		$cbgroup = DbSelectOptionTag("cbgroup",$group,"name",NULL,NULL,"form-control",NULL,"  منو  ");	
+		$rbmchecked = "checked";
+		$rbgchecked = "";
 	}
 	
-	$rbmchecked = "";
-	$rbgchecked = "";
+	
 	if ($_GET['act']=="view")
 	{
 	    $row=$db->Select("news","*","id='{$_GET["did"]}'",NULL);
@@ -382,7 +384,7 @@ $html.=<<<cd
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">ثبت اطلاعات</h3>
+                                    <h3 class="panel-title">ثبت خبر</h3>
                                 </div>
                                 <div class="panel-body">
                                     {$insertoredit}
