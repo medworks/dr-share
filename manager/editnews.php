@@ -93,25 +93,23 @@ $rownumber = $i+1;
 $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
 $rows[$i]["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
 $vals = "";
-if ($rows[$i]['pid']!=0)
+if ($rows[$i]['smid']!=0)
 {
-	$row = $db->Select("submenues","*","id={$rows[$i]['pid']}","id ASC");	
-	if ($row["pid"]==0) {$vals[] = "";}
+	$row = $db->Select("submenues","*","id={$rows[$i]['smid']}","id ASC");	
 	$vals[] = $row["name"];
-	
-	
+		
 	while($row["pid"]!=0)
 	{
 		$row = $db->Select("submenues","*","id={$row['pid']}","id ASC");
 		$vals[] = $row["name"];
 	}
     
-	$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
+	$row = $db->Select("menues","*","id={$row['mid']}","id ASC");	
 	$vals[] = $row["name"];
 }
 else
 {
-		$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
+		$row = $db->Select("categories","*","id={$rows[$i]['gid']}","id ASC");	
 		$vals[] = "";
 		$vals[] = "";
 		$vals[] = $row["name"];
