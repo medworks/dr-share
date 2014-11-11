@@ -19,7 +19,7 @@
 	$db = Database::GetDatabase(); 
 	if ($_GET['act']=="del")
 	{
-		$db->Delete("news"," id",$_GET["did"]);		
+		$db->Delete("topics"," id",$_GET["did"]);		
 		header('location:editarticle.php?act=new');	
 	}		
     

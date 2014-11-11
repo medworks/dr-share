@@ -8,6 +8,7 @@
 	include_once("../classes/login.php");
     include_once("../lib/persiandate.php");
 	
+	$imgload="";
 	$login = Login::GetLogin();
     if (!$login->IsLogged())
 	{
@@ -91,10 +92,13 @@
 			header('location:addarticle.php?act=new&msg=2');			
 		} 	
 		else 
-		{  					
-            $did = $db->InsertId();
-			upload($db,$did,"insert");
-			header('location:addarticle.php?act=new&msg=1');
+		{  				
+			if ($_FILES['userfile']['tmp_name']!="")
+			{
+				$did = $db->InsertId();
+				upload($db,$did,"insert");
+				header('location:addarticle.php?act=new&msg=1');
+			}	
 		}  		
 	}
 	else
@@ -198,8 +202,11 @@
 		}
 		
 		
-		//$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 2",NULL);
-		$imgload = "<img  src='img.php?did={$_GET[did]}&tid=3'  width='200px' height='180px' />";
+		$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 3",NULL);
+		if (isset($pic))
+		{
+			$imgload = "<img  src='img.php?did={$_GET[did]}&tid=3'  width='200px' height='180px' />";
+		}	
 	}
 	
 	if ($_GET['act']=="edit")
@@ -263,8 +270,11 @@
 			$rbgchecked = "";
 		}
 		
-		//$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 2",NULL);
-		$imgload = "<img  src='img.php?did={$_GET[did]}&tid=3'  width='200px' height='180px' />";
+		$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 3",NULL);
+		if (isset($pic))
+		{
+			$imgload = "<img  src='img.php?did={$_GET[did]}&tid=3'  width='200px' height='180px' />";
+		}	
 	}
   
 $html.=<<<cd
