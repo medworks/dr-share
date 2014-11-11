@@ -81,10 +81,13 @@
 			header('location:dataentry.php?act=new&msg=2');			
 		} 	
 		else 
-		{  					
-            $did = $db->InsertId();
-			upload($db,$did,"insert");
-			header('location:dataentry.php?act=new&msg=1');
+		{  
+			if ($_FILES['userfile']['tmp_name']!="")
+			{
+				$did = $db->InsertId();
+				upload($db,$did,"insert");
+				header('location:dataentry.php?act=new&msg=1');
+			}	
 		}  		
 	}
 	else
@@ -152,8 +155,11 @@
 		$sm2 = $db->SelectAll("submenues","*","pid <> 0");	
 		$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");	
 		
-		//$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid=1",NULL);
-		$imgload = "<img  src='img.php?did={$_GET[did]}&tid=1'  width='200px' height='180px' />";
+		$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 1",NULL);
+		if (isset($pic))
+		{
+			$imgload = "<img  src='img.php?did={$_GET[did]}&tid=1'  width='200px' height='180px' />";
+		}	
 	}
 	
 	if ($_GET['act']=="edit")
@@ -194,8 +200,11 @@
 		$sm2 = $db->SelectAll("submenues","*","pid <> 0");	
 		$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");	
 		
-		//$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid=1",NULL);
-		$imgload = "<img  src='img.php?did={$_GET[did]}&tid=1'  width='200px' height='180px' />";
+		$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 1",NULL);
+		if (isset($pic))
+		{
+			$imgload = "<img  src='img.php?did={$_GET[did]}&tid=1'  width='200px' height='180px' />";
+		}	
 	}
 	
 	
