@@ -108,8 +108,9 @@ $html.=<<<cd
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>عنوان خبر</th>
-                                                <th>متن خبر</th>
+												<th>نوع</th>
+                                                <th>عنوان</th>
+                                                <th>متن</th>
                                                 <th>منو و زیر منو</th>
                                                 <th>گروه</th>
                                                 <th class="text-center">عملیات</th>
@@ -124,16 +125,25 @@ cd;
 
 	$pagination->records_per_page($records_per_page);	
 
-	$db->cmd = " SELECT *,1 As 'type' FROM news LIMIT ".($pagination->get_page() - 1) * $records_per_page.",".$records_per_page .
+	$db->cmd = "( SELECT *,1 As 'type' FROM news )".
 	           " UNION ALL ".
-			   " SELECT *,2 As 'type' FROM topics LIMIT ".($pagination->get_page() - 1) * $records_per_page.",".$records_per_page;
+			   " (SELECT *,2 As 'type' FROM topics ) ".
+			   " LIMIT ".($pagination->get_page() - 1) * $records_per_page.",".$records_per_page ;			
 	$res = $db->RunSQL();			
 	$rows = array();
     if ($res)
     {
         while($row = mysqli_fetch_array($res)) $rows[] = $row;
-    }		
-	$reccount =  Count($rows);
+    }
+	
+	$db->cmd = " SELECT Count(*) FROM ".
+			   " ( SELECT *,1 As 'type' FROM news  ".
+	           " UNION ALL ".
+			   " SELECT *,2 As 'type' FROM topics ) AS tb";
+	$res = $db->RunSQL();
+	$row = mysqli_fetch_row($res);	
+			   
+	$reccount =  $row[0];
 	$pagination->records($reccount); 	
 	$vals = array();
 for($i = 0; $i < Count($rows); $i++)
@@ -141,6 +151,7 @@ for($i = 0; $i < Count($rows); $i++)
 $rownumber = $i+1;
 $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
 $rows[$i]["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
+$type = ($rows[$i]["type"]==1) ? "خبر" : "مقاله";
 $vals = "";
 if ($rows[$i]['smid']!=0)
 {
@@ -155,17 +166,20 @@ if ($rows[$i]['smid']!=0)
     
 	$row = $db->Select("menues","*","id={$row['mid']}","id ASC");	
 	$vals[] = $row["name"];
+	$group = "";
 }
 else
 {
 		$row = $db->Select("categories","*","id={$rows[$i]['gid']}","id ASC");	
 		$vals[] = "";
 		$vals[] = "";
-		$vals[] = $row["name"];
+		$vals[] = "";//$row["name"];
+		$group = $row["name"];
 }	
 $html.=<<<cd
                                             <tr>
                                                 <td>{$rownumber}</td>
+												<td>{$type}</td>
                                                 <td>{$rows[$i]["subject"]}</td>
                                                 <td>{$rows[$i]["text"]}</td>
                                                 <td>
@@ -174,7 +188,7 @@ $html.=<<<cd
                                                     <span class="label label-warning">{$vals[0]}</span>                        
                                                 </td>
                                                 <td>
-                                                    <span class="label label-success">خانواده</span>
+                                                    <span class="label label-success">{$group}</span>
                                                 </td>
                                                 <td class="text-center">
 												  <a href="sendnews.php?act=send&did={$rows[$i]["id"]}"  >
