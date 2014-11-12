@@ -1,6 +1,24 @@
 <?php
-    include_once("./inc/header.php")
-?>
+	include_once("../config.php");
+	include_once("../classes/functions.php");
+  	include_once("../classes/messages.php");
+  	include_once("../classes/session.php");	
+  	include_once("../classes/security.php");
+  	include_once("../classes/database.php");	
+	include_once("../classes/login.php");
+    include_once("../lib/persiandate.php");
+	include_once("../lib/Zebra_Pagination.php"); 
+		
+	$login = Login::GetLogin();
+    if (!$login->IsLogged())
+	{
+		header("Location: ../index.php");
+		die(); // solve a security bug
+	}
+	
+	$db = Database::GetDatabase();
+	
+$html.=<<<cd
     <!--Page main section start-->
     <section id="min-wrapper">
         <div id="main-content">
@@ -98,55 +116,80 @@
                                             </tr>
                                             </thead>
                                             <tbody>
+cd;
+	$records_per_page = 10;
+	$pagination = new Zebra_Pagination();
+
+	$pagination->navigation_position("right");
+
+	$pagination->records_per_page($records_per_page);	
+
+	$db->cmd = " SELECT *,1 As 'type' FROM news LIMIT ".($pagination->get_page() - 1) * $records_per_page.",".$records_per_page .
+	           " UNION ALL ".
+			   " SELECT *,2 As 'type' FROM topics LIMIT ".($pagination->get_page() - 1) * $records_per_page.",".$records_per_page;
+	$res = $db->RunSQL();			
+	$rows = array();
+    if ($res)
+    {
+        while($row = mysqli_fetch_array($res)) $rows[] = $row;
+    }		
+	$reccount =  Count($rows);
+	$pagination->records($reccount); 	
+	$vals = array();
+for($i = 0; $i < Count($rows); $i++)
+{
+$rownumber = $i+1;
+$rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
+$rows[$i]["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
+$vals = "";
+if ($rows[$i]['smid']!=0)
+{
+	$row = $db->Select("submenues","*","id={$rows[$i]['smid']}","id ASC");	
+	$vals[] = $row["name"];
+		
+	while($row["pid"]!=0)
+	{
+		$row = $db->Select("submenues","*","id={$row['pid']}","id ASC");
+		$vals[] = $row["name"];
+	}
+    
+	$row = $db->Select("menues","*","id={$row['mid']}","id ASC");	
+	$vals[] = $row["name"];
+}
+else
+{
+		$row = $db->Select("categories","*","id={$rows[$i]['gid']}","id ASC");	
+		$vals[] = "";
+		$vals[] = "";
+		$vals[] = $row["name"];
+}	
+$html.=<<<cd
                                             <tr>
-                                                <td>1</td>
-                                                <td>PSD Design</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
+                                                <td>{$rownumber}</td>
+                                                <td>{$rows[$i]["subject"]}</td>
+                                                <td>{$rows[$i]["text"]}</td>
                                                 <td>
-                                                    
+                                                    <span class="label label-success">{$vals[2]}</span>
+                                                    <span class="label label-info">{$vals[1]}</span>
+                                                    <span class="label label-warning">{$vals[0]}</span>                        
                                                 </td>
                                                 <td>
                                                     <span class="label label-success">خانواده</span>
                                                 </td>
                                                 <td class="text-center">
+												  <a href="sendnews.php?act=send&did={$rows[$i]["id"]}"  >
                                                     <button class="btn btn-xs btn-success" title="ارسال"><i class="fa fa-send-o"></i></button>
+												  </a>	
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>PSD</td>
-                                                <td>Lorem ipsum dolor sit amet</td>
-                                                <td>
-                                                    <span class="label label-success">خانواده</span>
-                                                    <span class="label label-info">ازدواج</span>
-                                                    <span class="label label-warning">مشکلات ازدواج</span>
-                                                    <span class="label label-danger">مشکلات...</span>
-                                                </td>
-                                                <td>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-xs btn-success" title="ارسال"><i class="fa fa-send-o"></i></button>
-                                                </td>
-                                            </tr>
+cd;
+}
+$pgcodes = $pagination->render(true);
+$html.=<<<cd
                                             </tbody>
                                         </table>
                                     </div>
-                                    <!--Table Wrapper Finish-->
-                                    <div class="dataTables_paginate paging_full_numbers" id="ls-editable-table_paginate">
-                                        <a class="paginate_button first disabled" aria-controls="ls-editable-table" tabindex="0" id="ls-editable-table_first">اولین</a>
-                                        <a class="paginate_button previous disabled" aria-controls="ls-editable-table" tabindex="0" id="ls-editable-table_previous">قبلی</a>
-                                        <span>
-                                            <a class="paginate_button current" aria-controls="ls-editable-table" tabindex="0">1</a>
-                                            <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">2</a>
-                                            <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">3</a>
-                                            <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">4</a>
-                                            <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">5</a>
-                                            <a class="paginate_button " aria-controls="ls-editable-table" tabindex="0">6</a>
-                                        </span>
-                                        <a class="paginate_button next" aria-controls="ls-editable-table" tabindex="0" id="ls-editable-table_next">بعدی</a>
-                                        <a class="paginate_button last" aria-controls="ls-editable-table" tabindex="0" id="ls-editable-table_last">آخرین</a>
-                                    </div>
-                                    <div class="dataTables_info" id="ls-editable-table_info" role="alert" aria-live="polite" aria-relevant="all">نمایش 1 تا 10 از 577 فیلد</div>
+									{$pgcodes}                                   
                                 </div>
                             </div>
                         </div>
@@ -157,6 +200,8 @@
         </div>
     </section>
     <!--Page main section end -->
-<?php
-    include_once("./inc/footer.php")
+cd;
+	include_once("./inc/header.php");
+	echo $html;
+    include_once("./inc/footer.php");
 ?>
