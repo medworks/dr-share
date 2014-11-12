@@ -1,6 +1,27 @@
 <?php
-    include_once("./inc/header.php")
-?>
+	include_once("../config.php");
+	include_once("../classes/functions.php");
+  	include_once("../classes/messages.php");
+  	include_once("../classes/session.php");	
+  	include_once("../classes/security.php");
+  	include_once("../classes/database.php");	
+	include_once("../classes/login.php");
+    include_once("../lib/persiandate.php"); 
+
+	$login = Login::GetLogin();
+    if (!$login->IsLogged())
+	{
+		header("Location: ../index.php");
+		die(); // solve a security bug
+	}
+	
+	if ($_POST['mark']=="saveinfo")
+	{
+		SetSettingValue("About_System",$_POST["About_System"]);
+		header('location:aboutinfo.php');		
+	}
+	$About_System = GetSettingValue('About_System',0);
+$html.=<<<cd
     <!--Page main section start-->
     <section id="min-wrapper">
         <div id="main-content">
@@ -19,7 +40,7 @@
                     </div>
                 </div>
                 <!-- Main Content Element  Start-->
-                <form class="form-horizontal ls_form" role="form">
+                <form class="form-horizontal ls_form" role="form" action="" method="post">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
@@ -29,7 +50,9 @@
                                 <div class="panel-body">
                                     <div class="row ls_divider last">
                                         <div class="col-md-10 ls-group-input">
-                                            <textarea class="animatedTextArea form-control" id="bio" name="bio" style="min-height:250px"></textarea>
+                                            <textarea class="animatedTextArea form-control"  name="About_System" style="min-height:250px">
+											{$About_System}
+											</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -44,6 +67,7 @@
                                 </div>
                                 <div class="panel-body">
                                     <button type="submit" class="btn btn-default">ثبت</button>
+									<input type="hidden"  name="mark" value="saveinfo" /> 
                                 </div>
                             </div>
                         </div>
@@ -54,6 +78,8 @@
         </div>
     </section>
     <!--Page main section end -->
-<?php
-    include_once("./inc/footer.php")
+cd;
+	include_once("./inc/header.php");
+	echo $html;
+    include_once("./inc/footer.php");
 ?>
