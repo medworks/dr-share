@@ -143,7 +143,7 @@ $html.=<<<cd
                     </div>
                 </div>
                 <!-- Main Content Element  Start-->
-                <form id="frmsubmenu" name="frmsubmenu" action="" method="post" 
+                <form id="frmsubmenu" class="form-inline ls_form" name="frmsubmenu" action="" method="post" 
 				class="form-inline ls_form" role="form">
                     <div class="row">
                         <div class="col-md-12">
@@ -155,13 +155,11 @@ $html.=<<<cd
                                     <div class="form-group">
                                         <input id="edtname" name="edtname" type="text" 
 										class="form-control" placeholder="اسم زیر منو" value="{$row['name']}"/>
-                                    </div>
-                                    <div class="panel-body">
-                                        {$cbmenu}
-										<div id="sm1">
+										{$cbmenu}
+										<div id="sm1" style="display:inline-block;">
 											{$cbsm1}
 										</div>
-                                        <div id="sm2">
+                                        <div id="sm2" style="display:inline-block;">
 											{$cbsm2}
 										</div>
                                         {$insertoredit}
