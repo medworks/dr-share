@@ -19,8 +19,8 @@
 	$db = Database::GetDatabase(); 
 	if ($_GET['act']=="del")
 	{
-		$db->Delete("menusubjects"," id",$_GET["did"]);		
-		header('location:editdata.php?act=new');	
+		$db->Delete("gallerypics"," id ",$_GET["did"]);		
+		header('location:editgallery.php?act=new');	
 	}		
     
 $html.=<<<cd
@@ -58,6 +58,7 @@ $html.=<<<cd
                                             <thead>
                                             <tr>
 											<th>#</th>
+												<th>گروه</th>
                                                 <th>عنوان</th>
                                                 <th>متن</th>
                                                 <th>تصویر</th>
@@ -72,13 +73,13 @@ cd;
 
 	$pagination->navigation_position("right");
 
-	$reccount = $db->CountAll("menusubjects");
+	$reccount = $db->CountAll("gallerypics");
 	$pagination->records($reccount); 
 	
     $pagination->records_per_page($records_per_page);	
 
 $rows = $db->SelectAll(
-				"menusubjects",
+				"gallerypics",
 				"*",
 				NULL,
 				"id ASC",
@@ -90,41 +91,21 @@ $vals = array();
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;
+$grow = $db->Select("gcategories","*","id='{$rows[$i][gcid]}'",NULL);
+$prow = $db->Select("gpics","*","gid='{$rows[$i][id]}'",NULL);
 $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
 $rows[$i]["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
-$vals = "";
-if ($rows[$i]['pid']!=0)
-{
-	$row = $db->Select("submenues","*","id={$rows[$i]['pid']}","id ASC");	
-	if ($row["pid"]==0) {$vals[] = "";}
-	$vals[] = $row["name"];
-	
-	
-	while($row["pid"]!=0)
-	{
-		$row = $db->Select("submenues","*","id={$row['pid']}","id ASC");
-		$vals[] = $row["name"];
-	}
-    
-	$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
-	$vals[] = $row["name"];
-}
-else
-{
-		$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
-		$vals[] = "";
-		$vals[] = "";
-		$vals[] = $row["name"];
-}	
+
 $html.=<<<cd
 
                                                 
                                             <tr>
                                                 <td>{$rownumber}</td>
+												 <td>{$grow["name"]}</td>
                                                 <td>{$rows[$i]["subject"]}</td>
                                                 <td>{$rows[$i]["text"]}</td>
                                                 <td>
-                                                    <img src="./images/avatar2-80.png" width="50px" height="50px" />                        
+                                                    <img src="img.php?did={$rows[$i]["id"]}&type=gall" width="50px" height="50px" /> 
                                                 </td>
                                                 <td class="text-center">
 												<a href="?act=del&did={$rows[$i]["id"]}"  >												
