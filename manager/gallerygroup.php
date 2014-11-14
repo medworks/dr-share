@@ -20,21 +20,21 @@
 	{
 		$fields = array("`name`");		
 		$values = array("'{$_POST[edtgroup]}'");	
-		if (!$db->InsertQuery('categories',$fields,$values)) 
+		if (!$db->InsertQuery('gcategories',$fields,$values)) 
 		{			
-			header('location:categories.php?act=new&msg=2');			
+			header('location:gallerygroup.php?act=new&msg=2');			
 		} 	
 		else 
 		{  										
-			header('location:categories.php?act=new&msg=1');
+			header('location:gallerygroup.php?act=new&msg=1');
 		}  		
 	}
 	else
 	if ($_POST["mark"]=="editgroup")
 	{			    
 		$values = array("`name`"=>"'{$_POST[edtgroup]}'");
-        $db->UpdateQuery("categories",$values,array("id='{$_GET[gid]}'"));		
-		header('location:categories.php?act=new&msg=1');
+        $db->UpdateQuery("gcategories",$values,array("id='{$_GET[gid]}'"));		
+		header('location:gallerygroup.php?act=new&msg=1');
 	}	
 	if ($_GET['act']=="new")
 	{
@@ -44,15 +44,15 @@
 	}
 	if ($_GET['act']=="edit")
 	{
-	    $row=$db->Select("categories","*","id='{$_GET["gid"]}'",NULL);		
+	    $row=$db->Select("gcategories","*","id='{$_GET["gid"]}'",NULL);		
 		$insertoredit = "
 			<button type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editgroup' /> ";
 	}
 	if ($_GET['act']=="del")
 	{
-		$db->Delete("categories"," id",$_GET["gid"]);		
-		header('location:categories.php?act=new');	
+		$db->Delete("gcategories"," id",$_GET["gid"]);		
+		header('location:gallerygroup.php?act=new');	
 	}	
 $msgs = GetMessage($_GET['msg']);
 
@@ -112,7 +112,7 @@ $html=<<<cd
 								<tbody>
 								<tr>
 cd;
-$rows = $db->SelectAll("categories","*",NULL,"id ASC");
+$rows = $db->SelectAll("gcategories","*",NULL,"id ASC");
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;
