@@ -213,7 +213,7 @@
                 <ul>
                     <li><a href="gallerygroup.php?act=new">دسته بندی تصاویر</a></li>
                     <li><a href="addgallery.php?act=new">تعریف گالری</a></li>
-                    <li><a href="edirgallery.php?act=new">ویرایش گالری</a></li>
+                    <li><a href="editgallery.php?act=new">ویرایش گالری</a></li>
                 </ul>
             </li>
             <li>
