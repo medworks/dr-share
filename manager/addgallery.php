@@ -84,7 +84,7 @@
     else
     if ($_POST["mark"]=="editdata")
     {               
-        $values = array("`gid`"=>"'{$sm}'","`subject`"=>"'{$_POST[edtsubject]}'",
+        $values = array("`gcid`"=>"'{{$_POST[cbgroup]}}'","`subject`"=>"'{$_POST[edtsubject]}'",
 						"`text`"=>"'{$_POST[edttext]}'" );
         $db->UpdateQuery("gallerypics",$values,array("id='{$_GET[did]}'"));
         upload($db,$_GET["did"],"edit");    
@@ -205,8 +205,7 @@ $html=<<<cd
     <!--Page main section end -->
     <script type="text/javascript">
         $(document).ready(function(){
-           
-        
+
         });
     </script>
 cd;
