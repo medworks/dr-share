@@ -65,8 +65,8 @@
     if ($_POST["mark"]=="savedata")
     {
                 
-        $fields = array("`gid`","`subject`","`text`");       
-        $values = array("0","'{$_POST[edtsubject]}'","'{$_POST[edttext]}'");   
+        $fields = array("`gcid`","`subject`","`text`");       
+        $values = array("{$_POST[cbgroup]}","'{$_POST[edtsubject]}'","'{$_POST[edttext]}'");   
         if (!$db->InsertQuery('gallerypics',$fields,$values)) 
         {           
             header('location:addgallery.php?act=new&msg=2');         
