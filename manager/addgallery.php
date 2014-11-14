@@ -34,19 +34,19 @@
                 //tid 1 is for menu pics, 2 for news pics, 3 for maghalat pics
                 if ($mode == "insert")
                 {
-                    $fields = array("`tid`","`sid`","`itype`","`img`","`iname`","`isize`");     
-                    $values = array("'1'","'{$did}'","'{$type}'","'{$imgfp}'","'{$name}'","'{$size}'"); 
-                    $db->InsertQuery('pics',$fields,$values);
+                    $fields = array("`gid`","`itype`","`img`","`iname`","`isize`");     
+                    $values = array("'{$did}'","'{$type}'","'{$imgfp}'","'{$name}'","'{$size}'"); 
+                    $db->InsertQuery('gpics',$fields,$values);
                 }
                 else
                 {
-                  $imgrow =$db->Select("pics","*","sid='{$did}'");
+                  $imgrow =$db->Select("gpics","*","id='{$did}'");
                   if ($imgfp != $imgrow["img"])
                   {
-                    $values = array("`tid`"=>"'1'","`sid`"=>"'{$did}'",
+                    $values = array("`gid`"=>"'{$did}'",
                         "`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
                         "`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
-                    $db->UpdateQuery("pics",$values,array("sid='{$did}'")); 
+                    $db->UpdateQuery("gpics",$values,array("id='{$did}'")); 
                   } 
                 }   
                 //echo $db->cmd;
@@ -64,21 +64,12 @@
     
     if ($_POST["mark"]=="savedata")
     {
-        if (isset($_POST["cbsm2"]) and $_POST["cbsm2"]!=0)
-        {
-            $sm = $_POST["cbsm2"];
-        }
-        else
-        if (isset($_POST["cbsm1"]) and $_POST["cbsm1"]!=0)
-        {
-            $sm = $_POST["cbsm1"];
-        }
-        
-        $fields = array("`mid`","`smid`","`subject`","`text`","`picid`");       
-        $values = array("'{$_POST[cbmenu]}'","'{$sm}'","'{$_POST[edtsubject]}'","'{$_POST[edttext]}'","'0'");   
-        if (!$db->InsertQuery('menusubjects',$fields,$values)) 
+                
+        $fields = array("`gid`","`subject`","`text`");       
+        $values = array("0","'{$_POST[edtsubject]}'","'{$_POST[edttext]}'");   
+        if (!$db->InsertQuery('gallerypics',$fields,$values)) 
         {           
-            header('location:dataentry.php?act=new&msg=2');         
+            header('location:addgallery.php?act=new&msg=2');         
         }   
         else 
         {  
@@ -86,132 +77,30 @@
             {
                 $did = $db->InsertId();
                 upload($db,$did,"insert");
-                header('location:dataentry.php?act=new&msg=1');
+                header('location:addgallery.php?act=new&msg=1');
             }   
         }       
     }
     else
     if ($_POST["mark"]=="editdata")
-    {       
-        if (isset($_POST["cbsm2"]) and $_POST["cbsm2"]!=0)
-        {
-            $sm = $_POST["cbsm2"];
-        }
-        else
-        if (isset($_POST["cbsm1"]) and $_POST["cbsm1"]!=0)
-        {
-            $sm = $_POST["cbsm1"];
-        }
-        
-        $values = array("`mid`"=>"'{$_POST[cbmenu]}'","`smid`"=>"'{$sm}'",
-                        "`subject`"=>"'{$_POST[edtsubject]}'","`text`"=>"'{$_POST[edttext]}'",
-                        "`picid`"=>"'0'");
-        $db->UpdateQuery("menusubjects",$values,array("id='{$_GET[did]}'"));
+    {               
+        $values = array("`gid`"=>"'{$sm}'","`subject`"=>"'{$_POST[edtsubject]}'",
+						"`text`"=>"'{$_POST[edttext]}'" );
+        $db->UpdateQuery("gallerypics",$values,array("id='{$_GET[did]}'"));
         upload($db,$_GET["did"],"edit");    
-        header('location:dataentry.php?act=new&msg=1');
+        header('location:addgallery.php?act=new&msg=1');
     }
     
     if ($_GET['act']=="new")
     {
         $insertoredit = "
             <button id='submit' type='submit' class='btn btn-default'>ثبت</button>
-            <input type='hidden' name='mark' value='savedata' /> ";
-        $menues = $db->SelectAll("menues","*"); 
-        $cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");   
+            <input type='hidden' name='mark' value='savedata' /> ";  
+		$group = $db->SelectAll("gcategories","*");	
+		$cbgroup = DbSelectOptionTag("cbgroup",$group,"name",NULL,NULL,"form-control",NULL,"  منو  ");
     }
 
-    if ($_GET['act']=="view")
-    {
-        $row=$db->Select("menusubjects","*","id='{$_GET["did"]}'",NULL);
         
-        $menues = $db->SelectAll("menues","*"); 
-        $cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
-        
-        $srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
-        if ($srow["pid"] == 0)  
-        {
-            $m = $srow["mid"];
-            $m1 = $srow["id"];
-            $m2 = 0;
-        }
-        else
-        {           
-            $srow2 = $db->Select("submenues","*","id='{$srow["pid"]}'",NULL);
-            if ($srow2["pid"] == 0)
-            {
-                $m1 = $srow["pid"];
-                $m2 = $srow["id"];
-            }
-            else
-            {
-                $m1 = 0;
-                $m2 = 0;
-            }   
-        }
-        
-        $sm1 = $db->SelectAll("submenues","*","pid = 0");   
-        $cbsm1 = DbSelectOptionTag("cbsm1",$sm1,"name","{$m1}",NULL,"form-control",NULL,"زیر منو"); 
-
-        $sm2 = $db->SelectAll("submenues","*","pid <> 0");  
-        $cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو"); 
-        
-        $pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 1",NULL);
-        if (isset($pic))
-        {
-            $imgload = "<img  src='img.php?did={$_GET[did]}&tid=1'  width='200px' height='180px' />";
-        }   
-    }
-    
-    if ($_GET['act']=="edit")
-    {
-        $row=$db->Select("menusubjects","*","id='{$_GET["did"]}'",NULL);        
-        $insertoredit = "
-            <button id='submit' type='submit' class='btn btn-default'>ویرایش</button>
-            <input type='hidden' name='mark' value='editdata' /> ";
-
-        $menues = $db->SelectAll("menues","*"); 
-        $cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
-        
-        $srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
-        if ($srow["pid"] == 0)  
-        {
-            $m = $srow["mid"];
-            $m1 = $srow["id"];
-            $m2 = 0;
-        }
-        else
-        {           
-            $srow2 = $db->Select("submenues","*","id='{$srow["pid"]}'",NULL);
-            if ($srow2["pid"] == 0)
-            {
-                $m1 = $srow["pid"];
-                $m2 = $srow["id"];
-            }
-            else
-            {
-                $m1 = $srow["id"];
-                $m2 = $srow2["pid"];
-            }   
-        }
-        
-        $sm1 = $db->SelectAll("submenues","*","pid = 0");   
-        $cbsm1 = DbSelectOptionTag("cbsm1",$sm1,"name","{$m1}",NULL,"form-control",NULL,"زیر منو"); 
-
-        $sm2 = $db->SelectAll("submenues","*","pid <> 0");  
-        $cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو"); 
-        
-        $pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 1",NULL);
-        if (isset($pic))
-        {
-            $imgload = "<img  src='img.php?did={$_GET[did]}&tid=1'  width='200px' height='180px' />";
-        }   
-    }
-    
-    
-    
-    
-
-    
 $html=<<<cd
     <!--Page main section start-->
     <section id="min-wrapper">
@@ -239,13 +128,7 @@ $html=<<<cd
                                     <h3 class="panel-title">انتخاب دسته تصاویر</h3>
                                 </div>
                                 <div class="panel-body">
-                                    {$cbmenu}
-                                    <div id="sm1">
-                                            {$cbsm1}
-                                        </div>
-                                        <div id="sm2">
-                                            {$cbsm2}
-                                        </div>                                    
+                                     {$cbgroup}                                
                                 </div>
                             </div>
                         </div>
@@ -297,8 +180,7 @@ $html=<<<cd
                                             </div>
                                         </div>
                                         
-                                    </div>
-                                    {$imgload}
+                                    </div>                                   
                                 </div>
                             </div>
                         </div>
@@ -323,19 +205,7 @@ $html=<<<cd
     <!--Page main section end -->
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#cbmenu").change(function(){
-                var id= $(this).val();
-                $.get('./ajaxcommand.php?smid='+id,function(data) {         
-                        $('#sm1').html(data);
-                        
-                        $("#cbsm1").change(function(){
-                            var id= $(this).val();
-                            $.get('./ajaxcommand.php?smid2='+id,function(data) {            
-                                $('#sm2').html(data);
-                            });
-                        });         
-                });
-            });         
+           
         
         });
     </script>
