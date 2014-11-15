@@ -4524,7 +4524,7 @@ height:58px
 
 .minimize .main_navigation ul {
   margin-top:0;
-  direction: rtl;
+  /*direction: rtl;*/
 }
 
 .minimize #mobile_menu a:after {
