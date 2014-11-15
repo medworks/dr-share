@@ -1,0 +1,106 @@
+#demopanel {left: 0px;position: fixed;top: 108px;z-index: 9999;}
+#panel {position:relative; left:-230px; border: 1px solid rgba(0,0,0,.1);border-left:0!important;}
+.panel_button { position: relative; left:0px; width:48px; cursor: pointer; z-index:10;border: 1px solid rgba(0,0,0,.1);border-left:0!important;}
+#panel {position: absolute;top:-80px;left:-280px;overflow: hidden;background:#fff;padding:15px 12px 15px 13px;width:204px;font-size:10px;color:#999;}
+#panel h3 {display:block; color:#333!important; padding-bottom:0px; margin-bottom:5px; font-size:11px; line-height: 11px; font-family:Helvetica, Arial, sans-serif!important; font-weight:bold;}
+#panel section { display:block; margin-bottom:30px; }
+#panel p {
+	font-size:11px;
+	line-height:16px;
+	margin-bottom:0;
+	font-family:"Arial",Helvetica, sans-serif!important; 
+}
+#panel img:hover { cursor:pointer;}
+#panel select { margin-bottom:5px; width:120px;}
+#panel .heading {font-weight:bold; font-family:Arial, sans-serif; display:block; line-height: 16px;}
+#panel .selector ul {list-style: none outside none;margin: 0;padding: 0;}
+#panel .selector  ul li {border: 1px solid #888888;cursor: pointer;float: left;height: 15px;margin: 3px;width: 15px;background-color:#fff;}
+#font_list {font-size:12px; max-width:120px; }
+.dark_c .scale + .l { display:none!important;}
+
+#panel .colors {
+    display:block;
+    line-height: 6px;
+    margin-bottom:5px;
+}
+
+#panel .colors span {
+    width:16px;
+    height:6px;
+    display:inline-block;
+    margin:0;
+}
+
+#panel .colors span:hover, #panel .bg span:hover { cursor:pointer; }
+
+#panel .selector {
+    margin-bottom:15px;
+}
+
+#panel .bg span {
+    width:16px;
+    height:16px;
+    display: inline-block;
+    margin:0;
+}
+
+#panel section.last {
+    margin-bottom:0;
+}
+
+.pat1.skin_light {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/bright_squares.png');}
+.pat2.skin_light {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/crossword.png');}
+.pat3.skin_light {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/diamond_upholstery.png');}
+.pat4.skin_light {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/farmer.png');}
+.pat5.skin_light {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/food.png');}
+.pat6.skin_light {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/geometry.png');}
+.pat7.skin_light {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/notebook.png');}
+.pat8.skin_light {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/shattered.png');}
+.pat9.skin_light {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/skulls.png');}
+.pat10.skin_light {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/tree_bark.png');}
+
+.pat1.skin_dark {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/cartographer.png');}
+.pat2.skin_dark {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/dark_geometric.png');}
+.pat3.skin_dark {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/dark_mosaic.png');}
+.pat4.skin_dark {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/dark_wood.png');}
+.pat5.skin_dark {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/flowers.png');}
+.pat6.skin_dark {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/green-fibers.png');}
+.pat7.skin_dark {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/inflicted.png');}
+.pat8.skin_dark {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/stardust.png');}
+.pat9.skin_dark {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/type.png');}
+.pat10.skin_dark {background:url('http://gazette.seoresearch.com/wp-content/themes/gazette/images/patterns/zwartevilt.png');}
+
+#panel #ss_skin a {
+	display: inline-block;
+	color: #333;
+	padding: 5px 10px;
+	line-height: 12px;
+	border: 2px solid rgba(0,0,0,.33);
+	margin: 0 5px 10px 0;
+}
+
+/*#header .container .col12 { text-align: center; }*/
+
+#panel div span img {
+    border-radius:99px;
+}
+
+.panel_button {
+    display:inline-block;
+    width:32px;
+    height:32px;
+    padding:3px;
+    background:#fff;
+}
+
+.panel_button:before {
+font-family: "FontAwesome";
+content: '\f085';
+color: #555;
+font-size: 24px;
+line-height: 32px;
+width: 32px;
+text-align: center;
+display: block;
+}
+
