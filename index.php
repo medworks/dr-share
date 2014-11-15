@@ -1,6 +1,21 @@
 <?php
-	include_once('./inc/header.php');
-?>
+	include_once("config.php");
+	include_once("classes/functions.php");
+  	include_once("classes/messages.php");
+  	include_once("classes/session.php");	
+  	include_once("classes/security.php");
+  	include_once("classes/database.php");	
+	include_once("classes/login.php");
+    include_once("lib/persiandate.php"); 
+	
+	//error_reporting(E_ALL);
+	//ini_set('display_errors', 1);
+	
+	$db = Database::GetDatabase();
+	
+	$news = $db->SelectAll("news","*",NULL,"id ASC");
+	
+$html.=<<<cd
 	<div class="container">
 		<div id="content">
 			<div id="content_inner">
@@ -124,10 +139,24 @@
 						<div class="page">
 							<div class="article_grid four_column_blog carousel">
 								<h4>اخبار</h4>
-								<div class="3">
+cd;
+for($i = 0; $i < Count($news); $i++)
+{
+	//$pic=$db->Select("pics","*","tid=2 AND sid ='{$news[i][id]}'",NULL);
+	$news[$i]["text"] =(mb_strlen($news[$i]["text"])>90)?mb_substr($news[$i]["text"],0,90,"UTF-8")."...":$news[$i]["text"];
+	if ($i % 4 == 0)
+	{
+		$class = " last";
+	}
+	else
+	{
+		$class = "";
+	}
+$html.=<<<cd
+								<div class="3 {$class}">
 									<div class="fade-in article_grid_module appeared">
 										<div class="article_grid_image">
-											<img class=" morph" src="./images/slides/1.jpg" alt="" height="160" width="280">
+											<img class=" morph" src="manager/img.php?did={$news[$i]["id"]}&tid=2" width="160px" height="160px" /> 										    
 											<div class="hover_buttons">
 												<div>
 													<div>
@@ -139,10 +168,10 @@
 										</div>
 										<div class="article_grid_content">
 											<h3 class="article_heading rtl">
-												<a href="#" title="" rel="bookmark">عنوان خبر</a>
+												<a href="#" title="" rel="bookmark">{$news[$i]['subject']}</a>
 											</h3>
 											<div class="post_excerpt">
-												<p class="rtl" style="font-size:18px">متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... </p>
+												<p class="rtl" style="font-size:18px">{$news[$i]['text']}</p>
 												<p>
 													<a class="post_more_link" href="#" style="font-size:15px">ادامه خبر</a>
 												</p>
@@ -150,136 +179,9 @@
 										</div>
 									</div>
 								</div>
-								<div class="3">
-									<div class="fade-in article_grid_module appeared">
-										<div class="article_grid_image">
-											<img class=" morph" src="./images/slides/2.jpg" alt="" height="160" width="280">
-											<div class="hover_buttons">
-												<div>
-													<div>
-														<!-- <a href="http://gazette.seoresearch.com/wp-content/uploads/2014/08/tumblr_n6esribU971st5lhmo1_1280-1280x768.jpg" class="hb-image-zoom" rel="swipebox[blog_shortcode]" title="Phasellus euismod purus eget sed luctus"></a> -->
-														<a href="#" class="hb-image-link" title=""></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="article_grid_content">
-											<h3 class="article_heading rtl">
-												<a href="#" title="" rel="bookmark">عنوان خبر</a>
-											</h3>
-											<div class="post_excerpt">
-												<p class="rtl" style="font-size:18px">متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... </p>
-												<p>
-													<a class="post_more_link" href="#" style="font-size:15px">ادامه خبر</a>
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="3">
-									<div class="fade-in article_grid_module appeared">
-										<div class="article_grid_image">
-											<img class=" morph" src="./images/slides/3.jpg" alt="" height="160" width="280">
-											<div class="hover_buttons">
-												<div>
-													<div>
-														<!-- <a href="http://gazette.seoresearch.com/wp-content/uploads/2014/08/tumblr_n6esribU971st5lhmo1_1280-1280x768.jpg" class="hb-image-zoom" rel="swipebox[blog_shortcode]" title="Phasellus euismod purus eget sed luctus"></a> -->
-														<a href="#" class="hb-image-link" title=""></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="article_grid_content">
-											<h3 class="article_heading rtl">
-												<a href="#" title="" rel="bookmark">عنوان خبر</a>
-											</h3>
-											<div class="post_excerpt">
-												<p class="rtl" style="font-size:18px">متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... </p>
-												<p>
-													<a class="post_more_link" href="#" style="font-size:15px">ادامه خبر</a>
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="3 last">
-									<div class="fade-in article_grid_module appeared">
-										<div class="article_grid_image">
-											<img class=" morph" src="./images/slides/4.jpg" alt="" height="160" width="280">
-											<div class="hover_buttons">
-												<div>
-													<div>
-														<!-- <a href="http://gazette.seoresearch.com/wp-content/uploads/2014/08/tumblr_n6esribU971st5lhmo1_1280-1280x768.jpg" class="hb-image-zoom" rel="swipebox[blog_shortcode]" title="Phasellus euismod purus eget sed luctus"></a> -->
-														<a href="#" class="hb-image-link" title=""></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="article_grid_content">
-											<h3 class="article_heading rtl">
-												<a href="#" title="" rel="bookmark">عنوان خبر</a>
-											</h3>
-											<div class="post_excerpt">
-												<p class="rtl" style="font-size:18px">متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... </p>
-												<p>
-													<a class="post_more_link" href="#" style="font-size:15px">ادامه خبر</a>
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="3">
-									<div class="fade-in article_grid_module appeared">
-										<div class="article_grid_image">
-											<img class=" morph" src="./images/slides/5.jpg" alt="" height="160" width="280">
-											<div class="hover_buttons">
-												<div>
-													<div>
-														<!-- <a href="http://gazette.seoresearch.com/wp-content/uploads/2014/08/tumblr_n6esribU971st5lhmo1_1280-1280x768.jpg" class="hb-image-zoom" rel="swipebox[blog_shortcode]" title="Phasellus euismod purus eget sed luctus"></a> -->
-														<a href="#" class="hb-image-link" title=""></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="article_grid_content">
-											<h3 class="article_heading rtl">
-												<a href="#" title="" rel="bookmark">عنوان خبر</a>
-											</h3>
-											<div class="post_excerpt">
-												<p class="rtl" style="font-size:18px">متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... </p>
-												<p>
-													<a class="post_more_link" href="#" style="font-size:15px">ادامه خبر</a>
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="3">
-									<div class="fade-in article_grid_module appeared">
-										<div class="article_grid_image">
-											<img class=" morph" src="./images/slides/6.jpg" alt="" height="160" width="280">
-											<div class="hover_buttons">
-												<div>
-													<div>
-														<!-- <a href="http://gazette.seoresearch.com/wp-content/uploads/2014/08/tumblr_n6esribU971st5lhmo1_1280-1280x768.jpg" class="hb-image-zoom" rel="swipebox[blog_shortcode]" title="Phasellus euismod purus eget sed luctus"></a> -->
-														<a href="#" class="hb-image-link" title=""></a>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="article_grid_content">
-											<h3 class="article_heading rtl">
-												<a href="#" title="" rel="bookmark">عنوان خبر</a>
-											</h3>
-											<div class="post_excerpt">
-												<p class="rtl" style="font-size:18px">متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... متن خبر... </p>
-												<p>
-													<a class="post_more_link" href="#" style="font-size:15px">ادامه خبر</a>
-												</p>
-											</div>
-										</div>
-									</div>
-								</div>
+cd;
+}
+$html.=<<<cd
 							</div>
 						</div>
 						<div class="clearboth"></div>
@@ -371,6 +273,8 @@
 			</div>
 		</div>
 	</div>
-<?php
+cd;
+	include_once('./inc/header.php');
+	echo $html;
 	include_once('./inc/footer.php');
 ?>

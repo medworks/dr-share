@@ -12,10 +12,10 @@
 	}
 	else
 	{
-		$pic = $db->Select("pics","*","`sid`='{$_GET[did]}' AND tid='{$_GET[tid]}'",NULL);
+		$pic = $db->Select("pics","*","`sid`='{$_GET[did]}' AND `tid`='{$_GET[tid]}'",NULL);
 	}
 	//echo $db->cmd;
-	header("Content-type: {$pic['itype']}");
+	header("Content-type: {$pic[itype]}");
 	//echo base64_decode($pic['img']);
 	echo $pic["img"];
 	//echo $img;	
