@@ -117,7 +117,7 @@
 	width:100%
 	}
 
-	.main_navigation ul li:hover ul {
+	.main_navigation ul li:hover > ul {
 	display:block;
 	opacity:1
 	}

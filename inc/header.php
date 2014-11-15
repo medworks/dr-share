@@ -77,7 +77,8 @@
 	.fade-in{opacity:0}.blog_layout2 .article_list_image img{width:px;height:px}::selection{background-color:#8e44ad}
 	#navigation{background-color:#2c3e50}.main_navigation ul ul{background-color:#1b1e24}
 	.main_navigation ul ul:before{border-color:transparent transparent #1b1e24 transparent}
-	.main_navigation ul ul ul{background-color:#1b1e24}.main_navigation ul ul ul:before{border-color:transparent #1b1e24 transparent transparent}
+	.main_navigation ul ul ul{background-color:#1b1e24}
+	.main_navigation ul ul ul:before{border-color:transparent #1b1e24 transparent transparent}
 	.main_navigation li.current_page_item > a,.main_navigation a:hover, .main_navigation li:hover{background:#0090d9}
 	.nt-icon-search:hover, .nt-search.nt-search-open .nt-icon-search{background-color:#d35400;color:#fff}
 	footer{background-color:#1b1e24}
@@ -219,131 +220,39 @@ var BP_Confirm = {"are_you_sure":"Are you sure?"};
 						<li class="current_page_item">
 							<a href="#">صفحه اصلی</a>
 						</li>
-						<li class="menu-item-has-children menu_arrow">
-							<a href="#">زوج و خانواده</a>
+						<li class="menu_arrow menu-item-has-children">
+							<a href="#">بالینی، جنسی شخصیتی</a>
 							<ul class="sub-menu">
-								<li>
-									<a href="#">زوج و خانواده</a>
-									<!-- <ul class="sub-menu">
-										<li><a href="#">زوج و خانواده22</a></li>
-									</ul> -->
-								</li>
-								<li>
-									<a href="#">زوج و خانواده</a>
-									<!-- <ul class="sub-menu">
-										<li><a href="#">زوج و خانواده22</a></li>
-									</ul> -->
-								</li>
-								<li>
-									<a href="#">زوج و خانواده</a>
-									<!-- <ul class="sub-menu">
-										<li><a href="#">زوج و خانواده22</a></li>
-									</ul> -->
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children menu_arrow">
-							<a href="#">زوج و خانواده</a>
-							<ul class="sub-menu">
-								<li>
-									<a href="#">زوج و خانواده</a>
-									<!-- <ul class="sub-menu">
-										<li><a href="#">زوج و خانواده22</a></li>
-									</ul> -->
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children menu_arrow">
-							<a href="#">زوج و خانواده</a>
-							<ul class="sub-menu">
-								<li>
-									<a href="#">زوج و خانواده</a>
-									<!-- <ul class="sub-menu">
-										<li><a href="#">زوج و خانواده22</a></li>
-									</ul> -->
-								</li>
-							</ul>
-						</li>
-						<li>
-							<a href="#">صفحه اصلی</a>
-						</li>
-						<li>
-							<a href="#">صفحه اصلی</a>
-						</li>
-						<li>
-							<a href="#">صفحه اصلی</a>
-						</li>
-						<li class="menu-item-has-children menu_arrow">
-							<a href="#">زوج و خانواده</a>
-							<ul class="sub-menu">
-								<li>
-									<a href="#">زوج و خانواده</a>
-									<!-- <ul class="sub-menu">
-										<li><a href="#">زوج و خانواده22</a></li>
-									</ul> -->
-								</li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children menu_arrow">
-							<a href="#">زوج و خانواده</a>
-							<ul class="sub-menu">
-								<li>
-									<a href="#">زوج و خانواده</a>
-									<!-- <ul class="sub-menu">
-										<li><a href="#">زوج و خانواده22</a></li>
-									</ul> -->
-								</li>
-							</ul>
-						</li>
-						<!-- <li id="menu-item-2813" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu_arrow megamenu mega-4-cols"><a href="http://gazette.seoresearch.com/features/">Features</a>
-							<ul class="sub-menu">
-								<li id="menu-item-3496" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/features/8-custom-widgets/">8 Custom Widgets</a></li>
-								<li id="menu-item-3458" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/features/admin-panel-preview/">Admin Panel Demo</a></li>
-								<li id="menu-item-2819" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/features/documentation/">Documentation</a></li>
-								<li id="menu-item-3494" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/features/full-rtl-support/">Full RTL Support</a></li>
-								<li id="menu-item-3487" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/features/responsive/">Responsive</a></li>
-								<li id="menu-item-3495" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/features/retina-ready/">Retina Ready</a></li>
-								<li id="menu-item-2773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu_arrow"><a href="http://gazette.seoresearch.com/shortcodes/">Shortcodes</a>
+								<li class="menu_arrow">
+									<a href="#">اختلالات اضطرابی GAD</a>
 									<ul class="sub-menu">
-										<li id="menu-item-3373" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/shortcodes/flexible-columns/">Flexible Columns</a></li>
-										<li id="menu-item-3374" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/shortcodes/buttons/">Buttons</a></li>
-										<li id="menu-item-3375" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/shortcodes/content-styling/">Content Styling</a></li>
-										<li id="menu-item-3377" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/shortcodes/tables/">Tables</a></li>
-										<li id="menu-item-3378" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/shortcodes/grouped-content/">Grouped Content</a></li>
-										<li id="menu-item-3380" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/shortcodes/blog/">Blog</a></li>
-										<li id="menu-item-3382" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/shortcodes/video/">Video</a></li>
-										<li id="menu-item-3384" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/shortcodes/contact-form/">Contact Form</a></li>
-										<li id="menu-item-3385" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/shortcodes/google-maps/">Google Maps</a></li>
+										<li><a href="#">وسواس</a></li>
+										<li><a href="#">پانیک</a></li>
+										<li><a href="#">اضطراب فراگیر GAD</a></li>
+										<li><a href="#">ترس از فضای بسته</a></li>
+										<li><a href="#">ترس از ارتفاع</a></li>
+										<li><a href="#">ترس از تاریکی</a></li>
+										<li><a href="#">ترس از مرگ</a></li>
+										<li><a href="#">تیک ناخن جویدن</a></li>
+										<li><a href="#">تر از شبح</a></li>
 									</ul>
 								</li>
-								<li id="menu-item-2731" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu_arrow"><a href="#">Pages</a>
+								<li class="menu_arrow">
+									<a href="#">اختلالات اضطرابی2</a>
 									<ul class="sub-menu">
-										<li id="menu-item-3439" class="menu-item menu-item-type-custom menu-item-object-custom"><a href="http://gazette.seoresearch.com/404">404 Error</a></li>
-										<li id="menu-item-2807" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/pages/contact-us/">Contact us</a></li>
-										<li id="menu-item-2841" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/pages/custom-sidebar/">Custom sidebar</a></li>
-										<li id="menu-item-2809" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/pages/left-sidebar/">Left sidebar</a></li>
-										<li id="menu-item-2820" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/pages/full-width/">Full width</a></li>
-										<li id="menu-item-2822" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/pages/sitemap/">Sitemap</a></li>
-										<li id="menu-item-2811" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/pages/typography/">Typography</a></li>
-									</ul>
-								</li>
-								<li id="menu-item-2824" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu_arrow"><a href="http://gazette.seoresearch.com/gallery/">Galleries</a>
-									<ul class="sub-menu">
-										<li id="menu-item-2833" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/gallery/one-column-gallery/">One column</a></li>
-										<li id="menu-item-3688" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/gallery/two-columns/">Two columns</a></li>
-										<li id="menu-item-2829" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/gallery/three-columns-gallery/">Three columns</a></li>
-										<li id="menu-item-2827" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/gallery/four-columns-gallery/">Four columns</a></li>
-										<li id="menu-item-2886" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/gallery/small-gallery-list/">Small list</a></li>
-										<li id="menu-item-2891" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/gallery/medium-list-gallery/">Medium list</a></li>
-										<li id="menu-item-2888" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://gazette.seoresearch.com/gallery/large-list-gallery/">Large list</a></li>
+										<li><a href="#">وسواس</a></li>
+										<li><a href="#">پانیک</a></li>
+										<li><a href="#">اضطراب فراگیر GAD</a></li>
+										<li><a href="#">ترس از فضای بسته</a></li>
+										<li><a href="#">ترس از ارتفاع</a></li>
+										<li><a href="#">ترس از تاریکی</a></li>
+										<li><a href="#">ترس از مرگ</a></li>
+										<li><a href="#">تیک ناخن جویدن</a></li>
+										<li><a href="#">تر از شبح</a></li>
 									</ul>
 								</li>
 							</ul>
 						</li>
-						<li id="menu-item-2734" class="menu-item menu-item-type-taxonomy menu-item-object-category megamenu"><a href="http://gazette.seoresearch.com/category/games-reviews/" class="category-color-FDD01C">Games</a></li>
-						<li id="menu-item-3427" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://gazette.seoresearch.com/category/music/" class="category-color-0aa699">Music</a></li>
-						<li id="menu-item-2623" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://gazette.seoresearch.com/category/fashion/" class="category-color-f7a4a3">Fashion</a></li>
-						<li id="menu-item-2622" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="http://gazette.seoresearch.com/category/technology/" class="category-color-f35958">Tech</a></li> -->
 					</ul>
 				</div>
 			</div>

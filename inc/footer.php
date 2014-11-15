@@ -148,36 +148,41 @@
 jQuery.noConflict();
 jQuery(document).ready(function() { 
 
-        	            jQuery('#video-gallery').royalSlider({
-                arrowsNav: true,
-                fadeinLoadedSlide: true,
-                controlNavigationSpacing: 0,
-                controlNavigation: 'thumbnails',
-                thumbs: {
-                    autoCenter: false,
-                    fitInViewport: true,
-                    orientation: 'vertical',
-                    spacing: 0,
-                    paddingBottom: 0
-                },
-                keyboardNavEnabled: true,
-                imageScaleMode: 'fill',
-                imageAlignCenter: true,
-                slidesSpacing: 0,
-                loop: true,
-                loopRewind: true,
-                numImagesToPreload: 3,
-                video: {
-                    autoHideArrows: true,
-                    autoHideControlNav: false,
-                    autoHideBlocks: true
-                },
-                autoScaleSlider: true,
-                autoScaleSliderWidth: 960,
-                autoScaleSliderHeight: 450,
-                imgWidth: 640,
-                imgHeight: 360
-            });
+    jQuery('#video-gallery').royalSlider({
+            autoPlay: {
+                enabled: true,
+                pauseOnHover: true,
+                delay: 8000
+            },
+            arrowsNav: true,
+            fadeinLoadedSlide: true,
+            controlNavigationSpacing: 0,
+            controlNavigation: 'thumbnails',
+            thumbs: {
+                autoCenter: false,
+                fitInViewport: true,
+                orientation: 'vertical',
+                spacing: 0,
+                paddingBottom: 0
+            },
+            keyboardNavEnabled: true,
+            imageScaleMode: 'fill',
+            imageAlignCenter: true,
+            slidesSpacing: 0,
+            loop: true,
+            loopRewind: true,
+            numImagesToPreload: 3,
+            video: {
+                autoHideArrows: true,
+                autoHideControlNav: false,
+                autoHideBlocks: true
+            },
+            autoScaleSlider: true,
+            autoScaleSliderWidth: 960,
+            autoScaleSliderHeight: 450,
+            imgWidth: 640,
+            imgHeight: 360
+        });
 
 
         
