@@ -7,6 +7,7 @@
   	include_once("../classes/database.php");	
 	include_once("../classes/login.php");
     include_once("../lib/persiandate.php");
+	include_once("../lib/class.phpmailer.php");
 	include_once("../lib/Zebra_Pagination.php"); 
 		
 	$login = Login::GetLogin();
@@ -17,6 +18,25 @@
 	}
 	
 	$db = Database::GetDatabase();
+	
+	if (isset($_GET["act"]) and $_GET["act"]=="send")
+	{
+		$News_Email = GetSettingValue('News_Email',0);
+		$Email_Sender_Name = GetSettingValue('Email_Sender_Name',0);
+		
+		$row = $db->Select("submenues","*","id={$rows[$i]['smid']}","id ASC");
+		
+		$db->cmd = "SELECT * FROM (".
+				   "( SELECT *,1 As 'type' FROM news ) ".
+	               " UNION ALL ".
+			       "(SELECT *,2 As 'type' FROM topics ) ".
+				   " ) AS tb WHERE id={$_GET['did']} AND type={$_GET['type']} "; 
+		  
+		$res = $db->RunSQL();
+		$sndrow = mysqli_fetch_row($res);	
+		
+		$issend=SendEmail($News_Email,$Email_Sender_Name, array($email), $sndrow["subject"],$sndrow["text"]);
+	}	
 	
 $html.=<<<cd
     <!--Page main section start-->
@@ -191,7 +211,7 @@ $html.=<<<cd
                                                     <span class="label label-success">{$group}</span>
                                                 </td>
                                                 <td class="text-center">
-												  <a href="sendnews.php?act=send&did={$rows[$i]["id"]}"  >
+												  <a href="sendnews.php?act=send&did={$rows[$i]["id"]}&type={$rows[$i]["type"]}"  >
                                                     <button class="btn btn-xs btn-success" title="ارسال"><i class="fa fa-send-o"></i></button>
 												  </a>	
                                                 </td>

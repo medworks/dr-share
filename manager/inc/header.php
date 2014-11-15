@@ -206,10 +206,15 @@
                 </ul>
             </li>
             <li>
-                <a href="gallery.php">
+                <a href="#">
                     <i class="fa fa-image"></i>
                     <span>گالری تصاویر</span>
                 </a>
+                <ul>
+                    <li><a href="gallerygroup.php?act=new">دسته بندی تصاویر</a></li>
+                    <li><a href="addgallery.php?act=new">تعریف گالری</a></li>
+                    <li><a href="editgallery.php?act=new">ویرایش گالری</a></li>
+                </ul>
             </li>
             <li>
                 <a href="editpic.php">
