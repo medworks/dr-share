@@ -133,7 +133,9 @@
 	line-height: 20px;
 	padding: 7px 7px 7px 34px;
 	font-weight: bold;
-	font-size: 13px;
+	font-size: 20px;
+	color: #555;
+	font-family: "bmitra";
 }
 .su-spoiler-icon {
 	position: absolute;
@@ -145,9 +147,9 @@
 	line-height: 21px;
 	text-align: center;
 	font-size: 14px;
-	font-family: FontAwesome;
-	font-weight: normal;
-	font-style: normal;
+	font-family: FontAwesome !important;
+	font-weight: normal !important;
+	font-style: normal !important;
 	-webkit-font-smoothing: antialiased;
 	*margin-right: .3em;
 }
@@ -158,6 +160,11 @@
 	-o-transition: padding-top .2s;
 	transition: padding-top .2s;
 	-ie-transition: padding-top .2s;
+	color: #555;
+	text-align: justify;
+	font-family: "bmitra";
+	font-size: 18px;
+	font-weight: normal !important;
 }
 .su-spoiler.su-spoiler-closed > .su-spoiler-content {
 	height: 0;
@@ -195,11 +202,11 @@
 .su-spoiler-icon-folder-2.su-spoiler-closed .su-spoiler-icon:before { content: "\f114"; }
 .su-spoiler-style-default { }
 .su-spoiler-style-default > .su-spoiler-title {
-	padding-left: 27px;
-	padding-right: 0;
+	padding-right: 27px;
+	/*padding-right: 0;*/
 }
-.su-spoiler-style-default > .su-spoiler-title > .su-spoiler-icon { left: 0; }
-.su-spoiler-style-default > .su-spoiler-content { padding: 1em 0 1em 27px; }
+.su-spoiler-style-default > .su-spoiler-title > .su-spoiler-icon { right: 0; }
+.su-spoiler-style-default > .su-spoiler-content { padding: 1em 27px 1em 0;}
 .su-spoiler-style-fancy {
 	border: 1px solid #ccc;
 	-webkit-border-radius: 10px;
@@ -315,7 +322,7 @@
 .su-column {
 	display: block;
 	margin: 0 4% 0 0;
-	float: left;
+	float: right;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;

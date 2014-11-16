@@ -20,25 +20,43 @@ $html.=<<<cd
 	<div id="main_inner">
 		<div class="article_grid four_column_blog">
 			<h4>آزمون های روانشناختی</h4>
-
-			<div class="su-row">
-				<div class="su-column su-column-size-1-2">
+			<div class="su-row rtl">
+				<div class="su-column su-column-size-3-3">
 					<div class="su-column-inner su-clearfix">
 						<div class="su-accordion">
+
+				
 							<div class="su-spoiler su-spoiler-style-default su-spoiler-icon-plus su-spoiler-closed">
 								<div class="su-spoiler-title">
-									<span class="su-spoiler-icon"></span>Fringilla Sit
+									<span class="su-spoiler-icon"></span>آزمون اول
 								</div>
 								<div class="su-spoiler-content su-clearfix">
-									Nullam quis risus eget urna mollis ornare vel eu leo. Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Donec id elit non mi porta gravida at eget metus. Vestibulum id ligula porta felis euismod semper.
+									توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول..
 								</div>
 							</div>
+
+							<div class="su-spoiler su-spoiler-style-default su-spoiler-icon-plus su-spoiler-closed">
+								<div class="su-spoiler-title">
+									<span class="su-spoiler-icon"></span>آزمون اول
+								</div>
+								<div class="su-spoiler-content su-clearfix">
+									توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول..
+								</div>
+							</div>
+
+							<div class="su-spoiler su-spoiler-style-default su-spoiler-icon-plus su-spoiler-closed">
+								<div class="su-spoiler-title">
+									<span class="su-spoiler-icon"></span>آزمون اول
+								</div>
+								<div class="su-spoiler-content su-clearfix">
+									توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول..
+								</div>
+							</div>
+					
 						</div>
 					</div>
 				</div>
 			</div>
-
-
 		</div>
 	</div><!-- #main_inner -->
 </div>
