@@ -57,7 +57,154 @@ $html.=<<<cd
 					</div>
 				</div>
 			</div>
-
+			<div class="col3">
+				<div>
+					<div class="article_grid_image">
+						<img class="morph" src="./images/slides/2.jpg" alt="" width="280" height="160" />
+						<div class="hover_buttons">
+							<div>
+								<div>
+									<a href="#" class="hb-image-link" title=""></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="article_grid_content">
+						<h3 class="article_heading">
+							<a href="#" title="" rel="bookmark">
+								عنوان خبر
+							</a>
+						</h3>
+						<p class="post_meta">
+							<span class="meta_date">
+								<a href="#" title="">29 فروردین 1393</a>
+							</span>
+							<span class="meta_author">
+								<a href="#">Admin</a>
+							</span>
+						</p>
+						<div class="post_excerpt">
+							<p>
+								خبر پنجم
+							</p>
+							<p>
+								<a class="post_more_link" href="#">ادامه خبر</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col3">
+				<div>
+					<div class="article_grid_image">
+						<img class="morph" src="./images/slides/3.jpg" alt="" width="280" height="160" />
+						<div class="hover_buttons">
+							<div>
+								<div>
+									<a href="#" class="hb-image-link" title=""></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="article_grid_content">
+						<h3 class="article_heading">
+							<a href="#" title="" rel="bookmark">
+								عنوان خبر
+							</a>
+						</h3>
+						<p class="post_meta">
+							<span class="meta_date">
+								<a href="#" title="">29 فروردین 1393</a>
+							</span>
+							<span class="meta_author">
+								<a href="#">Admin</a>
+							</span>
+						</p>
+						<div class="post_excerpt">
+							<p>
+								خبر پنجم
+							</p>
+							<p>
+								<a class="post_more_link" href="#">ادامه خبر</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col3 last">
+				<div>
+					<div class="article_grid_image">
+						<img class="morph" src="./images/slides/4.jpg" alt="" width="280" height="160" />
+						<div class="hover_buttons">
+							<div>
+								<div>
+									<a href="#" class="hb-image-link" title=""></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="article_grid_content">
+						<h3 class="article_heading">
+							<a href="#" title="" rel="bookmark">
+								عنوان خبر
+							</a>
+						</h3>
+						<p class="post_meta">
+							<span class="meta_date">
+								<a href="#" title="">29 فروردین 1393</a>
+							</span>
+							<span class="meta_author">
+								<a href="#">Admin</a>
+							</span>
+						</p>
+						<div class="post_excerpt">
+							<p>
+								خبر پنجم
+							</p>
+							<p>
+								<a class="post_more_link" href="#">ادامه خبر</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col3">
+				<div>
+					<div class="article_grid_image">
+						<img class="morph" src="./images/slides/5.jpg" alt="" width="280" height="160" />
+						<div class="hover_buttons">
+							<div>
+								<div>
+									<a href="#" class="hb-image-link" title=""></a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="article_grid_content">
+						<h3 class="article_heading">
+							<a href="#" title="" rel="bookmark">
+								عنوان خبر
+							</a>
+						</h3>
+						<p class="post_meta">
+							<span class="meta_date">
+								<a href="#" title="">29 فروردین 1393</a>
+							</span>
+							<span class="meta_author">
+								<a href="#">Admin</a>
+							</span>
+						</p>
+						<div class="post_excerpt">
+							<p>
+								خبر پنجم
+							</p>
+							<p>
+								<a class="post_more_link" href="#">ادامه خبر</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div><!-- #main_inner -->
 </div>
