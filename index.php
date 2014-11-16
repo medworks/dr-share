@@ -15,7 +15,7 @@
 	
 	$news = $db->SelectAll("news","*",NULL,"id ASC");
 	
-$html.=<<<cd
+$fhtml.=<<<cd
 	<div class="container">
 		<div id="content">
 			<div id="content_inner">
@@ -152,7 +152,7 @@ for($i = 0; $i < Count($news); $i++)
 	{
 		$class = "";
 	}
-$html.=<<<cd
+$fhtml.=<<<cd
 								<div class="3 {$class}">
 									<div class="fade-in article_grid_module appeared">
 										<div class="article_grid_image">
@@ -181,7 +181,7 @@ $html.=<<<cd
 								</div>
 cd;
 }
-$html.=<<<cd
+$fhtml.=<<<cd
 							</div>
 						</div>
 						<div class="clearboth"></div>
@@ -275,6 +275,7 @@ $html.=<<<cd
 	</div>
 cd;
 	include_once('./inc/header.php');
-	echo $html;
+	echo $fhtml;
 	include_once('./inc/footer.php');
+	include_once('./inc/last.php');
 ?>
