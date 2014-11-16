@@ -86,7 +86,7 @@ $html.=<<<cd
 			</div>
 			<div class="col2">
 				<div id="nav_menu-7" class="widget widget_nav_menu fade-in">
-					<h4 class="widgettitle rtl">رویدادهای جاری</h4>
+					<h4 class="widgettitle rtl">مقالات</h4>
 					<div class="menu-galleries-container">
 						<ul id="menu-galleries" class="menu">
 							<li>

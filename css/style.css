@@ -1299,7 +1299,8 @@ padding:0
 footer .textwidget p {
 font-size:13px;
 line-height:25px;
-font-weight:400
+font-weight:400;
+text-align: justify;
 }
 
 footer .post_meta {
