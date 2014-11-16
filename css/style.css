@@ -94,7 +94,7 @@ img{max-width:100%;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-
 img.scale-with-grid{max-width:100%;height:auto}
 html,body,div,form,fieldset,input,textarea,h1,h2,h3,h4,h5,h6,p,ul,ol,li{margin:0;padding:0;font-size:100%;vertical-align:top}
 li ol,li ul{margin-bottom:0}
-h1,h2,h3,h4,h5,h6,p,div.rating_row,ul,ol{margin-bottom:20px}
+h1,h2,h3,h4,h5,h6,p,div.rating_row,ul,ol{margin-bottom:5px}
 input,textarea{padding:4px;font-family:inherit}
 img,fieldset{border:0}
 ol{list-style:decimal outside; padding-left:25px;}
@@ -184,7 +184,7 @@ line-height:139%;
 
 #main h4 {
 font-weight:700;
-line-height:52px;
+line-height:39px;
 font-size: 26px;
 /*letter-spacing: 1px;*/
 display:block;
@@ -747,8 +747,8 @@ padding:0
 }
 
 .post_excerpt {
-font-size:13px;
-line-height:26px
+font-size:18px;
+line-height:26px;
 }
 
 #main {
@@ -1802,7 +1802,7 @@ font-weight:300
 text-transform:uppercase;
 /*letter-spacing:1px;*/
 line-height:24px;
-font-size:10px;
+font-size:15px;
 font-weight:400
 }
 
@@ -2947,7 +2947,7 @@ display: inline-block;
 height:auto;
 line-height:26px;
 padding:0 1px;
-font-size:11px;
+font-size:18px;
 text-transform:uppercase;
 /*letter-spacing:1.5px;*/
 font-weight:400;
@@ -3440,18 +3440,18 @@ z-index:90!important;
 max-width:100%!important
 }
 
-.post_meta .meta_date a:before,
-.post_meta .meta_comments a:before,
-.rss-date:before, 
-.timeago:before,
-.post_meta .meta_author a:before {
+.post_meta .meta_date a:after,
+.post_meta .meta_comments a:after,
+.rss-date:after, 
+.timeago:after,
+.post_meta .meta_author a:after {
 font-family:"FontAwesome";
 content:'\f017';
-margin-right:5px
+margin-left:5px
 }
 
 
-.post_meta .meta_author a:before {
+.post_meta .meta_author a:after {
 content:'\f007';
 }
 
@@ -3847,7 +3847,7 @@ margin-bottom:25px;
 
 .article_grid_image {
 display:block;
-margin-bottom:25px;
+margin-bottom:5px;
 min-height:25px;
 }
 
@@ -3861,6 +3861,7 @@ display:block;
 /*.article_grid_image + .meta_category + .article_grid_content {*/
 .article_grid_content {
 padding:0 25px 1px;
+text-align: right;
 }
 
 .portfolio > .article_grid_content {

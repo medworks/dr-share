@@ -34,30 +34,30 @@ $html.=<<<cd
 					</div>
 					<div class="article_grid_content">
 						<h3 class="article_heading">
-							<a href="#" title="" rel="bookmark">خبر 5 پنجم 5</a>
+							<a href="#" title="" rel="bookmark">
+								عنوان خبر
+							</a>
 						</h3>
 						<p class="post_meta">
 							<span class="meta_date">
-								<a href="#" title="">3 months ago</a>
+								<a href="#" title="">29 فروردین 1393</a>
 							</span>
 							<span class="meta_author">
-								<a href="">Daniel</a>
-							</span>
-							<span class="meta_comments">
-								<a href="#" title="">0</a>
+								<a href="#">Admin</a>
 							</span>
 						</p>
 						<div class="post_excerpt">
 							<p>
-								In porta lacinia velit, eu eleifend massa varius sed. Vivamus eu dignissim orci. Ut lectus metus, condimentum sed est vitae, mattis accumsan libero.
+								خبر پنجم
 							</p>
 							<p>
-								<a class="post_more_link" href="#">Read More</a>
+								<a class="post_more_link" href="#">ادامه خبر</a>
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</div><!-- #main_inner -->
 </div>
