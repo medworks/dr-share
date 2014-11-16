@@ -582,6 +582,7 @@ jQuery(window).load(function(){
 <script type="text/javascript" src="./js/jquery.royalslider.min.js"></script>
 <script type="text/javascript" src="./js/jquery.validationEngine-en.js"></script>
 <script type="text/javascript" src="./js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="./js/other-shortcodes.js"></script>
 
 <script type="text/javascript">
 /* <![CDATA[ */

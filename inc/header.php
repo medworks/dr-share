@@ -48,6 +48,7 @@ $hhtml.=<<<cd
 <link rel="stylesheet" href="./css/rs-minimal-white.css" type="text/css" media="screen">
 <link rel="stylesheet" href="./css/slick.css" type="text/css" media="screen">
 <link rel="stylesheet" href="./css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" id="su-box-shortcodes-css" href="./css/box-shortcodes.css" type="text/css" media="all">
 <link rel="stylesheet" href="./css/responsive.css" type="text/css" media="screen">
 <link id="ss" rel="stylesheet" href="./css/light.css" type="text/css" media="screen">
 <link rel="stylesheet" href="./css/review_system.css" type="text/css" media="screen">
