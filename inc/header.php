@@ -282,6 +282,9 @@ $hhtml.=<<<cd
 			<div class="col12"></div>
 		</div>
 	</header>
+	<div class="container">
+		<div id="content">
+			<div id="content_inner">
 cd;
 	echo $hhtml;
 ?>	

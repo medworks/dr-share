@@ -19,13 +19,17 @@
 	$About_System = GetSettingValue('About_System',0);
 
 $html.=<<<cd
+        </div>
+    </div>
+</div>
 </section>
 
 <footer style="background-color: rgb(41, 128, 185);">
 	<div class="container">
 		<div class="col12">
 			<div class="col4">
-				<div id="text-9" class="widget widget_text fade-in">		<div class="textwidget">
+				<div id="text-9" class="widget widget_text fade-in">
+                    <div class="textwidget">
 						<div class="custom_logo">
 							<h1 class="rtl" style="color:#fff">رهیاب کلینیک</h1>
 						</div>

@@ -211,7 +211,7 @@ $html.=<<<cd
 cd;
 
 	include_once('./inc/header.php');
-	echo $html;
 	include_once('./inc/sidebar.php');
 	include_once('./inc/footer.php');
+	include_once('./inc/last.php');
 ?>
