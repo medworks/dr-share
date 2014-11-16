@@ -749,6 +749,7 @@ padding:0
 .post_excerpt {
 font-size:18px;
 line-height:26px;
+color: #000;
 }
 
 #main {
@@ -2953,7 +2954,7 @@ text-transform:uppercase;
 /*letter-spacing:1.5px;*/
 font-weight:400;
 border:0;
-margin:0 30px 0 0
+margin:0 110px 0 0
 }
 
 a.post_more_link:hover, .author_bio a:hover {
@@ -3861,7 +3862,7 @@ display:block;
 
 /*.article_grid_image + .meta_category + .article_grid_content {*/
 .article_grid_content {
-padding:0 25px 1px;
+padding:0 0 1px;
 text-align: right;
 }
 

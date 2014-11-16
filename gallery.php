@@ -19,41 +19,28 @@ $html.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
 		<div class="article_grid four_column_blog">
-			<h4>اخبار و تازه ها</h4>
-
+			<h4>گالری تصاویر</h4>
 			
-			<div class="col3">
+
+			<div class="col4">
 				<div>
 					<div class="article_grid_image">
-						<img class="morph" src="./images/slides/1.jpg" alt="" width="280" height="160" />
+						<img class="morph" src="./images/slides/5.jpg" alt="" width="480" height="270">
 						<div class="hover_buttons">
 							<div>
 								<div>
-									<a href="#" class="hb-image-link" title=""></a>
+									<a href="./images/slides/5.jpg" class="hb-image-zoom" rel="swipebox[portfolio_img_group_13]" title=""></a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="article_grid_content">
 						<h3 class="article_heading">
-							<a href="#" title="" rel="bookmark">
-								عنوان خبر
-							</a>
+							<a href="#">عنوان سرگروه عکس</a>
 						</h3>
-						<p class="post_meta">
-							<span class="meta_date">
-								<a href="#" title="">29 فروردین 1393</a>
-							</span>
-							<span class="meta_author">
-								<a href="#">Admin</a>
-							</span>
-						</p>
 						<div class="post_excerpt">
 							<p>
-								خبر پنجم
-							</p>
-							<p>
-								<a class="post_more_link" href="#">ادامه خبر</a>
+								<a href="#" class="post_more_link" style="margin-right:165px">تصاویر بیشتر</a>
 							</p>
 						</div>
 					</div>
