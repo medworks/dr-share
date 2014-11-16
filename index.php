@@ -195,13 +195,14 @@ $html.=<<<cd
 							<ul>
 								<li><a href="#">گروه درمانی</a></li>
 								<li><a href="#">اخبار و تازه</a></li>
-								<li><a href="#">کلاسها و دوره های آموزشی</a></li>
+								<li><a href="#">کلاس ها و دوره های آموزشی</a></li>
 								<li><a href="#">آرشیو مقالات</a></li>
-								<li><a href="#">گالری تصاویر</a></li>
-								<li><a href="#">عضویت</a></li>
-								<li><a href="#">پیوندهای مفید</a></li>
+								<li><a href="#">آزمون های روانشناختی</a></li>
 								<li><a href="#">درباره ما</a></li>
 								<li><a href="#">تماس با ما</a></li>
+								<li><a href="#">عضویت</a></li>
+								<li><a href="#">همایش ها</a></li>
+								<li><a href="#">پرسش و پاسخ</a></li>
 							</ul>
 						</div>
 						<div id="text-16" class="widget widget_text fade-in">

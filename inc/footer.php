@@ -43,25 +43,25 @@
 			</div>
 			<div class="col2">
 				<div id="archives-4" class="widget widget_archive fade-in">
-					<h4 class="widgettitle rtl">پرسش و پاسخ</h4>
+					<h4 class="widgettitle rtl">پیوندهای مفید</h4>
 					<ul>
 						<li>
-							<a href="#" style="color:#ccc;">عنوان پرسش</a>
+							<a href="#" style="color:#ccc;">پیوند 1</a>
 						</li>
 						<li>
-							<a href="#" style="color:#ccc;">عنوان پرسش</a>
+							<a href="#" style="color:#ccc;">پیوند 2</a>
 						</li>
 						<li>
-							<a href="#" style="color:#ccc;">عنوان پرسش</a>
+							<a href="#" style="color:#ccc;">پیوند 3</a>
 						</li>
 						<li>
-							<a href="#" style="color:#ccc;">عنوان پرسش</a>
+							<a href="#" style="color:#ccc;">پیوند 4</a>
 						</li>
 						<li>
-							<a href="#" style="color:#ccc;">عنوان پرسش</a>
+							<a href="#" style="color:#ccc;">پیوند 5</a>
 						</li>
 						<li>
-							<a href="#" style="color:#ccc;">عنوان پرسش</a>
+							<a href="#" style="color:#ccc;">پیوند 6</a>
 						</li>
 					</ul>
 				</div>
