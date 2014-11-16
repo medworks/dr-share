@@ -1,3 +1,6 @@
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer style="background-color: rgb(41, 128, 185);">

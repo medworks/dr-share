@@ -182,7 +182,6 @@ var BP_Confirm = {"are_you_sure":"Are you sure?"};
 
 </head>
 <body class="is_loading has_slider slider_royalslider royalslider has_header_social is_home right_sidebar right_sidebar">
-
 <section id="body_inner">
 	<div id="preload">
 		<div>
@@ -258,9 +257,14 @@ var BP_Confirm = {"are_you_sure":"Are you sure?"};
 			</div>
 		</div>
 	</div>
-	<div id="scroll_top"><a href="#top"></a></div>	
+	<div id="scroll_top">
+		<a href="#top"></a>
+	</div>	
 	<header>
 		<div class="container">
 			<div class="col12"></div>
 		</div>
 	</header>
+	<div class="container">
+		<div id="content">
+			<div id="content_inner">
