@@ -14,6 +14,7 @@
 	$db = Database::GetDatabase();
 	
 	$news = $db->SelectAll("news","*",NULL,"id ASC");
+	$gallery = $db->SelectAll("gpics","*",NULL,"id ASC",0,5);
 	
 $fhtml.=<<<cd
 	<div class="container">
@@ -156,7 +157,7 @@ $fhtml.=<<<cd
 								<div class="3 {$class}">
 									<div class="fade-in article_grid_module appeared">
 										<div class="article_grid_image">
-											<img class=" morph" src="manager/img.php?did={$news[$i]["id"]}&tid=2" width="160px" height="160px" /> 										    
+											<img class=" morph" src="manager/img.php?did={$news[$i]["id"]}&tid=2" width="160px" height="160px" />
 											<div class="hover_buttons">
 												<div>
 													<div>
@@ -181,6 +182,7 @@ $fhtml.=<<<cd
 								</div>
 cd;
 }
+
 $fhtml.=<<<cd
 							</div>
 						</div>
@@ -208,35 +210,18 @@ $fhtml.=<<<cd
 							<h4 class="widgettitle rtl">گالری تصاویر</h4>
 							<div class="textwidget">
 								<div class="flickr_wrap">
+cd;
+for($i = 0; $i < Count($gallery); $i++)
+{
+$html.=<<<cd
 									<div class="flickr_badge_image" id="flickr_badge_image1">
 										<a href="#" target="_blank">
-											<img src="./images/slides/1.jpg" alt="" title="" height="75px" width="75px">
+											<img  src="manager/img.php?did={$gallery[$i]["gid"]}&type=gall" width="75px" height="75px" />
 										</a>
 									</div>
-									<div class="flickr_badge_image" id="flickr_badge_image1">
-										<a href="#" target="_blank">
-											<img src="./images/slides/2.jpg" alt="" title="" height="75px" width="75px">
-										</a>
-									</div>
-									<div class="flickr_badge_image" id="flickr_badge_image1">
-										<a href="#" target="_blank">
-											<img src="./images/slides/3.jpg" alt="" title="" height="75px" width="75px">
-										</a>
-									</div>
-									<div class="flickr_badge_image" id="flickr_badge_image1">
-										<a href="#" target="_blank">
-											<img src="./images/slides/4.jpg" alt="" title="" height="75px" width="75px">
-										</a>
-									</div>
-									<div class="flickr_badge_image" id="flickr_badge_image1">
-										<a href="#" target="_blank">
-											<img src="./images/slides/5.jpg" alt="" title="" height="75px" width="75px">
-										</a>
-									</div><div class="flickr_badge_image" id="flickr_badge_image1">
-										<a href="#" target="_blank">
-											<img src="./images/slides/6.jpg" alt="" title="" height="75px" width="75px">
-										</a>
-									</div> 
+cd;
+}
+$html.=<<<cd
 								</div>
 							</div>
 						</div>
