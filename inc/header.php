@@ -1,3 +1,20 @@
+<?php
+	include_once("config.php");
+	include_once("classes/functions.php");
+  	include_once("classes/session.php");	
+  	include_once("classes/security.php");
+  	include_once("classes/database.php");	
+	
+	//error_reporting(E_ALL);
+	//ini_set('display_errors', 1);
+	
+	$db = Database::GetDatabase();
+	
+	//$rwnews = $db->SelectAll("news","*",NULL,"id DESC",0,5);
+
+
+$hhtml.=<<<cd
+
 <!DOCTYPE html>
 <!--[if !IE]><!-->
 <html lang="fa-IR">
@@ -219,6 +236,8 @@ var BP_Confirm = {"are_you_sure":"Are you sure?"};
 						<li class="current_page_item">
 							<a href="#">صفحه اصلی</a>
 						</li>
+cd;
+$hhtml.=<<<cd
 						<li class="menu_arrow menu-item-has-children">
 							<a href="#">بالینی، جنسی شخصیتی</a>
 							<ul class="sub-menu">
@@ -257,14 +276,12 @@ var BP_Confirm = {"are_you_sure":"Are you sure?"};
 			</div>
 		</div>
 	</div>
-	<div id="scroll_top">
-		<a href="#top"></a>
-	</div>	
+	<div id="scroll_top"><a href="#top"></a></div>	
 	<header>
 		<div class="container">
 			<div class="col12"></div>
 		</div>
 	</header>
-	<div class="container">
-		<div id="content">
-			<div id="content_inner">
+cd;
+	echo $hhtml;
+?>	
