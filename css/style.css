@@ -189,7 +189,7 @@ font-size: 26px;
 /*letter-spacing: 1px;*/
 display:block;
 width:100%;
-margin:0 auto 0px;
+margin:0 auto 25px;
 text-transform:uppercase;
 text-align:right;
 }
@@ -3194,7 +3194,9 @@ line-height: 18px;
 .meta_category a,
 body.single_post #main .related_content .meta_category a {
 color:#fff!important;
-font-size:10px;
+font-size:15px;
+padding: 3px !important;
+background-color: #0090D9;
 text-transform:uppercase;
 font-weight:700;
 /*letter-spacing:2px;*/
