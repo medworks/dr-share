@@ -27,7 +27,7 @@ $html.=<<<cd
 				<li><a href="#">همایش ها</a></li>
 				<li><a href="#">پرسش و پاسخ</a></li>
 				<li><a href="#">درباره ما</a></li>
-				<li><a href="#">تماس با ما</a></li>
+				<li><a href="contactus.php">تماس با ما</a></li>
 			</ul>
 		</div>
 		<div id="text-16" class="widget widget_text fade-in">

@@ -170,6 +170,7 @@ $hhtml.=<<<cd
 <link rel="stylesheet" id="nt_swipebox-css" href="./css/swipebox.css" type="text/css" media="screen">
 <link rel="stylesheet" id="bbp-default-css" href="./css/bbpress.css" type="text/css" media="screen">
 <link rel="stylesheet" id="bp-parent-css-css" href="./css/buddypress.css" type="text/css" media="screen">
+<link rel="stylesheet" id="su-media-shortcodes-css" href="./css/media-shortcodes.css" type="text/css" media="all">
 <script type="text/javascript" src="./js/jquery.js"></script>
 <script type="text/javascript" src="./js/jquery-migrate.min.js"></script>
 <script type="text/javascript" src="./js/widget-members.min.js"></script>

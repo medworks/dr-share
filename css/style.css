@@ -275,9 +275,10 @@ label {
 margin-bottom: 5px;
 display: inline-block;
 /*letter-spacing: 1px;*/
-font-size: 10px!important;
+font-size: 18px!important;
 line-height: 12px!important;
-font-weight: 700;
+font-weight: normal;
+font-family: 'bmitra';
 text-transform: uppercase;
 }
 
@@ -1020,7 +1021,8 @@ font-style:normal
 }
 
 #content .teaser {
-font-size:20px;
+font-size:25px;
+font-weight: normal !importantl;
 font-weight:400;
 font-style:normal;
 margin-bottom:25px;
