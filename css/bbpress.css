@@ -56,6 +56,10 @@ margin-left:50px;
 background:none;
 list-style:none;
 margin:0;
+font-size: 17px;
+font-weight: bold;
+color: #555;
+font-family: 'bmitra';
 }
 
 #bbpress-forums ul.bbp-lead-topic,#bbpress-forums ul.bbp-topics,#bbpress-forums ul.bbp-forums,#bbpress-forums ul.bbp-replies,#bbpress-forums ul.bbp-search-results {
@@ -113,8 +117,8 @@ display:inline;
 }
 
 li.bbp-forum-info,li.bbp-topic-title {
-float:left;
-text-align:left;
+float:right;
+text-align:right;
 width:55%;
 }
 
@@ -124,23 +128,23 @@ margin-right:10px;
 
 li.bbp-forum-info .bbp-forum-title, 
 li.bbp-topic-title .bbp-topic-permalink {
-font-size:16px;
+font-size:20px;
 margin-bottom:0;
 text-transform:uppercase;
 font-weight:800;
-letter-spacing:1px;
+letter-spacing:0px;
 display:block;
 line-height:36px;
 }
 
 li.bbp-forum-topic-count,li.bbp-topic-voice-count,li.bbp-forum-reply-count,li.bbp-topic-reply-count,li.bbp-forum-freshness,li.bbp-topic-freshness {
 float:left;
-text-align:center;
+text-align:left;
 width:10%;
 }
 
 li.bbp-forum-freshness,li.bbp-topic-freshness {
-text-align:right;
+text-align:left;
 float:left;
 width:25%;
 }
@@ -150,6 +154,7 @@ border-top-style:solid;
 border-top-width:1px;
 overflow:hidden;
 position:relative;
+font-family: 'bmitra';
 }
 
 #bbpress-forums li.bbp-body ul.topic {
@@ -162,10 +167,13 @@ padding:25px 0;
 
 #bbpress-forums li.bbp-body ul.forum .bbp-forum-content {
 padding-top:5px;
-font-size:13px;
+font-size:18px;
 line-height:24px;
 margin-bottom:10px;
 display:block;
+text-align: left;
+font-weight: normal;
+font-family: 'bmitra';
 }
 
 #bbpress-forums li.bbp-body ul.forum.bbp-has-subforums {

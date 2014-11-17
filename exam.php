@@ -13,7 +13,6 @@
 	
 	$db = Database::GetDatabase();
 	
-	$news = $db->SelectAll("news","*",NULL,"id ASC");
 
 $html.=<<<cd
 <div id="main" class="col9 clearfix">
