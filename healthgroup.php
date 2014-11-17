@@ -29,7 +29,7 @@ $html.=<<<cd
 								<span class="">خانم دکتر شاره</span>
 							</div>
 							<div class="su-tabs-panes">
-								<div class="su-tabs-pane su-clearfix" style="min-height: 180px; display: none;font-size:18px;font-family:bmitra"">
+								<div class="su-tabs-pane su-clearfix" style="min-height: 180px; display: none;font-size:18px;font-family:bmitra">
 									توضیحات تب اول... .توضیحات تب اول... توضیحات تب اول... توضیحات تب اول... توضیحات تب اول... 
 								</div>
 								<div class="su-tabs-pane su-clearfix" style="min-height: 180px; display: none;font-size:18px;font-family:bmitra">
