@@ -17,8 +17,9 @@ $html.=<<<cd
 		<div id="archives-5" class="widget widget_archive fade-in">
 			<h4 class="widgettitle rtl">کلینیک رهیاب</h4>
 			<ul>
-				<li><a href="#">گروه درمانی</a></li>
+				<li><a href="healthgroup.php">گروه درمانی</a></li>
 				<li><a href="news.php">اخبار و تازه ها</a></li>
+				<li><a href="gallery.php">گالری تصاویر</a></li>
 				<li><a href="#">کلاسها و دوره های آموزشی</a></li>
 				<li><a href="articles.php">آرشیو مقالات</a></li>
 				<li><a href="#">عضویت</a></li>

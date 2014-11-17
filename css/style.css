@@ -184,7 +184,7 @@ line-height:139%;
 
 #main h4 {
 font-weight:700;
-line-height:39px;
+line-height:59px;
 font-size: 26px;
 /*letter-spacing: 1px;*/
 display:block;
@@ -192,6 +192,7 @@ width:100%;
 margin:0 auto 25px;
 text-transform:uppercase;
 text-align:right;
+direction: rtl;
 }
 
 h5,h5 a {
@@ -755,7 +756,6 @@ color: #000;
 #main {
 min-height:250px;
 position:relative;
-direction: rtl;
 }
 
 #content .teaser {

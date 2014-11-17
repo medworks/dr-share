@@ -67,8 +67,8 @@
 }
 .su-tabs-vertical:after { clear: both; }
 .su-tabs-vertical .su-tabs-nav {
-	float: left;
-	width: 30%;
+	float: right;
+	width: 25%;
 }
 .su-tabs-vertical .su-tabs-nav span {
 	display: block;
@@ -82,10 +82,11 @@
 	-webkit-border-bottom-left-radius: 3px;
 	-moz-border-radius-bottomleft: 3px;
 	border-bottom-left-radius: 3px;
+	font-size: 18px;
 }
 .su-tabs-vertical .su-tabs-panes {
 	float: left;
-	width: 70%;
+	width: 75%;
 }
 .su-tabs-vertical .su-tabs-pane {
 	-webkit-border-radius: 0;
