@@ -17,9 +17,9 @@
 	$db = Database::GetDatabase();
 	if ($_POST["mark"]=="savemenu")
 	{
-		$fields = array("`name`","`pos`");		
-		$values = array("'{$_POST[edtname]}'","'{$_POST[edtpos]}'");	
-		if (!$db->InsertQuery('menues',$fields,$values)) 
+		$fields = array("`name`","`level`","`pos`");		
+		$values = array("'{$_POST[edtname]}'","1","'{$_POST[edtpos]}'");	
+		if (!$db->InsertQuery('submenues',$fields,$values)) 
 		{			
 			header('location:menu.php?act=new&msg=2');			
 		} 	
@@ -32,8 +32,9 @@
 	if ($_POST["mark"]=="editmenu")
 	{			    
 		$values = array("`name`"=>"'{$_POST[edtname]}'",
+						"`level`"=>"1",
 		                "`pos`"=>"'{$_POST[edtpos]}'");
-        $db->UpdateQuery("menues",$values,array("id='{$_GET["mid"]}'"));		
+        $db->UpdateQuery("submenues",$values,array("id='{$_GET["mid"]}'"));		
 		header('location:menu.php?act=new&msg=1');
 	}	
 	if ($_GET['act']=="new")
@@ -44,7 +45,7 @@
 	}
 	if ($_GET['act']=="edit")
 	{
-	    $row=$db->Select("menues","*","id='{$_GET["mid"]}'",NULL);		
+	    $row=$db->Select("submenues","*","id='{$_GET["mid"]}'",NULL);		
 		$insertoredit = "
 			<button type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editmenu' /> ";
@@ -114,7 +115,7 @@ $html.=<<<cd
                                             </thead>
                                             <tbody>
 cd;
-$rows = $db->SelectAll("menues","*",NULL,"id ASC");
+$rows = $db->SelectAll("submenues","*","pid = 0","pos,id ASC");
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;

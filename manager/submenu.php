@@ -77,7 +77,7 @@
 		$insertoredit = "
 			<button type='submit' class='btn btn-default'>ثبت</button>
 			<input type='hidden' name='mark' value='savesubmenu' /> ";
-			$menues = $db->SelectAll("menues","*");	
+			$menues = $db->SelectAll("submenues","*","pid=0");	
 			$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
 	}
 	if ($_GET['act']=="edit")
@@ -107,7 +107,7 @@
 				$m1 = $row2["pid"];
 			}	
 		}
-		$menues = $db->SelectAll("menues","*");	
+		$menues = $db->SelectAll("submenues","*","pid = 0");	
 		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$m}",NULL,"form-control",NULL,"  منو  ");
 		
 		$menues = $db->SelectAll("submenues","*","pid = 0");	
@@ -205,7 +205,7 @@ cd;
 $rows = $db->SelectAll(
 				"submenues",
 				"*",
-				NULL,
+				"pid <> 0",
 				"id ASC",
 				($pagination->get_page() - 1) * $records_per_page,
 				$records_per_page);

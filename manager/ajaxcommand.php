@@ -39,7 +39,7 @@
 
 if (isset($_GET["smid"]))
 {
-	$submenues = $db->SelectAll("submenues","*","mid={$_GET['smid']} AND pid = 0","id ASC");	
+	$submenues = $db->SelectAll("submenues","*","mid={$_GET['smid']} AND pid <> 0","id ASC");	
 	$cbsubmenues = DbSelectOptionTag("cbsm1",$submenues,"name",null,null,"form-control",null,"زیر منو");
 	echo $cbsubmenues;
 }

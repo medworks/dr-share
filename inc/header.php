@@ -238,46 +238,30 @@ var BP_Confirm = {"are_you_sure":"Are you sure?"};
 						<li class="current_page_item">
 							<a href="#">صفحه اصلی</a>
 						</li>
+					</ul>	
 cd;
 	
-	 function LoadMenue()
-	  {
-		  $db = Database::GetDatabase();	
-		  $menu="";		  		  
-		  $sql="select * from menues";
-		  $res=$db->RunSQL($sql);		  
-		  while($srow = mysqli_fetch_assoc($res))
-		  {			
-                          $menu.="<li class='menu_arrow menu-item-has-children'> <a href='?fsec={$srow["id"]}' > ".$srow["name"]." </a></li>";
-			  $sql2="select * from submenues where `mid` = {$srow[id]}";
-			  $res2=$db->RunSQL($sql2);                          
-			  while($crow = mysqli_fetch_assoc($res2))
-			  {
-				  $menu.="<li ><a href='?fsec={$srow["id"]}&fcat={$crow["id"]}' >" .$crow["name"]."</a>";
-			  }                          
-			  mysqli_free_result($res2);			  
-		  }		  
-  		  return $menu;
-	  }
-	//  $menues = LoadMenue();
-	  //echo $menues;
-	  
-	 $rows = $db->SelectAll("submenues","*",NULL,"id ASC"); 
-	  function has_children($rows,$id) {
-		  foreach ($rows as $row) {
+	 
+	$rows = $db->SelectAll("submenues","*",NULL,"id ASC"); 
+	 
+	function has_children($rows,$id) 
+	{
+		foreach ($rows as $row) 
+		{
 			if ($row['pid'] == $id)
 			  return true;
-			}
-			return false;
 		}
-		  print_r($rows);
+		return false;
+	}
+	
 	function build_menu($rows,$parent=0)
 	{  
-	  $result = "<ul>";
+	  $result = "<ul class='sub-menu'>";
 	  foreach ($rows as $row)
 	  {
-		if ($row['pid'] == $parent){
-		  $result.= "<li>{$row['name']}";
+		if ($row['pid'] == $parent)
+		{
+		  $result.= "<li class='menu_arrow menu-item-has-children'>{$row['name']}";
 		  if (has_children($rows,$row['id']))
 			$result.= build_menu($rows,$row['id']);
 		  $result.= "</li>";
@@ -288,9 +272,9 @@ cd;
 	  return $result;
 	}
 	$menues = build_menu($rows);
+	//echo $menues;
 $hhtml.=<<<cd
-                {$menues}
-
+			<!---
 						<li class="menu_arrow menu-item-has-children">
 							<a href="#">بالینی، جنسی شخصیتی</a>
 							<ul class="sub-menu">
@@ -325,6 +309,8 @@ $hhtml.=<<<cd
 							</ul>
 						</li>
 					</ul>
+					-->
+					{$menues}
 				</div>
 			</div>
 		</div>
