@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.6
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 16, 2014 at 07:40 AM
--- Server version: 5.6.16
--- PHP Version: 5.5.9
+-- Generation Time: Nov 17, 2014 at 09:22 PM
+-- Server version: 5.6.11
+-- PHP Version: 5.5.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `rahyab`
 --
+CREATE DATABASE IF NOT EXISTS `rahyab` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `rahyab`;
 
 -- --------------------------------------------------------
 
@@ -378,6 +380,7 @@ CREATE TABLE IF NOT EXISTS `submenues` (
   `pid` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `level` tinyint(4) NOT NULL,
+  `pos` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
@@ -385,13 +388,12 @@ CREATE TABLE IF NOT EXISTS `submenues` (
 -- Dumping data for table `submenues`
 --
 
-INSERT INTO `submenues` (`id`, `mid`, `pid`, `name`, `level`) VALUES
-(1, 1, 0, 'اخلاق 1', 0),
-(2, 3, 0, 'مرام 1', 0),
-(3, 4, 0, 'منش 1', 0),
-(4, 1, 1, 'اخلاق 2-1', 2),
-(6, 1, 1, 'اخلاق 2-2', 2),
-(7, 1, 1, 'اخلاق 2-3', 2);
+INSERT INTO `submenues` (`id`, `mid`, `pid`, `name`, `level`, `pos`) VALUES
+(1, 1, 0, 'اخلاق ', 1, 0),
+(2, 3, 0, 'مرام ', 1, 0),
+(3, 4, 0, 'منش ', 0, 0),
+(4, 1, 1, 'اخلاق 1', 2, 0),
+(6, 1, 4, 'اخلاق 2-2', 2, 0);
 
 -- --------------------------------------------------------
 
