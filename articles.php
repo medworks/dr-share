@@ -24,7 +24,7 @@ $html.=<<<cd
 					<li class="bbp-header">
 						<ul class="forum-titles">
 							<li class="bbp-forum-info" style="font-size:20px">مقالات</li>
-							<li class="bbp-forum-reply-count">توسط</li>
+							<li class="bbp-forum-reply-count">نویسنده</li>
 							<li class="bbp-forum-freshness">تاریخ</li>
 						</ul>
 					</li><!-- .bbp-header -->
