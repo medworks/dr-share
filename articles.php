@@ -20,7 +20,7 @@ $html.=<<<cd
 		<div class="article_grid four_column_blog">
 			<h4>آرشیو مقالات</h4>
 			<div id="bbpress-forums">
-				<ul id="forums-list-0" class="bbp-forums">
+				<ul class="bbp-forums">
 					<li class="bbp-header">
 						<ul class="forum-titles">
 							<li class="bbp-forum-info" style="font-size:20px">مقالات</li>

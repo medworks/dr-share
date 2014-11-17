@@ -260,7 +260,7 @@ clear:both;
 }
 
 div.bbp-reply-header .bbp-reply-post-date {
-font-size:11px;
+font-size:16px;
 text-transform:uppercase;
 color:#bbb;
 }
@@ -271,8 +271,10 @@ font-size:11px;
 }
 
 #bbpress-forums .hentry div.bbp-reply-content {
-margin-left:160px;
+/*margin-left:160px;*/
 padding:8px 0;
+text-align: right;
+font-size: 20px;
 }
 
 #bbpress-forums div.bbp-forum-content:after,#bbpress-forums div.bbp-topic-content:after,#bbpress-forums div.bbp-reply-content:after {
