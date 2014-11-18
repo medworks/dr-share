@@ -233,15 +233,13 @@ var BP_Confirm = {"are_you_sure":"Are you sure?"};
 				<span id="mobile_menu" data-effect="st-effect-1">
 					<a href=""></a>
 				</span>
-				<div class="main_navigation">
-					<ul id="menu-main-nav" class="">
-						<li class="current_page_item">
-							<a href="#">صفحه اصلی</a>
-						</li>
-					</ul>	
+				
+						
+					
 cd;
 	
-	 
+	
+	
 	$rows = $db->SelectAll("submenues","*",NULL,"id ASC"); 
 	 
 	function has_children($rows,$id) 
@@ -254,27 +252,52 @@ cd;
 		return false;
 	}
 	
-	function build_menu($rows,$parent=0)
-	{  
-	  $result = "<ul class='sub-menu'>";
+	function build_menu($rows, $parent=0)
+	{
+		if ($parent == 0)
+		{
+			$result = <<<CD
+				<div class="main_navigation">
+					<ul id="menu-main-nav" class="">
+						<li class="current_page_item">
+							<a href="#">صفحه اصلی</a>
+						</li>
+CD;
+				
+		}
+	  else $result = "<ul class='sub-menu'>";
 	  foreach ($rows as $row)
 	  {
 		if ($row['pid'] == $parent)
 		{
-		  $result.= "<li class='menu_arrow menu-item-has-children'>{$row['name']}";
-		  if (has_children($rows,$row['id']))
-			$result.= build_menu($rows,$row['id']);
+			switch ($row['level'])
+			{
+				case 0:
+					$class = " class='menu_arrow menu-item-has-children'";
+					break;
+				case 1:
+					$class = " class='menu_arrow'";
+					break;
+				case 2:
+					$class = "";
+					break;
+			}
+			
+		  $result .= "<li$class><a href='#'>{$row['name']}</a>";
+		  if (has_children($rows, $row['id']))
+			$result.= build_menu($rows, $row['id']);
 		  $result.= "</li>";
 		}
 	  }
 	  $result.= "</ul>";
-
+	  if ($parent == 0)
+		$result .= "</div>";
 	  return $result;
 	}
 	$menues = build_menu($rows);
 	//echo $menues;
 $hhtml.=<<<cd
-			<!---
+			<!--
 						<li class="menu_arrow menu-item-has-children">
 							<a href="#">بالینی، جنسی شخصیتی</a>
 							<ul class="sub-menu">
@@ -307,11 +330,8 @@ $hhtml.=<<<cd
 									</ul>
 								</li>
 							</ul>
-						</li>
-					</ul>
 					-->
 					{$menues}
-				</div>
 			</div>
 		</div>
 	</div>
