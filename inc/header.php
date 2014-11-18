@@ -31,6 +31,7 @@ $hhtml.=<<<cd
 <style id="font_skins" type="text/css"></style>
 <style id="font_skins_body" type="text/css"></style> -->
 <link rel="stylesheet" href="./css/panel.css" type="text/css" media="screen">
+<link href="./css/zebra_pagination.css" rel="stylesheet" />
 <meta name="google-site-verification" content="" />
 <meta name="msvalidate.01" content="" />
 <meta name="description" content="" />

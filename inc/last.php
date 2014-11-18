@@ -592,6 +592,7 @@ var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"h
 </script>
 
 <script type="text/javascript" src="./js/front-subscribers.js"></script>
+<script type="text/javascript" src="./js/zebra_pagination.js"></script>
 
 </body>
 </html>
