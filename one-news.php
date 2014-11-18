@@ -13,29 +13,28 @@
 	
 	$db = Database::GetDatabase();
 	
-	$news = $db->SelectAll("news","*",NULL,"id ASC");
-
-$html.=<<<cd
+	$news = $db->Select("news","*","id={$_GET['id']}");
+	$news["regdate"] = ToJalali($news["regdate"],"Y/m/d H:i");
+$ohtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
 
 		<div class="single_post_module">
 			<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-lifestyle category-travel tag-adipiscing tag-augue tag-donec tag-etiam tag-euismod">
-				<div class="single_post_image">
-					<a href="./images/slides/1.jpg" class="hb-image-zoom" rel="swipebox[single_post_image]" title="">
-						<img class=" morph" src="./images/slides/1.jpg" alt="" width="874" height="492">
+				<div class="single_post_image">					
+					<a href="manager/img.php?did={$news['id']}&tid=2" class="hb-image-zoom" rel="swipebox[single_post_image]" title="">
+					  <img class=" morph" src="manager/img.php?did={$news['id']}&tid=2" width="874px" height="492px" />	
 					</a>
 					<div class="meta_category">
-						<a href="javascript:void();" class="cat-featured" title="">تاریخ: 29 فروردین 1393</a>
-						<a href="javascript:void();" class="cat-lifestyle" title="">توسط: Admin</a>
+						<a href="javascript:void();" class="cat-featured" title="{$news['subject']}">تاریخ : {$news["regdate"]}</a>						
 					</div>
 				</div>
 				<article class="single_post_content">
-					<h1 class="article_heading entry_title" style="font-size:35px !important">عنوان خبر</h1>
+					<h1 class="article_heading entry_title" style="font-size:35px !important">{$news['subject']}</h1>
 					<div class="clearboth"></div>
 					<div class="entry">
 						<p style="font-size:22px;font-weight:normal;">
-							توضیحات خبر.... توضیحات خبر.... توضیحات خبر.... توضیحات خبر.... توضیحات خبر.... توضیحات خبر.... توضیحات خبر.... توضیحات خبر.... توضیحات خبر.... 
+							{$news["text"]}
 						</p>
 						<div class="clearboth"></div>									
 					</div>
@@ -47,6 +46,7 @@ $html.=<<<cd
 cd;
 
 	include_once('./inc/header.php');
+	echo $ohtml;
 	include_once('./inc/sidebar.php');
 	include_once('./inc/footer.php');
 	include_once('./inc/last.php');

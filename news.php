@@ -44,29 +44,29 @@ $nhtml.=<<<cd
 			<div class="col3">
 				<div>
 					<div class="article_grid_image">
-						<img class=" morph" src="manager/img.php?did={$rows[$i]["id"]}&tid=2" width="280px" height="160px" />
+						<img class=" morph" src="manager/img.php?did={$rows[$i]['id']}&tid=2" width="280px" height="160px" />
 						<div class="hover_buttons">
 							<div>
 								<div>
-									<a href="#" class="hb-image-link" title=""></a>
+									<a href="one-news{$rows[$i]['id']}.html" class="hb-image-link" title="{$rows[$i]['subject']}"></a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="article_grid_content">
 						<h3 class="article_heading">
-							<a href="#" title="" rel="bookmark">
+							<a href="one-news{$rows[$i]['id']}.html" title="{$rows[$i]['subject']}" rel="bookmark">
 								{$rows[$i]["subject"]}
 							</a>
 						</h3>
 						<p class="post_meta">
 							<span class="meta_date">
-								<a href="#" title="">{$rows[$i]["regdate"]}</a>
+								<a href="one-news{$rows[$i]['id']}.html" title="{$rows[$i]['subject']}" >{$rows[$i]["regdate"]}</a>
 							</span>							
 						</p>
 						<div class="post_excerpt">							
 							<p>
-								<a class="post_more_link" href="#">ادامه خبر</a>
+								<a class="post_more_link" href="one-news{$rows[$i]['id']}.html">ادامه خبر</a>
 							</p>
 						</div>
 					</div>
