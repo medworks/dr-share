@@ -257,13 +257,13 @@ cd;
 	{
 		if ($parent == 0)
 		{
-			$result = <<<CD
+			$result = <<<cd
 				<div class="main_navigation">
 					<ul id="menu-main-nav" class="">
 						<li class="current_page_item">
-							<a href="#">صفحه اصلی</a>
+							<a href="./index.html">صفحه اصلی</a>
 						</li>
-CD;
+cd;
 				
 		}
 	  else $result = "<ul class='sub-menu'>";
