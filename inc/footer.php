@@ -11,6 +11,7 @@
 	$db = Database::GetDatabase();
 	
 	$rwnews = $db->SelectAll("news","*",NULL,"id DESC",0,5);
+	$rwtopics = $db->SelectAll("topics","*",NULL,"id DESC",0,5);
 	
 	$Tell_Number = GetSettingValue('Tell_Number',0);
 	$Address = GetSettingValue('Address',0);
@@ -89,24 +90,17 @@ $html.=<<<cd
 					<h4 class="widgettitle rtl">مقالات</h4>
 					<div class="menu-galleries-container">
 						<ul id="menu-galleries" class="menu">
+cd;
+for($i = 0; $i < Count($rwnews); $i++)
+{
+$rwnews[$i]["subject"] =(mb_strlen($rwtopics[$i]["subject"])>20)?mb_substr($rwtopics[$i]["subject"],0,20,"UTF-8")."...":$rwtopics[$i]["subject"];
+$html.=<<<cd
 							<li>
-								<a href="#" style="color:#ccc;">عنوان رویداد</a>
+								<a href="#" style="color:#ccc;">{$rwnews[$i]['subject']}</a>
 							</li>
-							<li>
-								<a href="#" style="color:#ccc;">عنوان رویداد</a>
-							</li>
-							<li>
-								<a href="#" style="color:#ccc;">عنوان رویداد</a>
-							</li>
-							<li>
-								<a href="#" style="color:#ccc;">عنوان رویداد</a>
-							</li>
-							<li>
-								<a href="#" style="color:#ccc;">عنوان رویداد</a>
-							</li>
-							<li>
-								<a href="#" style="color:#ccc;">عنوان رویداد</a>
-							</li>
+cd;
+}
+$html.=<<<cd
 						</ul>
 					</div>
 				</div>
