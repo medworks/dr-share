@@ -13,49 +13,40 @@
 	
 	$db = Database::GetDatabase();
 	
-
-$html.=<<<cd
+	$topics = $db->Select("topics","*","id={$_GET['id']}");
+	$topics["regdate"] = ToJalali($topics["regdate"],"Y/m/d H:i");
+$ohtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
-		<div class="article_grid four_column_blog">
-			
 
-			<h4>اسم مقاله</h4>
-			<div id="bbpress-forums">
-				<ul class="forums bbp-replies">
-					<li class="bbp-header">
-						<div class="bbp-reply-author" style="font-size:18px">نویسنده: دکتر شارع</div>
-					</li><!-- .bbp-header -->
-					<div class="bbp-reply-header">
-						<div class="bbp-meta">
-							<span class="bbp-reply-post-date">29 فرودین 1393</span>
-							<span class="bbp-admin-links"></span>
-						</div><!-- .bbp-meta -->
-					</div><!-- #post-3480 -->
-					<div class="hentry">
-						<div class="bbp-reply-content">
-							<p>
-								توضیحات... توضیحات... توضیحات... توضیحات... توضیحات... 
-							</p>
-						</div><!-- .bbp-reply-content -->
-					</div><!-- .reply -->
-
-					<li class="bbp-footer">
-						<div class="tr">
-							<p class="td colspan4">&nbsp;</p>
-						</div><!-- .tr -->
-					</li><!-- .bbp-footer -->
-				</ul>
+		<div class="single_post_module">
+			<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-lifestyle category-travel tag-adipiscing tag-augue tag-donec tag-etiam tag-euismod">
+				<div class="single_post_image">					
+					<a href="manager/img.php?did={$topics['id']}&tid=2" class="hb-image-zoom" rel="swipebox[single_post_image]" title="">
+					  <img class=" morph" src="manager/img.php?did={$topics['id']}&tid=2" width="874px" height="492px" />	
+					</a>
+					<div class="meta_category">
+						<a href="javascript:void();" class="cat-featured" title="{$topics['subject']}">تاریخ : {$topics["regdate"]}</a>						
+					</div>
+				</div>
+				<article class="single_post_content">
+					<h1 class="article_heading entry_title" style="font-size:35px !important">{$topics['subject']}</h1>
+					<div class="clearboth"></div>
+					<div class="entry">
+						<p style="font-size:22px;font-weight:normal;">
+							{$topics["text"]}
+						</p>
+						<div class="clearboth"></div>									
+					</div>
+				</article>
 			</div>
-
-
-			
 		</div>
 	</div><!-- #main_inner -->
 </div>
 cd;
 
 	include_once('./inc/header.php');
+	echo $ohtml;
 	include_once('./inc/sidebar.php');
 	include_once('./inc/footer.php');
 	include_once('./inc/last.php');

@@ -11,6 +11,8 @@ deny from all
 	RewriteRule ^contactus.html dr-share/contactus.php [L]
 	RewriteRule ^news.html dr-share/news.php [L]
 	RewriteRule ^one-news([0-9]+).html dr-share/one-news.php?id=$1 [L]	
+	RewriteRule ^articles.html dr-share/articles.php [L]
+	RewriteRule ^one-article([0-9]+).html dr-share/one-article.php?id=$1 [L]	
 	RewriteBase / 	
 
 #Skip WWW	
