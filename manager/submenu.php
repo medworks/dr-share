@@ -70,40 +70,73 @@
 			$menues = $db->SelectAll("submenues","*","pid = 0");	
 			$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
 	}
+	
+	
+	function getparrents($db,$child_id)
+	{
+	  $ids = array();	  
+	  //$ids[] = $child_id;
+	  //$db = Database::GetDatabase();	  	  
+	  $db->cmd="select * from `submenues` WHERE `id` = {$child_id}";
+	  $res=$db->RunSQL($sql);
+	  $mrow = mysqli_fetch_array($res);	
+		//echo $mrow["pid"],"\n";
+	  while($mrow["pid"]!=0)
+	  {			
+		  $ids[] = $mrow["id"];
+		 // echo $mrow["pid"],"\n";
+		  $db->cmd="select * from `submenues` WHERE `id` = {$mrow['pid']}";
+		  $res=$db->RunSQL($sql);                          
+		  $mrow = mysqli_fetch_array($res);
+		 // mysqli_free_result($res);	
+  		 
+	  }
+	  if (count($ids)==1)
+		$ids[]="";
+	  $ids[] = $mrow["id"];
+	  return $ids;
+	}
+	
+	function getparrentsname($db,$child_id)
+	{
+	  $ids = array();	  
+	  //$ids[] = $child_id;
+	  //$db = Database::GetDatabase();	  	  
+	  $db->cmd="select * from `submenues` WHERE `id` = {$child_id}";
+	  $res=$db->RunSQL($sql);
+	  $mrow = mysqli_fetch_array($res);	
+		//echo $mrow["pid"],"\n";
+	  while($mrow["pid"]!=0)
+	  {			
+		  $ids[] = $mrow["name"];
+		 // echo $mrow["pid"],"\n";
+		  $db->cmd="select * from `submenues` WHERE `id` = {$mrow['pid']}";
+		  $res=$db->RunSQL($sql);                          
+		  $mrow = mysqli_fetch_array($res);
+		 // mysqli_free_result($res);	
+  		 
+	  }
+	  if (count($ids)==1)
+		$ids[]="";
+	  $ids[] = $mrow["name"];
+	  return $ids;
+	}
+	
 	if ($_GET['act']=="edit")
 	{
 	    $row=$db->Select("submenues","*","id='{$_GET["smid"]}'",NULL);
 		$insertoredit = "
 			<button type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editsubmenu' /> ";
-		if ($row["pid"] == 0)	
-		{
-			$m = $row["mid"];
-			$m1 = 0;
-			$m2 = 0;
-		}
-		else
-		{
-			$row2 = $db->Select("submenues","*","id='{$row["pid"]}'",NULL);
-			$m = $row["mid"];
-			$m2 = $row["pid"];
-			if ($row2["pid"] == 0)
-			{
-				$m1 = $row["pid"];
-				$m2 = 0;
-			}
-			else
-			{
-				$m1 = $row2["pid"];
-			}	
-		}
+		//echo $row["pid"],"\n";
+		$pids =  getparrents($db,$row["id"]);		
 		$menues = $db->SelectAll("submenues","*","pid = 0");	
-		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$m}",NULL,"form-control",NULL,"  منو  ");
+		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$pids[2]}",NULL,"form-control",NULL,"  منو  ");
 		
-		$menues = $db->SelectAll("submenues","*","pid = 0");	
-		$cbsm1 = DbSelectOptionTag("cbsm1",$menues,"name","{$m1}",NULL,"form-control",NULL,"زیر منو");		
 		$menues = $db->SelectAll("submenues","*","pid <> 0");	
-		$cbsm2 = DbSelectOptionTag("cbsm2",$menues,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");
+		$cbsm1 = DbSelectOptionTag("cbsm1",$menues,"name","{$pids[1]}",NULL,"form-control",NULL,"زیر منو");		
+		//$menues = $db->SelectAll("submenues","*","pid <> 0");	
+		//$cbsm2 = DbSelectOptionTag("cbsm2",$menues,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");
 		
 	}
 	if ($_GET['act']=="del")
@@ -200,40 +233,17 @@ $rows = $db->SelectAll(
 				($pagination->get_page() - 1) * $records_per_page,
 				$records_per_page);
 				
-$vals = array();
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;
+$vals =  getparrentsname($db,$rows[$i]["id"]);
 $html.=<<<cd
 							<tr>
 								<td>{$rownumber}</td>
 								<td>{$rows[$i]["name"]}</td>
 								<td>
 cd;
-$vals = "";
-if ($rows[$i]['pid']!=0)
-{
-	$row = $db->Select("submenues","*","id={$rows[$i]['pid']}","id ASC");	
-	if ($row["pid"]==0) {$vals[] = "";}
-	$vals[] = $row["name"];
-	
-	
-	while($row["pid"]!=0)
-	{
-		$row = $db->Select("submenues","*","id={$row['pid']}","id ASC");
-		$vals[] = $row["name"];
-	}
-    
-	$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
-	$vals[] = $row["name"];
-}
-else
-{
-		$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
-		$vals[] = "";
-		$vals[] = "";
-		$vals[] = $row["name"];
-}	
+
 $html.=<<<cd
             
                                                     <span class="label label-success">{$vals[2]}</span>
