@@ -17,16 +17,16 @@ $html.=<<<cd
 		<div id="archives-5" class="widget widget_archive fade-in">
 			<h4 class="widgettitle rtl">کلینیک رهیاب</h4>
 			<ul>
-				<li><a href="healthgroup.php">گروه درمانی</a></li>
-				<li><a href="news.php">اخبار و تازه ها</a></li>
-				<li><a href="gallery.php">گالری تصاویر</a></li>
+				<li><a href="healthgroup.html">گروه درمانی</a></li>
+				<li><a href="news.html">اخبار و تازه ها</a></li>
+				<li><a href="gallery.html">گالری تصاویر</a></li>
 				<li><a href="#">کلاسها و دوره های آموزشی</a></li>
-				<li><a href="articles.php">آرشیو مقالات</a></li>
+				<li><a href="articles.html">آرشیو مقالات</a></li>
 				<li><a href="#">عضویت</a></li>
-				<li><a href="exam.php">آزمون های روانشناختی</a></li>
+				<li><a href="exam.html">آزمون های روانشناختی</a></li>
 				<li><a href="#">همایش ها</a></li>
 				<li><a href="#">پرسش و پاسخ</a></li>
-				<li><a href="#">درباره ما</a></li>
+				<li><a href="about-us.html">درباره ما</a></li>
 				<li><a href="contactus.php">تماس با ما</a></li>
 			</ul>
 		</div>
