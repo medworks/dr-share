@@ -117,7 +117,7 @@
   		 
 	  }
 	  if (count($ids)==1)
-		$ids[]="";
+		$ids[]=null;
 	  $ids[] = $mrow["name"];
 	  return $ids;
 	}
