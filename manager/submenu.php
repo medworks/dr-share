@@ -20,12 +20,7 @@
 	if ($_POST["mark"]=="savesubmenu")
 	{
 		$fields = array("`mid`","`pid`","`name`","`level`");		
-		if (isset($_POST["cbsm2"]) and $_POST["cbsm2"]!= -1) 
-		{
-			$pid = $_POST["cbsm2"];
-			$level = 3;
-		}
-		else
+		
 		if (isset($_POST["cbsm1"]) and $_POST["cbsm1"]!= -1) 
 		{
 			$pid = $_POST["cbsm1"];
@@ -33,7 +28,7 @@
 		}
 		else
 		{
-			$pid = 0;
+			$pid = $_POST["cbmenu"];
 			$level = 1;
 		}
 		$values = array("'{$_POST[cbmenu]}'","'{$pid}'","'{$_POST[edtname]}'","'{$level}'");	
@@ -49,12 +44,7 @@
 	else
 	if ($_POST["mark"]=="editsubmenu")
 	{		
-		if (isset($_POST["cbsm2"]) and $_POST["cbsm2"]!= -1) 
-		{
-			$pid = $_POST["cbsm2"];
-			$level = 3;
-		}
-		else
+		
 		if (isset($_POST["cbsm1"]) and $_POST["cbsm1"]!= -1) 
 		{
 			$pid = $_POST["cbsm1"];
@@ -62,7 +52,7 @@
 		}
 		else
 		{
-			$pid = 0;
+			$pid = $_POST["cbmenu"];
 			$level = 1;
 		}
 		$values = array("`mid`"=>"'{$_POST[cbmenu]}'",
@@ -77,7 +67,7 @@
 		$insertoredit = "
 			<button type='submit' class='btn btn-default'>ثبت</button>
 			<input type='hidden' name='mark' value='savesubmenu' /> ";
-			$menues = $db->SelectAll("submenues","*","pid=0");	
+			$menues = $db->SelectAll("submenues","*","pid = 0");	
 			$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
 	}
 	if ($_GET['act']=="edit")

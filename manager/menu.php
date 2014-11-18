@@ -18,7 +18,7 @@
 	if ($_POST["mark"]=="savemenu")
 	{
 		$fields = array("`name`","`level`","`pos`");		
-		$values = array("'{$_POST[edtname]}'","1","'{$_POST[edtpos]}'");	
+		$values = array("'{$_POST[edtname]}'","0","'{$_POST[edtpos]}'");	
 		if (!$db->InsertQuery('submenues',$fields,$values)) 
 		{			
 			header('location:menu.php?act=new&msg=2');			
@@ -32,7 +32,7 @@
 	if ($_POST["mark"]=="editmenu")
 	{			    
 		$values = array("`name`"=>"'{$_POST[edtname]}'",
-						"`level`"=>"1",
+						"`level`"=>"0",
 		                "`pos`"=>"'{$_POST[edtpos]}'");
         $db->UpdateQuery("submenues",$values,array("id='{$_GET["mid"]}'"));		
 		header('location:menu.php?act=new&msg=1');
@@ -52,7 +52,7 @@
 	}
 	if ($_GET['act']=="del")
 	{
-		$db->Delete("menues"," id",$_GET["mid"]);		
+		$db->Delete("submenues"," id",$_GET["mid"]);		
 		header('location:menu.php?act=new');	
 	}	
 $msgs = GetMessage($_GET['msg']);
@@ -115,7 +115,7 @@ $html.=<<<cd
                                             </thead>
                                             <tbody>
 cd;
-$rows = $db->SelectAll("submenues","*","pid = 0","pos,id ASC");
+$rows = $db->SelectAll("submenues","*"," `pid` = 0"," pos,id ASC");
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;
