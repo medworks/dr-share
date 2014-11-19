@@ -282,16 +282,16 @@ cd;
 					$class = " class='menu_arrow'";
 					$href=""; 
 					if (!has_children($rows, $row['id']))
-						$href=" menues{$row[id]}-{$row[level]}.html ";
+						$href=" href= ' menues{$row[id]}-{$row[level]}.html' ";
 			}
 			else
 			if ($row['level']==2)
 			{
 					$class = "";
-					$href=" menues{$row[id]}-{$row[level]}.html ";			
+					$href=" href= ' menues{$row[id]}-{$row[level]}.html' ";
 			}
 			
-		  $result .= "<li$class><a href='{$href}'>{$row['name']}</a>";
+		  $result .= "<li$class><a {$href}>{$row['name']}</a>";
 		  if (has_children($rows, $row['id']))
 			$result.= build_menu($rows, $row['id']);
 		  $result.= "</li>";
