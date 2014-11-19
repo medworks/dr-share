@@ -271,20 +271,27 @@ cd;
 	  {
 		if ($row['pid'] == $parent)
 		{
-			switch ($row['level'])
-			{
-				case 0:
+			if ($row['level']==0)
+			{	
 					$class = " class='menu_arrow menu-item-has-children'";
-					break;
-				case 1:
+					$href="";
+			}
+			else
+			if ($row['level']==1)
+			{			
 					$class = " class='menu_arrow'";
-					break;
-				case 2:
+					$href=""; 
+					if (!has_children($rows, $row['id']))
+						$href=" menues{$row[id]}-{$row[level]}.html ";
+			}
+			else
+			if ($row['level']==2)
+			{
 					$class = "";
-					break;
+					$href=" menues{$row[id]}-{$row[level]}.html ";			
 			}
 			
-		  $result .= "<li$class><a href='#'>{$row['name']}</a>";
+		  $result .= "<li$class><a href='{$href}'>{$row['name']}</a>";
 		  if (has_children($rows, $row['id']))
 			$result.= build_menu($rows, $row['id']);
 		  $result.= "</li>";
