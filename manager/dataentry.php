@@ -73,9 +73,9 @@
 		{
 			$sm = $_POST["cbsm1"];
 		}
-		
-		$fields = array("`mid`","`smid`","`subject`","`text`","`picid`");		
-		$values = array("'{$_POST[cbmenu]}'","'{$sm}'","'{$_POST[edtsubject]}'","'{$_POST[edttext]}'","'0'");	
+		$date = date('Y-m-d H:i:s');
+		$fields = array("`mid`","`smid`","`subject`","`text`","`regdate`","`picid`");		
+		$values = array("'{$_POST[cbmenu]}'","'{$sm}'","'{$_POST[edtsubject]}'","'{$_POST[edttext]}'","'{$date}'","'0'");	
 		if (!$db->InsertQuery('menusubjects',$fields,$values)) 
 		{			
 			header('location:dataentry.php?act=new&msg=2');			

@@ -85,9 +85,9 @@
 			$grp = $_POST["cbgroup"];
 			$sm = 0;			
 		}
-		
-		$fields = array("`gid`","`smid`","`subject`","`text`","`picid`");		
-		$values = array("'{$grp}'","'{$sm}'","'{$_POST[edtsubject]}'","'{$_POST[edttext]}'","'0'");	
+		$date = date('Y-m-d H:i:s');
+		$fields = array("`gid`","`smid`","`subject`","`text`","`regdate`","`picid`");		
+		$values = array("'{$grp}'","'{$sm}'","'{$_POST[edtsubject]}'","'{$_POST[edttext]}'","'{$date}'","'0'");	
 		if (!$db->InsertQuery('news',$fields,$values)) 
 		{			
 			header('location:addnews.php?act=new&msg=2');			
