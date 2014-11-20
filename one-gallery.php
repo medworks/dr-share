@@ -14,7 +14,7 @@
 	
 	$db = Database::GetDatabase();	
 
-$ghtml.=<<<cd
+$oghtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
 		<div class="article_grid four_column_blog">
@@ -33,45 +33,40 @@ cd;
     $pagination->records_per_page($records_per_page);	
 
 $grows = $db->SelectAll(
-				"gcategories",
+				"gallerypics",
 				"*",
-				NULL,
+				"gcid={$_GET['id']}",
 				"id ASC",
 				($pagination->get_page() - 1) * $records_per_page,
 				$records_per_page);
 for($i = 0; $i < Count($grows); $i++)
 {
-$gpics = $db->Select("gallerypics","*","gcid = {$grows[$i]['id']}");
+//$gpics = $db->Select("gpics","*","gid = {$grows[$i]['id']}");
 //echo $db->cmd;
-$ghtml.=<<<cd
+$oghtml.=<<<cd
 			<div class="col4">
 				<div>
 					<div class="article_grid_image">
-						<img class="morph" src="manager/img.php?did={$gpics['id']}&type=gall" width="480px" height="270px" /> 						
+						<img class="morph" src="manager/img.php?did={$grows[$i]['id']}&type=gall" width="480px" height="270px" /> 						
 						<div class="hover_buttons">
 							<div>
 								<div>
-									<a href="manager/img.php?did={$gpics['id']}&type=gall" class="hb-image-zoom" rel="swipebox[portfolio_img_group_13]" title=""></a>
+									<a href="manager/img.php?did={$grows[$i]['id']}&type=gall" class="hb-image-zoom" rel="swipebox[portfolio_img_group_13]" title=""></a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="article_grid_content">
 						<h3 class="article_heading">
-							<a href="one-gallery{$grows[$i]['id']}.html">آلبوم : {$grows[$i]['name']}</a>
-						</h3>
-						<div class="post_excerpt">
-							<p>
-								<a href="one-gallery{$grows[$i]['id']}.html" class="post_more_link" style="margin-right:165px">تصاویر بیشتر</a>
-							</p>
-						</div>
+							<a href="">{$grows[$i]['subject']}</a>
+						</h3>						
 					</div>
 				</div>
 			</div>
 cd;
 }
 $pgcodes = $pagination->render(true);
-$ghtml.=<<<cd
+$oghtml.=<<<cd
 		</div>
 		{$pgcodes}
 	</div><!-- #main_inner -->
@@ -79,7 +74,7 @@ $ghtml.=<<<cd
 cd;
 
 	include_once('./inc/header.php');
-	echo $ghtml;
+	echo $oghtml;
 	include_once('./inc/sidebar.php');
 	include_once('./inc/footer.php');
 	include_once('./inc/last.php');
