@@ -1,13 +1,7 @@
 <?php
 	include_once("config.php");
 	include_once("classes/functions.php");
-  	include_once("classes/messages.php");
-  	include_once("classes/session.php");	
-  	include_once("classes/security.php");
-  	include_once("classes/database.php");	
-	include_once("classes/login.php");
-    include_once("lib/persiandate.php");
-  	  
+  	  	  
     $About_System = GetSettingValue('About_System',0);
 	
 $ahtml =<<<cd
@@ -17,9 +11,12 @@ $ahtml =<<<cd
 				<div class="article_grid four_column_blog">
 					<h4>درباره ما</h4>
 				</div>
-				<p style="font-size:22px;font-weight:normal;">
-					{$About_System}
-				</p>	
+				<div class="entry">
+					<p style="font-size:22px;font-weight:normal;">
+						{$About_System}
+					</p>
+					<div class="clearboth"></div>									
+				</div>				
 			</div><!-- #main_inner -->
 		</div>					
 		<!-- /Main content alpha -->
