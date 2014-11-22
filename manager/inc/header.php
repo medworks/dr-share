@@ -217,9 +217,9 @@
                 </ul>
             </li>
             <li>
-                <a href="editpic.php">
+                <a href="healthgroup.php?act=new">
                     <i class="fa fa-cloud-upload"></i>
-                    <span>ویرایش تصاویر</span>
+                    <span>گروه درمانی</span>
                 </a>
             </li>
             <li>

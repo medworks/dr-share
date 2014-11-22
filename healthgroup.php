@@ -14,7 +14,7 @@
 	$db = Database::GetDatabase();
 	
 
-$html.=<<<cd
+$hghtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
 		<div class="article_grid four_column_blog">
@@ -24,17 +24,31 @@ $html.=<<<cd
 					<div class="su-column-inner su-clearfix">
 						
 						<div class="su-tabs su-tabs-style-default su-tabs-vertical" data-active="1">
-							<div class="su-tabs-nav">
-								<span class="">آقای دکتر شارع</span>
-								<span class="">خانم دکتر شاره</span>
-							</div>
+						<div class="su-tabs-nav">
+cd;
+
+$rows = $db->SelectAll("health","*",NULL," id ASC");
+for($i = 0; $i < Count($rows); $i++)
+{
+$hghtml.=<<<cd
+							
+								<span class="">{$rows[$i]["subject"]}</span>								
+							
+cd;
+}
+$hghtml.=<<<cd
+						</div>
 							<div class="su-tabs-panes">
+cd;
+for($i = 0; $i < Count($rows); $i++)
+{
+$hghtml.=<<<cd
 								<div class="su-tabs-pane su-clearfix" style="min-height: 180px; display: none;font-size:18px;font-family:bmitra">
-									توضیحات تب اول... .توضیحات تب اول... توضیحات تب اول... توضیحات تب اول... توضیحات تب اول... 
+									{$rows[$i]["text"]}
 								</div>
-								<div class="su-tabs-pane su-clearfix" style="min-height: 180px; display: none;font-size:18px;font-family:bmitra">
-									توضیحات تب دوم... .توضیحات تب دوم... .توضیحات تب دوم... .توضیحات تب دوم... .توضیحات تب دوم... .توضیحات تب دوم... .توضیحات تب دوم... .توضیحات تب دوم... .
-								</div>
+cd;
+}
+$hghtml.=<<<cd
 							</div>
 						</div>
 					</div>
@@ -46,6 +60,7 @@ $html.=<<<cd
 cd;
 
 	include_once('./inc/header.php');
+	echo $hghtml;
 	include_once('./inc/sidebar.php');
 	include_once('./inc/footer.php');
 	include_once('./inc/last.php');
