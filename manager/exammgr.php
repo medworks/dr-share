@@ -83,7 +83,7 @@ $html.=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edtsubject" name="edtsubject" type="text" class="form-control" placeholder="اسم منو" value="{$row['name']}"/>
+                                        <input id="edtsubject" name="edtsubject" type="text" class="form-control" placeholder="اسم آزمون" value="{$row['subject']}"/>
                                     </div>
                                     <div class="col-md-10 ls-group-input">
                                             <textarea class="animatedTextArea form-control " id="edttext" name="edttext"> {$row["text"]}</textarea>
