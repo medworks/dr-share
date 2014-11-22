@@ -14,7 +14,7 @@
 	$db = Database::GetDatabase();
 	
 
-$html.=<<<cd
+$ehtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
 		<div class="article_grid four_column_blog">
@@ -23,35 +23,23 @@ $html.=<<<cd
 				<div class="su-column su-column-size-3-3">
 					<div class="su-column-inner su-clearfix">
 						<div class="su-accordion">
-
+cd;
+$rows = $db->SelectAll("exam","*",NULL," id ASC");
+for($i = 0; $i < Count($rows); $i++)
+{
+$ehtml.=<<<cd
 				
 							<div class="su-spoiler su-spoiler-style-default su-spoiler-icon-plus su-spoiler-closed">
 								<div class="su-spoiler-title">
-									<span class="su-spoiler-icon"></span>آزمون اول
+									<span class="su-spoiler-icon"></span>{$rows[$i]["subject"]}
 								</div>
 								<div class="su-spoiler-content su-clearfix">
-									توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول..
+									{$rows[$i]["text"]}
 								</div>
 							</div>
-
-							<div class="su-spoiler su-spoiler-style-default su-spoiler-icon-plus su-spoiler-closed">
-								<div class="su-spoiler-title">
-									<span class="su-spoiler-icon"></span>آزمون اول
-								</div>
-								<div class="su-spoiler-content su-clearfix">
-									توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول..
-								</div>
-							</div>
-
-							<div class="su-spoiler su-spoiler-style-default su-spoiler-icon-plus su-spoiler-closed">
-								<div class="su-spoiler-title">
-									<span class="su-spoiler-icon"></span>آزمون اول
-								</div>
-								<div class="su-spoiler-content su-clearfix">
-									توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول... توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول.. توضیح آزمون اول..
-								</div>
-							</div>
-					
+cd;
+}
+$ehtml.=<<<cd
 						</div>
 					</div>
 				</div>
@@ -62,6 +50,7 @@ $html.=<<<cd
 cd;
 
 	include_once('./inc/header.php');
+	echo $ehtml;
 	include_once('./inc/sidebar.php');
 	include_once('./inc/footer.php');
 	include_once('./inc/last.php');

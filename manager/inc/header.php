@@ -235,7 +235,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href="exammgr.php?act=new">
                     <i class="fa fa-file-o"></i>
                     <span>آزمون های روانشناختی</span>
                 </a>
