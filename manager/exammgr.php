@@ -74,25 +74,49 @@ $html.=<<<cd
                     </div>
                 </div>
                 <!-- Main Content Element  Start-->
-                <form action="" method="post" id="frmexam" class="form-inline ls_form" role="form">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">تعریف آزمون</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtsubject" name="edtsubject" type="text" class="form-control" placeholder="اسم آزمون" value="{$row['subject']}"/>
+                    <form action="" method="post" id="frmexam" class="form-inline ls_form" role="form">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">نام آزمون</h3>
                                     </div>
-                                    <div class="col-md-10 ls-group-input">
-                                            <textarea class="animatedTextArea form-control " id="edttext" name="edttext"> {$row["text"]}</textarea>
-                                     </div>
-                                    {$insertoredit}
+                                    <div class="panel-body">
+                                        <div class="form-group">
+                                            <input id="edtsubject" name="edtsubject" type="text" class="form-control" placeholder="اسم آزمون" value="{$row['subject']}"/>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">متن</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="row ls_divider last">
+                                            <div class="col-md-10 ls-group-input">
+                                                <textarea class="animatedTextArea form-control " id="edttext" name="edttext"> {$row["text"]}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title">ثبت اطلاعات</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        {$insertoredit}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 					</form>
                     <div class="row">
                         <div class="col-md-12">

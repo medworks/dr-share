@@ -218,7 +218,7 @@
             </li>
             <li>
                 <a href="healthgroup.php?act=new">
-                    <i class="fa fa-cloud-upload"></i>
+                    <i class="fa fa-briefcase"></i>
                     <span>گروه درمانی</span>
                 </a>
             </li>
