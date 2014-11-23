@@ -159,19 +159,19 @@ $fhtml.=<<<cd
 								<div>
 									<div>
 										<!-- <a href="http://gazette.seoresearch.com/wp-content/uploads/2014/08/tumblr_n6esribU971st5lhmo1_1280-1280x768.jpg" class="hb-image-zoom" rel="swipebox[blog_shortcode]" title="Phasellus euismod purus eget sed luctus"></a> -->
-										<a href="#" class="hb-image-link" title=""></a>
+										<a href="manager/img.php?did={$news[$i]["id"]}&tid=2" class="hb-image-link" title=""></a>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="article_grid_content">
 							<h3 class="article_heading rtl">
-								<a href="#" title="" rel="bookmark">{$news[$i]['subject']}</a>
+								<a href="one-news{$news[$i]['id']}.html" title="{$news[$i]['subject']}" rel="bookmark">{$news[$i]['subject']}</a>
 							</h3>
 							<div class="post_excerpt">
 								<p class="rtl" style="font-size:18px">{$news[$i]['text']}</p>
 								<p>
-									<a class="post_more_link" href="#" style="font-size:15px">ادامه خبر</a>
+									<a class="post_more_link" href="one-news{$news[$i]['id']}.html" style="font-size:15px">ادامه خبر</a>
 								</p>
 							</div>
 						</div>
