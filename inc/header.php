@@ -273,7 +273,14 @@ cd;
 		{
 			if ($row['level']==0)
 			{	
+				if (!has_children($rows, $row['id']))
+				{
+					$class = " menu-item-has-children'";
+				}
+				else
+				{
 					$class = " class='menu_arrow menu-item-has-children'";
+				}
 					$href="";
 			}
 			else
