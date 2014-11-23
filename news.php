@@ -44,7 +44,7 @@ $nhtml.=<<<cd
 			<div class="col3">
 				<div>
 					<div class="article_grid_image">
-						<img class=" morph" src="manager/img.php?did={$rows[$i]['id']}&tid=2" width="280px" height="160px" />
+						<img class=" morph" src="manager/img.php?did={$rows[$i]['id']}&tid=2" style="width:280px!important;height:160px!important"/>
 						<div class="hover_buttons">
 							<div>
 								<div>

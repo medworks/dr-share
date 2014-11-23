@@ -60,11 +60,11 @@ $ghtml.=<<<cd
 						<h3 class="article_heading">
 							<a href="one-gallery{$grows[$i]['id']}.html">آلبوم : {$grows[$i]['name']}</a>
 						</h3>
-						<div class="post_excerpt">
+						<!-- <div class="post_excerpt">
 							<p>
 								<a href="one-gallery{$grows[$i]['id']}.html" class="post_more_link" style="margin-right:165px">تصاویر بیشتر</a>
 							</p>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>

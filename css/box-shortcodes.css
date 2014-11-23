@@ -68,7 +68,7 @@
 .su-tabs-vertical:after { clear: both; }
 .su-tabs-vertical .su-tabs-nav {
 	float: right;
-	width: 25%;
+	width: 40%;
 }
 .su-tabs-vertical .su-tabs-nav span {
 	display: block;
@@ -86,7 +86,7 @@
 }
 .su-tabs-vertical .su-tabs-panes {
 	float: left;
-	width: 75%;
+	width: 60%;
 }
 .su-tabs-vertical .su-tabs-pane {
 	-webkit-border-radius: 0;
