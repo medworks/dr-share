@@ -285,8 +285,14 @@ cd;
 			}
 			else
 			if ($row['level']==1)
-			{			
-					$class = " class='menu_arrow'";
+			{		if (!has_children($rows, $row['id']))
+					{	
+						$class = "";
+					}
+					else
+					{
+						$class = " class='menu_arrow'";
+					}					
 					$href=""; 
 					if (!has_children($rows, $row['id']))
 						$href=" href= ' menues{$row[id]}-{$row[level]}.html' ";
