@@ -3868,7 +3868,7 @@ display:block;
 
 /*.article_grid_image + .meta_category + .article_grid_content {*/
 .article_grid_content {
-padding:0 0 1px;
+padding:0 10px 0 1px;
 text-align: right;
 }
 

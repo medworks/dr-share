@@ -184,6 +184,16 @@
                     <li><a href="editdata.php?act=edit">ویرایش اطلاعات</a></li>
                 </ul>
             </li>
+             <li>
+                <a href="#">
+                    <i class="fa fa-camera-retro"></i>
+                    <span>اسلاید شو</span>
+                </a>
+                <ul>
+                    <li><a href="addslide.php">ثبت عکس</a></li>
+                    <li><a href="editslide.php">ویرایش عکسها</a></li>
+                </ul>
+            </li>
             <li>
                 <a href="#">
                     <i class="fa fa-bullhorn"></i>

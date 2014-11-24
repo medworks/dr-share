@@ -154,7 +154,7 @@ $fhtml.=<<<cd
 				<div class="3 {$class}">
 					<div class="fade-in article_grid_module appeared">
 						<div class="article_grid_image">
-							<img class=" morph" src="manager/img.php?did={$news[$i]["id"]}&tid=2" width="160px" height="160px" />
+							<img class=" morph" src="manager/img.php?did={$news[$i]["id"]}&tid=2" style="width:160px!important;height:160!importmant"/>
 							<div class="hover_buttons">
 								<div>
 									<div>

@@ -22,7 +22,6 @@ $html.=<<<cd
 				<li><a href="gallery.html">گالری تصاویر</a></li>
 				<li><a href="#">کلاسها و دوره های آموزشی</a></li>
 				<li><a href="articles.html">آرشیو مقالات</a></li>
-				<li><a href="#">عضویت</a></li>
 				<li><a href="exam.html">آزمون های روانشناختی</a></li>
 				<li><a href="#">همایش ها</a></li>
 				<li><a href="#">پرسش و پاسخ</a></li>
@@ -30,7 +29,19 @@ $html.=<<<cd
 				<li><a href="contactus.php">تماس با ما</a></li>
 			</ul>
 		</div>
-		<div id="text-16" class="widget widget_text fade-in">
+		<div class="widget widget_text fade-in">
+			<h4 class="widgettitle rtl">عضویت در خبرنامه</h4>
+			<div class="textwidget">
+				<div class="flickr_wrap">
+					<div class="flickr_badge_image" id="flickr_badge_image1">
+						<input type="text" name="" class="wysija-input" style="float:right;" title="Email" value="" id="form-validation-field-0">
+						<input class="wysija-submit wysija-submit-field rtl" type="submit" style="margin-right:0;height:42px;font-size:17px" value="ثبت!">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="widget widget_text fade-in">
 			<h4 class="widgettitle rtl">گالری تصاویر</h4>
 			<div class="textwidget">
 				<div class="flickr_wrap">
@@ -49,7 +60,8 @@ $html.=<<<cd
 				</div>
 			</div>
 		</div>
-		<div id="text-18" class="widget widget_text fade-in">
+
+		<div class="widget widget_text fade-in">
 			<div class="textwidget">
 				<div class="social-count-plus">
 					<ul class="default">
