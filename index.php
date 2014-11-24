@@ -14,121 +14,38 @@
 	$db = Database::GetDatabase();
 	
 	$news = $db->SelectAll("news","*",NULL,"id ASC");
+	$slide = $db->SelectAll("slide","*",NULL,"id ASC");
 	
 $fhtml.=<<<cd
-	
 <div id="main" class="col9 clearfix">
 	<div id="nt_slider">
 		<div id="nt_slider_inner" class="slider_preload">
 			<div class="royalSlider videoGallery rsMinW" id="video-gallery">
+cd;
+for($i = 0; $i < Count($slide); $i++)
+{
+$fhtml.=<<<cd
 				<div>
 					<a href="#">
-						<img class="rsImg" src="./images/slides/1.jpg" alt="" height="492" width="874">	
+						<img class="rsImg" src="manager/img.php?slide=yes&did={$slide[$i]['id']}" alt ="{$rows[$i]["subject"]}" width="492" height="874" />
 					</a>
 					<div class="slider_h">
 						<a href="#">
-							<h2>عکس اول</h2>
+							<h2>{$slide[$i]['subject']}</h2>
 						</a>
 					</div>
 					<div class="rsTmb">
 						<div class="rsTmbImg">
-							<img class="rsThumbImage" src="./images/slides/1.jpg" alt="" height="160" width="280">
+							<img class="rsThumbImage" src="manager/img.php?slide=yes&did={$slide[$i]['id']}" alt ="{$rows[$i]["subject"]}"  width="160" height="280" />
 						</div>
 						<div class="rsTmbDesc">
-							<div class="slider_title">عکس اول</div>
+							<div class="slider_title">{$slide[$i]['subject']}</div>
 						</div>
 					</div>
 				</div>
-				<div>
-					<a href="#">
-						<img class="rsImg" src="./images/slides/2.jpg" alt="" height="492" width="874">	
-					</a>
-					<div class="slider_h">
-						<a href="#">
-							<h2>عکس دوم</h2>
-						</a>
-					</div>
-					<div class="rsTmb">
-						<div class="rsTmbImg">
-							<img class="rsThumbImage" src="./images/slides/2.jpg" alt="" height="160" width="280">
-						</div>
-						<div class="rsTmbDesc">
-							<div class="slider_title">عکس دوم</div>
-						</div>
-					</div>
-				</div>
-				<div>
-					<a href="#">
-						<img class="rsImg" src="./images/slides/3.jpg" alt="" height="492" width="874">	
-					</a>
-					<div class="slider_h">
-						<a href="#">
-							<h2>عکس سوم</h2>
-						</a>
-					</div>
-					<div class="rsTmb">
-						<div class="rsTmbImg">
-							<img class="rsThumbImage" src="./images/slides/3.jpg" alt="" height="160" width="280">
-						</div>
-						<div class="rsTmbDesc">
-							<div class="slider_title">عکس سوم</div>
-						</div>
-					</div>
-				</div>
-				<div>
-					<a href="#">
-						<img class="rsImg" src="./images/slides/4.jpg" alt="" height="492" width="874">	
-					</a>
-					<div class="slider_h">
-						<a href="#">
-							<h2>عکس چهارم</h2>
-						</a>
-					</div>
-					<div class="rsTmb">
-						<div class="rsTmbImg">
-							<img class="rsThumbImage" src="./images/slides/4.jpg" alt="" height="160" width="280">
-						</div>
-						<div class="rsTmbDesc">
-							<div class="slider_title">عکس چهارم</div>
-						</div>
-					</div>
-				</div>
-				<div>
-					<a href="#">
-						<img class="rsImg" src="./images/slides/5.jpg" alt="" height="492" width="874">	
-					</a>
-					<div class="slider_h">
-						<a href="#">
-							<h2>عکس پنجم</h2>
-						</a>
-					</div>
-					<div class="rsTmb">
-						<div class="rsTmbImg">
-							<img class="rsThumbImage" src="./images/slides/5.jpg" alt="" height="160" width="280">
-						</div>
-						<div class="rsTmbDesc">
-							<div class="slider_title">عکس پنجم</div>
-						</div>
-					</div>
-				</div>
-				<div>
-					<a href="#">
-						<img class="rsImg" src="./images/slides/6.jpg" alt="" height="492" width="874">	
-					</a>
-					<div class="slider_h">
-						<a href="#">
-							<h2>عکس ششم</h2>
-						</a>
-					</div>
-					<div class="rsTmb">
-						<div class="rsTmbImg">
-							<img class="rsThumbImage" src="./images/slides/6.jpg" alt="" height="160" width="280">
-						</div>
-						<div class="rsTmbDesc">
-							<div class="slider_title">عکس ششم</div>
-						</div>
-					</div>
-				</div>
+cd;
+}
+$fhtml.=<<<cd
 			</div>
 			<div class="clearboth"></div>
 		</div>
@@ -182,7 +99,6 @@ cd;
 
 $fhtml.=<<<cd
 			</div>
-		</div>
 		<div class="clearboth"></div>
 	</div><!-- #main_inner -->
 </div><!-- #main -->

@@ -190,8 +190,8 @@
                     <span>اسلاید شو</span>
                 </a>
                 <ul>
-                    <li><a href="addslide.php">ثبت عکس</a></li>
-                    <li><a href="editslide.php">ویرایش عکسها</a></li>
+                    <li><a href="addslide.php?act=new">ثبت عکس</a></li>
+                    <li><a href="editslide.php?act=edit">ویرایش عکسها</a></li>
                 </ul>
             </li>
             <li>

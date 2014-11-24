@@ -34,19 +34,20 @@
                 //tid 1 is for menu pics, 2 for news pics, 3 for maghalat pics
                 if ($mode == "insert")
                 {
-                    $fields = array("`gid`","`itype`","`img`","`iname`","`isize`");     
-                    $values = array("'{$did}'","'{$type}'","'{$imgfp}'","'{$name}'","'{$size}'"); 
-                    $db->InsertQuery('gpics',$fields,$values);
+                    $fields = array("`subject`","`text`","`itype`","`img`","`iname`","`isize`");     
+                    $values = array("'{$_POST[edtsubject]}'","'{$_POST[edttext]}'","'{$type}'","'{$imgfp}'","'{$name}'","'{$size}'"); 
+                    $db->InsertQuery('slide',$fields,$values);
                 }
                 else
                 {
-                  $imgrow =$db->Select("gpics","*","id='{$did}'");
+                  $imgrow =$db->Select("slide","*","id='{$did}'");
                   if ($imgfp != $imgrow["img"])
                   {
-                    $values = array("`gid`"=>"'{$did}'",
-                        "`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
-                        "`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
-                    $db->UpdateQuery("gpics",$values,array("id='{$did}'")); 
+                    $values = array("`subject`"=>"'{$_POST[edtsubject]}'",
+									"`text`"=>"'{$_POST[edttext]}'",
+									"`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
+									"`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
+                    $db->UpdateQuery("slide",$values,array("id='{$did}'")); 
                   } 
                 }   
                 //echo $db->cmd;
@@ -62,43 +63,32 @@
         }
     }   
     
-    if ($_POST["mark"]=="savedata")
-    {
-                
-        $fields = array("`gcid`","`subject`","`text`");       
-        $values = array("{$_POST[cbgroup]}","'{$_POST[edtsubject]}'","'{$_POST[edttext]}'");   
-        if (!$db->InsertQuery('gallerypics',$fields,$values)) 
-        {           
-            header('location:addgallery.php?act=new&msg=2');         
-        }   
-        else 
-        {  
-            if ($_FILES['userfile']['tmp_name']!="")
-            {
-                $did = $db->InsertId();
-                upload($db,$did,"insert");
-                header('location:addgallery.php?act=new&msg=1');
-            }   
-        }       
+    if ($_POST["mark"]=="saveslide")
+    {     
+            upload($db,$did,"insert");
+            header('location:addslide.php?act=new&msg=1');
     }
     else
-    if ($_POST["mark"]=="editdata")
-    {               
-        $values = array("`gcid`"=>"'{{$_POST[cbgroup]}}'","`subject`"=>"'{$_POST[edtsubject]}'",
-						"`text`"=>"'{$_POST[edttext]}'" );
-        $db->UpdateQuery("gallerypics",$values,array("id='{$_GET[did]}'"));
+    if ($_POST["mark"]=="editslide")
+    {                       
         upload($db,$_GET["did"],"edit");    
-        header('location:addgallery.php?act=new&msg=1');
+        header('location:addslide.php?act=new&msg=1');
     }
     
     if ($_GET['act']=="new")
     {
         $insertoredit = "
             <button id='submit' type='submit' class='btn btn-default'>ثبت</button>
-            <input type='hidden' name='mark' value='savedata' /> ";  
-		$group = $db->SelectAll("gcategories","*");	
-		$cbgroup = DbSelectOptionTag("cbgroup",$group,"name",NULL,NULL,"form-control",NULL,"  منو  ");
+            <input type='hidden' name='mark' value='saveslide' /> ";  		
     }
+	if ($_GET['act']=="edit")
+	{
+	    $row=$db->Select("topics","*","id='{$_GET["did"]}'",NULL);		
+		$insertoredit = "
+			<button id='submit' type='submit' class='btn btn-default'>ویرایش</button>
+			<input type='hidden' name='mark' value='editslide' /> ";
+	
+	}
 
         
 $html=<<<cd
