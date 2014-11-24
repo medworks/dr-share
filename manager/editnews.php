@@ -127,9 +127,6 @@ $html.=<<<cd
                                                     <span class="label label-warning">{$vals[0]}</span>                        
                                                 </td>
                                                 <td class="text-center">
-												<a href="addnews.php?act=view&did={$rows[$i]["id"]}"  >
-                                                    <button class="btn btn-xs btn-success" title="مشاهده"><i class="fa fa-eye"></i></button>
-												</a>
 												<a href="addnews.php?act=edit&did={$rows[$i]["id"]}"  >					
                                                     <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
 												</a>

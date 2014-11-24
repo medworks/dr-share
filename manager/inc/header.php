@@ -95,11 +95,11 @@
             <!--Collapse navigation menu icon end -->
             <!--Top Navigation Start-->
             <ul>
-                <li>
+                <!-- <li>
                     <a href="lock-screen.html">
                         <i class="fa fa-lock"></i>
                     </a>
-                </li>
+                </li> -->
                 <li>
                     <a href="admin.php?act=logout">
                         <i class="fa fa-power-off"></i>
@@ -186,7 +186,7 @@
             </li>
              <li>
                 <a href="#">
-                    <i class="fa fa-camera-retro"></i>
+                    <i class="fa fa-camera"></i>
                     <span>اسلاید شو</span>
                 </a>
                 <ul>
@@ -239,15 +239,37 @@
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <i class="fa fa-file-picture-o"></i>
-                    <span>کلاسها و دوره های درمانی</span>
-                </a>
-            </li>
-            <li>
                 <a href="exammgr.php?act=new">
                     <i class="fa fa-file-o"></i>
                     <span>آزمون های روانشناختی</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-file-picture-o"></i>
+                    <span>کلاسها و دوره ها</span>
+                </a>
+                <ul>
+                    <li><a href="javascript:void(0);">تعریف کلاس</a></li>
+                    <li><a href="javascript:void(0);">ویرایش کلاسها</a></li>
+                    <li><a href="javascript:void(0);">ثبت نام کنندگان</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-coffee"></i>
+                    <span>همایش ها</span>
+                </a>
+                <ul>
+                    <li><a href="javascript:void(0);">تعریف همایش</a></li>
+                    <li><a href="javascript:void(0);">ویرایش همایش ها</a></li>
+                    <li><a href="javascript:void(0);">ثبت نام کنندگان</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-pencil-square-o"></i>
+                    <span>پرسش و پاسخ</span>
                 </a>
             </li>
             <li>
