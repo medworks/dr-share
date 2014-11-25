@@ -174,6 +174,8 @@ $chtml.=<<<cd
                                     </div>
                                 </div>
                             </div>
+							<input type="submit" id="submit" value="ثبت نام"/>
+							<input type="hidden" name="mark" value="register" />
 						</form>
 						<div class="clearboth"></div>									
 					</div>
