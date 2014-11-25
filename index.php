@@ -99,7 +99,8 @@ cd;
 
 $fhtml.=<<<cd
 			</div>
-		<div class="clearboth"></div>
+			<div class="clearboth"></div>
+		</div>
 	</div><!-- #main_inner -->
 </div><!-- #main -->
 cd;
