@@ -8,6 +8,7 @@ deny from all
 	RewriteRule ^index.html dr-share/index.php [L]
 	RewriteRule ^about-us.html dr-share/about-us.php [L]
 	RewriteRule ^gallery.html dr-share/gallery.php [L]	
+	RewriteRule ^class.html dr-share/class.php [L]	
 	RewriteRule ^one-gallery([0-9]+).html dr-share/one-gallery.php?id=$1 [L]	
 	RewriteRule ^contactus.html dr-share/contactus.php [L]
 	RewriteRule ^healthgroup.html dr-share/healthgroup.php [L]
