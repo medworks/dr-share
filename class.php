@@ -16,171 +16,142 @@
 $chtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
-
-		<div class="single_post_module">
-			<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-lifestyle category-travel tag-adipiscing tag-augue tag-donec tag-etiam tag-euismod">				
-					<h1 class="article_heading entry_title" style="font-size:35px !important">{$news['subject']}</h1>
-					<div class="clearboth"></div>
-					<div class="entry">
-						<form id="frmdata" name="frmdata" enctype="multipart/form-data" action="" method="post" class="form-inline ls_form" role="form">
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">نام و نام خانوادگی</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtname" name="edtname" type="text" class="form-control" />
-                                    </div>
-                                </div>
+    <style>
+        .entry .nt_form_row{
+            margin-left:15px
+        }
+    </style>
+        <div class="article_grid four_column_blog">
+            <h4>کلاسها و دوره های آموزشی</h4>
+            <div class="entry rtl">
+                <p class="teaser">
+                    <span>
+                        ثبت نام در کلاسها و دوره های آموزشی:
+                    </span>
+                </p>
+                <div id="frmdata" name="frmdata" class="nt_form">
+                    <form action="" method="post">
+                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">نام و نام خانوادگی
+                                <span class="star">*</span>
+                            </label>
+                            <input type="text" id="edtname" name="edtname" class="textfield name required" value="">
+                        </div>
+                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">سال تولد
+                                <span class="star">*</span>
+                            </label>
+                            <input type="text" id="edtbirth" name="edtbirth" class="textfield name required" value="">
+                        </div>
+                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">نام پدر
+                                <span class="star">*</span>
+                            </label>
+                            <input type="text" id="edtfather" name="edtfather" class="textfield name required" value="">
+                        </div>
+                        <div class="nt_form_row name_row" style="margin-top:50px;display:inline-block">
+                            <label for="nt_field01">وضعیت تاهل
+                                <span class="star">*</span>
+                            </label>
+                            متاهل<input type="radio" id="chbtahol" name="chbtahol" class="textfield name required" value="0">
+                            مجرد<input type="radio" id="chbtahol" name="chbtahol" class="textfield name required" value="1">
+                        </div>
+                        <div class="clearboth"></div>
+                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">کد ملی
+                                <span class="star">*</span>
+                            </label>
+                            <input type="text" id="edtmeli" name="edtmeli" class="textfield name required" value="">
+                        </div>
+                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">میزان تحصیلات
+                                <span class="star">*</span>
+                            </label>
+                            <input type="text" id="edtdegri" name="edtdegri" class="textfield name required" value="">
+                        </div>
+                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">رشته تحصیلات
+                                <span class="star">*</span>
+                            </label>
+                            <input type="text" id="edtreshte" name="edtreshte" class="textfield name required" value="">
+                        </div>
+                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">شغل
+                                <span class="star">*</span>
+                            </label>
+                            <input type="text" id="edtjob" name="edtjob" class="textfield name required" value="">
+                        </div>
+                        <div class="clearboth"></div>
+                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">استان
+                                <span class="star">*</span>
+                            </label>
+                            <input type="text" id="edtostan" name="edtostan" class="textfield name required" value="">
+                        </div>
+                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">شهر
+                                <span class="star">*</span>
+                            </label>
+                            <input type="text" id="edtcity" name="edtcity" class="textfield name required" value="">
+                        </div>
+                        <div class="nt_form_row name_row" style="margin-top:30px;">
+                            <label for="nt_field01">آدرس منزل یا محل کار
+                                <span class="star">*</span>
+                            </label>
+                            <textarea id="txtadd" name="txtadd" class="textarea required" rows="5" cols="40" style="height:100px"></textarea>
+                        </div>
+                        <div class="clearboth"></div>
+                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">تلفن
+                                <span class="star">*</span>
+                            </label>
+                            <input type="text" id="edttell" name="edttell" class="textfield name required" value="">
+                        </div>
+                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">موبایل
+                                <span class="star">*</span>
+                            </label>
+                            <input type="text" id="edtmob" name="edtmob" class="textfield name required" value="">
+                        </div>
+                        <div class="nt_form_row email_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field11">ایمیل
+                                <span class="star">*</span>
+                            </label>
+                            <input type="text" id="edtemail" name="edtemail" class="textfield email required" value="">
+                        </div>
+                        <div class="nt_form_row textarea_row">
+                            <label for="nt_field21">توضیحات
+                                <span class="star">*</span>
+                            </label>
+                            <textarea id="txtmsg" name="txtmsg" class="textarea required" rows="5" cols="40"></textarea>
+                        </div>
+                        <!-- <div class="nt_form_row captcha_row">
+                            <label for="nt_field31">8 + 2 </label>
+                            <input type="text" name="nt_field31" id="nt_field31" class="textfield captcha required" value="">
+                        </div> -->
+                        <div class="nt_form_row">
+                            <input type="submit" value="ثبت نام" id="submit" class="contact_form_submit styled_button">
+                            <input type="hidden" name="mark" value="register" />
+                            <div class="nt_contact_feedback">
+                                <img src="./images/transparent.gif" style="background-image: url(./images/preloader-white.gif);">
                             </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">سال تولد</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtbirth" name="edtbirth" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">نام پدر</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtfather" name="edtfather" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">وضعیت تاهل</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        مجرد<input id="chbtahol" name="chbtahol" type="radio" class="form-control" value="0"/>
-										متاهل<input id="chbtahol" name="chbtahol" type="radio" class="form-control" value="1"/>
-                                    </div>
-                                </div>
-                            </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">کد ملی</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtmeli" name="edtmeli" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">میزان تحصیلات</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtdegri" name="edtdegri" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">رشته تحصیلی</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtreshte" name="edtreshte" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">شغل</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtjob" name="edtjob" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">استان</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtostan" name="edtostan" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">شهر</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtcity" name="edtcity" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">آدرس منزل یا محل کار</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-										<textarea id="txtadd" name="txtadd" > </textarea>
-                                    </div>
-                                </div>
-                            </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">تلفن</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edttell" name="edttell" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">موبایل</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtmob" name="edtmob" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">ایمیل</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtemail" name="edtemail" type="text" class="form-control" />
-                                    </div>
-                                </div>
-                            </div>
-							<div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">پیام شما</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <textarea id="txtmsg" name="txtmsg" > </textarea>
-                                    </div>
-                                </div>
-                            </div>
-							<input type="submit" id="submit" value="ثبت نام"/>
-							<input type="hidden" name="mark" value="register" />
-						</form>
-						<div class="clearboth"></div>									
-					</div>
-			</div>
-		</div>
+                        </div>
+                        <!-- <div class="nt_form_row nt_required">
+                            <input type="text" name="nt_required" id="nt_required">
+                        </div>
+                        <div class="nt_form_row nt_zip_required">
+                            <input type="text" name="nt_zip_required" id="nt_zip_required">
+                        </div> 
+                        <div class="nt_form_row" style="display:none;">
+                            <input type="hidden" name="_nt_form" value="1">
+                            <input type="hidden" name="_nt_form_encode" value="rVPLboMwEPwVTr1UqoA8mjqXXnpsfyFazDa4wYZgW2pa8e-FxGtIAYVDjsyMZ2fHBtia_Wq2YQ9HW5itMjuUIPLL11azOCbGSqHAZChRv-5bzRMvpNdFYeegbfKF3DguYWHDPztaW85Ra3_uxeGt4U6jMp6hE3AQWuKEm0gxgeqKWzvuU2Ce0iC4rNlPeebDyAsWrWDpeHMq0SchUIHswJUDc0gwH6AfjZR5lNqt8GhFhenA2VSWnOuRlNGclDT6-v7GY1JHb612Rs4x77Gg8ZygNMXgt4EK4UZWkr83zwb2d2x10YVdToall8ahNDyDmb1ugscgDm4nnXIfx0Wzw3mTqNvknyWwqP87DwYSkRUKT2VhevWsOtMfUd7LuK7_AA">
+                        </div> -->
+                    </form>
+                </div>
+                <div class="clearboth"></div>                                       
+            </div>
+        </div>  
+		
 	</div><!-- #main_inner -->
 </div>
 cd;
