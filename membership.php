@@ -24,44 +24,44 @@ $chtml.=<<<cd
                         عضویت در گروه در خبرنامه گروه رهیاب:
                     </span>
                 </p>
-                <div id="frmdata" name="frmdata" class="nt_form">
+                <div id="frmdata" name="frmdata" class="formdata">
                     <form action="" method="post">
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">نام و نام خانوادگی
                                 <span class="star">*</span>
                             </label>
-                            <input type="text" id="edtname" name="edtname" class="textfield name required" value="">
+                            <input type="text" id="edtname" name="edtname" class="textfield name validate[required]" data-prompt-position="topLeft:-60" value="">
                         </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">میزان تحصیلات
                                 <span class="star">*</span>
                             </label>
-                            <input type="text" id="edtdegri" name="edtdegri" class="textfield name required" value="">
+                            <input type="text" id="edtdegri" name="edtdegri" class="textfield name validate[required]" data-prompt-position="topLeft:-60" value="">
                         </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
-                            <label for="nt_field01">رشته تحصیلات
+                            <label for="nt_field01">رشته تحصیلی
                                 <span class="star">*</span>
                             </label>
-                            <input type="text" id="edtreshte" name="edtreshte" class="textfield name required" value="">
+                            <input type="text" id="edtreshte" name="edtreshte" class="textfield name validate[required]" data-prompt-position="topLeft:-60" value="">
                         </div>
                         <div class="clearboth"></div>
                         <div class="nt_form_row email_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field11">ایمیل
                                 <span class="star">*</span>
                             </label>
-                            <input type="text" id="edtemail" name="edtemail" class="textfield email required" value="">
+                            <input type="text" id="edtemail" name="edtemail" class="textfield email validate[required,custom[email]]" data-prompt-position="topLeft:-50" placeholder="info@rahyabclinic.com" value="">
                         </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">تلفن
                                 <span class="star"></span>
                             </label>
-                            <input type="text" id="edttell" name="edttell" class="textfield name required" value="">
+                            <input type="text" id="edttell" name="edttell" class="textfield name required" placeholder="5138417740" value="">
                         </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">موبایل
                                 <span class="star"></span>
                             </label>
-                            <input type="text" id="edtmob" name="edtmob" class="textfield name required" value="">
+                            <input type="text" id="edtmob" name="edtmob" class="textfield name required" placeholder="9359856189" value="">
                         </div>
                         <!-- <div class="nt_form_row captcha_row">
                             <label for="nt_field31">8 + 2 </label>
