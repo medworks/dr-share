@@ -38,32 +38,6 @@ $chtml.=<<<cd
                             <input type="text" id="edtname" name="edtname" class="textfield name required" value="">
                         </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
-                            <label for="nt_field01">سال تولد
-                                <span class="star">*</span>
-                            </label>
-                            <input type="text" id="edtbirth" name="edtbirth" class="textfield name required" value="">
-                        </div>
-                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
-                            <label for="nt_field01">نام پدر
-                                <span class="star">*</span>
-                            </label>
-                            <input type="text" id="edtfather" name="edtfather" class="textfield name required" value="">
-                        </div>
-                        <div class="nt_form_row name_row" style="margin-top:50px;display:inline-block">
-                            <label for="nt_field01">وضعیت تاهل
-                                <span class="star">*</span>
-                            </label>
-                            متاهل<input type="radio" id="chbtahol" name="chbtahol" class="textfield name required" value="0">
-                            مجرد<input type="radio" id="chbtahol" name="chbtahol" class="textfield name required" value="1">
-                        </div>
-                        <div class="clearboth"></div>
-                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
-                            <label for="nt_field01">کد ملی
-                                <span class="star">*</span>
-                            </label>
-                            <input type="text" id="edtmeli" name="edtmeli" class="textfield name required" value="">
-                        </div>
-                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">میزان تحصیلات
                                 <span class="star">*</span>
                             </label>
@@ -75,55 +49,24 @@ $chtml.=<<<cd
                             </label>
                             <input type="text" id="edtreshte" name="edtreshte" class="textfield name required" value="">
                         </div>
-                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
-                            <label for="nt_field01">شغل
-                                <span class="star">*</span>
-                            </label>
-                            <input type="text" id="edtjob" name="edtjob" class="textfield name required" value="">
-                        </div>
                         <div class="clearboth"></div>
-                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
-                            <label for="nt_field01">استان
-                                <span class="star">*</span>
-                            </label>
-                            <input type="text" id="edtostan" name="edtostan" class="textfield name required" value="">
-                        </div>
-                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
-                            <label for="nt_field01">شهر
-                                <span class="star">*</span>
-                            </label>
-                            <input type="text" id="edtcity" name="edtcity" class="textfield name required" value="">
-                        </div>
-                        <div class="nt_form_row name_row" style="margin-top:30px;">
-                            <label for="nt_field01">آدرس منزل یا محل کار
-                                <span class="star">*</span>
-                            </label>
-                            <textarea id="txtadd" name="txtadd" class="textarea required" rows="5" cols="40" style="height:100px"></textarea>
-                        </div>
-                        <div class="clearboth"></div>
-                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
-                            <label for="nt_field01">تلفن
-                                <span class="star">*</span>
-                            </label>
-                            <input type="text" id="edttell" name="edttell" class="textfield name required" value="">
-                        </div>
-                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
-                            <label for="nt_field01">موبایل
-                                <span class="star">*</span>
-                            </label>
-                            <input type="text" id="edtmob" name="edtmob" class="textfield name required" value="">
-                        </div>
                         <div class="nt_form_row email_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field11">ایمیل
                                 <span class="star">*</span>
                             </label>
                             <input type="text" id="edtemail" name="edtemail" class="textfield email required" value="">
                         </div>
-                        <div class="nt_form_row textarea_row">
-                            <label for="nt_field21">توضیحات
-                                <span class="star">*</span>
+                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">تلفن
+                                <span class="star"></span>
                             </label>
-                            <textarea id="txtmsg" name="txtmsg" class="textarea required" rows="5" cols="40"></textarea>
+                            <input type="text" id="edttell" name="edttell" class="textfield name required" value="">
+                        </div>
+                        <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">موبایل
+                                <span class="star"></span>
+                            </label>
+                            <input type="text" id="edtmob" name="edtmob" class="textfield name required" value="">
                         </div>
                         <!-- <div class="nt_form_row captcha_row">
                             <label for="nt_field31">8 + 2 </label>

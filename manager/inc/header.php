@@ -253,6 +253,7 @@
                     <li><a href="javascript:void(0);">تعریف کلاس</a></li>
                     <li><a href="javascript:void(0);">ویرایش کلاسها</a></li>
                     <li><a href="javascript:void(0);">ثبت نام کنندگان</a></li>
+                    <li><a href="javascript:void(0);">تایید شده ها</a></li>
                 </ul>
             </li>
             <li>
@@ -264,6 +265,7 @@
                     <li><a href="javascript:void(0);">تعریف همایش</a></li>
                     <li><a href="javascript:void(0);">ویرایش همایش ها</a></li>
                     <li><a href="javascript:void(0);">ثبت نام کنندگان</a></li>
+                    <li><a href="javascript:void(0);">تایید شده ها</a></li>
                 </ul>
             </li>
             <li>
