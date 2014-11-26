@@ -4625,7 +4625,7 @@ box-sizing:border-box
 }
 
 select,input[type="file"] {
-height:34px!important;
+height:42px!important;
 line-height:30px
 }
 

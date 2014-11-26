@@ -100,6 +100,12 @@ $chtml.=<<<cd
                             <input type="text" id="edtjob" name="edtjob" class="textfield name validate[required]" data-prompt-position="topLeft:-70" value="">
                         </div>
                         <div class="clearboth"></div>
+                        <div class="nt_form_row email_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field11">فیش پرداختی
+                                <span class="star">*</span>
+                            </label>
+                            <input type="file" id="file" name="file" class="textfield file validate[required]" data-prompt-position="topLeft:-10" value="">
+                        </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">استان
                                 <span class="star">*</span>
