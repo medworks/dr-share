@@ -45,8 +45,9 @@
 	background: #ee0101;
 	position:relative;
 	color: #fff;
+	font-family: 'bmitra';
 	min-width: 120px;
-	font-size: 11px;
+	font-size: 16px;
 	border: 2px solid #ddd;
 	box-shadow: 0 0 6px #000;
 	-moz-box-shadow: 0 0 6px #000;
@@ -81,8 +82,8 @@
 }
 
 .formError .formErrorArrow {
-	width: 15px;
-	margin: -2px 0 0 13px;
+	width: 28px;
+	margin: -4px 0 0 13px;
 	position:relative;
 }
 body[dir='rtl'] .formError .formErrorArrow,

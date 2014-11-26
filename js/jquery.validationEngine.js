@@ -1701,7 +1701,7 @@
 				}, options.autoHideDelay);
 			}
 			return prompt.animate({
-				"opacity": 0.87
+				"opacity": 0.6
 			});
 		},
 		/**
@@ -1737,7 +1737,7 @@
 				var css = {"top": pos.callerTopPosition,
 				"left": pos.callerleftPosition,
 				"marginTop": pos.marginTopSize,
-				"opacity": 0.87};
+				"opacity": 0.6};
 
 				if (noAnimation)
 					prompt.css(css);

@@ -1,53 +1,53 @@
 <?php
-	include_once("config.php");
-	include_once("classes/functions.php");
-  	include_once("classes/messages.php");
-  	include_once("classes/session.php");	
-  	include_once("classes/security.php");
-  	include_once("classes/database.php");	
-	include_once("classes/login.php");
+    include_once("config.php");
+    include_once("classes/functions.php");
+    include_once("classes/messages.php");
+    include_once("classes/session.php");    
+    include_once("classes/security.php");
+    include_once("classes/database.php");   
+    include_once("classes/login.php");
     include_once("lib/persiandate.php"); 
-	
-	//error_reporting(E_ALL);
-	//ini_set('display_errors', 1);
-	
-	$db = Database::GetDatabase();
-	
-	if (isset($_POST["mark"]) and $_POST["mark"]="register" )
-	{
-	    $date = date('Y-m-d H:i:s');
-		$fields = array("`name`","`birth`","`father`","`tahol`","`meli`",
-		                "`tahsilat`","`reshte`","`shoghl`","`ostan`","`shahr`",
-						"`address`","`tel`","`mobile`","`email`","`desc`","`regdate`");
-		$values = array("'{$_POST[edtname]}'","'{$_POST[edtbirth]}'","'{$_POST[edtfather]}'",
-						"'{$_POST[chbtahol]}'","'{$_POST[edtmeli]}'","'{$_POST[edtdegri]}'",
-						"'{$_POST[edtreshte]}'","'{$_POST[edtjob]}'","'{$_POST[edtostan]}'",
-						"'{$_POST[edtcity]}'","'{$_POST[txtadd]}'","'{$_POST[edttell]}'",
-						"'{$_POST[edtmob]}'","'{$_POST[edtemail]}'","'{$_POST[txtmsg]}'","'{$date}'");	
-		if (!$db->InsertQuery('classes',$fields,$values)) 
-		{			
-			header('location:class.html?act=new&msg=2');			
-		} 	
-		else 
-		{  					
-			header('location:class.html?act=new&msg=1');
-		}  		
-		//echo $db->cmd;
-	}
-$msgs = GetMessage($_GET['msg']);		
+    
+    //error_reporting(E_ALL);
+    //ini_set('display_errors', 1);
+    
+    $db = Database::GetDatabase();
+    
+    if (isset($_POST["mark"]) and $_POST["mark"]="register" )
+    {
+        $date = date('Y-m-d H:i:s');
+        $fields = array("`name`","`birth`","`father`","`tahol`","`meli`",
+                        "`tahsilat`","`reshte`","`shoghl`","`ostan`","`shahr`",
+                        "`address`","`tel`","`mobile`","`email`","`desc`","`regdate`");
+        $values = array("'{$_POST[edtname]}'","'{$_POST[edtbirth]}'","'{$_POST[edtfather]}'",
+                        "'{$_POST[chbtahol]}'","'{$_POST[edtmeli]}'","'{$_POST[edtdegri]}'",
+                        "'{$_POST[edtreshte]}'","'{$_POST[edtjob]}'","'{$_POST[edtostan]}'",
+                        "'{$_POST[edtcity]}'","'{$_POST[txtadd]}'","'{$_POST[edttell]}'",
+                        "'{$_POST[edtmob]}'","'{$_POST[edtemail]}'","'{$_POST[txtmsg]}'","'{$date}'");  
+        if (!$db->InsertQuery('classes',$fields,$values)) 
+        {           
+            header('location:class.html?act=new&msg=2');            
+        }   
+        else 
+        {                   
+            header('location:class.html?act=new&msg=1');
+        }       
+        //echo $db->cmd;
+    }
+$msgs = GetMessage($_GET['msg']);       
 $chtml.=<<<cd
 <div id="main" class="col9 clearfix">
-	<div id="main_inner">
+    <div id="main_inner">
         <div class="article_grid four_column_blog">
-            <h4>کلاسها و دوره های آموزشی</h4>
+            <h4>همایش ها</h4>
             <div class="entry rtl">
                 <p class="teaser">
                     <span>
-                        ثبت نام در کلاسها و دوره های آموزشی:
+                        ثبت نام در همایش ها:
                     </span>
                 </p>
                 <div class="nt_form">
-				    <!-- {$msgs} -->
+                    <!-- {$msgs} -->
                     <form id="frmclass" class="formdata" action="" method="post" role="form">
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">نام و نام خانوادگی
@@ -148,7 +148,7 @@ $chtml.=<<<cd
                             <input type="text" name="nt_field31" id="nt_field31" class="textfield captcha required" value="">
                         </div> -->
                         <div class="nt_form_row">
-							<button id='submit' type='submit' class='contact_form_submit styled_button'>ثبت نام</button>                  
+                            <button id='submit' type='submit' class='contact_form_submit styled_button'>ثبت نام</button>                  
                             <input type="hidden" name="mark" value="register" />
                             <div class="nt_contact_feedback">
                                 <img src="./images/transparent.gif" style="background-image: url(./images/preloader-white.gif);">
@@ -159,14 +159,14 @@ $chtml.=<<<cd
                 <div class="clearboth"></div>                                       
             </div>
         </div>  
-		
-	</div><!-- #main_inner -->
+        
+    </div><!-- #main_inner -->
 </div>
 cd;
 
-	include_once('./inc/header.php');
-	echo $chtml;
-	include_once('./inc/sidebar.php');
-	include_once('./inc/footer.php');
-	include_once('./inc/last.php');
+    include_once('./inc/header.php');
+    echo $chtml;
+    include_once('./inc/sidebar.php');
+    include_once('./inc/footer.php');
+    include_once('./inc/last.php');
 ?>

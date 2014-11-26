@@ -26,32 +26,32 @@ $html.=<<<cd
 							شما می توانید به صورت حضوری به آدرس زیر مراجعه نمایید:
 						</span>
 					</p>
-					<!-- <div class="su-gmap su-responsive-media-yes">
+					<div class="su-gmap su-responsive-media-yes">
 						<iframe width="800" height="300" src="http://maps.google.com/maps?q=London%2C+UK&amp;output=embed"></iframe>
-					</div> -->
+					</div>
 					<div class="divider"></div>
 					<p style="font-size:20px;">
 						یا با ارسال نامه با ما در ارتباط باشید:
 					</p>
 					<div id="nt_form1" class="nt_form">
-						<form id="contactForm" action="" method="post">
+						<form class="formdata" action="" method="post">
 							<div class="nt_form_row name_row" style="margin-top:30px;">
 								<label for="nt_field01">نام و نام خانوادگی
 									<span class="star">*</span>
 								</label>
-								<input type="text" name="nt_field01" id="nt_field01" class="textfield name validate[required]" value="" />
+								<input type="text" name="nt_field01" id="nt_field01" class="textfield name validate[required]" data-prompt-position="topLeft:-100" value="" />
 							</div>
 							<div class="nt_form_row email_row">
 								<label for="nt_field11">ایمیل
 									<span class="star">*</span>
 								</label>
-								<input type="text" name="nt_field11" id="nt_field11" class="textfield validate[required,custom[email]] email " value="" />
+								<input type="text" name="nt_field11" id="nt_field11" class="textfield validate[required,custom[email]] email" data-prompt-position="topLeft:-150" value="" />
 							</div>
 							<div class="nt_form_row textarea_row">
 								<label for="nt_field21">پیام
 									<span class="star">*</span>
 								</label>
-								<textarea name="nt_field21" id="nt_field21" class="textarea required" rows="5" cols="40"></textarea>
+								<textarea name="nt_field21" id="nt_field21" class="textarea required validate[required]" data-prompt-position="topLeft:550" rows="5" cols="40"></textarea>
 							</div>
 							<!-- <div class="nt_form_row captcha_row">
 								<label for="nt_field31">8 + 2 </label>

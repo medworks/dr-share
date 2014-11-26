@@ -3,7 +3,7 @@
 jQuery.noConflict();
 jQuery(document).ready(function() { 
 
-    jQuery("#contactForm").validationEngine();
+    jQuery(".formdata").validationEngine();
 
 
     jQuery('#video-gallery').royalSlider({

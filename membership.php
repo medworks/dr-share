@@ -16,11 +16,6 @@
 $chtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
-    <style>
-        .entry .nt_form_row{
-            margin-left:15px
-        }
-    </style>
         <div class="article_grid four_column_blog">
             <h4>عضویت در خبرنامه</h4>
             <div class="entry rtl">

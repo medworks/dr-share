@@ -23,10 +23,10 @@ $html.=<<<cd
 				<li><a href="class.html">کلاسها و دوره های آموزشی</a></li>
 				<li><a href="articles.html">آرشیو مقالات</a></li>
 				<li><a href="exam.html">آزمون های روانشناختی</a></li>
-				<li><a href="#">همایش ها</a></li>
+				<li><a href="conferences.html">همایش ها</a></li>
 				<li><a href="#">پرسش و پاسخ</a></li>
 				<li><a href="about-us.html">درباره ما</a></li>
-				<li><a href="contactus.php">تماس با ما</a></li>
+				<li><a href="contactus.html">تماس با ما</a></li>
 			</ul>
 		</div>
 		<div class="widget widget_text fade-in">

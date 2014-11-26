@@ -3563,6 +3563,7 @@ opacity:.8
 -------------------------------------------------------------- */
 .nt_form_row {
 /*margin-bottom:10px*/
+margin-left: 50px;
 }
 
 .nt_form_row label:first-child {
