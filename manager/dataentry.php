@@ -205,13 +205,7 @@
 		{
 			$imgload = "<img  src='img.php?did={$_GET[did]}&tid=1'  width='200px' height='180px' />";
 		}	
-	}
-	
-	
-	
-	
-
-	
+	}	
 $html=<<<cd
     <!--Page main section start-->
     <section id="min-wrapper">

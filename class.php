@@ -26,15 +26,15 @@
 						"'{$_POST[edtmob]}'","'{$_POST[edtemail]}'","'{$_POST[txtmsg]}'","'{$date}'");	
 		if (!$db->InsertQuery('classes',$fields,$values)) 
 		{			
-			//header('location:class.php?act=new&msg=2');			
+			header('location:class.html?act=new&msg=2');			
 		} 	
 		else 
 		{  					
-			//header('location:class.php?act=new&msg=1');
+			header('location:class.html?act=new&msg=1');
 		}  		
-		echo $db->cmd;
+		//echo $db->cmd;
 	}
-		
+$msgs = GetMessage($_GET['msg']);		
 $chtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
@@ -52,6 +52,7 @@ $chtml.=<<<cd
                     </span>
                 </p>
                 <div class="nt_form">
+				    {$msgs}
                     <form id="frmclass" action="" method="post" role="form">
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">نام و نام خانوادگی
