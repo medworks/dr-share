@@ -12,6 +12,28 @@
 	//ini_set('display_errors', 1);
 	
 	$db = Database::GetDatabase();
+	
+	if (isset($_POST["mark"]) and $_POST["mark"]="register" )
+	{
+	    $date = date('Y-m-d H:i:s');
+		$fields = array("`name`","`birth`","`father`","`tahol`","`meli`",
+		                "`tahsilat`","`reshte`","`shoghl`","`ostan`","`shahr`",
+						"`address`","`tel`","`mobile`","`email`","`desc`","`regdate`");
+		$values = array("'{$_POST[edtname]}'","'{$_POST[edtbirth]}'","'{$_POST[edtfather]}'",
+						"'{$_POST[chbtahol]}'","'{$_POST[edtmeli]}'","'{$_POST[edtdegri]}'",
+						"'{$_POST[edtreshte]}'","'{$_POST[edtjob]}'","'{$_POST[edtostan]}'",
+						"'{$_POST[edtcity]}'","'{$_POST[txtadd]}'","'{$_POST[edttell]}'",
+						"'{$_POST[edtmob]}'","'{$_POST[edtemail]}'","'{$_POST[txtmsg]}'","'{$date}'");	
+		if (!$db->InsertQuery('classes',$fields,$values)) 
+		{			
+			//header('location:class.php?act=new&msg=2');			
+		} 	
+		else 
+		{  					
+			//header('location:class.php?act=new&msg=1');
+		}  		
+		echo $db->cmd;
+	}
 		
 $chtml.=<<<cd
 <div id="main" class="col9 clearfix">
@@ -29,8 +51,8 @@ $chtml.=<<<cd
                         ثبت نام در کلاسها و دوره های آموزشی:
                     </span>
                 </p>
-                <div id="frmdata" name="frmdata" class="nt_form">
-                    <form action="" method="post">
+                <div class="nt_form">
+                    <form id="frmclass" action="" method="post" role="form">
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">نام و نام خانوادگی
                                 <span class="star">*</span>
@@ -53,8 +75,8 @@ $chtml.=<<<cd
                             <label for="nt_field01">وضعیت تاهل
                                 <span class="star">*</span>
                             </label>
-                            متاهل<input type="radio" id="chbtahol" name="chbtahol" class="textfield name required" value="0">
-                            مجرد<input type="radio" id="chbtahol" name="chbtahol" class="textfield name required" value="1">
+                            متاهل<input type="radio" id="chbtahol" name="chbtahol" class="textfield name required" value="1">
+                            مجرد<input type="radio" id="chbtahol" name="chbtahol" class="textfield name required" value="0">
                         </div>
                         <div class="clearboth"></div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
@@ -130,22 +152,12 @@ $chtml.=<<<cd
                             <input type="text" name="nt_field31" id="nt_field31" class="textfield captcha required" value="">
                         </div> -->
                         <div class="nt_form_row">
-                            <input type="submit" value="ثبت نام" id="submit" class="contact_form_submit styled_button">
+							<button id='submit' type='submit' class='contact_form_submit styled_button'>ثبت نام</button>                  
                             <input type="hidden" name="mark" value="register" />
                             <div class="nt_contact_feedback">
                                 <img src="./images/transparent.gif" style="background-image: url(./images/preloader-white.gif);">
                             </div>
-                        </div>
-                        <!-- <div class="nt_form_row nt_required">
-                            <input type="text" name="nt_required" id="nt_required">
-                        </div>
-                        <div class="nt_form_row nt_zip_required">
-                            <input type="text" name="nt_zip_required" id="nt_zip_required">
-                        </div> 
-                        <div class="nt_form_row" style="display:none;">
-                            <input type="hidden" name="_nt_form" value="1">
-                            <input type="hidden" name="_nt_form_encode" value="rVPLboMwEPwVTr1UqoA8mjqXXnpsfyFazDa4wYZgW2pa8e-FxGtIAYVDjsyMZ2fHBtia_Wq2YQ9HW5itMjuUIPLL11azOCbGSqHAZChRv-5bzRMvpNdFYeegbfKF3DguYWHDPztaW85Ra3_uxeGt4U6jMp6hE3AQWuKEm0gxgeqKWzvuU2Ce0iC4rNlPeebDyAsWrWDpeHMq0SchUIHswJUDc0gwH6AfjZR5lNqt8GhFhenA2VSWnOuRlNGclDT6-v7GY1JHb612Rs4x77Gg8ZygNMXgt4EK4UZWkr83zwb2d2x10YVdToall8ahNDyDmb1ugscgDm4nnXIfx0Wzw3mTqNvknyWwqP87DwYSkRUKT2VhevWsOtMfUd7LuK7_AA">
-                        </div> -->
+                        </div>                        
                     </form>
                 </div>
                 <div class="clearboth"></div>                                       
