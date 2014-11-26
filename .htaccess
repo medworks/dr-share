@@ -11,6 +11,8 @@ deny from all
 	RewriteRule ^class.html dr-share/class.php [L]	
 	RewriteRule ^conferences.html dr-share/conferences.php [L]	
 	RewriteRule ^contactus.html dr-share/contactus.php [L]	
+	RewriteRule ^membership.html dr-share/membership.php [L]	
+	RewriteRule ^faq.html dr-share/faq.php [L]	
 	RewriteRule ^one-gallery([0-9]+).html dr-share/one-gallery.php?id=$1 [L]	
 	RewriteRule ^contactus.html dr-share/contactus.php [L]
 	RewriteRule ^healthgroup.html dr-share/healthgroup.php [L]
