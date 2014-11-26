@@ -24,7 +24,8 @@ $html.=<<<cd
 				<li><a href="articles.html">آرشیو مقالات</a></li>
 				<li><a href="exam.html">آزمون های روانشناختی</a></li>
 				<li><a href="conferences.html">همایش ها</a></li>
-				<li><a href="#">پرسش و پاسخ</a></li>
+				<li><a href="membership.html">عضویت در خبرنامه</a></li>
+				<li><a href="faq.html">پرسش و پاسخ</a></li>
 				<li><a href="about-us.html">درباره ما</a></li>
 				<li><a href="contactus.html">تماس با ما</a></li>
 			</ul>
