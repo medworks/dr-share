@@ -59,7 +59,7 @@ $chtml.=<<<cd
                             <label for="nt_field01">سال تولد
                                 <span class="star">*</span>
                             </label>
-                            <input type="text" id="edtbirth" name="edtbirth" class="textfield name validate[required,custom[date]]" data-prompt-position="topLeft:-30" value="" />
+                            <input type="text" id="edtbirth" name="edtbirth" class="textfield name validate[required,custom[date]]" data-prompt-position="topLeft:-30" placeholder="1393/01/01" value="" />
                         </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">نام پدر
@@ -79,7 +79,7 @@ $chtml.=<<<cd
                             <label for="nt_field01">کد ملی
                                 <span class="star">*</span>
                             </label>
-                            <input type="text" id="edtmeli" name="edtmeli" class="textfield name validate[required,custom[onlyNumberSp],maxSize[10],minSize[10]]" data-prompt-position="topLeft:-30" value="">
+                            <input type="text" id="edtmeli" name="edtmeli" class="textfield name validate[required,custom[onlyNumberSp],maxSize[10],minSize[10]]" data-prompt-position="topLeft:-30" placeholder="0123456789" value="">
                         </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">میزان تحصیلات
@@ -88,7 +88,7 @@ $chtml.=<<<cd
                             <input type="text" id="edtdegri" name="edtdegri" class="textfield name validate[required]" data-prompt-position="topLeft:-70" value="">
                         </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
-                            <label for="nt_field01">رشته تحصیلات
+                            <label for="nt_field01">رشته تحصیلی
                                 <span class="star">*</span>
                             </label>
                             <input type="text" id="edtreshte" name="edtreshte" class="textfield name validate[required]" data-prompt-position="topLeft:-70" value="">
@@ -123,19 +123,19 @@ $chtml.=<<<cd
                             <label for="nt_field01">تلفن
                                 <span class="star">*</span>
                             </label>
-                            <input type="text" id="edttell" name="edttell" class="textfield name validate[required,custom[onlyNumberSp],maxSize[10],minSize[10]]" data-prompt-position="topLeft:-30"  value="">
+                            <input type="text" id="edttell" name="edttell" class="textfield name validate[required,custom[onlyNumberSp],maxSize[10],minSize[10]]" data-prompt-position="topLeft:-30" placeholder="5138417740" value="">
                         </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">موبایل
                                 <span class="star">*</span>
                             </label>
-                            <input type="text" id="edtmob" name="edtmob" class="textfield name validate[required,custom[onlyNumberSp],maxSize[10],minSize[10]]" data-prompt-position="topLeft:-50" value="">
+                            <input type="text" id="edtmob" name="edtmob" class="textfield name validate[required,custom[onlyNumberSp],maxSize[10],minSize[10]]" data-prompt-position="topLeft:-50" placeholder="9359856189" value="">
                         </div>
                         <div class="nt_form_row email_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field11">ایمیل
                                 <span class="star">*</span>
                             </label>
-                            <input type="text" id="edtemail" name="edtemail" class="textfield email validate[required,custom[email]]" data-prompt-position="topLeft:-150" value="">
+                            <input type="text" id="edtemail" name="edtemail" class="textfield email validate[required,custom[email]]" data-prompt-position="topLeft:-150" placeholder="info@rahyabclinic.com" value="">
                         </div>
                         <div class="nt_form_row textarea_row">
                             <label for="nt_field21">توضیحات
