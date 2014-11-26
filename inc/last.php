@@ -3,6 +3,9 @@
 jQuery.noConflict();
 jQuery(document).ready(function() { 
 
+    jQuery("#contactForm").validationEngine();
+
+
     jQuery('#video-gallery').royalSlider({
             autoPlay: {
                 enabled: true,
@@ -286,12 +289,12 @@ jQuery(document).ready(function() {
     /* 
      * Contact form submit
      */
-    jQuery('.contact_form_submit').click(function() {
-        clearInterval(preLoaderSmall);
-        preLoaderCount = 0;
-        numinaPreloaderSmall('.nt_contact_feedback');
-        jQuery(this).next().css('display', 'inline-block');
-    });
+    // jQuery('.contact_form_submit').click(function() {
+    //     clearInterval(preLoaderSmall);
+    //     preLoaderCount = 0;
+    //     numinaPreloaderSmall('.nt_contact_feedback');
+    //     jQuery(this).next().css('display', 'inline-block');
+    // });
 
     /* 
      * "target_blank" links
@@ -384,7 +387,7 @@ jQuery(document).ready(function() {
 /*
  * Contact ajaxForm
  */
-(function($) {
+/*(function($) {
     $(function() {
         try {
 
@@ -451,7 +454,7 @@ jQuery(document).ready(function() {
         }
     });
 
-})(jQuery);
+})(jQuery);*/
 
 
 
@@ -580,7 +583,7 @@ jQuery(window).load(function(){
 <script type="text/javascript" src="./js/jquery.swipebox.min.js"></script>
 <script type="text/javascript" src="./js/editor.js"></script>
 <script type="text/javascript" src="./js/jquery.royalslider.min.js"></script>
-<script type="text/javascript" src="./js/jquery.validationEngine-en.js"></script>
+<script type="text/javascript" src="./js/jquery.validationEngine-fa.js"></script>
 <script type="text/javascript" src="./js/jquery.validationEngine.js"></script>
 <script type="text/javascript" src="./js/other-shortcodes.js"></script>
 
@@ -592,7 +595,7 @@ var wysijaAJAX = {"action":"wysija_ajax","controller":"subscribers","ajaxurl":"h
 </script>
 
 <script type="text/javascript" src="./js/front-subscribers.js"></script>
-<script type="text/javascript" src="./js/zebra_pagination.js"></script>
+<!-- <script type="text/javascript" src="./js/zebra_pagination.js"></script> -->
 
 </body>
 </html>

@@ -5131,7 +5131,9 @@ line-height: 26px!important;
 .checkbox.check-danger input[type=checkbox]:checked + label::after {
     color:#fff;
 }
-.formError{display:none!important;}
+.formError{
+  /*display:none!important;*/
+  }
 
 
 .title_no_margin .article_heading,

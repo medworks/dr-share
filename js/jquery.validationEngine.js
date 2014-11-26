@@ -28,8 +28,7 @@
 				$(document).on("click", ".formError", function() {
 					$(this).fadeOut(150, function() {
 						// remove prompt once invisible
-						$(this).parent('.formErrorOuter').remove();
-						$(this).remove();
+						$(this).closest('.formError').remove();
 					});
 				});
 			}
@@ -80,21 +79,19 @@
 			var options = form.data('jqv');
 
 			// unbind fields
-			form.find("["+options.validateAttribute+"*=validate]").not("[type=checkbox]").off(options.validationEventTrigger, methods._onFieldEvent);
-			form.find("["+options.validateAttribute+"*=validate][type=checkbox],[class*=validate][type=radio]").off("click", methods._onFieldEvent);
+			form.off(options.validationEventTrigger, "["+options.validateAttribute+"*=validate]:not([type=checkbox]):not([type=radio]):not(.datepicker)", methods._onFieldEvent);
+			form.off("click", "["+options.validateAttribute+"*=validate][type=checkbox],["+options.validateAttribute+"*=validate][type=radio]", methods._onFieldEvent);
+			form.off(options.validationEventTrigger,"["+options.validateAttribute+"*=validate][class*=datepicker]", methods._onFieldEvent);
 
 			// unbind form.submit
-			form.off("submit", methods.onAjaxFormComplete);
-
-			// unbind form.submit
-			form.off("submit", methods.onAjaxFormComplete);
+			form.off("submit", methods._onSubmitEvent);
 			form.removeData('jqv');
 
 			form.off("click", "a[data-validation-engine-skip], a[class*='validate-skip'], button[data-validation-engine-skip], button[class*='validate-skip'], input[data-validation-engine-skip], input[class*='validate-skip']", methods._submitButtonClick);
 			form.removeData('jqv_submitButton');
 
 			if (options.autoPositionUpdate)
-				$(window).unbind("resize", methods.updatePromptsPosition);
+				$(window).off("resize", methods.updatePromptsPosition);
 
 			return this;
 		},
@@ -104,9 +101,10 @@
 		*
 		* @return true if the form validates, false if it fails
 		*/
-		validate: function() {
+		validate: function(userOptions) {
 			var element = $(this);
 			var valid = null;
+			var options;
 
 			if (element.is("form") || element.hasClass("validationEngineContainer")) {
 				if (element.hasClass('validating')) {
@@ -115,7 +113,10 @@
 					return false;
 				} else {
 					element.addClass('validating');
-					var options = element.data('jqv');
+					if(userOptions)
+						options = methods._saveOptions(element, userOptions);
+					else
+						options = element.data('jqv');
 					var valid = methods._validateFields(this);
 
 					// If the form doesn't validate, clear the 'validating' class before the user has a chance to submit again
@@ -135,12 +136,6 @@
 				var form = element.closest('form, .validationEngineContainer'),
 					options = (form.data('jqv')) ? form.data('jqv') : $.validationEngine.defaults,
 					valid = methods._validateField(element, options);
-
-				if (valid && options.onFieldSuccess)
-					options.onFieldSuccess();
-				else if (options.onFieldFailure && options.InvalidFields.length > 0) {
-					options.onFieldFailure();
-				}
 			}
 			if(options.onValidationComplete) {
 				// !! ensures that an undefined return is interpreted as return false but allows a onValidationComplete() to possibly return true and have form continue processing
@@ -162,6 +157,8 @@
 
 			var options = form.data('jqv');
 			// No option, take default one
+			if (!options)
+				options = methods._saveOptions(form, options);
 			form.find('['+options.validateAttribute+'*=validate]').not(":disabled").each(function(){
 				var field = $(this);
 				if (options.prettySelect && field.is(":hidden"))
@@ -201,6 +198,9 @@
 		hide: function() {
 			 var form = $(this).closest('form, .validationEngineContainer');
 			 var options = form.data('jqv');
+			 // No option, take default one
+			 if (!options)
+				options = methods._saveOptions(form, options);
 			 var fadeDuration = (options && options.fadeDuration) ? options.fadeDuration : 0.3;
 			 var closingtag;
 
@@ -209,23 +209,20 @@
 			 } else {
 				 closingtag = methods._getClassName($(this).attr("id")) +"formError";
 			 }
-			 $('.'+closingtag).fadeTo(fadeDuration, 0.3, function() {
-				 $(this).parent('.formErrorOuter').remove();
-				 $(this).remove();
+			 $('.'+closingtag).fadeTo(fadeDuration, 0, function() {
+				 $(this).closest('.formError').remove();
 			 });
 			 return this;
 		 },
 		 /**
 		 * Closes all error prompts on the page
 		 */
-		 hideAll: function() {
-
+		 hideAll: function() {             
 			 var form = this;
 			 var options = form.data('jqv');
 			 var duration = options ? options.fadeDuration:300;
-			 $('.formError').fadeTo(duration, 300, function() {
-				 $(this).parent('.formErrorOuter').remove();
-				 $(this).remove();
+			 $('.formError').fadeTo(duration, 0, function() {                 
+				 $(this).closest('.formError').remove();
 			 });
 			 return this;
 		 },
@@ -237,16 +234,32 @@
 			var field = $(this);
 			var form = field.closest('form, .validationEngineContainer');
 			var options = form.data('jqv');
+			// No option, take default one
+			if (!options)
+				options = methods._saveOptions(form, options);
 			options.eventTrigger = "field";
-			// validate the current field
-			window.setTimeout(function() {
-				methods._validateField(field, options);
-				if (options.InvalidFields.length == 0 && options.onFieldSuccess) {
-					options.onFieldSuccess();
-				} else if (options.InvalidFields.length > 0 && options.onFieldFailure) {
-					options.onFieldFailure();
-				}
-			}, (event.data) ? event.data.delay : 0);
+
+            if (options.notEmpty == true){
+
+                if(field.val().length > 0){
+                    // validate the current field
+                    window.setTimeout(function() {
+                        methods._validateField(field, options);
+                    }, (event.data) ? event.data.delay : 0);
+
+                }
+
+            }else{
+
+                // validate the current field
+                window.setTimeout(function() {
+                    methods._validateField(field, options);
+                }, (event.data) ? event.data.delay : 0);
+
+            }
+
+
+
 
 		},
 		/**
@@ -342,9 +355,18 @@
 					errorFound |= methods._validateField(field, options);
 					if (errorFound && first_err==null)
 						if (field.is(":hidden") && options.prettySelect)
-										 first_err = field = form.find("#" + options.usePrefix + methods._jqSelector(field.attr('id')) + options.useSuffix);
-									else
-										 first_err=field;
+							first_err = field = form.find("#" + options.usePrefix + methods._jqSelector(field.attr('id')) + options.useSuffix);
+						else {
+
+							//Check if we need to adjust what element to show the prompt on
+							//and and such scroll to instead
+							if(field.data('jqv-prompt-at') instanceof jQuery ){
+								field = field.data('jqv-prompt-at');
+							} else if(field.data('jqv-prompt-at')) {
+								field = $(field.data('jqv-prompt-at'));
+							}
+							first_err=field;
+						}
 					if (options.doNotShowAllErrosOnSubmit)
 						return false;
 					names.push(field.attr('name'));
@@ -393,7 +415,7 @@
 						var scrollContainerPos = -parseInt(overflowDIV.offset().top);
 
 						destination += scrollContainerScroll + scrollContainerPos - 5;
-						var scrollContainer = $(options.overflownDIV + ":not(:animated)");
+						var scrollContainer = $(options.overflownDIV).filter(":not(:animated)");
 
 						scrollContainer.animate({ scrollTop: destination }, 1100, function(){
 							if(options.focusFirstField) first_err.focus();
@@ -440,7 +462,11 @@
 					return options.onBeforeAjaxFormValidation(form, options);
 				},
 				error: function(data, transport) {
-					methods._ajaxError(data, transport);
+					if (options.onFailure) {
+						options.onFailure(data, transport);
+					} else {
+						methods._ajaxError(data, transport);
+					}
 				},
 				success: function(json) {
 					if ((dataType == "json") && (json !== true)) {
@@ -510,6 +536,9 @@
 				field.attr("id", "form-validation-field-" + $.validationEngine.fieldIdCounter);
 				++$.validationEngine.fieldIdCounter;
 			}
+
+			if(field.hasClass(options.ignoreFieldsWithClass))
+				return false;
 
            if (!options.validateNonVisibleFields && (field.is(":hidden") && !options.prettySelect || field.parent().is(":hidden")))
 				return false;
@@ -659,6 +688,12 @@
 							required = true;
 						}
 						break;
+					case "funcCallRequired":
+						errorMsg = methods._getErrorMessage(form, field, rules[i], rules, i, options, methods._funcCallRequired);
+						if (errorMsg !== undefined) {
+							required = true;
+						}
+						break;
 
 					default:
 				}
@@ -685,6 +720,14 @@
 					}
 				}
 
+				//funcCallRequired, first in rules, and has error, skip anything else
+				if( i==0 && str.indexOf('funcCallRequired')==0 && errorMsg !== undefined ){
+					promptText += errorMsg + "<br/>";
+					options.isError=true;
+					field_errors++;
+					end_validation=true;
+				}
+
 				// If it has been specified that validation should end now, break
 				if (end_validation) {
 					break;
@@ -698,7 +741,10 @@
 				}
 			}
 			// If the rules required is not added, an empty field is not validated
-			if(!required && !(field.val()) && field.val().length < 1) options.isError = false;
+			//the 3rd condition is added so that even empty password fields should be equal
+			//otherwise if one is filled and another left empty, the "equal" condition would fail
+			//which does not make any sense
+			if(!required && !(field.val()) && field.val().length < 1 && $.inArray('equals', rules) < 0) options.isError = false;
 
 			// Hack for radio/checkbox group button, the validation go into the
 			// first radio/checkbox of the group
@@ -711,7 +757,7 @@
 				} else {
 				field = $(form.find("input[name='" + fieldName + "'][type!=hidden]:first"));
 				}
-				options.showArrow = false;
+				options.showArrow = options.showArrowOnRadioAndCheckbox;
 			}
 
 			if(field.is(":hidden") && options.prettySelect) {
@@ -791,7 +837,7 @@
 			 // Otherwise if we are doing a function call, make the call and return the object
 			 // that is passed back.
 	 		 var rule_index = jQuery.inArray(rule, rules);
-			 if (rule === "custom" || rule === "funcCall") {
+			 if (rule === "custom" || rule === "funcCall" || rule === "funcCallRequired") {
 				 var custom_validation_type = rules[rule_index + 1];
 				 rule = rule + "[" + custom_validation_type + "]";
 				 // Delete the rule from the rules array so that it doesn't try to call the
@@ -824,7 +870,7 @@
 		 },
 		 _getCustomErrorMessage:function (field, classes, rule, options) {
 			var custom_message = false;
-			var validityProp = methods._validityProp[rule];
+			var validityProp = /^custom\[.*\]$/.test(rule) ? methods._validityProp["custom"] : methods._validityProp[rule];
 			 // If there is a validityProp for this rule, check to see if the field has an attribute for it
 			if (validityProp != undefined) {
 				custom_message = field.attr("data-errormessage-"+validityProp);
@@ -876,6 +922,7 @@
 			 "minCheckbox": "range-underflow",
 			 "equals": "pattern-mismatch",
 			 "funcCall": "custom-error",
+			 "funcCallRequired": "custom-error",
 			 "creditCard": "pattern-mismatch",
 			 "condRequired": "value-missing"
 		 },
@@ -892,6 +939,25 @@
 		*/
 		_required: function(field, rules, i, options, condRequired) {
 			switch (field.prop("type")) {
+				case "radio":
+				case "checkbox":
+					// new validation style to only check dependent field
+					if (condRequired) {
+						if (!field.prop('checked')) {
+							return options.allrules[rules[i]].alertTextCheckboxMultiple;
+						}
+						break;
+					}
+					// old validation style
+					var form = field.closest("form, .validationEngineContainer");
+					var name = field.attr("name");
+					if (form.find("input[name='" + name + "']:checked").size() == 0) {
+						if (form.find("input[name='" + name + "']:visible").size() == 1)
+							return options.allrules[rules[i]].alertTextCheckboxe;
+						else
+							return options.allrules[rules[i]].alertTextCheckboxMultiple;
+					}
+					break;
 				case "text":
 				case "password":
 				case "textarea":
@@ -908,25 +974,6 @@
 						|| ( placeholder    && field_val == placeholder    )
 					) {
 						return options.allrules[rules[i]].alertText;
-					}
-					break;
-				case "radio":
-				case "checkbox":
-					// new validation style to only check dependent field
-					if (condRequired) {
-						if (!field.attr('checked')) {
-							return options.allrules[rules[i]].alertTextCheckboxMultiple;
-						}
-						break;
-					}
-					// old validation style
-					var form = field.closest("form, .validationEngineContainer");
-					var name = field.attr("name");
-					if (form.find("input[name='" + name + "']:checked").size() == 0) {
-						if (form.find("input[name='" + name + "']:visible").size() == 1)
-							return options.allrules[rules[i]].alertTextCheckboxe;
-						else
-							return options.allrules[rules[i]].alertTextCheckboxMultiple;
 					}
 					break;
 			}
@@ -1028,6 +1075,9 @@
 			if (typeof(fn) == 'function')
 				return fn(field, rules, i, options);
 
+		},
+		_funcCallRequired: function(field, rules, i, options) {
+			return methods._funcCall(field,rules,i,options);
 		},
 		/**
 		* Field match
@@ -1137,7 +1187,7 @@
 		_past: function(form, field, rules, i, options) {
 
 			var p=rules[i + 1];
-			var fieldAlt = $(form.find("input[name='" + p.replace(/^#+/, '') + "']"));
+			var fieldAlt = $(form.find("*[name='" + p.replace(/^#+/, '') + "']"));
 			var pdate;
 
 			if (p.toLowerCase() == "now") {
@@ -1170,7 +1220,7 @@
 		_future: function(form, field, rules, i, options) {
 
 			var p=rules[i + 1];
-			var fieldAlt = $(form.find("input[name='" + p.replace(/^#+/, '') + "']"));
+			var fieldAlt = $(form.find("*[name='" + p.replace(/^#+/, '') + "']"));
 			var pdate;
 
 			if (p.toLowerCase() == "now") {
@@ -1398,7 +1448,11 @@
 					 options: options,
 					 beforeSend: function() {},
 					 error: function(data, transport) {
-						 methods._ajaxError(data, transport);
+						if (options.onFailure) {
+							options.onFailure(data, transport);
+						} else {
+							methods._ajaxError(data, transport);
+						}
 					 },
 					 success: function(json) {
 
@@ -1510,6 +1564,13 @@
 		* @param {Map} options user options
 		*/
 		 _showPrompt: function(field, promptText, type, ajaxed, options, ajaxform) {
+		 	//Check if we need to adjust what element to show the prompt on
+			if(field.data('jqv-prompt-at') instanceof jQuery ){
+				field = field.data('jqv-prompt-at');
+			} else if(field.data('jqv-prompt-at')) {
+				field = $(field.data('jqv-prompt-at'));
+			}
+
 			 var prompt = methods._getPrompt(field);
 			 // The ajax submit errors are not see has an error in the form,
 			 // When the form errors are returned, the engine see 2 bubbles, but those are ebing closed by the engine at the same time
@@ -1635,8 +1696,7 @@
 					prompt.animate({
 						"opacity": 0
 					},function(){
-						prompt.closest('.formErrorOuter').remove();
-						prompt.remove();
+						prompt.closest('.formError').remove();
 					});
 				}, options.autoHideDelay);
 			}
@@ -1676,7 +1736,8 @@
 				var pos = methods._calculatePosition(field, prompt, options);
 				var css = {"top": pos.callerTopPosition,
 				"left": pos.callerleftPosition,
-				"marginTop": pos.marginTopSize};
+				"marginTop": pos.marginTopSize,
+				"opacity": 0.87};
 
 				if (noAnimation)
 					prompt.css(css);
@@ -1694,8 +1755,7 @@
 			 var prompt = methods._getPrompt(field);
 			 if (prompt)
 				 prompt.fadeTo("fast", 0, function() {
-					 prompt.parent('.formErrorOuter').remove();
-					 prompt.remove();
+					 prompt.closest('.formError').remove();
 				 });
 		 },
 		 closePrompt: function(field) {
@@ -1711,7 +1771,7 @@
 		_getPrompt: function(field) {
 				var formId = $(field).closest('form, .validationEngineContainer').attr('id');
 			var className = methods._getClassName(field.attr("id")) + "formError";
-				var match = $("." + methods._escapeExpression(className) + '.parentForm' + formId)[0];
+				var match = $("." + methods._escapeExpression(className) + '.parentForm' + methods._getClassName(formId))[0];
 			if (match)
 			return $(match);
 		},
@@ -1808,7 +1868,7 @@
 			switch (positionType) {
 				default:
 				case "topRight":
-					promptleftPosition +=  fieldLeft + fieldWidth - 30;
+					promptleftPosition +=  fieldLeft + fieldWidth - 27;
 					promptTopPosition +=  fieldTop;
 					break;
 
@@ -1835,7 +1895,7 @@
 					promptleftPosition = fieldLeft;
 					break;
 				case "bottomRight":
-					promptleftPosition = fieldLeft + fieldWidth - 30;
+					promptleftPosition = fieldLeft + fieldWidth - 27;
 					promptTopPosition =  fieldTop +  field.height() + 5;
 					marginTopSize = 0;
 					break;
@@ -1979,8 +2039,10 @@
 		focusFirstField:true,
 		// Show prompts, set to false to disable prompts
 		showPrompts: true,
-       // Should we attempt to validate non-visible input fields contained in the form? (Useful in cases of tabbed containers, e.g. jQuery-UI tabs)
-       validateNonVisibleFields: false,
+		// Should we attempt to validate non-visible input fields contained in the form? (Useful in cases of tabbed containers, e.g. jQuery-UI tabs)
+		validateNonVisibleFields: false,
+		// ignore the validation for fields with this specific class (Useful in cases of tabbed containers AND hidden fields we don't want to validate)
+		ignoreFieldsWithClass: 'ignoreMe',
 		// Opening box position, possible locations are: topLeft,
 		// topRight, bottomLeft, centerRight, bottomRight, inline
 		// inline gets inserted after the validated field or into an element specified in data-prompt-target
@@ -2006,10 +2068,15 @@
 		doNotShowAllErrosOnSubmit: false,
 		// Object where you store custom messages to override the default error messages
 		custom_error_messages:{},
-		// true if you want to vind the input fields
+		// true if you want to validate the input fields on blur event
 		binded: true,
+		// set to true if you want to validate the input fields on blur only if the field it's not empty
+		notEmpty: false,
 		// set to true, when the prompt arrow needs to be displayed
 		showArrow: true,
+		// set to false, determines if the prompt arrow should be displayed when validating
+		// checkboxes and radio buttons
+		showArrowOnRadioAndCheckbox: false,
 		// did one of the validation fail ? kept global to stop further ajax validations
 		isError: false,
 		// Limit how many displayed errors a field can have
@@ -2035,7 +2102,7 @@
 		// Delay before auto-hide
 		autoHideDelay: 10000,
 		// Fade out duration while hiding the validations
-		fadeDuration: 0.3,
+		fadeDuration: 300,
 	 // Use Prettify select library
 	 prettySelect: false,
 	 // Add css class on prompt
@@ -2049,5 +2116,3 @@
 	}};
 	$(function(){$.validationEngine.defaults.promptPosition = methods.isRTL()?'topLeft':"topRight"});
 })(jQuery);
-
-
