@@ -17,11 +17,11 @@ $chtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
         <div class="article_grid four_column_blog">
-            <h4>عضویت در خبرنامه</h4>
+            <h4>پرسش و پاسخ</h4>
             <div class="entry rtl">
                 <p class="teaser">
                     <span>
-                        عضویت در گروه در خبرنامه گروه رهیاب:
+                        در این صفحه می توانید سوالاتتان را بپرسید
                     </span>
                 </p>
                 <div id="frmdata" name="frmdata" class="formdata">
