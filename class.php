@@ -28,7 +28,7 @@
 			//echo $db->cmd;
 			if($_FILES['userfile']['size'] < $maxsize )
 			{    
-				//tid 1 is for menu pics, 2 for news pics, 3 for maghalat pics
+				//tid 1 is for class pics, 2 for hamayesh pics
 				if ($mode == "insert")
 				{
 					$fields = array("`tid`","`cid`","`itype`","`img`","`iname`","`isize`");		
@@ -43,7 +43,7 @@
 					$values = array("`tid`"=>"'1'","`cid`"=>"'{$did}'",
 						"`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
 						"`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
-					$db->UpdateQuery("pics",$values,array("sid='{$did}'"));	
+					$db->UpdateQuery("pics",$values,array("cid='{$did}'"));	
 				  }	
 				}	
 				//echo $db->cmd;
