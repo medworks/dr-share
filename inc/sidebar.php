@@ -34,10 +34,12 @@ $html.=<<<cd
 			<h4 class="widgettitle rtl">عضویت در خبرنامه</h4>
 			<div class="textwidget">
 				<div class="flickr_wrap">
+				<form action="membership.php" method="GET" >
 					<div class="flickr_badge_image" id="flickr_badge_image1">
-						<input type="text" name="" class="wysija-input" style="float:right;" title="Email" value="" id="form-validation-field-0">
+						<input type="text" name="email" class="wysija-input" style="float:right;" title="Email" value="" id="form-validation-field-0">
 						<input class="wysija-submit wysija-submit-field rtl" type="submit" style="margin-right:0;height:42px;font-size:17px" value="ثبت!">
 					</div>
+				</form>	
 				</div>
 			</div>
 		</div>
