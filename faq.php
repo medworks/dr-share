@@ -12,8 +12,25 @@
 	//ini_set('display_errors', 1);
 	
 	$db = Database::GetDatabase();
-		
-$chtml.=<<<cd
+	if (isset($_POST["mark"]) and $_POST["mark"]="register" )
+	{
+	    $date = date('Y-m-d H:i:s');
+		$fields = array("`name`","`degri`","`reshte`","`tel`","`mobile`",
+		                "`email`","`question`","`regdate`");
+		$values = array("'{$_POST[edtname]}'","'{$_POST[edtdegri]}'","'{$_POST[edtreshte]}'",
+						"'{$_POST[edttell]}'","'{$_POST[edtmob]}'","'{$_POST[edtemail]}'",
+						"'{$_POST[txtask]}'","'{$date}'");	
+		if (!$db->InsertQuery('ask',$fields,$values)) 
+		{			
+			header('location:faq.html?act=new&msg=2');			
+		} 	
+		else 
+		{  			
+			header('location:faq.html?act=new&msg=1');			
+		}  		
+		//echo $db->cmd;
+	}	
+$ashtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
         <div class="article_grid four_column_blog">
@@ -68,7 +85,7 @@ $chtml.=<<<cd
                             <label for="nt_field21">سوال مورد نظر
                                 <span class="star">*</span>
                             </label>
-                            <textarea id="txtmsg" name="txtmsg" class="textarea validate[required]" data-prompt-position="topLeft:600" rows="5" cols="40"></textarea>
+                            <textarea id="txtask" name="txtask" class="textarea validate[required]" data-prompt-position="topLeft:600" rows="5" cols="40"></textarea>
                         </div>
                         <!-- <div class="nt_form_row captcha_row">
                             <label for="nt_field31">8 + 2 </label>
@@ -102,7 +119,7 @@ $chtml.=<<<cd
 cd;
 
 	include_once('./inc/header.php');
-	echo $chtml;
+	echo $ashtml;
 	include_once('./inc/sidebar.php');
 	include_once('./inc/footer.php');
 	include_once('./inc/last.php');
