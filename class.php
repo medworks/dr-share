@@ -13,6 +13,51 @@
 	
 	$db = Database::GetDatabase();
 	
+	function upload($db,$did,$mode)
+	{		
+		if(is_uploaded_file($_FILES['userfile']['tmp_name']) && getimagesize($_FILES['userfile']['tmp_name']) != false)
+		{    
+			$size = getimagesize($_FILES['userfile']['tmp_name']);		
+			$type = $size['mime'];
+			$imgfp = mysqli_real_escape_string($db->link,file_get_contents($_FILES['userfile']['tmp_name']));
+			//echo $imgfp;
+			$size = $size[3];
+			$name = $_FILES['userfile']['name'];
+			$maxsize = 512000;//512 kb
+			//$db = Database::GetDatabase();
+			//echo $db->cmd;
+			if($_FILES['userfile']['size'] < $maxsize )
+			{    
+				//tid 1 is for menu pics, 2 for news pics, 3 for maghalat pics
+				if ($mode == "insert")
+				{
+					$fields = array("`tid`","`cid`","`itype`","`img`","`iname`","`isize`");		
+					$values = array("'1'","'{$did}'","'{$type}'","'{$imgfp}'","'{$name}'","'{$size}'");	
+					$db->InsertQuery('clspics',$fields,$values);
+				}
+				else
+				{
+				  $imgrow =$db->Select("clspics","*","cid='{$did}'");
+				  if ($imgfp != $imgrow["img"])
+				  {
+					$values = array("`tid`"=>"'1'","`cid`"=>"'{$did}'",
+						"`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
+						"`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
+					$db->UpdateQuery("pics",$values,array("sid='{$did}'"));	
+				  }	
+				}	
+				//echo $db->cmd;
+			}
+			else
+			{        
+				throw new Exception("File Size Error");
+			}
+		}
+		else
+		{		
+			throw new Exception("Unsupported Image Format!");
+		}
+	}
 	if (isset($_POST["mark"]) and $_POST["mark"]="register" )
 	{
 	    $date = date('Y-m-d H:i:s');
@@ -29,8 +74,14 @@
 			header('location:class.html?act=new&msg=2');			
 		} 	
 		else 
-		{  					
-			header('location:class.html?act=new&msg=1');
+		{  
+			if ($_FILES['userfile']['tmp_name']!="")
+			{
+				$did = $db->InsertId();
+				upload($db,$did,"insert");
+				header('location:class.html?act=new&msg=1');
+			}	
+			
 		}  		
 		//echo $db->cmd;
 	}
@@ -48,7 +99,7 @@ $chtml.=<<<cd
                 </p>
                 <div class="nt_form">
 				    <!-- {$msgs} -->
-                    <form id="frmclass" class="formdata" action="" method="post" role="form">
+                    <form id="frmclass" class="formdata" enctype="multipart/form-data" action="" method="post" role="form">
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">نام و نام خانوادگی
                                 <span class="star">*</span>
@@ -104,7 +155,7 @@ $chtml.=<<<cd
                             <label for="nt_field11">فیش پرداختی
                                 <span class="star">*</span>
                             </label>
-                            <input type="file" id="file" name="file" class="textfield file validate[required]" data-prompt-position="topLeft:-10" value="">
+                            <input type="file" id="userfile" name="userfile" class="textfield file validate[required]" data-prompt-position="topLeft:-10" value="">
                         </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">استان
