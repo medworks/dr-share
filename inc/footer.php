@@ -51,7 +51,7 @@ for($i = 0; $i < Count($rwnews); $i++)
 $rwnews[$i]["subject"] =(mb_strlen($rwnews[$i]["subject"])>20)?mb_substr($rwnews[$i]["subject"],0,20,"UTF-8")."...":$rwnews[$i]["subject"];
 $html.=<<<cd
  							<li id="menu-item-2768" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2768">
- 								<a href="#" style="color:#ccc;">{$rwnews[$i][subject]}</a>
+ 								<a href="one-news{$rwnews[$i]['id']}.html" style="color:#ccc;">{$rwnews[$i][subject]}</a>
  							</li>
 cd;
 }
@@ -91,12 +91,12 @@ $html.=<<<cd
 					<div class="menu-galleries-container">
 						<ul id="menu-galleries" class="menu">
 cd;
-for($i = 0; $i < Count($rwnews); $i++)
+for($i = 0; $i < Count($rwtopics); $i++)
 {
-$rwnews[$i]["subject"] =(mb_strlen($rwtopics[$i]["subject"])>20)?mb_substr($rwtopics[$i]["subject"],0,20,"UTF-8")."...":$rwtopics[$i]["subject"];
+$rwtopics[$i]["subject"] =(mb_strlen($rwtopics[$i]["subject"])>20)?mb_substr($rwtopics[$i]["subject"],0,20,"UTF-8")."...":$rwtopics[$i]["subject"];
 $html.=<<<cd
 							<li>
-								<a href="#" style="color:#ccc;">{$rwnews[$i]['subject']}</a>
+								<a href="one-article{$rwtopics[$i]['id']}.html" style="color:#ccc;">{$rwtopics[$i]['subject']}</a>
 							</li>
 cd;
 }
