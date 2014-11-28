@@ -12,8 +12,90 @@
 	//ini_set('display_errors', 1);
 	
 	$db = Database::GetDatabase();
-		
-$chtml.=<<<cd
+	if (isset($_GET["email"]))
+	{
+		$cnt=$db->CountOf("newsmember"," email='{$_GET["email"]}'");
+		if ($cnt > 0)
+		{
+			exit;
+		}
+	}
+    
+	if ($_POST["mark"]=="register")
+	{			
+		$date = date('Y-m-d H:i:s');
+		$cats = implode(",",$_POST[cat]);
+		$fields = array("`name`","`degri`","`reshte`","`email`",
+						"`tell`","`mobile`","`group`","`regdate`");		
+		$values = array("'{$_POST[edtname]}'","'{$_POST[edtdegri]}'",
+						"'{$_POST[edtreshte]}'","'{$_POST[edtemail]}'",
+						"'{$_POST[edttell]}'","{$_POST[edtmob]}",
+						"'{$cats}'","'{$date}'");	
+		if (!$db->InsertQuery('newsmember',$fields,$values)) 
+		{			
+			header('location:membership.html?act=new&msg=2');			
+		} 	
+		else 
+		{  				
+			header('location:membership.html?act=new&msg=1');
+		}  		
+	}
+	else
+	if ($_POST["mark"]=="edittopic")
+	{				
+		$values = array("`gid`"=>"'{$_POST[cbgroup]}'","`smid`"=>"'{$sm}'",
+						"`subject`"=>"'{$_POST[edtsubject]}'","`text`"=>"'{$_POST[edttext]}'",
+						"`picid`"=>"'0'");
+        $db->UpdateQuery("topics",$values,array("id='{$_GET[did]}'"));		
+		header('location:dataentry.php?act=new&msg=1');
+	}	
+
+	
+	$mnu = $db->SelectAll("submenues","*",NULL,"id ASC");
+	
+	function haschildren($rows,$id) 
+	{
+		foreach ($rows as $row) 
+		{
+			if ($row['pid'] == $id)
+			  return true;
+		}
+		return false;
+	}
+	$mnulist = array();
+	function getmenu($rows,$returned,$parent=0)
+	{		
+	  foreach ($rows as $row)
+	  {
+		if ($row['pid'] == $parent)
+		{
+			if (!haschildren($rows, $row['id']))
+			{
+				$returned[] = $row['id'];
+			}	
+			else		  
+			{			
+			 $returned =getmenu($rows,$returned,$row['id']);						
+			}
+		}
+	  }  
+	  return $returned;
+	}
+	$mnulist = getmenu($mnu,$mnulist);
+	//print_r ($mnulist);
+	$mnuids = implode(', ', $mnulist);
+	
+	$mnu = $db->SelectAll("submenues","*","id IN (".$mnuids.")"," id ASC");	
+	for($i = 0; $i < Count($mnu); $i++)
+	{
+$chbs.=<<<cd
+		<label for="cat">{$mnu[$i]["name"]}
+        </label>
+		<input type="checkbox" name="cat[]" value="{$mnu[$i][id]}" />
+		<br/>
+cd;
+	}
+$nwlhtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
         <div class="article_grid four_column_blog">
@@ -67,6 +149,7 @@ $chtml.=<<<cd
                             <label for="nt_field31">8 + 2 </label>
                             <input type="text" name="nt_field31" id="nt_field31" class="textfield captcha required" value="">
                         </div> -->
+						{$chbs}
                         <div class="nt_form_row">
                             <input type="submit" value="ثبت نام" id="submit" class="contact_form_submit styled_button">
                             <input type="hidden" name="mark" value="register" />
@@ -95,7 +178,7 @@ $chtml.=<<<cd
 cd;
 
 	include_once('./inc/header.php');
-	echo $chtml;
+	echo $nwlhtml;
 	include_once('./inc/sidebar.php');
 	include_once('./inc/footer.php');
 	include_once('./inc/last.php');
