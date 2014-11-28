@@ -123,7 +123,7 @@
 			upload($db,$_GET["did"],"edit");
 			//var_dump($_FILES['userfile']);
 		}		
-		header('location:dataentry.php?act=new&msg=1');
+		header('location:addarticle.php?act=new&msg=1');
 	}
 	
 	$rbmchecked = "";
