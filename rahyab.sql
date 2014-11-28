@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2014 at 03:26 PM
+-- Generation Time: Nov 28, 2014 at 01:39 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -436,6 +436,33 @@ INSERT INTO `news` (`id`, `gid`, `smid`, `subject`, `text`, `regdate`, `picid`) 
 (11, 5, 0, '   تست گروه2', 'سعید در حال تست اخبار و صفحه اصلی می باشد که نهایتا خوابش می گیره!!!', '0000-00-00 00:00:00', 0),
 (12, 5, 0, '   تست گروه2', '   این تست گروه است \r\nبلیییییییییییییی2', '0000-00-00 00:00:00', 0),
 (13, 5, 0, '   تست گروه2', '   این تست گروه است \r\nبلیییییییییییییی2', '0000-00-00 00:00:00', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `newsmember`
+--
+
+CREATE TABLE IF NOT EXISTS `newsmember` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(60) NOT NULL,
+  `degri` varchar(30) NOT NULL,
+  `reshte` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `tell` varchar(12) NOT NULL,
+  `mobile` varchar(12) NOT NULL,
+  `group` varchar(50) NOT NULL,
+  `regdate` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `newsmember`
+--
+
+INSERT INTO `newsmember` (`id`, `name`, `degri`, `reshte`, `email`, `tell`, `mobile`, `group`, `regdate`) VALUES
+(1, 'مجتبی', 'امجدی', 'نرم افزار', 'gjh1ghg@gffh.com', '0123456789', '1234567890', '3,6,7,8,9', '2014-11-28 12:57:49'),
+(2, 'سعید حاتمی', 'لیسانس', 'نرم افزار', 'gjhghg@gffh.com', '0123456789', '1234567890', '6,7,8,9', '2014-11-28 12:58:25');
 
 -- --------------------------------------------------------
 
