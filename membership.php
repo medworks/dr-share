@@ -12,51 +12,6 @@
 	//ini_set('display_errors', 1);
 	
 	$db = Database::GetDatabase();
-$inseroredit=<<<cd
-	<input type="submit" value="ثبت نام" id="submit" class="contact_form_submit styled_button">
-	<input type="hidden" name="mark" value="register" />
-cd;
-	if (isset($_GET["email"]))
-	{
-		$row=$db->Select("newsmember","*"," email='{$_GET["email"]}'");
-		if ($row)
-		{
-$inseroredit=<<<cd
-	<input type="submit" value="ویرایش اطلاعات" id="submit" class="contact_form_submit styled_button">
-	<input type="hidden" name="mark" value="editinfo" />
-cd;
-		}
-	}
-    
-	if ($_POST["mark"]=="register")
-	{			
-		$date = date('Y-m-d H:i:s');
-		$cats = implode(",",$_POST[cat]);
-		$fields = array("`name`","`degri`","`reshte`","`email`",
-						"`tell`","`mobile`","`group`","`regdate`");		
-		$values = array("'{$_POST[edtname]}'","'{$_POST[edtdegri]}'",
-						"'{$_POST[edtreshte]}'","'{$_POST[edtemail]}'",
-						"'{$_POST[edttell]}'","{$_POST[edtmob]}",
-						"'{$cats}'","'{$date}'");	
-		if (!$db->InsertQuery('newsmember',$fields,$values)) 
-		{			
-			header('location:membership.html?act=new&msg=2');			
-		} 	
-		else 
-		{  				
-			header('location:membership.html?act=new&msg=1');
-		}  		
-	}
-	else
-	if ($_POST["mark"]=="edittopic")
-	{				
-		$values = array("`gid`"=>"'{$_POST[cbgroup]}'","`smid`"=>"'{$sm}'",
-						"`subject`"=>"'{$_POST[edtsubject]}'","`text`"=>"'{$_POST[edttext]}'",
-						"`picid`"=>"'0'");
-        $db->UpdateQuery("topics",$values,array("id='{$_GET[did]}'"));		
-		header('location:dataentry.php?act=new&msg=1');
-	}	
-
 	
 	$mnu = $db->SelectAll("submenues","*",NULL,"id ASC");
 	
@@ -89,8 +44,45 @@ cd;
 	  return $returned;
 	}
 	$mnulist = getmenu($mnu,$mnulist);
-	//print_r ($mnulist);
 	$mnuids = implode(', ', $mnulist);
+	
+	if (isset($_GET["email"]))
+	{
+		$row=$db->Select("newsmember","*"," email='{$_GET["email"]}'");
+		if ($row)
+		{
+$inseroredit=<<<cd
+	<input type="submit" value="ویرایش اطلاعات" id="submit" class="contact_form_submit styled_button">
+	<input type="hidden" name="mark" value="editinfo" />
+cd;
+	$cat = explode(",",$row["group"]);
+	$mnu = $db->SelectAll("submenues","*","id IN (".$mnuids.")"," id ASC");	
+	for($i = 0; $i < Count($mnu); $i++)
+	{
+	if (in_array($mnu[$i][id],$cat))
+	{
+		$chb = "<input type='checkbox' name='cat[]' value='{$mnu[$i][id]}' checked />  ";
+	}
+	else
+	{
+		$chb = "<input type='checkbox' name='cat[]' value='{$mnu[$i][id]}' />  ";
+	}
+$chbs.=<<<cd
+		<label for="cat">{$mnu[$i]["name"]}
+        </label>
+		{$chb}
+		<br/>
+cd;
+	}
+		}
+	}
+	else
+	{
+$inseroredit=<<<cd
+	<input type="submit" value="ثبت نام" id="submit" class="contact_form_submit styled_button">
+	<input type="hidden" name="mark" value="register" />
+cd;
+				
 	
 	$mnu = $db->SelectAll("submenues","*","id IN (".$mnuids.")"," id ASC");	
 	for($i = 0; $i < Count($mnu); $i++)
@@ -102,6 +94,40 @@ $chbs.=<<<cd
 		<br/>
 cd;
 	}
+	}	
+	if ($_POST["mark"]=="register")
+	{			
+		$date = date('Y-m-d H:i:s');
+		$cats = implode(',',$_POST['cat']);
+		$fields = array("`name`","`degri`","`reshte`","`email`",
+						"`tell`","`mobile`","`group`","`regdate`");		
+		$values = array("'{$_POST[edtname]}'","'{$_POST[edtdegri]}'",
+						"'{$_POST[edtreshte]}'","'{$_POST[edtemail]}'",
+						"'{$_POST[edttell]}'","{$_POST[edtmob]}",
+						"'{$cats}'","'{$date}'");	
+		if (!$db->InsertQuery('newsmember',$fields,$values)) 
+		{			
+			header('location:membership.html?act=new&msg=2');			
+		} 	
+		else 
+		{  				
+			header('location:membership.html?act=new&msg=1');
+		}  		
+	}
+	else
+	if ($_POST["mark"]=="editinfo")
+	{				
+		$cats = implode(',',$_POST['cat']);
+		$values = array("`name`"=>"'{$_POST[edtname]}'","`degri`"=>"'{$_POST[edtdegri]}'",
+						"`reshte`"=>"'{$_POST[edtreshte]}'","`email`"=>"'{$_POST[edtemail]}'",
+						"`tell`"=>"'{$_POST[edttell]}'","`mobile`"=>"'{$_POST[edtmob]}'",
+						"`group`"=>"'{$cats}'");
+        $db->UpdateQuery("newsmember",$values,array("id='{$row["id"]}'"));		
+		//echo $db->cmd;
+		header('location:membership.html?act=new&msg=1');
+	}	
+
+		
 $nwlhtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
