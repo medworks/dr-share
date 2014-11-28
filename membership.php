@@ -182,6 +182,8 @@ $nwlhtml.=<<<cd
                             <label for="nt_field31">8 + 2 </label>
                             <input type="text" name="nt_field31" id="nt_field31" class="textfield captcha required" value="">
                         </div> -->
+						<span class="star">لیست گروه های قابل عضویت جهت دریافت اخبار مربوطه</span>
+						<br/>
 						{$chbs}
                         <div class="nt_form_row">
                             {$inseroredit}
