@@ -248,11 +248,12 @@
                 <a href="#">
                     <i class="fa fa-file-picture-o"></i>
                     <span>کلاسها و دوره ها</span>
+                    <span class="badge badge-red">3</span>
                 </a>
                 <ul>
-                    <li><a href="javascript:void(0);">تعریف کلاس</a></li>
-                    <li><a href="javascript:void(0);">ویرایش کلاسها</a></li>
-                    <li><a href="javascript:void(0);">ثبت نام کنندگان</a></li>
+                    <li><a href="addclass.php">تعریف کلاس</a></li>
+                    <li><a href="editclass.php">ویرایش کلاسها</a></li>
+                    <li><a href="regclass.php">ثبت نام کنندگان</a></li>
                     <li><a href="javascript:void(0);">تایید شده ها</a></li>
                 </ul>
             </li>
@@ -260,6 +261,7 @@
                 <a href="#">
                     <i class="fa fa-coffee"></i>
                     <span>همایش ها</span>
+                    <span class="badge badge-red">3</span>
                 </a>
                 <ul>
                     <li><a href="javascript:void(0);">تعریف همایش</a></li>
@@ -272,6 +274,7 @@
                 <a href="#">
                     <i class="fa fa-pencil-square-o"></i>
                     <span>پرسش و پاسخ</span>
+                    <span class="badge badge-red">3</span>
                 </a>
             </li>
             <li>
