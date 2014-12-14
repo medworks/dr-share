@@ -251,8 +251,8 @@
                     <span class="badge badge-red">3</span>
                 </a>
                 <ul>
-                    <li><a href="addclass.php">تعریف کلاس</a></li>
-                    <li><a href="editclass.php">ویرایش کلاسها</a></li>
+                    <li><a href="addclass.php?act=new">تعریف کلاس</a></li>
+                    <li><a href="editclass.php?act=edit">ویرایش کلاسها</a></li>
                     <li><a href="regclass.php">ثبت نام کنندگان</a></li>
                     <li><a href="javascript:void(0);">تایید شده ها</a></li>
                 </ul>

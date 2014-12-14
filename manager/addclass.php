@@ -20,26 +20,27 @@
 	if ($_POST["mark"]=="savedata")
 	{
 		$fields = array("`title`","`subjects`","`starttime`","`period`","`endtime`","`details`");		
-		$values = array("'{$_POST[cbmenu]}'","'{$sm}'","'{$_POST[edtsubject]}'","'{$_POST[edttext]}'","'{$date}'","'0'");	
-		if (!$db->InsertQuery('menusubjects',$fields,$values)) 
+		$values = array("'{$_POST[edttitle]}'","'{$_POST[edtsubjects]}'","'{$_POST[edtstarttime]}'",
+				"'{$_POST[edtperid]}'","'{$_POST[edtendtime]}'","{$_POST[txtdetails]}");	
+		if (!$db->InsertQuery('defclasses',$fields,$values)) 
 		{			
-			header('location:dataentry.php?act=new&msg=2');			
+			header('location:adclass.php?act=new&msg=2');			
 		} 	
 		else 
 		{  
-				header('location:dataentry.php?act=new&msg=1');
+			header('location:addclass.php?act=new&msg=1');
 		}  		
 	}
 	else
 	if ($_POST["mark"]=="editdata")
 	{		
 		
-		$values = array("`title`"=>"'{$_POST[cbmenu]}'","`subjects`"=>"'{$sm}'",
-				"`starttime`"=>"'{$_POST[edtsubject]}'","`period`"=>"'{$_POST[edttext]}'",
-				"`endtime`"=>"'0'","`details`"=>"'{$_POST[edttext]}'");
-		$db->UpdateQuery("menusubjects",$values,array("id='{$_GET[did]}'"));
+		$values = array("`title`"=>"'{$_POST[edttitle]}'","`subjects`"=>"'{$_POST[edtsubjects]}'",
+				"`starttime`"=>"'{$_POST[edtstarttime]}'","`period`"=>"'{$_POST[edtperiod]}'",
+				"`endtime`"=>"{$_POST[edtendtime]}","`details`"=>"'{$_POST[txtdetails]}'");
+		$db->UpdateQuery("defclasses",$values,array("id='{$_GET[did]}'"));
 		
-		header('location:dataentry.php?act=new&msg=1');
+		header('location:addclass.php?act=new&msg=1');
 	}
 	
 	if ($_GET['act']=="new")
