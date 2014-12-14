@@ -86,7 +86,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edtsubject" name="edtsubject" type="text" class="form-control" value="{$row["subject"]}"/>
+                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -101,8 +101,8 @@ $html=<<<cd
                                 <div class="panel-body">
                                     <div class="row ls_divider last">
                                         <div class="col-md-10 ls-group-input">
-                                            <textarea id="edttext" name="edttext" class="animatedTextArea form-control " >
-												{$row["text"]}
+                                            <textarea id="edtsubjects" name="edtsubjects" class="animatedTextArea form-control " >
+												{$row["subjects"]}
 											</textarea>
                                         </div>
                                     </div>
@@ -118,7 +118,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="startdate" name="startdate" type="text" class="form-control" value=""/>
+                                        <input id="edtstarttime" name="edtstarttime" type="text" class="form-control" value="{$row["starttime"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -132,7 +132,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="time" name="time" type="text" class="form-control" value=""/>
+                                        <input id="edtperiod" name="edtperiod" type="text" class="form-control" value="{$row["period"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -146,7 +146,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="enddate" name="enddate" type="text" class="form-control" value=""/>
+                                        <input id="edtendtime" name="edtendtime" type="text" class="form-control" value="{$row["endtime"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -161,8 +161,8 @@ $html=<<<cd
                                 <div class="panel-body">
                                     <div class="row ls_divider last">
                                         <div class="col-md-10 ls-group-input">
-                                            <textarea id="edttext" name="edttext" class="animatedTextArea form-control " >
-												{$row["text"]}
+                                            <textarea id="txtdetails" name="txtdetails" class="animatedTextArea form-control " >
+												{$row["details"]}
 											</textarea>
                                         </div>
                                     </div>
@@ -188,24 +188,6 @@ $html=<<<cd
         </div>
     </section>
     <!--Page main section end -->
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#cbmenu").change(function(){
-				var id= $(this).val();
-				$.get('./ajaxcommand.php?smid='+id,function(data) {			
-						$('#sm1').html(data);
-						
-						$("#cbsm1").change(function(){
-							var id= $(this).val();
-							$.get('./ajaxcommand.php?smid2='+id,function(data) {			
-								$('#sm2').html(data);
-							});
-						});			
-				});
-			});			
-		
-		});
-	</script>
 cd;
 
 	include_once("./inc/header.php");
