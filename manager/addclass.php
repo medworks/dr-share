@@ -21,10 +21,10 @@
 	{
 		$fields = array("`title`","`subjects`","`starttime`","`period`","`endtime`","`details`");		
 		$values = array("'{$_POST[edttitle]}'","'{$_POST[edtsubjects]}'","'{$_POST[edtstarttime]}'",
-				"'{$_POST[edtperid]}'","'{$_POST[edtendtime]}'","{$_POST[txtdetails]}");	
+				"'{$_POST[edtperid]}'","'{$_POST[edtendtime]}'","'{$_POST[txtdetails]}'");	
 		if (!$db->InsertQuery('defclasses',$fields,$values)) 
 		{			
-			header('location:adclass.php?act=new&msg=2');			
+			header('location:addclass.php?act=new&msg=2');			
 		} 	
 		else 
 		{  
