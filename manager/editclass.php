@@ -20,7 +20,7 @@
 	if ($_GET['act']=="del")
 	{
 		$db->Delete("topics"," id",$_GET["did"]);		
-		header('location:editarticle.php?act=new');	
+		header('location:editclass.php?act=new');	
 	}		
     
 $html.=<<<cd
@@ -73,13 +73,13 @@ cd;
 
 	$pagination->navigation_position("right");
 
-	$reccount = $db->CountAll("topics");
+	$reccount = $db->CountAll("defclasses");
 	$pagination->records($reccount); 
 	
     $pagination->records_per_page($records_per_page);	
 
 $rows = $db->SelectAll(
-				"topics",
+				"defclasses",
 				"*",
 				NULL,
 				"id ASC",
@@ -91,39 +91,16 @@ $vals = array();
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;
-$rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
-$rows[$i]["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
-$vals = "";
-if ($rows[$i]['smid']!=0)
-{
-	$row = $db->Select("submenues","*","id={$rows[$i]['smid']}","id ASC");	
-	$vals[] = $row["name"];
-		
-	while($row["pid"]!=0)
-	{
-		$row = $db->Select("submenues","*","id={$row['pid']}","id ASC");
-		$vals[] = $row["name"];
-	}
-    
-	$row = $db->Select("menues","*","id={$row['mid']}","id ASC");	
-	$vals[] = $row["name"];
-}
-else
-{
-		$row = $db->Select("categories","*","id={$rows[$i]['gid']}","id ASC");	
-		$vals[] = "";
-		$vals[] = "";
-		$vals[] = $row["name"];
-}	
+
 $html.=<<<cd
 
                                                 
                                             <tr>
                                                 <td>{$rownumber}</td>
-                                                <td>{$rows[$i]["subject"]}</td>
-                                                <td>{$rows[$i]["text"]}</td>
-                                                <td>{$rows[$i]["text"]}</td>
-                                                <td>{$rows[$i]["text"]}</td>
+                                                <td>{$rows[$i]["title"]}</td>
+                                                <td>{$rows[$i]["starttime"]}</td>
+                                                <td>{$rows[$i]["period"]}</td>
+                                                <td>{$rows[$i]["endtime"]}</td>
                                                 
                                                 <td class="text-center">
 												<a href="addarticle.php?act=edit&did={$rows[$i]["id"]}"  >					
@@ -155,7 +132,8 @@ $html.=<<<cd
     </section>
     <!--Page main section end -->
 cd;
-	include_once("./inc/header.php");
-	echo $html;
+    
+    include_once("./inc/header.php");
+    echo $html;
     include_once("./inc/footer.php");
 ?>
