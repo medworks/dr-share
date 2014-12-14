@@ -11,15 +11,17 @@
 	
 	
 	$login = Login::GetLogin();
-    if (!$login->IsLogged())
+	if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");
 		die(); // solve a security bug
-	} 
-	$db = Database::GetDatabase(); 
+	}
+	
+	$db = Database::GetDatabase();
+	
 	if ($_GET['act']=="del")
 	{
-		$db->Delete("topics"," id",$_GET["did"]);		
+		$db->Delete("defclasses"," id",$_GET["did"]);		
 		header('location:editclass.php?act=new');	
 	}		
     
@@ -103,7 +105,7 @@ $html.=<<<cd
                                                 <td>{$rows[$i]["endtime"]}</td>
                                                 
                                                 <td class="text-center">
-												<a href="addarticle.php?act=edit&did={$rows[$i]["id"]}"  >					
+												<a href="addclass.php?act=edit&did={$rows[$i]["id"]}"  >					
                                                     <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
 												</a>
 												<a href="?act=del&did={$rows[$i]["id"]}"  >												

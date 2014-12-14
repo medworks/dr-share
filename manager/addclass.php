@@ -21,7 +21,7 @@
 	{
 		$fields = array("`title`","`subjects`","`starttime`","`period`","`endtime`","`details`");		
 		$values = array("'{$_POST[edttitle]}'","'{$_POST[edtsubjects]}'","'{$_POST[edtstarttime]}'",
-				"'{$_POST[edtperid]}'","'{$_POST[edtendtime]}'","'{$_POST[txtdetails]}'");	
+				"'{$_POST[edtperiod]}'","'{$_POST[edtendtime]}'","'{$_POST[txtdetails]}'");	
 		if (!$db->InsertQuery('defclasses',$fields,$values)) 
 		{			
 			header('location:addclass.php?act=new&msg=2');			
@@ -37,10 +37,11 @@
 		
 		$values = array("`title`"=>"'{$_POST[edttitle]}'","`subjects`"=>"'{$_POST[edtsubjects]}'",
 				"`starttime`"=>"'{$_POST[edtstarttime]}'","`period`"=>"'{$_POST[edtperiod]}'",
-				"`endtime`"=>"{$_POST[edtendtime]}","`details`"=>"'{$_POST[txtdetails]}'");
+				"`endtime`"=>"'{$_POST[edtendtime]}'","`details`"=>"'{$_POST[txtdetails]}'");
 		$db->UpdateQuery("defclasses",$values,array("id='{$_GET[did]}'"));
 		
 		header('location:addclass.php?act=new&msg=1');
+		//echo $db->cmd;
 	}
 	
 	if ($_GET['act']=="new")
@@ -53,7 +54,7 @@
 		
 	if ($_GET['act']=="edit")
 	{
-	    $row=$db->Select("menusubjects","*","id='{$_GET["did"]}'",NULL);		
+		$row=$db->Select("defclasses","*","id='{$_GET["did"]}'",NULL);		
 		$insertoredit = "
 			<button id='submit' type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editdata' /> ";
@@ -191,7 +192,7 @@ $html=<<<cd
     <!--Page main section end -->
 cd;
 
-	include_once("./inc/header.php");
-	echo $html;
+    include_once("./inc/header.php");
+    echo $html;
     include_once("./inc/footer.php");
 ?>
