@@ -107,7 +107,7 @@ $html.=<<<cd
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" name="Rss_Add" value="{$Rss_Add}"/>
                                                 <span class="help_text">
-                                                    آدرس خبرنامه را در این قسمت قرار دهید. به طور مثال: http://www.rahyabclinic.com/rss.xml
+                                                    آدرس خبرنامه را در این قسمت قرار دهید. به طور مثال: http://www.rahyabclinic.com/rss.php
                                                 </span>
                                             </div>
                                         </div>

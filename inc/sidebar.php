@@ -8,8 +8,12 @@
   	include_once("classes/database.php");	
 	include_once("classes/login.php");
     include_once("lib/persiandate.php"); 
-$db = Database::GetDatabase();
-$gallery = $db->SelectAll("gpics","*",NULL,"id ASC",0,5);
+	$db = Database::GetDatabase();
+	$gallery = $db->SelectAll("gpics","*",NULL,"id ASC",0,5);
+
+	$FaceBook_Add = GetSettingValue('FaceBook_Add',0);  
+    $Twitter_Add = GetSettingValue('Twitter_Add',0);  
+    $Rss_Add = GetSettingValue('Rss_Add',0); 
 
 $html.=<<<cd
 <div id="sidebar" class="col3 last">
@@ -69,22 +73,22 @@ $html.=<<<cd
 				<div class="social-count-plus">
 					<ul class="default">
 						<li class="count-twitter">
-							<a class="icon" href="#" target="_blank"></a>
+							<a class="icon" href="{$Twitter_Add}" target="_blank"></a>
 						</li>
 						<li class="count-facebook">
-							<a class="icon" href="#" target="_blank"></a>
+							<a class="icon" href="{$FaceBook_Add}" target="_blank"></a>
 						</li>
 						<li class="count-youtube">
-							<a class="icon" href="#" target="_blank"></a>
+							<a class="icon" href="javascript:void(0);" target="_blank"></a>
 						</li>
 						<li class="count-googleplus">
-							<a class="icon" href="#" target="_blank"></a>
+							<a class="icon" href="javascript:void(0);" target="_blank"></a>
 						</li>
 						<li class="count-instagram">
-							<a class="icon" href="#" target="_blank"></a>
+							<a class="icon" href="javascript:void(0);" target="_blank"></a>
 						</li>
 						<li class="count-posts">
-							<a class="icon" href="#" target="_blank"></a>
+							<a class="icon" href="{$Rss_Add}" target="_blank"></a>
 						</li>
 					</ul>
 				</div>
