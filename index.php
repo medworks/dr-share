@@ -66,6 +66,9 @@ $fhtml.=<<<cd
 cd;
 for($i = 0; $i < Count($news); $i++)
 {
+	$pic = $db->Select("pics","*","`sid`='{$news[$i][id]}' AND `tid`='2'");
+	$img = base64_encode($pic['img']);
+	$src = 'data: '.$pic['itype'].';base64,'.$img;
 	//$pic=$db->Select("pics","*","tid=2 AND sid ='{$news[i][id]}'",NULL);
 	$news[$i]["text"] =(mb_strlen($news[$i]["text"])>90)?mb_substr($news[$i]["text"],0,90,"UTF-8")."...":$news[$i]["text"];
 	if ($i % 4 == 0)
@@ -80,7 +83,10 @@ $fhtml.=<<<cd
 				<div class="3 {$class}">
 					<div class="fade-in article_grid_module appeared">
 						<div class="article_grid_image">
+						      <!--
 							<img class=" morph" src="manager/img.php?did={$news[$i]["id"]}&tid=2" style="width:160px!important;height:160!importmant"/>
+						-->
+						<img class="morph" src="{$src}" alt ="{$news[$i]['subject']}" style="width:160px!important;height:160!importmant" />
 							<div class="hover_buttons">
 								<div>
 									<div>
