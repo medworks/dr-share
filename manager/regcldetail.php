@@ -16,48 +16,29 @@
     }
     $db = Database::GetDatabase();
     
-    
-    if ($_POST["mark"]=="savedata")
+       
+           
+    if (isset($_GET["act"]) and $_GET["act"]=="view")
     {
-        $fields = array("`title`","`subjects`","`starttime`","`period`","`endtime`","`details`");       
-        $values = array("'{$_POST[edttitle]}'","'{$_POST[edtsubjects]}'","'{$_POST[edtstarttime]}'",
-                "'{$_POST[edtperiod]}'","'{$_POST[edtendtime]}'","'{$_POST[txtdetails]}'"); 
-        if (!$db->InsertQuery('defclasses',$fields,$values)) 
-        {           
-            header('location:addclass.php?act=new&msg=2');          
-        }   
-        else 
-        {  
-            header('location:addclass.php?act=new&msg=1');
-        }       
-    }
-    else
-    if ($_POST["mark"]=="editdata")
-    {       
-        
-        $values = array("`title`"=>"'{$_POST[edttitle]}'","`subjects`"=>"'{$_POST[edtsubjects]}'",
-                "`starttime`"=>"'{$_POST[edtstarttime]}'","`period`"=>"'{$_POST[edtperiod]}'",
-                "`endtime`"=>"'{$_POST[edtendtime]}'","`details`"=>"'{$_POST[txtdetails]}'");
-        $db->UpdateQuery("defclasses",$values,array("id='{$_GET[did]}'"));
-        
-        header('location:addclass.php?act=new&msg=1');
+	$row = $db->Select("classes","*","id ={$_GET['did']}");
+	$regdate = ToJalali($row["regdate"]," l d F  Y ساعت H:i");
+        if($row["tahol"] ==0)
+        {
+          $row["tahol"] = "مجرد" ;
+        }
+        else
+        {
+            $row["tahol"]="متاهل" ;
+        }
+    
         //echo $db->cmd;
     }
-    
-    if ($_GET['act']=="new")
+	
+    if ((isset($_POST["mark"]) and $_POST["mark"]=="confirm"))
     {
-        $insertoredit = "
-            <button id='submit' type='submit' class='btn btn-default'>ثبت</button>
-            <input type='hidden' name='mark' value='savedata' /> ";
-    }
-
-        
-    if ($_GET['act']=="edit")
-    {
-        $row=$db->Select("defclasses","*","id='{$_GET["did"]}'",NULL);      
-        $insertoredit = "
-            <button id='submit' type='submit' class='btn btn-default'>ویرایش</button>
-            <input type='hidden' name='mark' value='editdata' /> ";
+	$values = array("`confirm`"=>"'1'");
+	$db->UpdateQuery("classes",$values,array("id='{$_GET[did]}'"));		
+	header('location:regclassconf.php?act=new');
     }
     
 $html=<<<cd
@@ -88,7 +69,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        
+                                        {$regdate}
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +83,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtname" name="edtname" type="text" class="form-control" value="{$row["name"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +97,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtfather" name="edtfather" type="text" class="form-control" value="{$row["father"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -130,7 +111,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtbirth" name="edtbirth" type="text" class="form-control" value="{$row["birth"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -144,7 +125,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edttahol" name="edttahol" type="text" class="form-control" value="{$row["tahol"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +139,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtmeli" name="edtmeli" type="text" class="form-control" value="{$row["meli"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -172,7 +153,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edttahsilat" name="edttahsilat" type="text" class="form-control" value="{$row["tahsilat"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -186,7 +167,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtreshte" name="edtreshte" type="text" class="form-control" value="{$row["reshte"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +181,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtjob" name="edtjob" type="text" class="form-control" value="{$row["shoghl"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -214,7 +195,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtfish" name="edtfish" type="text" class="form-control" value="{$row["title"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -228,7 +209,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtostan" name="edtostan" type="text" class="form-control" value="{$row["ostan"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -242,7 +223,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtshahr" name="edtshahr" type="text" class="form-control" value="{$row["shahr"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -256,7 +237,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtaddress" name="edtaddress" type="text" class="form-control" value="{$row["address"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -270,7 +251,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edttel" name="edttel" type="text" class="form-control" value="{$row["tel"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -284,7 +265,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtmobile" name="edtmobile" type="text" class="form-control" value="{$row["mobile"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -298,7 +279,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtemail" name="edtemail" type="text" class="form-control" value="{$row["email"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -312,7 +293,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtdesc" name="edtdesc" type="text" class="form-control" value="{$row["desc"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -326,7 +307,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttitle" name="edttitle" type="text" class="form-control" value="{$row["title"]}"/>
+                                        <input id="edtdore" name="edtdore" type="text" class="form-control" value="{$row["clsid"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -339,7 +320,8 @@ $html=<<<cd
                                     <h3 class="panel-title">تایید</h3>
                                 </div>
                                 <div class="panel-body">
-                                    {$insertoredit}
+                                    <button id="submit" type="submit" class="btn btn-default">تایید</button>
+                                    <input type="hidden" name="mark" value="confirm"> 
                                 </div>
                             </div>
                         </div>
