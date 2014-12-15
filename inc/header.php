@@ -37,10 +37,10 @@ $hhtml.=<<<cd
 <link href="./css/zebra_pagination.css" rel="stylesheet" />
 <meta name="google-site-verification" content="" />
 <meta name="msvalidate.01" content="" />
-<meta name="description" content="" />
-<meta name="keywords" content="" />
+<meta name="description" content="$seo->Site_Describtion" />
+<meta name="keywords" content="$seo->Site_KeyWords" />
 <meta name="author" content="Mediateq.ir" />
-<meta name="generator" content="Powered by Mediateq CMS panel" />
+<meta name="generator" content="Powered by Mediateq.ir CMS panel" />
 <meta name="googlebot" content="INDEX,FOLLOW" />
 <meta name="robots" content="INDEX,FOLLOW" />
 <meta name="format-detection" content="telephone=yes" />
