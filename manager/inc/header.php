@@ -264,10 +264,10 @@
                     <!-- <span class="badge badge-red">3</span> -->
                 </a>
                 <ul>
-                    <li><a href="javascript:void(0);">تعریف همایش</a></li>
-                    <li><a href="javascript:void(0);">ویرایش همایش ها</a></li>
-                    <li><a href="javascript:void(0);">ثبت نام کنندگان</a></li>
-                    <li><a href="javascript:void(0);">تایید شده ها</a></li>
+                    <li><a href="addconference.php">تعریف همایش</a></li>
+                    <li><a href="editconference.php">ویرایش همایش ها</a></li>
+                    <li><a href="regconference.php">ثبت نام کنندگان</a></li>
+                    <li><a href="regconferenceconf.php">تایید شده ها</a></li>
                 </ul>
             </li>
             <li>
