@@ -21,7 +21,7 @@
 	{
 		$fields = array("`mid`","`pid`","`name`","`level`");		
 		
-		if (isset($_POST["cbsm1"]) and $_POST["cbsm1"]!= -1) 
+		if (isset($_POST["cbsm1"]) and $_POST["cbsm1"]!= 0) 
 		{
 			$pid = $_POST["cbsm1"];
 			$level = 2;
@@ -45,7 +45,7 @@
 	if ($_POST["mark"]=="editsubmenu")
 	{		
 		
-		if (isset($_POST["cbsm1"]) and $_POST["cbsm1"]!= -1) 
+		if (isset($_POST["cbsm1"]) and $_POST["cbsm1"]!= 0) 
 		{
 			$pid = $_POST["cbsm1"];
 			$level = 2;
@@ -215,24 +215,26 @@ $html.=<<<cd
                                             <tbody>
 cd;
 
-	$records_per_page = 10;
-	$pagination = new Zebra_Pagination();
-
-	$pagination->navigation_position("right");
-
-	$reccount = $db->CountAll("submenues");
-	$pagination->records($reccount); 
+	//$records_per_page = 10;
+	//$pagination = new Zebra_Pagination();
+	//
+	//$pagination->navigation_position("right");
+	//
+	//$reccount = $db->CountOf("submenues","pid <> 0");
+	//$pagination->records($reccount); 
 	
-    $pagination->records_per_page($records_per_page);	
+    //$pagination->records_per_page($records_per_page);	
 
-$rows = $db->SelectAll(
-				"submenues",
-				"*",
-				"pid <> 0",
-				"id ASC",
-				($pagination->get_page() - 1) * $records_per_page,
-				$records_per_page);
-				
+//$rows = $db->SelectAll(
+//				"submenues",
+//				"*",
+//				"pid <> 0",
+//				"id ASC",
+//				($pagination->get_page() - 1) * $records_per_page,
+//				$records_per_page);
+
+
+$rows = $db->SelectAll("submenues","*","pid <> 0","id ASC");				
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;
@@ -266,8 +268,8 @@ $html.=<<<cd
 cd;
 }
 
-	$pgcodes = $pagination->render(true);
-	
+	//$pgcodes = $pagination->render(true);
+	$pgcodes ="";
 $html.=<<<cd
                                             </tbody>
                                         </table>

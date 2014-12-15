@@ -24,10 +24,16 @@ $fhtml.=<<<cd
 cd;
 for($i = 0; $i < Count($slide); $i++)
 {
+	$img = base64_encode($slide[$i]['img']);
+	$src = 'data: '.$slide[$i]['itype'].';base64,'.$img;
+	
 $fhtml.=<<<cd
 				<div>
 					<a href="#">
+						<!--
 						<img class="rsImg" src="manager/img.php?slide=yes&did={$slide[$i]['id']}" alt ="{$rows[$i]['subject']}" width="492" height="874" />
+						-->
+						 <img class="rsImg" src="{$src}" alt ="{$rows[$i]['subject']}" width="492" height="874" />
 					</a>
 					<div class="slider_h">
 						<a href="#">
@@ -36,7 +42,10 @@ $fhtml.=<<<cd
 					</div>
 					<div class="rsTmb">
 						<div class="rsTmbImg">
+						   <!--
 							<img class="rsThumbImage" src="manager/img.php?slide=yes&did={$slide[$i]['id']}" alt ="{$rows[$i]['subject']}"  width="160" height="280" />
+						   -->
+						   <img class="rsThumbImage" src="{$src}" alt ="{$rows[$i]['subject']}" width="160" height="280" />
 						</div>
 						<div class="rsTmbDesc">
 							<div class="slider_title">{$slide[$i]['subject']}</div>
