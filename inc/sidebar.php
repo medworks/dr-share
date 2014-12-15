@@ -14,6 +14,8 @@
 	$FaceBook_Add = GetSettingValue('FaceBook_Add',0);  
     $Twitter_Add = GetSettingValue('Twitter_Add',0);  
     $Rss_Add = GetSettingValue('Rss_Add',0); 
+	$Gplus_Add = GetSettingValue('Gplus_Add',0);
+    
 
 $html.=<<<cd
 <div id="sidebar" class="col3 last">
@@ -88,7 +90,7 @@ $html.=<<<cd
 							<a class="icon" href="javascript:void(0);" target="_blank"></a>
 						</li>
 						<li class="count-googleplus">
-							<a class="icon" href="javascript:void(0);" target="_blank"></a>
+							<a class="icon" href="$Gplus_Add" target="_blank"></a>
 						</li>
 						<li class="count-instagram">
 							<a class="icon" href="javascript:void(0);" target="_blank"></a>
