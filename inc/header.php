@@ -4,11 +4,14 @@
   	include_once("classes/session.php");	
   	include_once("classes/security.php");
   	include_once("classes/database.php");	
+  	include_once("classes/seo.php");
+
 	
 	//error_reporting(E_ALL);
 	//ini_set('display_errors', 1);
 	
 	$db = Database::GetDatabase();
+	$seo = Seo::GetSeo();
 	
 	//$rwnews = $db->SelectAll("news","*",NULL,"id DESC",0,5);
 
@@ -23,7 +26,7 @@ $hhtml.=<<<cd
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Rahyab clinic</title>
+<title> $seo->Site_Title </title>
 <!-- <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="http://gazette.seoresearch.com/xmlrpc.php">
 <link id="google_font" href="#font_change" rel="stylesheet" type="text/css">
