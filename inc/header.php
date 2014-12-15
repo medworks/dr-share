@@ -35,8 +35,8 @@ $hhtml.=<<<cd
 <style id="font_skins_body" type="text/css"></style> -->
 <link rel="stylesheet" href="./css/panel.css" type="text/css" media="screen">
 <link href="./css/zebra_pagination.css" rel="stylesheet" />
-<meta name="google-site-verification" content="" />
-<meta name="msvalidate.01" content="" />
+<meta name="google-site-verification" content="JXoNxh7OugEcHZ1x-aSZOBEl1eZXGnaA7phMGYtLwC4" />
+<meta name="msvalidate.01" content="A92EDE738075648B70C10A8E52AFBCA6" />
 <meta name="description" content="$seo->Site_Describtion" />
 <meta name="keywords" content="$seo->Site_KeyWords" />
 <meta name="author" content="Mediateq.ir" />
