@@ -30,7 +30,7 @@ $html.=<<<cd
 						</span>
 					</p>
 					<div class="su-gmap su-responsive-media-yes">
-						<iframe width="800" height="300" src="http://maps.google.com/maps?q=London%2C+UK&amp;output=embed"></iframe>
+						<iframe width="800" height="300" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1607.8850629161327!2d59.578664076466595!3d36.293627177674786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sir!4v1418660564909"></iframe>
 					</div>
 					<div class="divider"></div>
 					<p style="font-size:20px;">

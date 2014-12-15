@@ -18,6 +18,8 @@
 	$Contact_Email = GetSettingValue('Contact_Email',0);
 	
 	$About_System = GetSettingValue('About_System',0);
+	$About_System= (mb_strlen($About_System)>450) ? mb_substr($About_System,0,450,"UTF-8")."..." : $body;
+
 
 $html.=<<<cd
         </div>
@@ -32,10 +34,10 @@ $html.=<<<cd
 				<div id="text-9" class="widget widget_text fade-in">
                     <div class="textwidget">
 						<div class="custom_logo">
-							<h1 class="rtl" style="color:#fff">رهیاب کلینیک</h1>
+							<h1 class="rtl" style="color:#fff">کلینیک رهیاب</h1>
 						</div>
 						<p class="rtl">
-							{$About_System} 
+							<a href="about-us.html">{$About_System} </a>
 						</p>
 					</div>
 				</div>
