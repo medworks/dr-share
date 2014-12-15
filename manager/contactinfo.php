@@ -154,7 +154,7 @@ $html.=<<<cd
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">آدرس google plus</label>
                                             <div class="col-md-10">
-                                                <input type="text" class="form-control" name="Gplus_Add"  value={$Gplus_Add}/>
+                                                <input type="text" class="form-control" name="Gplus_Add"  value={$Gplus_Add} />
                                                 <span class="help_text">
                                                     آدرس گوگل پلاس را در این قسمت قرار دهید. به طور مثال: https://plus.google.com/rahyabclinic
                                                 </span>
