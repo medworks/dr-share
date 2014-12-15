@@ -127,7 +127,7 @@ $html.=<<<cd
                                                 <td>{$rows[$i]["text"]}</td>
                                                 <td>{$rows[$i]["text"]}</td>
                                                 <td class="text-center">
-                                                    <a href="addclass.php?act=edit&did={$rows[$i]["id"]}"  >                    
+                                                    <a href="regconfdetail.php">                    
                                                         <button class="btn btn-xs btn-warning" title="مشاهده"><i class="fa fa-eye"></i></button>
                                                     </a>   
                                                 </td>
