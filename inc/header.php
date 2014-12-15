@@ -263,8 +263,8 @@ cd;
 			$result = <<<cd
 				<div class="main_navigation">
 					<ul id="menu-main-nav" class="">
-						<li class="current_page_item">
-							<a href="./index.html">صفحه اصلی</a>
+						<li class="current_page_item11">
+							<a href="./">صفحه اصلی</a>
 						</li>
 cd;
 				
