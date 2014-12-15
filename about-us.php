@@ -3,6 +3,9 @@
 	include_once("classes/functions.php");
   	  	  
     $About_System = GetSettingValue('About_System',0);
+    $seo = Seo::GetSeo();
+    
+    $seo->Site_Title = 'درباره ما';  
 	
 $ahtml =<<<cd
 		<!-- Main content alpha -->

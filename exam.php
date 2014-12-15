@@ -12,6 +12,9 @@
 	//ini_set('display_errors', 1);
 	
 	$db = Database::GetDatabase();
+	$seo = Seo::GetSeo();
+    
+    $seo->Site_Title = 'آزمون های روانشناختی';  
 	
 
 $ehtml.=<<<cd

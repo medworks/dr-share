@@ -12,6 +12,9 @@
 	//ini_set('display_errors', 1);
 	
 	$db = Database::GetDatabase();
+	$seo = Seo::GetSeo();
+    
+    $seo->Site_Title = 'عضویت در خبرنامه';  
 	
 	$mnu = $db->SelectAll("submenues","*",NULL,"id ASC");
 	

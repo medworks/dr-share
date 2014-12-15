@@ -12,6 +12,10 @@
 	//ini_set('display_errors', 1);
 	
 	$db = Database::GetDatabase();
+    $seo = Seo::GetSeo();
+    
+    $seo->Site_Title = 'پرسش و پاسخ';  
+    
 	if (isset($_POST["mark"]) and $_POST["mark"]="register" )
 	{
 	    $date = date('Y-m-d H:i:s');
