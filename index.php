@@ -76,7 +76,7 @@ $fhtml.=<<<cd
 								<div>
 									<div>
 										<!-- <a href="http://gazette.seoresearch.com/wp-content/uploads/2014/08/tumblr_n6esribU971st5lhmo1_1280-1280x768.jpg" class="hb-image-zoom" rel="swipebox[blog_shortcode]" title="Phasellus euismod purus eget sed luctus"></a> -->
-										<a href="manager/img.php?did={$news[$i]["id"]}&tid=2" class="hb-image-link" title=""></a>
+										<a href="one-news{$news[$i]['id']}.html" class="hb-image-link" title="{$news[$i]['subject']}"></a>
 									</div>
 								</div>
 							</div>

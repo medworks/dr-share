@@ -735,7 +735,8 @@ opacity:0;
 }
 
 #content .entry {
-clear:both
+clear:both;
+text-align:right;
 }
 
 .container {
@@ -3485,7 +3486,8 @@ padding-left:0;
 .single_post_content .article_heading {
 display:block;
 width:100%;
-margin-bottom:20px
+margin-bottom:20px;
+text-align:right;
 }
 
 .single_post_content .article_heading:after,.article_list li:after {
