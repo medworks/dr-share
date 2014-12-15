@@ -80,11 +80,11 @@ border:1px solid rgba(0,0,0,.7);
 }
 
 .social-count-plus ul li {
-border-top:1px solid rgba(0,0,0,.05)!important;
+/*border-top:1px solid rgba(0,0,0,.05)!important;*/
 }
 
 .social-count-plus ul li:nth-child(3n-1),.social-count-plus ul li:nth-child(3n-2) {
-box-shadow:1px 0 0 rgba(0,0,0,.05);
+/*box-shadow:1px 0 0 rgba(0,0,0,.05);*/
 }
 
 input[type=text].nt-search-input {
