@@ -21,7 +21,7 @@
         {    
             $size = getimagesize($_FILES['userfile']['tmp_name']);      
             $type = $size['mime'];
-            $imgfp = mysql_real_escape_string(file_get_contents($_FILES['userfile']['tmp_name']));
+            $imgfp = mysqli_real_escape_string($db->link,file_get_contents($_FILES['userfile']['tmp_name']));
             //echo $imgfp;
             $size = $size[3];
             $name = $_FILES['userfile']['name'];

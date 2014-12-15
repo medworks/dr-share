@@ -9,7 +9,7 @@
     include_once("../lib/persiandate.php"); 
 
 	$login = Login::GetLogin();
-    if (!$login->IsLogged())
+	if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");
 		die(); // solve a security bug
@@ -151,6 +151,6 @@ $html.=<<<cd
     <!--Page main section end -->
 cd;
     include_once("./inc/header.php");
-	echo $html;
+    echo $html;
     include_once("./inc/footer.php");
 ?>
