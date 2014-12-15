@@ -110,7 +110,7 @@ $html.=<<<cd
 					<h4 class="widgettitle rtl">تماس با ما</h4>		
 					<span class="contact_widget_address">{$Address}</span><br>
 					<span class="contact_widget_phone">{$Tell_Number}</span><br>
-					<span class="contact_widget_email"><a href="#" rel="{$Contact_Email}" class="eail_link_replace">{$Contact_Email}</a></span><br>
+					<span class="contact_widget_email"><a href="javascript:void(0);" rel="{$Contact_Email}" class="eail_link_replace" style="font-size:14px;">{$Contact_Email}</a></span><br>
         		</div>
         	</div>
         	<div class="clearboth"></div>
@@ -145,7 +145,7 @@ $html.=<<<cd
         						</li>
 							</ul>
 						</div>
-						<p class="copyright_text" style="font-size:16px;margin-top:50px;">Rahyab clinic. All rights reserved. Designed by Mediateq.ir</p>
+						<p class="copyright_text" style="font-size:16px;margin-top:50px;">Rahyab clinic. All rights reserved. Designed by <a href="http://www.mediateq.ir" style="text-transform:none;padding:0">Mediateq.ir</p>
 					</div><!-- columns-->
 				</div><!-- container -->
 			</div><!-- #sub_footer -->
