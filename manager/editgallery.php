@@ -19,7 +19,7 @@
 	$db = Database::GetDatabase(); 
 	if ($_GET['act']=="del")
 	{
-		$db->Delete("gallerypics"," id ",$_GET["did"]);		
+		$db->Delete("gpics"," id ",$_GET["did"]);		
 		header('location:editgallery.php?act=new');	
 	}		
     
@@ -92,8 +92,8 @@ $rownumber = $i+1;
 $prow = $db->Select("gallerypics","*","id='{$rows[$i][gid]}'");
 $grow = $db->Select("gcategories","*","id='{$prow[gcid]}'",NULL);
 
-$prow["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
-$prow["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
+$prow["subject"] =(mb_strlen($prow["subject"])>20)?mb_substr($prow["subject"],0,20,"UTF-8")."...":$prow["subject"];
+$prow["text"] =(mb_strlen($prow["text"])>20)?mb_substr($prow["text"],0,20,"UTF-8")."...":$prow["text"];
 
 $html.=<<<cd
 
@@ -107,9 +107,9 @@ $html.=<<<cd
                                                     <img src="img.php?did={$rows[$i]["id"]}&type=gall" width="50px" height="50px" /> 
                                                 </td>
                                                 <td class="text-center">
-												<a href="?act=del&did={$rows[$i]["id"]}"  >												
+							<a href="?act=del&did={$rows[$i]["id"]}"  >												
                                                     <button class="btn btn-xs btn-danger" title="پاک کردن"><i class="fa fa-minus"></i></button>
-												</a>	
+							</a>	
                                                 </td>
                                             </tr>
 cd;
