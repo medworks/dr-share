@@ -1586,6 +1586,7 @@ vertical-align: top;
 border-left:0!important;
 line-height:34px!important;
 margin-bottom:3px;
+text-align:right;
 }
 
 .main_navigation ul ul a {
@@ -1621,7 +1622,7 @@ background-color:transparent!important
 .main_navigation li {
 position: relative;
 display: inline-block;
-margin-right: 10px;
+margin-right: 3px;
 vertical-align: middle;
 float: right;
 }

@@ -10,6 +10,9 @@
 	//ini_set('display_errors', 1);
 	
 	$db = Database::GetDatabase();
+	$seo = Seo::GetSeo();
+	
+	$seo->Site_Title = "اخبار";
 	
 	$records_per_page = 10;
 	$pagination = new Zebra_Pagination();
@@ -44,7 +47,7 @@ $nhtml.=<<<cd
 			<div class="col3">
 				<div>
 					<div class="article_grid_image">
-						<img class=" morph" src="manager/img.php?did={$rows[$i]['id']}&tid=2" style="width:280px!important;height:160px!important"/>
+						<img class=" morph" src="manager/img.php?did={$rows[$i]['id']}&tid=2" style="width:201px!important;height:115px!important"/>
 						<div class="hover_buttons">
 							<div>
 								<div>

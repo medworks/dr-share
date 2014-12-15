@@ -12,8 +12,11 @@
 	//ini_set('display_errors', 1);
 	
 	$db = Database::GetDatabase();
+	$seo = Seo::GetSeo();
+	
 	
 	$news = $db->Select("news","*","id={$_GET['id']}");
+	$seo->Site_Title = $news['subject'];
 	$news["regdate"] = ToJalali($news["regdate"],"Y/m/d H:i");
 $ohtml.=<<<cd
 <div id="main" class="col9 clearfix">

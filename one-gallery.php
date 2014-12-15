@@ -12,7 +12,10 @@
 	//error_reporting(E_ALL);
 	//ini_set('display_errors', 1);
 	
-	$db = Database::GetDatabase();	
+	$db = Database::GetDatabase();
+	$seo = Seo::GetSeo();
+	
+	$seo->Site_Title = 'گالری تصاویر';		
 
 $oghtml.=<<<cd
 <div id="main" class="col9 clearfix">
@@ -39,6 +42,7 @@ $grows = $db->SelectAll(
 				"id ASC",
 				($pagination->get_page() - 1) * $records_per_page,
 				$records_per_page);
+
 for($i = 0; $i < Count($grows); $i++)
 {
 //$gpics = $db->Select("gpics","*","gid = {$grows[$i]['id']}");

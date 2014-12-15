@@ -321,41 +321,7 @@ cd;
 	$menues = build_menu($rows);
 	//echo $menues;
 $hhtml.=<<<cd
-			<!--
-						<li class="menu_arrow menu-item-has-children">
-							<a href="#">بالینی، جنسی شخصیتی</a>
-							<ul class="sub-menu">
-								<li class="menu_arrow">
-									<a href="#">اختلالات اضطرابی GAD</a>
-									<ul class="sub-menu">
-										<li><a href="#">وسواس</a></li>
-										<li><a href="#">پانیک</a></li>
-										<li><a href="#">اضطراب فراگیر GAD</a></li>
-										<li><a href="#">ترس از فضای بسته</a></li>
-										<li><a href="#">ترس از ارتفاع</a></li>
-										<li><a href="#">ترس از تاریکی</a></li>
-										<li><a href="#">ترس از مرگ</a></li>
-										<li><a href="#">تیک ناخن جویدن</a></li>
-										<li><a href="#">تر از شبح</a></li>
-									</ul>
-								</li>
-								<li class="menu_arrow">
-									<a href="#">اختلالات اضطرابی2</a>
-									<ul class="sub-menu">
-										<li><a href="#">وسواس</a></li>
-										<li><a href="#">پانیک</a></li>
-										<li><a href="#">اضطراب فراگیر GAD</a></li>
-										<li><a href="#">ترس از فضای بسته</a></li>
-										<li><a href="#">ترس از ارتفاع</a></li>
-										<li><a href="#">ترس از تاریکی</a></li>
-										<li><a href="#">ترس از مرگ</a></li>
-										<li><a href="#">تیک ناخن جویدن</a></li>
-										<li><a href="#">تر از شبح</a></li>
-									</ul>
-								</li>
-							</ul>
-					-->
-					{$menues}
+				{$menues}
 			</div>
 		</div>
 	</div>

@@ -12,7 +12,10 @@
 	//error_reporting(E_ALL);
 	//ini_set('display_errors', 1);
 	
-	$db = Database::GetDatabase();	
+	$db = Database::GetDatabase();
+	$seo = Seo::GetSeo();
+	
+	$seo->Site_Title = "گالری تصاویر";	
 
 $ghtml.=<<<cd
 <div id="main" class="col9 clearfix">

@@ -10,6 +10,9 @@
 	//ini_set('display_errors', 1);
 	
 	$db = Database::GetDatabase();
+	$seo = Seo::GetSeo();
+    
+    $seo->Site_Title = 'مقالات';  
 	
 	$records_per_page = 10;
 	$pagination = new Zebra_Pagination();

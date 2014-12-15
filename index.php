@@ -24,10 +24,16 @@ $fhtml.=<<<cd
 cd;
 for($i = 0; $i < Count($slide); $i++)
 {
+	$img = base64_encode($slide[$i]['img']);
+	$src = 'data: '.$slide[$i]['itype'].';base64,'.$img;
+	
 $fhtml.=<<<cd
 				<div>
 					<a href="#">
+						<!--
 						<img class="rsImg" src="manager/img.php?slide=yes&did={$slide[$i]['id']}" alt ="{$rows[$i]['subject']}" width="492" height="874" />
+						-->
+						 <img class="rsImg" src="{$src}" alt ="{$rows[$i]['subject']}" width="492" height="874" />
 					</a>
 					<div class="slider_h">
 						<a href="#">
@@ -36,7 +42,10 @@ $fhtml.=<<<cd
 					</div>
 					<div class="rsTmb">
 						<div class="rsTmbImg">
+						   <!--
 							<img class="rsThumbImage" src="manager/img.php?slide=yes&did={$slide[$i]['id']}" alt ="{$rows[$i]['subject']}"  width="160" height="280" />
+						   -->
+						   <img class="rsThumbImage" src="{$src}" alt ="{$rows[$i]['subject']}" width="160" height="280" />
 						</div>
 						<div class="rsTmbDesc">
 							<div class="slider_title">{$slide[$i]['subject']}</div>
@@ -57,6 +66,9 @@ $fhtml.=<<<cd
 cd;
 for($i = 0; $i < Count($news); $i++)
 {
+	$pic = $db->Select("pics","*","`sid`='{$news[$i][id]}' AND `tid`='2'");
+	$img = base64_encode($pic['img']);
+	$src = 'data: '.$pic['itype'].';base64,'.$img;
 	//$pic=$db->Select("pics","*","tid=2 AND sid ='{$news[i][id]}'",NULL);
 	$news[$i]["text"] =(mb_strlen($news[$i]["text"])>90)?mb_substr($news[$i]["text"],0,90,"UTF-8")."...":$news[$i]["text"];
 	if ($i % 4 == 0)
@@ -71,11 +83,10 @@ $fhtml.=<<<cd
 				<div class="3 {$class}">
 					<div class="fade-in article_grid_module appeared">
 						<div class="article_grid_image">
-							<img class=" morph" src="manager/img.php?did={$news[$i]["id"]}&tid=2" style="width:160px!important;height:160!importmant"/>
+						<img class="morph" src="{$src}" alt ="{$news[$i]['subject']}" style="width:201px !important;height:115px !important" />
 							<div class="hover_buttons">
 								<div>
 									<div>
-										<!-- <a href="http://gazette.seoresearch.com/wp-content/uploads/2014/08/tumblr_n6esribU971st5lhmo1_1280-1280x768.jpg" class="hb-image-zoom" rel="swipebox[blog_shortcode]" title="Phasellus euismod purus eget sed luctus"></a> -->
 										<a href="one-news{$news[$i]['id']}.html" class="hb-image-link" title="{$news[$i]['subject']}"></a>
 									</div>
 								</div>
