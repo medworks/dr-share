@@ -80,7 +80,7 @@
     <div class="container-fluid">
         <!--Logo text start-->
         <div class="header-logo">
-            <a href="./" title="کلینیک رهیاب">
+            <a href="javascript:void(0);" title="کلینیک رهیاب">
                 <h1>کلینیک رهیاب</h1>
             </a>
         </div>
@@ -141,13 +141,13 @@
         <!--Phone Navigation Menu icon start-->
         <!--Left navigation start-->
         <ul class="mainNav">
-            <li>
+            <!-- <li>
                 <a href="admin.php">
                     <i class="fa fa-dashboard"></i>
                     <span>داشبورد</span>
                 </a>
             </li>
-            <!-- <li>
+            <li>
                 <a href="#">
                     <i class="fa fa-envelope-o"></i>
                     <span>Email</span>
@@ -248,7 +248,7 @@
                 <a href="#">
                     <i class="fa fa-file-picture-o"></i>
                     <span>کلاسها و دوره ها</span>
-                    <span class="badge badge-red">3</span>
+                    <!-- <span class="badge badge-red">3</span> -->
                 </a>
                 <ul>
                     <li><a href="addclass.php?act=new">تعریف کلاس</a></li>
@@ -261,7 +261,7 @@
                 <a href="#">
                     <i class="fa fa-coffee"></i>
                     <span>همایش ها</span>
-                    <span class="badge badge-red">3</span>
+                    <!-- <span class="badge badge-red">3</span> -->
                 </a>
                 <ul>
                     <li><a href="javascript:void(0);">تعریف همایش</a></li>
@@ -274,7 +274,7 @@
                 <a href="#">
                     <i class="fa fa-pencil-square-o"></i>
                     <span>پرسش و پاسخ</span>
-                    <span class="badge badge-red">3</span>
+                    <!-- <span class="badge badge-red">3</span> -->
                 </a>
             </li>
             <li>

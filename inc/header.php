@@ -225,9 +225,9 @@ var BP_Confirm = {"are_you_sure":"Are you sure?"};
 		<div class="container">
 			<div class="col12">
 				<div class="logo">
-					<a rel="home" href="./" site_title="">
+					<a rel="home" href="./" title="رهیاب کلینیک">
 						<div class="custom_logo">
-							<div><h1 style="color:#fff;margin-bottom:12px;">رهیاب<em>کلینیک</em></h1></div>
+							<img src="./images/logo.png" style="width:100px;height:auto" alt="کلینیک رهیاب" />
 						</div>
 					</a>
 				</div>
