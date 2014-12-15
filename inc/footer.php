@@ -119,30 +119,13 @@ $html.=<<<cd
         			<div class="col12">
         				<div class="footer_links">
         					<ul id="menu-theme-links-footer-widget-1">
-        						<li>
-        							<a href="#">صفحه اصلی</a>
-        						</li>
-								<li>
-        							<a href="#">درباره ما</a>
-        						</li>
-        						<li>
-        							<a href="#">عضویت</a>
-        						</li>
-        						<li>
-        							<a href="#">همایش ها</a>
-        						</li>
-        						<li>
-        							<a href="#">پرسش و پاسخ</a>
-        						</li>
-        						<li>
-        							<a href="#">اخبار</a>
-        						</li>
-        						<li>
-        							<a href="#">گالری تصاویر</a>
-        						</li>
-        						<li>
-        							<a href="#">تماس با ما</a>
-        						</li>
+        						<li><a href="./">صفحه اصلی</a></li>
+        						<li><a href="healthgroup.html">گروه درمانی</a></li>
+								<li><a href="news.html">اخبار و تازه ها</a></li>
+								<li><a href="gallery.html">گالری تصاویر</a></li>
+								<li><a href="class.html">کلاسها و دوره های آموزشی</a></li>
+								<li><a href="articles.html">آرشیو مقالات</a></li>
+								<li><a href="faq.html">پرسش و پاسخ</a></li>
 							</ul>
 						</div>
 						<p class="copyright_text" style="font-size:16px;margin-top:50px;">Rahyab clinic. All rights reserved. Designed by <a href="http://www.mediateq.ir" style="text-transform:none;padding:0">Mediateq.ir</p>
