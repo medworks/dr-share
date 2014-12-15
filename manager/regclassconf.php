@@ -62,6 +62,7 @@ $html.=<<<cd
                                                 <th>موبایل</th>
                                                 <th>تلفن تماس</th>
                                                 <th>شهر</th>
+                                                <th>عملیات</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -125,6 +126,11 @@ $html.=<<<cd
                                                 <td>{$rows[$i]["text"]}</td>
                                                 <td>{$rows[$i]["text"]}</td>
                                                 <td>{$rows[$i]["text"]}</td>
+                                                <td class="text-center">
+                                                    <a href="addclass.php?act=edit&did={$rows[$i]["id"]}"  >                    
+                                                        <button class="btn btn-xs btn-warning" title="مشاهده"><i class="fa fa-eye"></i></button>
+                                                    </a>   
+                                                </td>
                                             </tr>
 cd;
 }
