@@ -55,10 +55,16 @@ $html.=<<<cd
 cd;
 for($i = 0; $i < Count($gallery); $i++)
 {
+	//$pic = $db->Select("gpics","*","`gid`='{$gallery[$i][id]}'");
+	$img = base64_encode($gallery[$i]['img']);
+	$src = 'data: '.$gallery[$i]['itype'].';base64,'.$img;
 $html.=<<<cd
 					<div class="flickr_badge_image" id="flickr_badge_image1">
 						<a href="#" target="_blank">
+							<!--
 							<img  src="manager/img.php?did={$gallery[$i]["gid"]}&type=gall" width="75px" height="75px" />
+							-->
+							<img  src="{$src}"  width="75px" height="75px" />
 						</a>
 					</div>
 cd;

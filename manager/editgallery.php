@@ -73,37 +73,36 @@ cd;
 
 	$pagination->navigation_position("right");
 
-	$reccount = $db->CountAll("gallerypics");
+	$reccount = $db->CountAll("gpics");
 	$pagination->records($reccount); 
 	
     $pagination->records_per_page($records_per_page);	
 
 $rows = $db->SelectAll(
-				"gallerypics",
+				"gpics",
 				"*",
 				NULL,
 				"id ASC",
 				($pagination->get_page() - 1) * $records_per_page,
 				$records_per_page);
 				
-	
-$vals = array();
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;
-$grow = $db->Select("gcategories","*","id='{$rows[$i][gcid]}'",NULL);
-$prow = $db->Select("gpics","*","gid='{$rows[$i][id]}'",NULL);
-$rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
-$rows[$i]["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
+$prow = $db->Select("gallerypics","*","id='{$rows[$i][gid]}'");
+$grow = $db->Select("gcategories","*","id='{$prow[gcid]}'",NULL);
+
+$prow["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
+$prow["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
 
 $html.=<<<cd
 
                                                 
                                             <tr>
                                                 <td>{$rownumber}</td>
-												 <td>{$grow["name"]}</td>
-                                                <td>{$rows[$i]["subject"]}</td>
-                                                <td>{$rows[$i]["text"]}</td>
+						<td>{$grow["name"]}</td>
+                                                <td>{$prow["subject"]}</td>
+                                                <td>{$prow["text"]}</td>
                                                 <td>
                                                     <img src="img.php?did={$rows[$i]["id"]}&type=gall" width="50px" height="50px" /> 
                                                 </td>
