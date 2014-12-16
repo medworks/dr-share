@@ -40,13 +40,13 @@
 				}
 				else
 				{
-				  $imgrow =$db->Select("pics","*","sid='{$did}'");
+				  $imgrow =$db->Select("pics","*","sid='{$did}' AND tid='1'");
 				  if ($imgfp != $imgrow["img"])
 				  {
 					$values = array("`tid`"=>"'1'","`sid`"=>"'{$did}'",
 						"`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
 						"`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
-					$db->UpdateQuery("pics",$values,array("sid='{$did}'"));	
+					$db->UpdateQuery("pics",$values,array("sid='{$did}' AND tid='1'"));	
 				  }	
 				}	
 				//echo $db->cmd;
