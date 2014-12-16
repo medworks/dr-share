@@ -116,7 +116,7 @@
 		$insertoredit = "
 			<button id='submit' type='submit' class='btn btn-default'>ثبت</button>
 			<input type='hidden' name='mark' value='savedata' /> ";
-		$menues = $db->SelectAll("menues","*");	
+		$menues = $db->SelectAll("submenues","*","pid = 0");	
 		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");	
 	}
 
