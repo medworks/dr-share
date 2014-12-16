@@ -124,7 +124,7 @@
 	{
 	    $row=$db->Select("menusubjects","*","id='{$_GET["did"]}'",NULL);
 		
-		$menues = $db->SelectAll("menues","*");	
+		$menues = $db->SelectAll("submenues","*","pid = 0");
 		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
 		
 		$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
@@ -169,7 +169,7 @@
 			<button id='submit' type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editdata' /> ";
 
-		$menues = $db->SelectAll("menues","*");	
+		$menues = $db->SelectAll("submenues","*","pid = 0");
 		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$row[mid]}",NULL,"form-control",NULL,"  منو  ");
 		
 		$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
@@ -337,5 +337,5 @@ cd;
 
 	include_once("./inc/header.php");
 	echo $html;
-    include_once("./inc/footer.php");
+	include_once("./inc/footer.php");
 ?>

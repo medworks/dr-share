@@ -134,7 +134,7 @@
 		$insertoredit = "
 			<button id='submit' type='submit' class='btn btn-default'>ثبت</button>
 			<input type='hidden' name='mark' value='savenews' /> ";
-		$menues = $db->SelectAll("menues","*");	
+		$menues = $db->SelectAll("submenues","*","pid = 0");
 		$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
 			
 		$group = $db->SelectAll("categories","*");	
@@ -151,7 +151,7 @@
 		if($row["gid"]!="0")
 		{
 			//=========================== load default menu =======================
-			$menues = $db->SelectAll("menues","*");	
+			$menues = $db->SelectAll("submenues","*","pid = 0");
 			$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
 			//=====================================================================
 			$group = $db->SelectAll("categories","*");	
@@ -167,7 +167,7 @@
 			$cbgroup = DbSelectOptionTag("cbgroup",$group,"name",NULL,NULL,"form-control",NULL,"  منو  ");	
 			//==============================================================
 			$mrow = $db->Select("submenues","*","id='{$row["smid"]}'",NULL);
-			$menues = $db->SelectAll("menues","*");	
+			$menues = $db->SelectAll("submenues","*","pid = 0");
 			$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$mrow[mid]}",NULL,"form-control",NULL,"  منو  ");
 		
 			$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
@@ -220,7 +220,7 @@
 		if($row["gid"]!="0")
 		{
 			//=========================== load default menu =======================
-			$menues = $db->SelectAll("menues","*");	
+			$menues = $db->SelectAll("submenues","*","pid = 0");
 			$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
 			//=====================================================================
 			$group = $db->SelectAll("categories","*");	
@@ -236,7 +236,7 @@
 			$cbgroup = DbSelectOptionTag("cbgroup",$group,"name",NULL,NULL,"form-control",NULL,"  منو  ");	
 			//==============================================================
 			$mrow = $db->Select("submenues","*","id='{$row["smid"]}'",NULL);
-			$menues = $db->SelectAll("menues","*");	
+			$menues = $db->SelectAll("submenues","*","pid = 0");	
 			$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name","{$mrow[mid]}",NULL,"form-control",NULL,"  منو  ");
 		
 			$srow=$db->Select("submenues","*","id='{$row["smid"]}'",NULL);
@@ -430,5 +430,5 @@ $html.=<<<cd
 cd;
 	include_once("./inc/header.php");
 	echo $html;
-    include_once("./inc/footer.php")
+	include_once("./inc/footer.php")
 ?>
