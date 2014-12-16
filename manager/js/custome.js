@@ -5,12 +5,12 @@ $(document).ready(function(){
 	var first=href.lastIndexOf("/")+1;
 	var last=href.lastIndexOf(".php")+3;
 	var lenght=last-first;
-	/* if(href.indexOf("seenregres")>0){
-      jQuery('ul.mainNav li.reseller').addClass('active');
+	  if(href.indexOf("regcldetail")>0){
+      jQuery('ul.mainNav li.class').addClass('active');
     }
-    if(href.indexOf("lineregs")>0){
-      jQuery('ul.mainNav li.lines').addClass('active');
-    } */
+    if(href.indexOf("regconfdetail")>0){
+      jQuery('ul.mainNav li.conf').addClass('active');
+    } 
     href=href.substr(first,lenght+1);
     $("ul.mainNav li a").each(function(){
     	var linkhref=$(this).attr("href");

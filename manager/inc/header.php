@@ -244,7 +244,7 @@
                     <span>آزمون های روانشناختی</span>
                 </a>
             </li>
-            <li>
+            <li class="class">
                 <a href="#">
                     <i class="fa fa-file-picture-o"></i>
                     <span>کلاسها و دوره ها</span>
@@ -257,7 +257,7 @@
                     <li><a href="regclassconf.php">تایید شده ها</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="conf">
                 <a href="#">
                     <i class="fa fa-coffee"></i>
                     <span>همایش ها</span>
