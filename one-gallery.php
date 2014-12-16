@@ -6,8 +6,8 @@
   	include_once("classes/security.php");
   	include_once("classes/database.php");	
 	include_once("classes/login.php");
-    include_once("lib/persiandate.php");
-    include_once("./lib/Zebra_Pagination.php"); 	
+	include_once("lib/persiandate.php");
+	include_once("./lib/Zebra_Pagination.php"); 	
 	
 	//error_reporting(E_ALL);
 	//ini_set('display_errors', 1);
@@ -47,15 +47,24 @@ for($i = 0; $i < Count($grows); $i++)
 {
 //$gpics = $db->Select("gpics","*","gid = {$grows[$i]['id']}");
 //echo $db->cmd;
+	$pic = $db->Select("gpics","*","`gid`='{$grows[$i]['id']}'");
+	$img = base64_encode($pic['img']);
+	$src = 'data: '.$pic['itype'].';base64,'.$img;
 $oghtml.=<<<cd
 			<div class="col4">
 				<div>
 					<div class="article_grid_image">
-						<img class="morph" src="manager/img.php?did={$grows[$i]['id']}&type=gall" width="480px" height="270px" /> 						
+					<!--
+						<img class="morph" src="manager/img.php?did={$grows[$i]['id']}&type=gall" width="480px" height="270px" />
+					-->
+					<img  class="morph" src="{$src}"  width="480px" height="270px" />
 						<div class="hover_buttons">
 							<div>
 								<div>
-									<a href="manager/img.php?did={$grows[$i]['id']}&type=gall" class="hb-image-zoom" rel="swipebox[portfolio_img_group_13]" title=""></a>
+								<!--
+									<a href="manager/img.php?did={$grows[$i]['id']}&type=gall" class="hb-image-zoom" rel="swipebox[portfolio_img_group_13]" title="{$grows[$i]['subject']}"></a>
+								-->
+								<a href="{$src}" class="hb-image-zoom" rel="swipebox[portfolio_img_group_13]" title="{$grows[$i]['subject']}"></a>
 								</div>
 							</div>
 						</div>

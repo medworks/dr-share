@@ -19,7 +19,8 @@
 	$db = Database::GetDatabase(); 
 	if ($_GET['act']=="del")
 	{
-		$db->Delete("gpics"," id ",$_GET["did"]);		
+		$db->Delete("gallerypics"," id ",$_GET["gid"]);	
+		$db->Delete("gpics"," id ",$_GET["did"]);	
 		header('location:editgallery.php?act=new');	
 	}		
     
@@ -107,7 +108,7 @@ $html.=<<<cd
                                                     <img src="img.php?did={$rows[$i]["id"]}&type=gall" width="50px" height="50px" /> 
                                                 </td>
                                                 <td class="text-center">
-							<a href="?act=del&did={$rows[$i]["id"]}"  >												
+							<a href="?act=del&did={$rows[$i]['id']}&gid={$rows[$i]['gid']}"  >												
                                                     <button class="btn btn-xs btn-danger" title="پاک کردن"><i class="fa fa-minus"></i></button>
 							</a>	
                                                 </td>
