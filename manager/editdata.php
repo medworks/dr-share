@@ -77,45 +77,73 @@ cd;
 	
     $pagination->records_per_page($records_per_page);	
 
-$rows = $db->SelectAll(
-				"menusubjects",
-				"*",
-				NULL,
-				"id ASC",
-				($pagination->get_page() - 1) * $records_per_page,
-				$records_per_page);
+$rows = $db->SelectAll("menusubjects",
+			"*",
+			NULL,
+			"id ASC",
+			($pagination->get_page() - 1) * $records_per_page,
+			$records_per_page);
 				
 	
+
+	function getparrents($db,$child_id)
+	{
+	  $ids = array();	  
+	  //$ids[] = $child_id;
+	  //$db = Database::GetDatabase();	  	  
+	  $db->cmd="select * from `submenues` WHERE `id` = {$child_id}";
+	  $res=$db->RunSQL($sql);
+	  $mrow = mysqli_fetch_array($res);	
+		//echo $mrow["pid"],"\n";
+	  while($mrow["pid"]!=0)
+	  {			
+		  $ids[] = $mrow["id"];
+		 // echo $mrow["pid"],"\n";
+		  $db->cmd="select * from `submenues` WHERE `id` = {$mrow['pid']}";
+		  $res=$db->RunSQL($sql);                          
+		  $mrow = mysqli_fetch_array($res);
+		 // mysqli_free_result($res);	
+  		 
+	  }
+	  if (count($ids)==1)
+		$ids[]="";
+	  $ids[] = $mrow["id"];
+	  return $ids;
+	}
+	
+	function getparrentsname($db,$child_id)
+	{
+	  $ids = array();	  
+	  //$ids[] = $child_id;
+	  //$db = Database::GetDatabase();	  	  
+	  $db->cmd="select * from `submenues` WHERE `id` = {$child_id}";
+	  $res=$db->RunSQL($sql);
+	  $mrow = mysqli_fetch_array($res);	
+		//echo $mrow["pid"],"\n";
+	  while($mrow["pid"]!=0)
+	  {			
+		  $ids[] = $mrow["name"];
+		 // echo $mrow["pid"],"\n";
+		  $db->cmd="select * from `submenues` WHERE `id` = {$mrow['pid']}";
+		  $res=$db->RunSQL($sql);                          
+		  $mrow = mysqli_fetch_array($res);
+		 // mysqli_free_result($res);	
+  		 
+	  }
+	  if (count($ids)==1)
+		$ids[]=null;
+	  $ids[] = $mrow["name"];
+	  return $ids;
+	}
+	
+
 $vals = array();
 for($i = 0; $i < Count($rows); $i++)
 {
-$rownumber = $i+1;
-$rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
-$rows[$i]["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
-$vals = "";
-if ($rows[$i]['pid']!=0)
-{
-	$row = $db->Select("submenues","*","id={$rows[$i]['pid']}","id ASC");	
-	if ($row["pid"]==0) {$vals[] = "";}
-	$vals[] = $row["name"];
-	
-	
-	while($row["pid"]!=0)
-	{
-		$row = $db->Select("submenues","*","id={$row['pid']}","id ASC");
-		$vals[] = $row["name"];
-	}
-    
-	$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
-	$vals[] = $row["name"];
-}
-else
-{
-		$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
-		$vals[] = "";
-		$vals[] = "";
-		$vals[] = $row["name"];
-}	
+	$rownumber = $i+1;
+	$rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
+	$rows[$i]["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
+	$vals =  getparrentsname($db,$rows[$i]["smid"]);
 $html.=<<<cd
 
                                                 

@@ -237,8 +237,8 @@ cd;
 $rows = $db->SelectAll("submenues","*","pid <> 0","id ASC");				
 for($i = 0; $i < Count($rows); $i++)
 {
-$rownumber = $i+1;
-$vals =  getparrentsname($db,$rows[$i]["id"]);
+	$rownumber = $i+1;
+	$vals =  getparrentsname($db,$rows[$i]["id"]);
 $html.=<<<cd
 							<tr>
 								<td>{$rownumber}</td>
