@@ -6,7 +6,7 @@
   	include_once("classes/security.php");
   	include_once("classes/database.php");	
 	include_once("classes/login.php");
-    include_once("lib/persiandate.php"); 
+	include_once("lib/persiandate.php"); 
 	
 	//error_reporting(E_ALL);
 	//ini_set('display_errors', 1);
@@ -16,9 +16,13 @@
     
 	
 	$news = $db->Select("menusubjects","*","smid={$_GET['id']}");
-    $seo->Site_Title = $news['subject'];  
+	$seo->Site_Title = $news['subject'];  
 
 	$news["regdate"] = ToJalali($news["regdate"],"Y/m/d H:i");
+	
+	$pic = $db->Select("pics","*","`tid`= 1 AND `sid`='{$news['id']}'");
+	$img = base64_encode($pic['img']);
+	$src = 'data: '.$pic['itype'].';base64,'.$img;
 $ohtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
@@ -27,7 +31,10 @@ $ohtml.=<<<cd
 			<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-lifestyle category-travel tag-adipiscing tag-augue tag-donec tag-etiam tag-euismod">
 				<div class="single_post_image">					
 					<a href="manager/img.php?did={$news['id']}&tid=1" class="hb-image-zoom" rel="swipebox[single_post_image]" title="{$news['subject']}">
-					  <img class=" morph" src="manager/img.php?did={$news['id']}&tid=1" width="874px" height="492px" />	
+					<!--
+					  <img class=" morph" src="manager/img.php?did={$news['id']}&tid=1" width="874px" height="492px" />
+					 -->
+					 <img  class="morph" src="{$src}"  width="874px" height="492px" />
 					</a>
 					<!-- <div class="meta_category">
 						<a href="javascript:void();" class="cat-featured" title="{$news['subject']}">تاریخ : {$news["regdate"]}</a>						
