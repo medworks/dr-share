@@ -12,8 +12,8 @@
 	$gallery = $db->SelectAll("gpics","*",NULL,"id ASC",0,5);
 
 	$FaceBook_Add = GetSettingValue('FaceBook_Add',0);  
-    $Twitter_Add = GetSettingValue('Twitter_Add',0);  
-    $Rss_Add = GetSettingValue('Rss_Add',0); 
+	$Twitter_Add = GetSettingValue('Twitter_Add',0);  
+	$Rss_Add = GetSettingValue('Rss_Add',0); 
 	$Gplus_Add = GetSettingValue('Gplus_Add',0);
     
 
