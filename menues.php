@@ -29,15 +29,15 @@ $ohtml.=<<<cd
 					<a href="manager/img.php?did={$news['id']}&tid=1" class="hb-image-zoom" rel="swipebox[single_post_image]" title="{$news['subject']}">
 					  <img class=" morph" src="manager/img.php?did={$news['id']}&tid=1" width="874px" height="492px" />	
 					</a>
-					<div class="meta_category">
+					<!-- <div class="meta_category">
 						<a href="javascript:void();" class="cat-featured" title="{$news['subject']}">تاریخ : {$news["regdate"]}</a>						
-					</div>
+					</div> -->
 				</div>
 				<article class="single_post_content">
 					<h1 class="article_heading entry_title" style="font-size:35px !important">{$news['subject']}</h1>
 					<div class="clearboth"></div>
 					<div class="entry">
-						<p style="font-size:22px;font-weight:normal;">
+						<p style="font-size:22px;font-weight:normal!important;color:#000;line-height: 1.5;letter-spacing:0px">
 							{$news["text"]}
 						</p>
 						<div class="clearboth"></div>									
