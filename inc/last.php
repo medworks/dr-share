@@ -129,6 +129,7 @@ jQuery(document).ready(function() {
         });
 
         jQuery('.article_grid.four_column_blog.carousel').slick({
+            rtl: true,
             slidesToShow: 4,
             slidesToScroll: 1,
             infinite: true,

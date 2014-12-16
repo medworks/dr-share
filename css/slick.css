@@ -13,6 +13,7 @@ user-select:none;
 -webkit-tap-highlight-color:transparent;
 margin-bottom:60px;
 overflow:hidden;
+direction: rtl;
 }
 
 .slick-list {
