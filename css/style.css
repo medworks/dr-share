@@ -811,6 +811,9 @@ text-transform: uppercase;
 display: inline-block;
 color: #000;
 }
+.widget_archive a.active{
+  color: #0090d9;
+}
 
 .widget_categories li,
 .widget_links li,

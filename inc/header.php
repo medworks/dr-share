@@ -263,7 +263,7 @@ cd;
 			$result = <<<cd
 				<div class="main_navigation">
 					<ul id="menu-main-nav" class="">
-						<li class="current_page_item11">
+						<li class="index">
 							<a href="./">صفحه اصلی</a>
 						</li>
 cd;
@@ -298,13 +298,13 @@ cd;
 					}					
 					$href=""; 
 					if (!has_children($rows, $row['id']))
-						$href=" href= ' menues{$row[id]}-{$row[level]}.html' ";
+						$href=" href= 'menues{$row[id]}-{$row[level]}.html' ";
 			}
 			else
 			if ($row['level']==2)
 			{
 					$class = "";
-					$href=" href= ' menues{$row[id]}-{$row[level]}.html' ";
+					$href=" href= 'menues{$row[id]}-{$row[level]}.html' ";
 			}
 			
 		  $result .= "<li$class><a {$href}>{$row['name']}</a>";

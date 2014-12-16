@@ -1,7 +1,27 @@
 <script type="text/javascript">
 /* <![CDATA[ */
 jQuery.noConflict();
-jQuery(document).ready(function() { 
+jQuery(document).ready(function() {
+    // active menu
+    var href=window.location.href.substr(window.location.href.lastIndexOf("/")+1);
+
+    if(href==""){
+          jQuery('ul#menu-main-nav li.index').addClass('current_page_item');
+    }
+    jQuery("ul#menu-main-nav li a").each(function(){
+       
+      if(jQuery(this).attr("href") == href){
+        jQuery(this).parents("ul#menu-main-nav li").addClass("current_page_item");
+      }
+    });
+
+    jQuery("div.widget_archive li a").each(function(){
+       
+      if(jQuery(this).attr("href") == href){
+        jQuery(this).addClass("active");
+      }
+    });
+
 
     jQuery(".formdata").validationEngine();
 
