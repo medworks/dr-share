@@ -130,7 +130,7 @@ left:48px;
 }
 
 .slick-prev:before {
-content:">";
+content:"<";
 }
 
 .slick-next {
@@ -138,7 +138,7 @@ left:0;
 }
 
 .slick-next:before {
-content:"<";
+content:">";
 }
 
 .slick-dots {
