@@ -21,7 +21,8 @@ deny from all
 	RewriteRule ^one-news([0-9]+).html dr-share/one-news.php?id=$1 [L]	
 	RewriteRule ^articles.html dr-share/articles.php [L]
 	RewriteRule ^one-article([0-9]+).html dr-share/one-article.php?id=$1 [L]	
-	RewriteRule ^menues([0-9]+)-([0-9]+).html dr-share/menues.php?id=$1&lvl=$2 [L]	
+	RewriteRule ^menues([0-9]+)-([0-9]+).html dr-share/menues.php?id=$1&lvl=$2 [L]
+	RewriteRule ^sitemap.xml dr-share/sitemap.php [L]
 	RewriteBase / 	
 
 #Skip WWW	
