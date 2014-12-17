@@ -14,31 +14,26 @@
         header("Location: ../index.php");
         die(); // solve a security bug
     }
-    $db = Database::GetDatabase();
-    
-       
+    $db = Database::GetDatabase(); 
            
-    if (isset($_GET["act"]) and $_GET["act"]=="view")
+    if (isset($_GET["act"]) and $_GET["act"]=="rep")
     {
-	$row = $db->Select("classes","*","id ={$_GET['did']}");
+	$row = $db->Select("ask","*","id ={$_GET['did']}");
 	$regdate = ToJalali($row["regdate"]," l d F  Y ساعت H:i");
-        if($row["tahol"] ==0)
-        {
-          $row["tahol"] = "مجرد" ;
-        }
-        else
-        {
-            $row["tahol"]="متاهل" ;
-        }
-    
-        //echo $db->cmd;
     }
 	
     if ((isset($_POST["mark"]) and $_POST["mark"]=="confirm"))
     {
-	$values = array("`confirm`"=>"'1'");
-	$db->UpdateQuery("classes",$values,array("id='{$_GET[did]}'"));		
-	header('location:regclassconf.php?act=new');
+	$values = array("`answer`"=>"'1'","`answertxt`"=>"'$_POST[txtanswer]'");
+	$db->UpdateQuery("ask",$values,array("id='{$_GET[did]}'"));
+	
+	$Contact_Email = GetSettingValue('Contact_Email',0);
+	$Email_Sender_Name = GetSettingValue('Email_Sender_Name',0);
+	
+	SendEmail($Contact_Email, $Email_Sender_Name,array("$row[email]"), "پاسخ سوال شما",$_POST["txtanswer"]);
+	
+	header('location:regfaq.php?act=new');
+	//echo $db->cmd;
     }
     
 $html=<<<cd
@@ -60,7 +55,7 @@ $html=<<<cd
                     </div>
                 </div>
                 <!-- Main Content Element  Start-->
-                <form id="frmdata" name="frmdata" enctype="multipart/form-data" action="" method="post" class="form-inline ls_form" role="form">
+                <form id="frmdata" name="frmdata"  action="" method="post" class="form-inline ls_form" role="form">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
@@ -97,7 +92,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edtfather" name="edtfather" type="text" class="form-control" value="{$row["father"]}"/>
+                                        <input id="edtdegri" name="edtdegri" type="text" class="form-control" value="{$row["degri"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -111,7 +106,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edtbirth" name="edtbirth" type="text" class="form-control" value="{$row["birth"]}"/>
+                                        <input id="edtreshte" name="edtrshte" type="text" class="form-control" value="{$row["reshte"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +120,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttahol" name="edttahol" type="text" class="form-control" value="{$row["tahol"]}"/>
+                                        <input id="edtemail" name="edtemail" type="text" class="form-control" value="{$row["email"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +134,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edtmeli" name="edtmeli" type="text" class="form-control" value="{$row["meli"]}"/>
+                                        <input id="edttel" name="edttel" type="text" class="form-control" value="{$row["tel"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +148,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edttahsilat" name="edttahsilat" type="text" class="form-control" value="{$row["tahsilat"]}"/>
+                                        <input id="edtmobile" name="edtmobile" type="text" class="form-control" value="{$row["mobile"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -167,7 +162,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edtreshte" name="edtreshte" type="text" class="form-control" value="{$row["reshte"]}"/>
+                                        <input id="edtask" name="edtask" type="text" class="form-control" value="{$row["question"]}"/>
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +176,9 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <textarea></textarea>
+                                        <textarea id="txtanswer" name="txtanswer" >
+					{$row["answertxt"]}
+					</textarea>
                                     </div>
                                 </div>
                             </div>
