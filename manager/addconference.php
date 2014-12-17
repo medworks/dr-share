@@ -9,7 +9,7 @@
 	include_once("../lib/persiandate.php"); 
 
 	$login = Login::GetLogin();
-    if (!$login->IsLogged())
+	if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");
 		die(); // solve a security bug
@@ -29,7 +29,8 @@
 		else 
 		{  
 			header('location:addconference.php?act=new&msg=1');
-		}  		
+		}
+		//echo $db->cmd;
 	}
 	else
 	if ($_POST["mark"]=="editdata")

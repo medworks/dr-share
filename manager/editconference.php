@@ -6,7 +6,7 @@
   	include_once("../classes/security.php");
   	include_once("../classes/database.php");	
 	include_once("../classes/login.php");
-    include_once("../lib/persiandate.php"); 
+	include_once("../lib/persiandate.php"); 
 	include_once("../lib/Zebra_Pagination.php"); 
 	
 	
@@ -21,8 +21,8 @@
 	
 	if ($_GET['act']=="del")
 	{
-		$db->Delete("defclasses"," id",$_GET["did"]);		
-		header('location:editclass.php?act=new');	
+		$db->Delete("defhamayesh"," id",$_GET["did"]);		
+		header('location:editconference.php?act=new');	
 	}		
     
 $html.=<<<cd
@@ -75,13 +75,13 @@ cd;
 
 	$pagination->navigation_position("right");
 
-	$reccount = $db->CountAll("defclasses");
+	$reccount = $db->CountAll("defhamayesh");
 	$pagination->records($reccount); 
 	
     $pagination->records_per_page($records_per_page);	
 
 $rows = $db->SelectAll(
-				"defclasses",
+				"defhamayesh",
 				"*",
 				NULL,
 				"id ASC",
@@ -105,7 +105,7 @@ $html.=<<<cd
                                                 <td>{$rows[$i]["endtime"]}</td>
                                                 
                                                 <td class="text-center">
-												<a href="addclass.php?act=edit&did={$rows[$i]["id"]}"  >					
+												<a href="addconference.php?act=edit&did={$rows[$i]["id"]}"  >					
                                                     <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
 												</a>
 												<a href="?act=del&did={$rows[$i]["id"]}"  >												
