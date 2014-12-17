@@ -11,6 +11,9 @@ $(document).ready(function(){
     if(href.indexOf("regconfdetail")>0){
       jQuery('ul.mainNav li.conf').addClass('active');
     } 
+    if(href.indexOf("regfaqdetail")>0){
+      jQuery('ul.mainNav li.faq').addClass('active');
+    } 
     href=href.substr(first,lenght+1);
     $("ul.mainNav li a").each(function(){
     	var linkhref=$(this).attr("href");
