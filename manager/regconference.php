@@ -6,23 +6,20 @@
   	include_once("../classes/security.php");
   	include_once("../classes/database.php");	
 	include_once("../classes/login.php");
-    include_once("../lib/persiandate.php"); 
+	include_once("../lib/persiandate.php"); 
 	include_once("../lib/Zebra_Pagination.php"); 
 	
 	
-	$login = Login::GetLogin();
+    $login = Login::GetLogin();
+    
     if (!$login->IsLogged())
-	{
+    {
 		header("Location: ../index.php");
 		die(); // solve a security bug
-	} 
-	$db = Database::GetDatabase(); 
-	if ($_GET['act']=="del")
-	{
-		$db->Delete("menusubjects"," id",$_GET["did"]);		
-		header('location:editdata.php?act=new');	
-	}		
-    
+    } 
+   
+   $db = Database::GetDatabase(); 
+	    
 $html.=<<<cd
     <!--Page main section start-->
     <section id="min-wrapper">
@@ -31,12 +28,12 @@ $html.=<<<cd
                 <div class="row">
                     <div class="col-md-12">
                         <!--Top header start-->
-                        <h3 class="ls-top-header">ثبت نام کنندگان همایش</h3>
+                        <h3 class="ls-top-header">ثبت نام کنندگان  همایش</h3>
                         <!--Top header end -->
                         <!--Top breadcrumb start -->
                         <ol class="breadcrumb">
                             <li><a href="admin.php"><i class="fa fa-home"></i></a></li>
-                            <li class="active">ثبت نام کنندگان همایش</li>
+                            <li class="active">لیست ثبت نام کنندگان</li>
                         </ol>
                         <!--Top breadcrumb start -->
                     </div>
@@ -73,63 +70,36 @@ cd;
 
 	$pagination->navigation_position("right");
 
-	$reccount = $db->CountAll("menusubjects");
+	$reccount = $db->CountAll("hamayesh");
 	$pagination->records($reccount); 
 	
     $pagination->records_per_page($records_per_page);	
 
-$rows = $db->SelectAll(
-				"menusubjects",
-				"*",
-				NULL,
-				"id ASC",
-				($pagination->get_page() - 1) * $records_per_page,
-				$records_per_page);
+$rows = $db->SelectAll("hamayesh",
+			"*",
+			"confirm = 0 ",
+			"regdate DESC",
+			($pagination->get_page() - 1) * $records_per_page,
+			$records_per_page);
 				
 	
 $vals = array();
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;
-$rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
-$rows[$i]["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
-$vals = "";
-if ($rows[$i]['pid']!=0)
-{
-	$row = $db->Select("submenues","*","id={$rows[$i]['pid']}","id ASC");	
-	if ($row["pid"]==0) {$vals[] = "";}
-	$vals[] = $row["name"];
-	
-	
-	while($row["pid"]!=0)
-	{
-		$row = $db->Select("submenues","*","id={$row['pid']}","id ASC");
-		$vals[] = $row["name"];
-	}
-    
-	$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
-	$vals[] = $row["name"];
-}
-else
-{
-		$row = $db->Select("menues","*","id={$rows[$i]['mid']}","id ASC");	
-		$vals[] = "";
-		$vals[] = "";
-		$vals[] = $row["name"];
-}	
 $html.=<<<cd
 
                                                 
                                             <tr>
-                                                <td></td>
-                                                <td>{$rows[$i]["subject"]}</td>
-                                                <td>{$rows[$i]["text"]}</td>
-                                                <td>{$rows[$i]["text"]}</td>
-                                                <td>{$rows[$i]["text"]}</td>
+                                                <td>{$rownumber}</td>
+                                                <td>{$rows[$i]["name"]}</td>
+                                                <td>{$rows[$i]["mobile"]}</td>
+                                                <td>{$rows[$i]["tel"]}</td>
+                                                <td>{$rows[$i]["shahr"]}</td>
                                                 <td class="text-center">
-    												<a href="regcldetail.php"  >					
-                                                        <button class="btn btn-xs btn-warning" title="مشاهده"><i class="fa fa-eye"></i></button>
-    												</a>	
+    							<a href="regconfdetail.php?act=view&did={$rows[$i]['id']}"  >					
+								<button class="btn btn-xs btn-warning" title="مشاهده"><i class="fa fa-eye"></i></button>
+							</a>	
                                                 </td>
                                             </tr>
 cd;
@@ -153,7 +123,7 @@ $html.=<<<cd
     </section>
     <!--Page main section end -->
 cd;
-	include_once("./inc/header.php");
-	echo $html;
+    include_once("./inc/header.php");
+    echo $html;
     include_once("./inc/footer.php");
 ?>
