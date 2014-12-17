@@ -3,10 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 15, 2014 at 09:39 
+-- Generation Time: Dec 17, 2014 at 11:21 
 -- Server version: 5.6.12
 -- PHP Version: 5.5.3
---test
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -39,6 +38,8 @@ CREATE TABLE IF NOT EXISTS `ask` (
   `mobile` varchar(11) NOT NULL,
   `question` text NOT NULL,
   `regdate` datetime NOT NULL,
+  `answer` tinyint(1) NOT NULL DEFAULT '0',
+  `answertxt` text NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -46,8 +47,8 @@ CREATE TABLE IF NOT EXISTS `ask` (
 -- Dumping data for table `ask`
 --
 
-INSERT INTO `ask` (`id`, `name`, `degri`, `reshte`, `email`, `tel`, `mobile`, `question`, `regdate`) VALUES
-(1, 'اخلاق2', 'لیسانس', 'نرم افزار', 'gjhghg@gffh.com', '0123456789', '1234567890', '4565465', '2014-11-27 15:05:06');
+INSERT INTO `ask` (`id`, `name`, `degri`, `reshte`, `email`, `tel`, `mobile`, `question`, `regdate`, `answer`, `answertxt`) VALUES
+(1, 'اخلاق2', 'لیسانس', 'نرم افزار', 'gjhghg@gffh.com', '0123456789', '1234567890', '4565465', '2014-11-27 15:05:06', 0, '');
 
 -- --------------------------------------------------------
 
@@ -109,7 +110,7 @@ INSERT INTO `classes` (`id`, `name`, `clsid`, `birth`, `father`, `tahol`, `meli`
 (2, 'اخلاق', 0, '465', 'تاتناتن', 1, '46565465', 'اتنانتانات', 'تمنتمنتممن', 'انتاتنانت', 'اتناننانات', 'اتنانننت', '4655', '46546545', '41654665', 'gjhghg@gffh.com', '654655', '2014-11-26 11:04:21', 0),
 (3, 'اخلاق', 0, '465', 'علیرض', 1, '46565465', 'اتنانتانات', 'تمنتمنتممن', 'تناتن', 'اتناننانات', 'لتالالالتا', '', '746778', '41654665', 'gjhghg@gffh.com', '', '2014-11-26 11:10:11', 0),
 (4, 'اخلاق', 0, '465', 'علیرض', 1, '46565465', 'اتنانتانات', 'تمنتمنتممن', 'تناتن', 'اتناننانات', 'لتالالالتا', '', '746778', '41654665', 'gjhghg@gffh.com', '', '2014-11-26 11:10:34', 0),
-(5, 'اخلاق', 0, '1393/08/19', 'تاتناتن', 1, '0123654789', 'اتنانتانات', 'تمنتمنتممن', 'انتاتنانت', 'اتناننانات', 'اتنانننت', '465465465465', '0123456789', '1234567890', 'gjhghg@gffh.com', '465465', '2014-11-27 14:22:18', 0);
+(5, 'اخلاق', 0, '1393/08/19', 'تاتناتن', 1, '0123654789', 'اتنانتانات', 'تمنتمنتممن', 'انتاتنانت', 'اتناننانات', 'اتنانننت', '465465465465', '0123456789', '1234567890', 'gjhghg@gffh.com', '465465', '2014-11-27 14:22:18', 1);
 
 -- --------------------------------------------------------
 
@@ -161,6 +162,23 @@ CREATE TABLE IF NOT EXISTS `defclasses` (
 INSERT INTO `defclasses` (`id`, `title`, `subjects`, `starttime`, `period`, `endtime`, `details`) VALUES
 (1, 'کلاس روانشناسی', '																								\r\n				hgjhgjhg\r\nhkjhkj							\r\n											', 'چهارشنبه ۲۲ آذر ', '۱۰۰ جلسه', 'سه شنبه ۲۲ فروردین', '													hjkhkj\r\njkhjkhjk\r\nhkjhk\r\njhkjhjk											\r\n											\r\n											'),
 (2, 'کلاس ریاضی', '															لتالتالا\r\nانتانتانت\r\nاتناتنانت\r\nاتنانت									\r\n											\r\n											', 'چهارشنبه ۲۲ دی ', '۵۰ جلسه', 'سه شنبه ۲۲ خرداد', '																								\r\n						ندارد					\r\n											');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `defhamayesh`
+--
+
+CREATE TABLE IF NOT EXISTS `defhamayesh` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) NOT NULL,
+  `subjects` text NOT NULL,
+  `starttime` varchar(40) NOT NULL,
+  `period` varchar(30) NOT NULL,
+  `endtime` varchar(40) NOT NULL,
+  `details` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -280,6 +298,7 @@ CREATE TABLE IF NOT EXISTS `hamayesh` (
   `email` varchar(25) NOT NULL,
   `desc` text NOT NULL,
   `regdate` datetime NOT NULL,
+  `confirm` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
@@ -287,8 +306,8 @@ CREATE TABLE IF NOT EXISTS `hamayesh` (
 -- Dumping data for table `hamayesh`
 --
 
-INSERT INTO `hamayesh` (`id`, `name`, `hid`, `birth`, `father`, `tahol`, `meli`, `tahsilat`, `reshte`, `shoghl`, `ostan`, `shahr`, `address`, `tel`, `mobile`, `email`, `desc`, `regdate`) VALUES
-(1, 'مرام 2-1', 0, '1393/08/19', 'علیرض', 1, '0123654789', 'اتنانتانات', 'تمنتمنتممن', 'انتاتنانت', 'اتناننانات', 'اتنانننت', '465465', '0123456789', '1234567890', 'gjhghg@gffh.com', '5+64+654', '2014-11-27 14:47:17');
+INSERT INTO `hamayesh` (`id`, `name`, `hid`, `birth`, `father`, `tahol`, `meli`, `tahsilat`, `reshte`, `shoghl`, `ostan`, `shahr`, `address`, `tel`, `mobile`, `email`, `desc`, `regdate`, `confirm`) VALUES
+(1, 'مرام 2-1', 0, '1393/08/19', 'علیرض', 1, '0123654789', 'اتنانتانات', 'تمنتمنتممن', 'انتاتنانت', 'اتناننانات', 'اتنانننت', '465465', '0123456789', '1234567890', 'gjhghg@gffh.com', '5+64+654', '2014-11-27 14:47:17', 0);
 
 -- --------------------------------------------------------
 
