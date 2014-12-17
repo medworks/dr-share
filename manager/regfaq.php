@@ -69,20 +69,20 @@ cd;
 
 	$pagination->navigation_position("right");
 
-	$reccount = $db->CountAll("classes");
+	$reccount = $db->CountAll("ask");
 	$pagination->records($reccount); 
 	
     $pagination->records_per_page($records_per_page);	
 
-$rows = $db->SelectAll("classes",
+$rows = $db->SelectAll("ask",
 			"*",
-			"confirm = 0 ",
-			"regdate DESC",
+			NULL,
+			"regdate DESC,answer ASC",
 			($pagination->get_page() - 1) * $records_per_page,
 			$records_per_page);
 				
 	
-$vals = array();
+//echo $db->cmd;
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;

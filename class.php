@@ -6,15 +6,15 @@
   	include_once("classes/security.php");
   	include_once("classes/database.php");	
 	include_once("classes/login.php");
-    include_once("lib/persiandate.php"); 
+	include_once("lib/persiandate.php"); 
 	
 	//error_reporting(E_ALL);
 	//ini_set('display_errors', 1);
 	
 	$db = Database::GetDatabase();
-    $seo = Seo::GetSeo();
+	$seo = Seo::GetSeo();
     
-    $seo->Site_Title = 'کلاسها و دوره های آموزشی';  
+	$seo->Site_Title = 'کلاسها و دوره های آموزشی';  
 	
 	function upload($db,$did,$mode)
 	{		
