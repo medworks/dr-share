@@ -270,8 +270,8 @@
                     <li><a href="regconferenceconf.php">تایید شده ها</a></li>
                 </ul>
             </li>
-            <li>
-                <a href="#">
+            <li class="faq">
+                <a href="regfaq.php">
                     <i class="fa fa-pencil-square-o"></i>
                     <span>پرسش و پاسخ</span>
                     <!-- <span class="badge badge-red">3</span> -->
