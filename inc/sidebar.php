@@ -24,10 +24,10 @@ $html.=<<<cd
 			<h4 class="widgettitle rtl">کلینیک رهیاب</h4>
 			<ul>
 				<li><a href="healthgroup.html">گروه درمانی</a></li>
-				<li><a href="news.html">اخبار و تازه ها</a></li>
-				<li><a href="gallery.html">گالری تصاویر</a></li>
+				<li><a href="news.html" class="news">اخبار و تازه ها</a></li>
+				<li><a href="gallery.html" class="gallery">گالری تصاویر</a></li>
 				<li><a href="class.html">کلاسها و دوره های آموزشی</a></li>
-				<li><a href="articles.html">آرشیو مقالات</a></li>
+				<li><a href="articles.html" class="article">آرشیو مقالات</a></li>
 				<li><a href="exam.html">آزمون های روانشناختی</a></li>
 				<li><a href="conferences.html">همایش ها</a></li>
 				<li><a href="membership.html">عضویت در خبرنامه</a></li>
@@ -62,10 +62,7 @@ for($i = 0; $i < Count($gallery); $i++)
 	$src = 'data: '.$gallery[$i]['itype'].';base64,'.$img;
 $html.=<<<cd
 					<div class="flickr_badge_image" id="flickr_badge_image1">
-						<a href="#" target="_blank">
-							<!--
-							<img  src="manager/img.php?did={$gallery[$i]["gid"]}&type=gall" width="75px" height="75px" />
-							-->
+						<a href="gallery.html">
 							<img  src="{$src}"  width="75px" height="75px" />
 						</a>
 					</div>

@@ -20,6 +20,15 @@ jQuery(document).ready(function() {
       if(jQuery(this).attr("href") == href){
         jQuery(this).addClass("active");
       }
+      if(href.indexOf("article")>0){
+          jQuery('div.widget_archive li a.article').addClass('active');
+      }
+       if(href.indexOf("news")>0){
+          jQuery('div.widget_archive li a.news').addClass('active');
+      }
+       if(href.indexOf("gallery")>0){
+          jQuery('div.widget_archive li a.gallery').addClass('active');
+      }
     });
 
 
