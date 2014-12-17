@@ -121,6 +121,9 @@
 			case 9:
 				$result = $msg->ShowSuccess("تنظیمات اعمال شد");
 			break;
+			case 10:
+				$result = $msg->ShowSuccess("سوال شما ارسال شد .به زودی پاسخ خود را از طریق ایمیل دریافت خواهد کرد");
+			break;
 		}
 		$result .= <<<JAVA
 		<script language="javascript">

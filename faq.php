@@ -6,15 +6,15 @@
   	include_once("classes/security.php");
   	include_once("classes/database.php");	
 	include_once("classes/login.php");
-    include_once("lib/persiandate.php"); 
+	include_once("lib/persiandate.php"); 
 	
 	//error_reporting(E_ALL);
 	//ini_set('display_errors', 1);
 	
 	$db = Database::GetDatabase();
-    $seo = Seo::GetSeo();
+	$seo = Seo::GetSeo();
     
-    $seo->Site_Title = 'پرسش و پاسخ';  
+	$seo->Site_Title = 'پرسش و پاسخ';  
     
 	if (isset($_POST["mark"]) and $_POST["mark"]="register" )
 	{
@@ -22,18 +22,19 @@
 		$fields = array("`name`","`degri`","`reshte`","`tel`","`mobile`",
 		                "`email`","`question`","`regdate`");
 		$values = array("'{$_POST[edtname]}'","'{$_POST[edtdegri]}'","'{$_POST[edtreshte]}'",
-						"'{$_POST[edttell]}'","'{$_POST[edtmob]}'","'{$_POST[edtemail]}'",
-						"'{$_POST[txtask]}'","'{$date}'");	
+				"'{$_POST[edttell]}'","'{$_POST[edtmob]}'","'{$_POST[edtemail]}'",
+				"'{$_POST[txtask]}'","'{$date}'");	
 		if (!$db->InsertQuery('ask',$fields,$values)) 
 		{			
 			header('location:faq.html?act=new&msg=2');			
 		} 	
 		else 
 		{  			
-			header('location:faq.html?act=new&msg=1');			
+			header('location:faq.html?act=new&msg=10');			
 		}  		
 		//echo $db->cmd;
-	}	
+	}
+	$msgs = GetMessage($_GET["msg"]);
 $ashtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
@@ -45,6 +46,7 @@ $ashtml.=<<<cd
                         در این صفحه می توانید سوالاتتان را بپرسید
                     </span>
                 </p>
+		<p>$msgs</p>
                 <div id="frmdata" name="frmdata" class="formdata">
                     <form action="" method="post">
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
