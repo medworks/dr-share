@@ -264,8 +264,8 @@
                     <!-- <span class="badge badge-red">3</span> -->
                 </a>
                 <ul>
-                    <li><a href="addconference.php">تعریف همایش</a></li>
-                    <li><a href="editconference.php">ویرایش همایش ها</a></li>
+                    <li><a href="addconference.php?act=new">تعریف همایش</a></li>
+                    <li><a href="editconference.php?act=edit">ویرایش همایش ها</a></li>
                     <li><a href="regconference.php">ثبت نام کنندگان</a></li>
                     <li><a href="regconferenceconf.php">تایید شده ها</a></li>
                 </ul>

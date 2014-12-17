@@ -6,7 +6,8 @@
     include_once("../classes/security.php");
     include_once("../classes/database.php");    
     include_once("../classes/login.php");
-    include_once("../lib/persiandate.php"); 
+    include_once("../lib/persiandate.php");
+    include_once("../lib/class.phpmailer.php");
 
     $login = Login::GetLogin();
     if (!$login->IsLogged())
@@ -29,8 +30,10 @@
 	
 	$Contact_Email = GetSettingValue('Contact_Email',0);
 	$Email_Sender_Name = GetSettingValue('Email_Sender_Name',0);
-	
-	SendEmail($Contact_Email, $Email_Sender_Name,array("$row[email]"), "پاسخ سوال شما",$_POST["txtanswer"]);
+	$email = $row["email"];
+	$message = $_POST["txtanswer"];
+
+	SendEmail($Contact_Email, $Email_Sender_Name,array($email), "پاسخ سوال شما",$message);
 	
 	header('location:regfaq.php?act=new');
 	//echo $db->cmd;

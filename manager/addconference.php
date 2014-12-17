@@ -22,13 +22,13 @@
 		$fields = array("`title`","`subjects`","`starttime`","`period`","`endtime`","`details`");		
 		$values = array("'{$_POST[edttitle]}'","'{$_POST[edtsubjects]}'","'{$_POST[edtstarttime]}'",
 				"'{$_POST[edtperiod]}'","'{$_POST[edtendtime]}'","'{$_POST[txtdetails]}'");	
-		if (!$db->InsertQuery('defclasses',$fields,$values)) 
+		if (!$db->InsertQuery('defhamayesh',$fields,$values)) 
 		{			
-			header('location:addclass.php?act=new&msg=2');			
+			header('location:addconference.php?act=new&msg=2');			
 		} 	
 		else 
 		{  
-			header('location:addclass.php?act=new&msg=1');
+			header('location:addconference.php?act=new&msg=1');
 		}  		
 	}
 	else
@@ -38,9 +38,9 @@
 		$values = array("`title`"=>"'{$_POST[edttitle]}'","`subjects`"=>"'{$_POST[edtsubjects]}'",
 				"`starttime`"=>"'{$_POST[edtstarttime]}'","`period`"=>"'{$_POST[edtperiod]}'",
 				"`endtime`"=>"'{$_POST[edtendtime]}'","`details`"=>"'{$_POST[txtdetails]}'");
-		$db->UpdateQuery("defclasses",$values,array("id='{$_GET[did]}'"));
+		$db->UpdateQuery("defhamayesh",$values,array("id='{$_GET[did]}'"));
 		
-		header('location:addclass.php?act=new&msg=1');
+		header('location:addconference.php?act=new&msg=1');
 		//echo $db->cmd;
 	}
 	
@@ -54,7 +54,7 @@
 		
 	if ($_GET['act']=="edit")
 	{
-		$row=$db->Select("defclasses","*","id='{$_GET["did"]}'",NULL);		
+		$row=$db->Select("defhamayesh","*","id='{$_GET["did"]}'",NULL);		
 		$insertoredit = "
 			<button id='submit' type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editdata' /> ";
