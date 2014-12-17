@@ -12,7 +12,7 @@
                         <!--Top header end -->
                         <!--Top breadcrumb start -->
                         <ol class="breadcrumb">
-                            <li><a href="admin.php"><i class="fa fa-home"></i></a></li>
+                            <li><a href="javascript:void(0);"><i class="fa fa-home"></i></a></li>
                             <li class="active">ویرایش تصاویر</li>
                         </ol>
                         <!--Top breadcrumb start -->
