@@ -98,7 +98,7 @@ $html.=<<<cd
                                                 <td>{$rows[$i]["tel"]}</td>
                                                 <td>{$rows[$i]["shahr"]}</td>
                                                 <td class="text-center">
-                                                    <a href="regcldetail.php?act=view&did={$rows[$i]["id"]}"  >                    
+                                                    <a href="regconfdetail.php?act=view&did={$rows[$i]["id"]}"  >                    
                                                         <button class="btn btn-xs btn-warning" title="مشاهده"><i class="fa fa-eye"></i></button>
                                                     </a>   
                                                 </td>
