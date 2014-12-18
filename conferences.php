@@ -85,8 +85,8 @@
 		}  		
 		//echo $db->cmd;
 	}
-	$class = $db->SelectAll("defhamayesh","*","`expire` ='0'");	
-	$cbhamayesh = DbSelectOptionTag("cbhamayesh",$class,"title",NULL,NULL,"form-control",NULL,"  کلاس  ");	
+	$hamayesh = $db->SelectAll("defhamayesh","*","`expire` ='0'");	
+	$cbhamayesh = DbSelectOptionTag("cbhamayesh",$hamayesh,"title",NULL,NULL,"form-control",NULL,"  همایش  ");	
 $msgs = GetMessage($_GET['msg']);		
 $chtml.=<<<cd
 <div id="main" class="col9 clearfix">
@@ -106,7 +106,7 @@ $chtml.=<<<cd
                             <label for="nt_field01">نام همایش
                                 <span class="star">*</span>
                             </label>
-                            {$cbclass}
+                            {$cbhamayesh}
                         </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">نام و نام خانوادگی
