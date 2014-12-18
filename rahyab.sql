@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.1.6
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Dec 17, 2014 at 11:21 
--- Server version: 5.6.12
--- PHP Version: 5.5.3
+-- Host: 127.0.0.1
+-- Generation Time: Dec 18, 2014 at 10:50 PM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `rahyab`
 --
-CREATE DATABASE IF NOT EXISTS `rahyab` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `rahyab`;
 
 -- --------------------------------------------------------
 
@@ -152,6 +150,7 @@ CREATE TABLE IF NOT EXISTS `defclasses` (
   `period` varchar(30) NOT NULL,
   `endtime` varchar(40) NOT NULL,
   `details` text NOT NULL,
+  `expire` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
@@ -159,9 +158,9 @@ CREATE TABLE IF NOT EXISTS `defclasses` (
 -- Dumping data for table `defclasses`
 --
 
-INSERT INTO `defclasses` (`id`, `title`, `subjects`, `starttime`, `period`, `endtime`, `details`) VALUES
-(1, 'کلاس روانشناسی', '																								\r\n				hgjhgjhg\r\nhkjhkj							\r\n											', 'چهارشنبه ۲۲ آذر ', '۱۰۰ جلسه', 'سه شنبه ۲۲ فروردین', '													hjkhkj\r\njkhjkhjk\r\nhkjhk\r\njhkjhjk											\r\n											\r\n											'),
-(2, 'کلاس ریاضی', '															لتالتالا\r\nانتانتانت\r\nاتناتنانت\r\nاتنانت									\r\n											\r\n											', 'چهارشنبه ۲۲ دی ', '۵۰ جلسه', 'سه شنبه ۲۲ خرداد', '																								\r\n						ندارد					\r\n											');
+INSERT INTO `defclasses` (`id`, `title`, `subjects`, `starttime`, `period`, `endtime`, `details`, `expire`) VALUES
+(1, 'کلاس روانشناسی', '																								\r\n				hgjhgjhg\r\nhkjhkj							\r\n											', 'چهارشنبه ۲۲ آذر ', '۱۰۰ جلسه', 'سه شنبه ۲۲ فروردین', '													hjkhkj\r\njkhjkhjk\r\nhkjhk\r\njhkjhjk											\r\n											\r\n											', 0),
+(2, 'کلاس ریاضی', '															لتالتالا\r\nانتانتانت\r\nاتناتنانت\r\nاتنانت									\r\n											\r\n											', 'چهارشنبه ۲۲ دی ', '۵۰ جلسه', 'سه شنبه ۲۲ خرداد', '																								\r\n						ندارد					\r\n											', 0);
 
 -- --------------------------------------------------------
 
@@ -177,8 +176,17 @@ CREATE TABLE IF NOT EXISTS `defhamayesh` (
   `period` varchar(30) NOT NULL,
   `endtime` varchar(40) NOT NULL,
   `details` text NOT NULL,
+  `expire` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `defhamayesh`
+--
+
+INSERT INTO `defhamayesh` (`id`, `title`, `subjects`, `starttime`, `period`, `endtime`, `details`, `expire`) VALUES
+(1, 'همایش 1', '', '', '', '', '', 0),
+(2, 'همایش ض2', '', '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -529,9 +537,7 @@ CREATE TABLE IF NOT EXISTS `pics` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
 
---
--- Dumping data for table `pics`
---
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `settings`
