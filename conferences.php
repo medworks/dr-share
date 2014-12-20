@@ -61,10 +61,10 @@
 	if (isset($_POST["mark"]) and $_POST["mark"]="register" )
 	{
 	    $date = date('Y-m-d H:i:s');
-		$fields = array("`name`","`birth`","`father`","`tahol`","`meli`",
+		$fields = array("`name`","`hid`","`birth`","`father`","`tahol`","`meli`",
 		                "`tahsilat`","`reshte`","`shoghl`","`ostan`","`shahr`",
 						"`address`","`tel`","`mobile`","`email`","`desc`","`regdate`");
-		$values = array("'{$_POST[edtname]}'","'{$_POST[edtbirth]}'","'{$_POST[edtfather]}'",
+		$values = array("'{$_POST[edtname]}'","'{$_POST[cbhamayesh]}'","'{$_POST[edtbirth]}'","'{$_POST[edtfather]}'",
 						"'{$_POST[chbtahol]}'","'{$_POST[edtmeli]}'","'{$_POST[edtdegri]}'",
 						"'{$_POST[edtreshte]}'","'{$_POST[edtjob]}'","'{$_POST[edtostan]}'",
 						"'{$_POST[edtcity]}'","'{$_POST[txtadd]}'","'{$_POST[edttell]}'",
@@ -85,6 +85,8 @@
 		}  		
 		//echo $db->cmd;
 	}
+	$hamayesh = $db->SelectAll("defhamayesh","*","`expire` ='0'");	
+	$cbhamayesh = DbSelectOptionTag("cbhamayesh",$hamayesh,"title",NULL,NULL,"form-control",NULL,"  همایش  ");	
 $msgs = GetMessage($_GET['msg']);		
 $chtml.=<<<cd
 <div id="main" class="col9 clearfix">
@@ -100,6 +102,12 @@ $chtml.=<<<cd
                 <div class="nt_form">
 				    <!-- {$msgs} -->
                     <form id="frmclass" class="formdata" enctype="multipart/form-data" action="" method="post" role="form">
+						<div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+                            <label for="nt_field01">نام همایش
+                                <span class="star">*</span>
+                            </label>
+                            {$cbhamayesh}
+                        </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">نام و نام خانوادگی
                                 <span class="star">*</span>

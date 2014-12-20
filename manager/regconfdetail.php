@@ -21,6 +21,10 @@
     if (isset($_GET["act"]) and $_GET["act"]=="view")
     {
 	$row = $db->Select("hamayesh","*","id ={$_GET['did']}");
+	$pic = $db->Select("clspics","*","cid='{$_GET['did']}' AND tid='2' ");
+	$hamayesh = $db->Select("defhamayesh","*","id ={$row['hid']}");
+	$img = base64_encode($pic['img']);
+	$src = 'data: '.$pic['itype'].';base64,'.$img;
 	$regdate = ToJalali($row["regdate"]," l d F  Y ساعت H:i");
         if($row["tahol"] ==0)
         {
@@ -195,7 +199,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edtfish" name="edtfish" type="text" class="form-control" value="{$row["title"]}"/>
+									<img class="morph" src="{$src}"  style="width:201px !important;height:115px !important" />                                    
                                     </div>
                                 </div>
                             </div>
@@ -307,7 +311,7 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edtdore" name="edtdore" type="text" class="form-control" value="{$row["clsid"]}"/>
+                                        <input id="edtdore" name="edtdore" type="text" class="form-control" value="{$hamayesh["title"]}"/>
                                     </div>
                                 </div>
                             </div>
