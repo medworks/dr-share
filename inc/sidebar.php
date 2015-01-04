@@ -42,8 +42,8 @@ $html.=<<<cd
 				<div class="flickr_wrap">
 				<form action="membership.html" method="GET" >
 					<div class="flickr_badge_image" id="flickr_badge_image1">
-						<input type="text" name="email" class="wysija-input" style="float:right;" title="Email" value="" id="form-validation-field-0">
-						<input class="wysija-submit wysija-submit-field rtl" type="submit" style="margin-right:0;height:42px;font-size:17px" value="ثبت!">
+						<input type="text" name="email" class="wysija-input" style="float:right;" title="Email" placeholder="info@rahyabclinic.com" value="" id="form-validation-field-0" />
+						<input class="wysija-submit wysija-submit-field rtl" type="submit" style="margin-right:0;height:42px;font-size:17px" value="ثبت!" />
 					</div>
 				</form>	
 				</div>

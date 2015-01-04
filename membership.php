@@ -82,7 +82,7 @@ cd;
 	else
 	{
 $inseroredit=<<<cd
-	<input type="submit" value="ثبت نام" id="submit" class="contact_form_submit styled_button">
+	<input type="submit" style="margin-top:25px" value="ثبت نام" id="submit" class="contact_form_submit styled_button">
 	<input type="hidden" name="mark" value="register" />
 cd;
 				
@@ -167,7 +167,7 @@ $nwlhtml.=<<<cd
                             <label for="nt_field11">ایمیل
                                 <span class="star">*</span>
                             </label>
-                            <input type="text" id="edtemail" name="edtemail" class="textfield email validate[required,custom[email]]" data-prompt-position="topLeft:-50" placeholder="info@rahyabclinic.com" value="{$row['email']}">
+                            <input type="text" id="edtemail" name="edtemail" class="textfield email validate[required,custom[email]]" data-prompt-position="topLeft:-50" placeholder="info@rahyabclinic.com" value="$_GET[email]">
                         </div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">تلفن
@@ -185,7 +185,7 @@ $nwlhtml.=<<<cd
                             <label for="nt_field31">8 + 2 </label>
                             <input type="text" name="nt_field31" id="nt_field31" class="textfield captcha required" value="">
                         </div> -->
-						<span class="star">لیست گروه های قابل عضویت جهت دریافت اخبار مربوطه</span>
+						<p style="font-size:20px">لیست گروه های قابل عضویت جهت دریافت اخبار مربوطه</p>
 						<br/>
 						{$chbs}
                         <div class="nt_form_row">
