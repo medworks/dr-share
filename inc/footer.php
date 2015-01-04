@@ -27,7 +27,7 @@ $html.=<<<cd
 </div>
 </section>
 
-<footer style="background-color: rgb(41, 128, 185);">
+<footer style="background: url('./images/bg_main.gif') repeat-x center">
 	<div class="container">
 		<div class="col12">
 			<div class="col4">
@@ -53,7 +53,7 @@ for($i = 0; $i < Count($rwnews); $i++)
 $rwnews[$i]["subject"] =(mb_strlen($rwnews[$i]["subject"])>20)?mb_substr($rwnews[$i]["subject"],0,20,"UTF-8")."...":$rwnews[$i]["subject"];
 $html.=<<<cd
  							<li id="menu-item-2768" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2768">
- 								<a href="one-news{$rwnews[$i]['id']}.html" style="color:#ccc;">{$rwnews[$i][subject]}</a>
+ 								<a href="one-news{$rwnews[$i]['id']}.html" style="color:#000;">{$rwnews[$i][subject]}</a>
  							</li>
 cd;
 }
@@ -67,22 +67,22 @@ $html.=<<<cd
 					<h4 class="widgettitle rtl">پیوندهای مفید</h4>
 					<ul>
 						<li>
-							<a href="#" style="color:#ccc;">پیوند 1</a>
+							<a href="#" style="color:#000;">پیوند 1</a>
 						</li>
 						<li>
-							<a href="#" style="color:#ccc;">پیوند 2</a>
+							<a href="#" style="color:#000;">پیوند 2</a>
 						</li>
 						<li>
-							<a href="#" style="color:#ccc;">پیوند 3</a>
+							<a href="#" style="color:#000;">پیوند 3</a>
 						</li>
 						<li>
-							<a href="#" style="color:#ccc;">پیوند 4</a>
+							<a href="#" style="color:#000;">پیوند 4</a>
 						</li>
 						<li>
-							<a href="#" style="color:#ccc;">پیوند 5</a>
+							<a href="#" style="color:#000;">پیوند 5</a>
 						</li>
 						<li>
-							<a href="#" style="color:#ccc;">پیوند 6</a>
+							<a href="#" style="color:#000;">پیوند 6</a>
 						</li>
 					</ul>
 				</div>
@@ -98,7 +98,7 @@ for($i = 0; $i < Count($rwtopics); $i++)
 $rwtopics[$i]["subject"] =(mb_strlen($rwtopics[$i]["subject"])>20)?mb_substr($rwtopics[$i]["subject"],0,20,"UTF-8")."...":$rwtopics[$i]["subject"];
 $html.=<<<cd
 							<li>
-								<a href="one-article{$rwtopics[$i]['id']}.html" style="color:#ccc;">{$rwtopics[$i]['subject']}</a>
+								<a href="one-article{$rwtopics[$i]['id']}.html" style="color:#000;">{$rwtopics[$i]['subject']}</a>
 							</li>
 cd;
 }
@@ -130,7 +130,7 @@ $html.=<<<cd
 								<li><a href="faq.html">پرسش و پاسخ</a></li>
 							</ul>
 						</div>
-						<p class="copyright_text" style="font-size:16px;margin-top:50px;">Rahyab clinic. All rights reserved. Designed by <a href="http://www.mediateq.ir" style="text-transform:none;padding:0">Mediateq.ir</p>
+						<p class="copyright_text" style="font-size:16px;margin-top:50px;color:#000">Rahyab clinic. All rights reserved. Designed by <a href="http://www.mediateq.ir" style="text-transform:none;padding:0">Mediateq.ir</p>
 					</div><!-- columns-->
 				</div><!-- container -->
 			</div><!-- #sub_footer -->

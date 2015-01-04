@@ -101,7 +101,7 @@ $hhtml.=<<<cd
 	.main_navigation ul ul:before{border-color:transparent transparent #1b1e24 transparent}
 	.main_navigation ul ul ul{background-color:#1b1e24}
 	.main_navigation ul ul ul:before{border-color:transparent #1b1e24 transparent transparent}
-	.main_navigation li.current_page_item > a,.main_navigation a:hover, .main_navigation li:hover{background:#0090d9}
+	.main_navigation li.current_page_item > a,.main_navigation a:hover, .main_navigation li:hover{background:#066287}
 	.nt-icon-search:hover, .nt-search.nt-search-open .nt-icon-search{background-color:#d35400;color:#fff}
 	footer{background-color:#1b1e24}
 	.article_grid_image,.article_list_image,.single_post_image{background-color:#c0392b}
@@ -133,15 +133,15 @@ $hhtml.=<<<cd
 	.footer_links li:after{color:rgba(255,255,255,.1)}
 	footer .post_meta .meta_date:before, footer .item_meta, footer .post_meta, footer .post_meta a, footer .rss-date{color:rgba(255,255,255,.35)}
 	footer h2,footer h2 a,footer h3,footer h3 a,footer h5,footer h5 a,footer h6,footer h6 a{color:#fff}
-	footer a{color:rgba(255,255,255,.55)}
+	footer a{color:rgba(0,0,0,.99)}
 	footer a:hover{color:#fff}
 	footer .widgettitle{color:rgba(255,255,255,1);border-bottom:1px solid rgba(255,255,255,.15)}
 	footer .article_heading a{color:rgba(255,255,255,.8)!important}
-	footer{color:rgba(255,255,255,.6)}
+	footer{color:rgba(0,0,0,.99)}
 	footer .widget_tag_cloud a{color:rgba(255,255,255,.45)}
 	footer .gazette_logo, footer .widget_tag_cloud a:hover{color:#fff}
 	#sub_footer{color:rgba(255,255,255,.4)}
-	#sub_footer a{color:rgba(255,255,255,.7)}
+	#sub_footer a{color:rgba(0,0,0,.99)}
 	.fade-in,.appeared{-webkit-transition-property:-webkit-transform,opacity;-moz-transition-property:-moz-transform,opacity;-ms-transition-property:-ms-transform,opacity;-o-transition-property:-o-transform,opacity;transition-property:transform,opacity;-webkit-transition-duration:.8s;-moz-transition-duration:.8s;-ms-transition-duration:.8s;-o-transition-duration:.8s;transition-duration:.8s}
 	.fade-in{-webkit-transform:translate(0px,100px);-moz-transform:translate(0px,100px);-o-transform:translate(0px,100px);-ms-transform:translate(0px,100px);transform:translate(0px,100px)}
 	.appeared{-webkit-transform:translate(0,0);-moz-transform:translate(0,0);-o-transform:translate(0,0);-ms-transform:translate(0,0);transform:translate(0,0)}
