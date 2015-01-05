@@ -60,7 +60,16 @@ $hhtml.=<<<cd
 <!--[if IE 8]> <link rel="stylesheet" type="text/css" href="http://gazette.seoresearch.com/wp-content/themes/gazette/skins/_ie/ie8.css"> <![endif]-->
 <!--[if IE 9]> <link rel="stylesheet" type="text/css" href="http://gazette.seoresearch.com/wp-content/themes/gazette/skins/_ie/ie9.css"> <![endif]-->
 <!--[if lt IE 10]> <link rel="stylesheet" type="text/css" href="http://gazette.seoresearch.com/wp-content/themes/gazette/skins/_ie/ie.css"> <![endif]-->
+
 <style type="text/css">
+body,html{     
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;  
+}
 	.category-color-f7a4a3:hover{background:#f7a4a3!important}
 	.main_navigation .current-menu-item a.category-color-f7a4a3{background:#f7a4a3!important}
 	.category-color-736086:hover{background:#736086!important}
@@ -204,7 +213,7 @@ var BP_Confirm = {"are_you_sure":"Are you sure?"};
 </style>
 
 </head>
-<body class="is_loading has_slider slider_royalslider royalslider has_header_social is_home right_sidebar right_sidebar">
+<body class="is_loading has_slider slider_royalslider royalslider has_header_social is_home right_sidebar right_sidebar" oncontextmenu="return false;">
 <section id="body_inner">
 	<div id="preload">
 		<div>
