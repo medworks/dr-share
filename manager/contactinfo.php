@@ -39,7 +39,8 @@
 	$FaceBook_Add = GetSettingValue('FaceBook_Add',0);
 	$Twitter_Add = GetSettingValue('Twitter_Add',0);
 	$Gplus_Add = GetSettingValue('Gplus_Add',0);
-	$Tell_Number = GetSettingValue('Tell_Number',0);
+    $Tell_Number = GetSettingValue('Tell_Number',0);
+	$Fax_Number = GetSettingValue('Fax_Number',0);
 	$Address = GetSettingValue('Address',0);
 	
 $html.=<<<cd
@@ -117,6 +118,14 @@ $html.=<<<cd
                                             <label class="col-md-2 control-label">تلفن کلینیک</label>
                                             <div class="col-md-10">
                                                 <input type="text" class="form-control" name="Tell_Number" value="{$Tell_Number}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row ls_divider">
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">تلفن کلینیک 2</label>
+                                            <div class="col-md-10">
+                                                <input type="text" class="form-control" name="Fax_Number" value="{$Fax_Number}" />
                                             </div>
                                         </div>
                                     </div>

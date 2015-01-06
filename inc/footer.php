@@ -14,6 +14,7 @@
 	$rwtopics = $db->SelectAll("topics","*",NULL,"id DESC",0,5);
 	
 	$Tell_Number = GetSettingValue('Tell_Number',0);
+	$Fax_Number = GetSettingValue('Fax_Number',0);
 	$Address = GetSettingValue('Address',0);
 	$Contact_Email = GetSettingValue('Contact_Email',0);
 	
@@ -112,7 +113,8 @@ $html.=<<<cd
 					<h4 class="widgettitle rtl">تماس با ما</h4>		
 					<span class="contact_widget_address">{$Address}</span><br>
 					<span class="contact_widget_phone">{$Tell_Number}</span><br>
-					<span class="contact_widget_email"><a href="javascript:void(0);" rel="{$Contact_Email}" class="eail_link_replace" style="font-size:14px;">{$Contact_Email}</a></span><br>
+					<span class="contact_widget_phone">{$Fax_Number}</span><br>
+					<span class="contact_widget_email"><a href="javascript:void(0);" rel="{$Contact_Email}" class="eail_link_replace" style="font-size:14px;font-family:fontello!important;">{$Contact_Email}</a></span><br>
         		</div>
         	</div>
         	<div class="clearboth"></div>
