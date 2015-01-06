@@ -126,7 +126,7 @@ $html=<<<cd
                             </div>
                         </div>
                     </div> 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -143,7 +143,7 @@ $html=<<<cd
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">

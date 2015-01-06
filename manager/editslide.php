@@ -59,7 +59,7 @@ $html.=<<<cd
                                             <tr>
 											<th>#</th>
                                                 <th>عنوان</th>
-                                                <th>متن</th>
+                                                <!-- <th>متن</th> -->
                                                 <th>تصویر</th>
                                                 <th class="text-center">عملیات</th>
                                             </tr>
@@ -99,7 +99,7 @@ $html.=<<<cd
                                             <tr>
                                                 <td>{$rownumber}</td>
                                                 <td>{$rows[$i]["subject"]}</td>
-                                                <td>{$rows[$i]["text"]}</td>
+                                                <!-- <td>{$rows[$i]["text"]}</td> -->
                                                 <td>
                                                     <img src="img.php?did={img.php?slide=yes&did={$slide[$i]['id']}" width="50px" height="50px" /> 
                                                 </td>

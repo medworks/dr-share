@@ -61,7 +61,7 @@ $html.=<<<cd
 											<th>#</th>
 												<th>گروه</th>
                                                 <th>عنوان</th>
-                                                <th>متن</th>
+                                                <!-- <th>متن</th> -->
                                                 <th>تصویر</th>
                                                 <th class="text-center">عملیات</th>
                                             </tr>
@@ -103,7 +103,7 @@ $html.=<<<cd
                                                 <td>{$rownumber}</td>
 						<td>{$grow["name"]}</td>
                                                 <td>{$prow["subject"]}</td>
-                                                <td>{$prow["text"]}</td>
+                                                <!-- <td>{$prow["text"]}</td> -->
                                                 <td>
                                                     <img src="img.php?did={$rows[$i]["id"]}&type=gall" width="50px" height="50px" /> 
                                                 </td>
