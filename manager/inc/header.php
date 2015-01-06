@@ -72,6 +72,8 @@
     <script src="./js/respond.min.js"></script>
     <![endif]-->
 	<script type="text/javascript" src="./js/jquery-1.11.min.js"></script>
+<script type="text/javascript" src="./js/ckeditor.js"></script>
+    
     
 </head>
 <body>
