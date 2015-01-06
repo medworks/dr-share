@@ -122,7 +122,7 @@
 				$result = $msg->ShowSuccess("تنظیمات اعمال شد");
 			break;
 			case 10:
-				$result = $msg->ShowSuccess("سوال شما ارسال شد .به زودی پاسخ خود را از طریق ایمیل دریافت خواهد کرد");
+				$result = $msg->ShowSuccess("سوال شما ارسال شد. به زودی پاسخ خود را از طریق ایمیل دریافت خواهید کرد.");
 			break;
 		}
 		$result .= <<<JAVA

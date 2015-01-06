@@ -34,7 +34,7 @@ class Message
    public function ShowSuccess($msg)
     {            
             return '<div class="success">
-                      <p style="font-size:20px;color:#3f7227;">'. $msg .'</p>
+                      <p style="font-size:20px;background-color: #7bcf29;padding: 5px;color:#fff">'. $msg .'</p>
                     </div>
                     <div class="badboy"></div>';
     }
