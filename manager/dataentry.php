@@ -201,9 +201,11 @@
 		$cbsm2 = DbSelectOptionTag("cbsm2",$sm2,"name","{$m2}",NULL,"form-control",NULL,"زیر منو");	
 		
 		$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 1",NULL);
+		$img = base64_encode($pic['img']);
+		$src = 'data: '.$pic['itype'].';base64,'.$img;
 		if (isset($pic))
 		{
-			$imgload = "<img  src='img.php?did={$_GET[did]}&tid=1'  width='200px' height='180px' />";
+			$imgload = "<img src='{$src}'  width='200px' height='180px' />";
 		}	
 	}	
 $html=<<<cd
