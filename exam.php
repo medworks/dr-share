@@ -56,8 +56,9 @@ $ehtml.=<<<cd
 								</div>
 								<div class="su-spoiler-content su-clearfix">
 									{$rows[$i]["text"]}
+									{$img}
 								</div>
-								  {$img}
+								  
 							</div>
 cd;
 }
