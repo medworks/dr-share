@@ -9,51 +9,95 @@
     include_once("../lib/persiandate.php"); 
 
 	$login = Login::GetLogin();
-    if (!$login->IsLogged())
+	if (!$login->IsLogged())
 	{
 		header("Location: ../index.php");
 		die(); // solve a security bug
 	}
 	$db = Database::GetDatabase();
+	
+	function upload($db,$did,$mode)
+	{
+		if(is_uploaded_file($_FILES['userfile']['tmp_name']) && getimagesize($_FILES['userfile']['tmp_name']) != false)
+		{    
+		    $size = getimagesize($_FILES['userfile']['tmp_name']);      
+		    $type = $size['mime'];
+		    $imgfp = mysqli_real_escape_string($db->link,file_get_contents($_FILES['userfile']['tmp_name']));
+		    //echo $imgfp;
+		    $size = $size[3];
+		    $name = $_FILES['userfile']['name'];
+		    $maxsize = 512000;//512 kb
+		    //$db = Database::GetDatabase();
+		    //echo $db->cmd;
+		    if($_FILES['userfile']['size'] < $maxsize )
+		    {    
+			//echo "my1";
+			//tid 1 is for menu pics, 2 for news pics, 3 for maghalat pics
+			if ($mode == "insert")
+			{
+			    $fields = array("`subject`","`text`","`itype`","`img`","`iname`","`isize`");     
+			    $values = array("'{$_POST[edtsubject]}'","'{$_POST[edttext]}'","'{$type}'","'{$imgfp}'","'{$name}'","'{$size}'"); 
+			    $db->InsertQuery('exam',$fields,$values);
+			   // print_r($values);
+			}
+			else
+			{
+			  $imgrow =$db->Select("exam","*","id='{$did}'");
+			  if ($imgfp != $imgrow["img"])
+			  {
+			    $values = array("`subject`"=>"'{$_POST[edtsubject]}'",
+										"`text`"=>"'{$_POST[edttext]}'",
+										"`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
+										"`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
+			    $db->UpdateQuery("exam",$values,array("id='{$did}'")); 
+			  } 
+			}   
+			//echo $db->cmd;
+		    }
+		    else
+		    {        
+			throw new Exception("File Size Error");
+		    }
+		}
+		else
+		{       
+		    throw new Exception("Unsupported Image Format!");
+		}
+	}   
+	
 	if ($_POST["mark"]=="saveexam")
 	{
-		$fields = array("`subject`","`text`");		
-		$values = array("'{$_POST[edtsubject]}'","'{$_POST[edttext]}'");	
-		if (!$db->InsertQuery('exam',$fields,$values)) 
-		{			
-			header('location:exammgr.php?act=new&msg=2');			
-		} 	
-		else 
-		{  										
-			header('location:exammgr.php?act=new&msg=1');
-		}  		
+		upload($db,$did,"insert");								
+		//header('location:exammgr.php?act=new&msg=1');		
 	}
 	else
 	if ($_POST["mark"]=="editexam")
 	{			    
-		$values = array("`subject`"=>"'{$_POST[edtsubject]}'",						
-		                "`text`"=>"'{$_POST[edttext]}'");
-        $db->UpdateQuery("exam",$values,array("id='{$_GET["eid"]}'"));		
+		upload($db,$_GET["did"],"edit"); 	
 		header('location:exammgr.php?act=new&msg=1');
-	}	
+	}
+	
 	if ($_GET['act']=="new")
 	{
 		$insertoredit = "
 			<button type='submit' class='btn btn-default'>ثبت</button>
 			<input type='hidden' name='mark' value='saveexam' /> ";
 	}
+	
 	if ($_GET['act']=="edit")
 	{
 	    $row=$db->Select("exam","*","id='{$_GET["eid"]}'",NULL);		
-		$insertoredit = "
+	    $insertoredit = "
 			<button type='submit' class='btn btn-default'>ویرایش</button>
 			<input type='hidden' name='mark' value='editexam' /> ";
 	}
+	
 	if ($_GET['act']=="del")
 	{
 		$db->Delete("exam"," id",$_GET["eid"]);		
 		header('location:exammgr.php?act=new');	
-	}	
+	}
+	
 $msgs = GetMessage($_GET['msg']);
 $html.=<<<cd
     <!--Page main section start-->
@@ -74,7 +118,7 @@ $html.=<<<cd
                     </div>
                 </div>
                 <!-- Main Content Element  Start-->
-                    <form action="" method="post" id="frmexam" class="form-inline ls_form" role="form">
+                    <form action="" enctype="multipart/form-data" method="post" id="frmexam" class="form-inline ls_form" role="form">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="panel panel-default">
@@ -89,6 +133,26 @@ $html.=<<<cd
                                 </div>
                             </div>
                         </div>
+			<div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">انتخاب عکس</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="row ls_divider last">
+                                        <div class="form-group">
+                                            <div class="col-md-10 col-md-offset-2 ls-group-input">
+                                                <input kl_virtual_keyboard_secure_input="on" id="userfile" name="userfile" class="file" multiple="true" data-preview-file-type="any" type="file" />
+                                                <input type="hidden" name="MAX_FILE_SIZE" value="512000" />
+                                            </div>
+                                        </div>
+                                        
+                                    </div>                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="panel panel-default">
