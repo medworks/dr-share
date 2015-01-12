@@ -115,7 +115,7 @@ $html.=<<<cd
                                             </thead>
                                             <tbody>
 cd;
-$rows = $db->SelectAll("submenues","*"," `pid` = 0"," pos,id ASC");
+$rows = $db->SelectAll("submenues","*"," `pid` = 0"," pos ASC,id ASC");
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;

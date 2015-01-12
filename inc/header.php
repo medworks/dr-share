@@ -253,7 +253,7 @@ cd;
 	
 	
 	
-	$rows = $db->SelectAll("submenues","*",NULL,"id ASC"); 
+	$rows = $db->SelectAll("submenues","*",NULL,"pos ASC,id ASC"); 
 	 
 	function has_children($rows,$id) 
 	{
