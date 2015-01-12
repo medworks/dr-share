@@ -38,7 +38,7 @@ if (!empty($rows[$i]['iname']))
 
 $img=<<<cd
                 <div class="su-spoiler-title">
-			  <img src="{$src}" title="{$rows[$i]['subject']} />
+			  <img src="{$src}" title="{$rows[$i]['subject']}" />
                  </div>
 cd;
 }
