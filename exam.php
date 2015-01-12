@@ -30,7 +30,25 @@ cd;
 $rows = $db->SelectAll("exam","*",NULL," id ASC");
 for($i = 0; $i < Count($rows); $i++)
 {
+	$img=null;
+	$img = base64_encode($rows[$i]['img']);
+	$src = 'data: '.$rows[$i]['itype'].';base64,'.$img;
+if (!empty($rows[$i]['iname']))
+{
+
+$img=<<<cd
+                <div class="su-spoiler-title">
+			  <img src="{$src}" title="{$rows[$i]['subject']} />
+                 </div>
+cd;
+}
+else
+{
+	$img = "";
+}
+
 $ehtml.=<<<cd
+				
 				
 							<div class="su-spoiler su-spoiler-style-default su-spoiler-icon-plus su-spoiler-closed">
 								<div class="su-spoiler-title">
@@ -39,6 +57,7 @@ $ehtml.=<<<cd
 								<div class="su-spoiler-content su-clearfix">
 									{$rows[$i]["text"]}
 								</div>
+								  {$img}
 							</div>
 cd;
 }
