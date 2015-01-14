@@ -49,6 +49,28 @@
 	$mnulist = getmenu($mnu,$mnulist);
 	$mnuids = implode(', ', $mnulist);
 	
+	$mnu = $db->SelectAll("submenues","*","id IN (".$mnuids.")"," id ASC");	
+	$grp = $db->SelectAll("categories","*");
+	for($i = 0; $i < Count($mnu); $i++)
+	{
+$chbs.=<<<cd
+		<label for="cat">{$mnu[$i]["name"]}
+        </label>
+		<input type="checkbox" name="cat[]" value="{$mnu[$i][id]}" />
+		<br/>
+cd;
+	}
+for($i = 0; $i < Count($grp); $i++)
+	{
+$chbs.=<<<cd
+<hr />
+		<label for="cat">{$grp[$i]["name"]}
+        </label>
+		<input type="checkbox" name="grp[]" value="{$grp[$i][id]}" />
+		<br/>
+cd;
+	}	
+	
 	if (isset($_GET["email"]))
 	{
 		$row=$db->Select("newsmember","*"," email='{$_GET["email"]}'");
@@ -82,34 +104,13 @@ cd;
 	}
 	else
 	{
-$inseroredit=<<<cd
+
+	
+	}	
+	$inseroredit=<<<cd
 	<input type="submit" style="margin-top:25px" value="ثبت نام" id="submit" class="contact_form_submit styled_button">
 	<input type="hidden" name="mark" value="register" />
 cd;
-				
-	
-	$mnu = $db->SelectAll("submenues","*","id IN (".$mnuids.")"," id ASC");	
-	$grp = $db->SelectAll("categories","*");
-	for($i = 0; $i < Count($mnu); $i++)
-	{
-$chbs.=<<<cd
-		<label for="cat">{$mnu[$i]["name"]}
-        </label>
-		<input type="checkbox" name="cat[]" value="{$mnu[$i][id]}" />
-		<br/>
-cd;
-	}
-for($i = 0; $i < Count($grp); $i++)
-	{
-$chbs.=<<<cd
-<hr />
-		<label for="cat">{$grp[$i]["name"]}
-        </label>
-		<input type="checkbox" name="grp[]" value="{$grp[$i][id]}" />
-		<br/>
-cd;
-	}	
-	}	
 	if ($_POST["mark"]=="register")
 	{			
 		$date = date('Y-m-d H:i:s');
