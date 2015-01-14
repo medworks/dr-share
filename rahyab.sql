@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.1.6
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jan 12, 2015 at 05:50 
--- Server version: 5.6.12
--- PHP Version: 5.5.3
+-- Host: 127.0.0.1
+-- Generation Time: Jan 14, 2015 at 09:39 PM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `rahyab`
 --
-CREATE DATABASE IF NOT EXISTS `rahyab` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `rahyab`;
 
 -- --------------------------------------------------------
 
@@ -503,6 +501,7 @@ CREATE TABLE IF NOT EXISTS `newsmember` (
   `email` varchar(30) NOT NULL,
   `tell` varchar(12) NOT NULL,
   `mobile` varchar(12) NOT NULL,
+  `menu` varchar(50) NOT NULL,
   `group` varchar(50) NOT NULL,
   `regdate` datetime NOT NULL,
   PRIMARY KEY (`id`)
@@ -512,9 +511,9 @@ CREATE TABLE IF NOT EXISTS `newsmember` (
 -- Dumping data for table `newsmember`
 --
 
-INSERT INTO `newsmember` (`id`, `name`, `degri`, `reshte`, `email`, `tell`, `mobile`, `group`, `regdate`) VALUES
-(1, 'مجتبی', 'امجدی', 'نرم افزار', 'gjh1ghg@gffh.com', '0123456789', '1234567890', '3,6,7,8,9', '2014-11-28 12:57:49'),
-(2, 'سعید حاتمی', 'لیسانس', 'نرم افزار', 'gjhghg@gffh.com', '0123456789', '1234567890', '6,7,8,9', '2014-11-28 12:58:25');
+INSERT INTO `newsmember` (`id`, `name`, `degri`, `reshte`, `email`, `tell`, `mobile`, `menu`, `group`, `regdate`) VALUES
+(1, 'مجتبی', 'امجدی', 'نرم افزار', 'gjh1ghg@gffh.com', '0123456789', '1234567890', '3,6,7,8,9', '', '2014-11-28 12:57:49'),
+(2, 'سعید حاتمی', 'لیسانس', 'نرم افزار', 'gjhghg@gffh.com', '0123456789', '1234567890', '6,7,8,9', '', '2014-11-28 12:58:25');
 
 -- --------------------------------------------------------
 
