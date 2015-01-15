@@ -67,7 +67,7 @@ $html.=<<<cd
                                 <div class="panel-body">
                                     <div class="radio-inline">
                                         <label class="radio-inline">
-                                            <input type="radio" name="optionsRadios2" id="optionsRadios3" value="option3" checked="" />
+                                            <input type="radio" name="optionsRadios2" id="mnus" value="mnu" checked="" />
                                             انتخاب بر اساس منو
                                         </label>
                                     </div>
