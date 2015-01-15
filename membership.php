@@ -60,28 +60,38 @@ $chbs.=<<<cd
 		<br/>
 cd;
 	}
-for($i = 0; $i < Count($grp); $i++)
+	$chbs.="<hr />";
+	for($i = 0; $i < Count($grp); $i++)
 	{
 $chbs.=<<<cd
-<hr />
-		<label for="cat">{$grp[$i]["name"]}
+
+		<label for="grp">{$grp[$i]["name"]}
         </label>
 		<input type="checkbox" name="grp[]" value="{$grp[$i][id]}" />
 		<br/>
 cd;
 	}	
 	
+	
+	$inseroredit=<<<cd
+	<input type="submit" style="margin-top:25px" value="ثبت نام" id="submit" class="contact_form_submit styled_button">
+	<input type="hidden" name="mark" value="register" />
+cd;
+
 	if (isset($_GET["email"]))
 	{
 		$row=$db->Select("newsmember","*"," email='{$_GET["email"]}'");
 		if ($row)
 		{
+		$chbs="";
 $inseroredit=<<<cd
 	<input type="submit" value="ویرایش اطلاعات" id="submit" class="contact_form_submit styled_button">
 	<input type="hidden" name="mark" value="editinfo" />
 cd;
-	$cat = explode(",",$row["group"]);
+	$cat = explode(",",$row["menu"]);
 	$mnu = $db->SelectAll("submenues","*","id IN (".$mnuids.")"," pos ASC,id ASC");	
+	$selgrp = explode(",",$row["group"]);
+	$grp = $db->SelectAll("categories","*");
 	
 	for($i = 0; $i < Count($mnu); $i++)
 	{
@@ -100,27 +110,39 @@ $chbs.=<<<cd
 		<br/>
 cd;
 	}
-		}
+	$chbs.="<hr />";
+	for($i = 0; $i < Count($grp); $i++)
+	{
+	if (in_array($grp[$i][id],$selgrp))
+	{
+		$chb = "<input type='checkbox' name='grp[]' value='{$grp[$i][id]}' checked />  ";
 	}
 	else
 	{
-
-	
-	}	
-	$inseroredit=<<<cd
-	<input type="submit" style="margin-top:25px" value="ثبت نام" id="submit" class="contact_form_submit styled_button">
-	<input type="hidden" name="mark" value="register" />
+		$chb = "<input type='checkbox' name='grp[]' value='{$grp[$i][id]}' />  ";
+	}
+$chbs.=<<<cd
+		<label for="cat">{$grp[$i]["name"]}
+        </label>
+		{$chb}
+		<br/>
 cd;
+	}
+		}
+	}
+		
 	if ($_POST["mark"]=="register")
 	{			
 		$date = date('Y-m-d H:i:s');
 		$cats = implode(',',$_POST['cat']);
+		$grps = implode(',',$_POST['grp']);
 		$fields = array("`name`","`degri`","`reshte`","`email`",
-						"`tell`","`mobile`","`menue`","`regdate`");		
+						"`tell`","`mobile`","`menu`","`group`","`regdate`");		
 		$values = array("'{$_POST[edtname]}'","'{$_POST[edtdegri]}'",
 						"'{$_POST[edtreshte]}'","'{$_POST[edtemail]}'",
-						"'{$_POST[edttell]}'","{$_POST[edtmob]}",
-						"'{$cats}'","'{$date}'");	
+						"'{$_POST[edttell]}'","'{$_POST[edtmob]}'",
+						"'{$cats}'","'{$grps}'","'{$date}'");	
+						
 		if (!$db->InsertQuery('newsmember',$fields,$values)) 
 		{			
 			header('location:membership.html?act=new&msg=2');			
@@ -128,16 +150,18 @@ cd;
 		else 
 		{  				
 			header('location:membership.html?act=new&msg=1');
-		}  		
+		}
+  		//echo $db->cmd;
 	}
 	else
 	if ($_POST["mark"]=="editinfo")
 	{				
 		$cats = implode(',',$_POST['cat']);
+		$grps = implode(',',$_POST['grp']);
 		$values = array("`name`"=>"'{$_POST[edtname]}'","`degri`"=>"'{$_POST[edtdegri]}'",
 						"`reshte`"=>"'{$_POST[edtreshte]}'","`email`"=>"'{$_POST[edtemail]}'",
 						"`tell`"=>"'{$_POST[edttell]}'","`mobile`"=>"'{$_POST[edtmob]}'",
-						"`menu`"=>"'{$cats}'");
+						"`menu`"=>"'{$cats}'","`group`"=>"'{$grps}'");
         $db->UpdateQuery("newsmember",$values,array("id='{$row["id"]}'"));		
 		//echo $db->cmd;
 		header('location:membership.html?act=new&msg=1');
