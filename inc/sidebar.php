@@ -23,14 +23,15 @@ $html.=<<<cd
 		<div id="archives-5" class="widget widget_archive fade-in">
 			<h4 class="widgettitle rtl">کلینیک رهیاب</h4>
 			<ul>
-				<li><a href="healthgroup.html">گروه درمانی</a></li>
+				<li><a href="javascript:void(0);">موسس (دکتر شاره)</a></li>
 				<li><a href="news.html" class="news">اخبار و تازه ها</a></li>
-				<li><a href="gallery.html" class="gallery">گالری تصاویر</a></li>
 				<li><a href="class.html">کلاسها و دوره های آموزشی</a></li>
+				<li><a href="conferences.html">همایش ها</a></li>
+				<li><a href="healthgroup.html">گروه درمانی</a></li>
 				<li><a href="articles.html" class="article">آرشیو مقالات</a></li>
 				<li><a href="exam.html">آزمون های روانشناختی</a></li>
-				<li><a href="conferences.html">همایش ها</a></li>
 				<li><a href="membership.html">عضویت در خبرنامه</a></li>
+				<li><a href="gallery.html" class="gallery">گالری تصاویر</a></li>
 				<li><a href="faq.html">پرسش و پاسخ</a></li>
 				<li><a href="about-us.html">درباره ما</a></li>
 				<li><a href="contactus.html">تماس با ما</a></li>
