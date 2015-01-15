@@ -316,7 +316,7 @@ cd;
 					$href=" href= 'menues{$row[id]}-{$row[level]}.html' ";
 			}
 			
-		  $result .= "<li$class><a {$href}>{$row['name']}</a>";
+		  $result .= "<li$class><a {$href}><span style='display:inline-block;text-align:right;direction:rtl'>{$row['name']}</span></a>";
 		  if (has_children($rows, $row['id']))
 			$result.= build_menu($rows, $row['id']);
 		  $result.= "</li>";
