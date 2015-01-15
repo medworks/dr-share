@@ -37,8 +37,6 @@
 		$res = $db->RunSQL();
 	//	echo $db->cmd;
 		$sndrow = mysqli_fetch_array($res);
-			//echo "1",$sndrow["text"],"<br/>";
-	//		echo "<br/>2->",$sndrow["text"],"<br/>";
 		for($i=0;$i<=count($users);$i++)
 		{
 			$menus = explode(",",$users[$i]["menu"]);
@@ -47,7 +45,7 @@
 			if ( $sndrow["gid"] > 0)
 			{
 				//echo "1 <br/>";
-				if (in_array($_GET['did'],$groups))
+				if (in_array($sndrow["gid"],$groups))
 					$issend=SendEmail($News_Email,$Email_Sender_Name, array($email), $sndrow["subject"],$sndrow["text"]);
 					
 			}
@@ -55,7 +53,7 @@
 			{
 				
 				//echo "2 <br/>";
-				if (in_array($_GET['did'],$menus))
+				if (in_array($sndrow["smid"],$menus))
 					$issend = SendEmail($News_Email,$Email_Sender_Name, array($email), $sndrow["subject"],$sndrow["text"]);
 				
 			}
