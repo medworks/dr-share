@@ -24,18 +24,43 @@
 		$News_Email = GetSettingValue('News_Email',0);
 		$Email_Sender_Name = GetSettingValue('Email_Sender_Name',0);
 		
-		$row = $db->Select("submenues","*","id={$rows[$i]['smid']}","id ASC");
+		//$row = $db->Select("submenues","*","id={$rows[$i]['smid']}","id ASC");
+		
+		$users = $db->SelectAll("newsmember","*");
 		
 		$db->cmd = "SELECT * FROM (".
 				   "( SELECT *,1 As 'type' FROM news ) ".
 	               " UNION ALL ".
 			       "(SELECT *,2 As 'type' FROM topics ) ".
-				   " ) AS tb WHERE id={$_GET['did']} AND type={$_GET['type']} "; 
-		  
-		$res = $db->RunSQL();
-		$sndrow = mysqli_fetch_row($res);	
+				   " ) AS tb WHERE id='{$_GET['did']}' AND type='{$_GET['type']}' "; 
 		
-		$issend=SendEmail($News_Email,$Email_Sender_Name, array($email), $sndrow["subject"],$sndrow["text"]);
+		$res = $db->RunSQL();
+	//	echo $db->cmd;
+		$sndrow = mysqli_fetch_array($res);
+			//echo "1",$sndrow["text"],"<br/>";
+	//		echo "<br/>2->",$sndrow["text"],"<br/>";
+		for($i=0;$i<=count($users);$i++)
+		{
+			$menus = explode(",",$users[$i]["menu"]);
+			$groups = explode(",",$users[$i]["group"]);
+			$email = $users[$i]['email'];
+			if ( $sndrow["gid"] > 0)
+			{
+				//echo "1 <br/>";
+				if (in_array($_GET['did'],$groups))
+					$issend=SendEmail($News_Email,$Email_Sender_Name, array($email), $sndrow["subject"],$sndrow["text"]);
+					
+			}
+			else
+			{
+				
+				//echo "2 <br/>";
+				if (in_array($_GET['did'],$menus))
+					$issend = SendEmail($News_Email,$Email_Sender_Name, array($email), $sndrow["subject"],$sndrow["text"]);
+				
+			}
+		//	echo $issend;
+		}
 	}	
 	
 $html.=<<<cd
