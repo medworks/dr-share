@@ -211,8 +211,8 @@ $html.=<<<cd
                                                     <span class="label label-success">{$group}</span>
                                                 </td>
                                                 <td class="text-center">
-												  <a href="sendnews.php?act=send&did={$rows[$i]["id"]}&type={$rows[$i]["type"]}"  >
-                                                    <button class="btn btn-xs btn-success" title="ارسال"><i class="fa fa-send-o"></i></button>
+												  <a class="btn btn-xs btn-success" href="sendnews.php?act=send&did={$rows[$i]["id"]}&type={$rows[$i]["type"]}"  >
+                                                    <!-- <button class="btn btn-xs btn-success" title="ارسال"><i class="fa fa-send-o"></i></button> -->
 												  </a>	
                                                 </td>
                                             </tr>
