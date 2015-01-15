@@ -40,14 +40,17 @@
 				}
 				else
 				{
+					echo "1";
 				  $imgrow =$db->Select("pics","*","sid='{$did}' AND tid='1'");
 				  if ($imgfp != $imgrow["img"])
 				  {
 					$values = array("`tid`"=>"'1'","`sid`"=>"'{$did}'",
 						"`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
 						"`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
-					$db->UpdateQuery("pics",$values,array("sid='{$did}' AND tid='1'"));	
+					$db->UpdateQuery("pics",$values,array("sid='{$did}' AND tid='1'"));
+				
 				  }	
+				  	
 				}	
 				//echo $db->cmd;
 			}
@@ -107,7 +110,12 @@
 						"`subject`"=>"'{$_POST[edtsubject]}'","`text`"=>"'{$_POST[edttext]}'",
 						"`picid`"=>"'0'");
         $db->UpdateQuery("menusubjects",$values,array("id='{$_GET[did]}'"));
-		upload($db,$_GET["did"],"edit");	
+		if ($_FILES['userfile']['tmp_name']!="")
+		{
+			upload($db,$_GET["did"],"edit");
+			//var_dump($_FILES['userfile']);
+		}	
+	//	upload($db,$_GET["did"],"edit");	
 		header('location:dataentry.php?act=new&msg=1');
 	}
 	
