@@ -29,22 +29,22 @@ $ohtml.=<<<cd
 
 		<div class="single_post_module">
 			<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-lifestyle category-travel tag-adipiscing tag-augue tag-donec tag-etiam tag-euismod">
+cd;
+			if($pic!=""){
+$ohtml.=<<<cd
 				<div class="single_post_image">					
 					<a href="manager/img.php?did={$news['id']}&tid=1" class="hb-image-zoom" rel="swipebox[single_post_image]" title="{$news['subject']}">
-					<!--
-					  <img class=" morph" src="manager/img.php?did={$news['id']}&tid=1" width="874px" height="492px" />
-					 -->
-					 <img  class="morph" src="{$src}"  width="874px" height="492px" />
+						<img  class="morph" src="{$src}"  width="874px" height="492px" />
 					</a>
-					<!-- <div class="meta_category">
-						<a href="javascript:void();" class="cat-featured" title="{$news['subject']}">تاریخ : {$news["regdate"]}</a>						
-					</div> -->
 				</div>
+cd;
+			}
+$ohtml.=<<<cd
 				<article class="single_post_content">
-					<h1 class="article_heading entry_title" style="font-size:35px !important">{$news['subject']}</h1>
+					<h1 class="article_heading entry_title" style="font-size:35px !important;direction:rtl">{$news['subject']}</h1>
 					<div class="clearboth"></div>
 					<div class="entry">
-						<p style="font-size:22px;font-weight:normal!important;color:#000;line-height: 1.5;letter-spacing:0px">
+						<p style="font-size:22px;font-weight:normal!important;color:#000;line-height: 1.5;letter-spacing:0px;text-align:justify;direction:rtl">
 							{$news["text"]}
 						</p>
 						<div class="clearboth"></div>									
