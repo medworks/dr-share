@@ -206,7 +206,10 @@
 		$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 2",NULL);
 		if (isset($pic))
 		{
-			$imgload = "<img  src='img.php?did={$_GET[did]}&tid=2'  width='200px' height='180px' />";
+			$img = base64_encode($pic['img']);
+			$src = 'data: '.$pic['itype'].';base64,'.$img;
+			//$imgload = "<img  src='img.php?did={$_GET[did]}&tid=2'  width='200px' height='180px' />";
+			$imgload = "<img  src='{$src}'  width='200px' height='180px' />";
 		}	
 	}
 	
@@ -274,7 +277,10 @@
 		$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 2",NULL);
 		if (isset($pic))
 		{
-			$imgload = "<img  src='img.php?did={$_GET[did]}&tid=2'  width='200px' height='180px' />";
+			$img = base64_encode($pic['img']);
+			$src = 'data: '.$pic['itype'].';base64,'.$img;
+			//$imgload = "<img  src='img.php?did={$_GET[did]}&tid=2'  width='200px' height='180px' />";
+			$imgload = "<img  src='{$src}'  width='200px' height='180px' />";
 		}	
 	}
   
