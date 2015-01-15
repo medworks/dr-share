@@ -103,9 +103,14 @@ $html=<<<cd
                                 <div class="panel-body">
                                     <div class="row ls_divider last">
                                         <div class="col-md-10 ls-group-input">
-                                            <textarea id="edtsubjects" name="edtsubjects" class="animatedTextArea form-control " >
+                                            <textarea id="edtsubjects" name="edtsubjects" class="form-control " >
 												{$row["subjects"]}
 											</textarea>
+                                            <script>
+                                                CKEDITOR.replace( 'edtsubjects',{
+                                                      language: 'fa'
+                                                  } );
+                                            </script>
                                         </div>
                                     </div>
                                 </div>
@@ -116,39 +121,18 @@ $html=<<<cd
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    <h3 class="panel-title">آغاز کلاس (روز و ساعت)</h3>
+                                    <h3 class="panel-title">زمان و ساعات کلاسها</h3>
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <input id="edtstarttime" name="edtstarttime" type="text" class="form-control" value="{$row["starttime"]}"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">مدت زمان کلاس</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtperiod" name="edtperiod" type="text" class="form-control" value="{$row["period"]}"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title">پایان کلاس (روز و ساعت)</h3>
-                                </div>
-                                <div class="panel-body">
-                                    <div class="form-group">
-                                        <input id="edtendtime" name="edtendtime" type="text" class="form-control" value="{$row["endtime"]}"/>
+                                        <textarea id="txtdate" name="txtdate" class="form-control " >
+                                            {$row["details"]}
+                                        </textarea>
+                                        <script>
+                                            CKEDITOR.replace( 'txtdate',{
+                                                  language: 'fa'
+                                              } );
+                                        </script>
                                     </div>
                                 </div>
                             </div>
@@ -163,9 +147,14 @@ $html=<<<cd
                                 <div class="panel-body">
                                     <div class="row ls_divider last">
                                         <div class="col-md-10 ls-group-input">
-                                            <textarea id="txtdetails" name="txtdetails" class="animatedTextArea form-control " >
+                                            <textarea id="txtdetails" name="txtdetails" class="form-control " >
 												{$row["details"]}
 											</textarea>
+                                            <script>
+                                                CKEDITOR.replace( 'txtdetails',{
+                                                      language: 'fa'
+                                                  } );
+                                            </script>
                                         </div>
                                     </div>
                                 </div>

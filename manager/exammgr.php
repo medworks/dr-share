@@ -133,7 +133,7 @@ $html.=<<<cd
                                 </div>
                             </div>
                         </div>
-			<div class="row">
+			        <div class="row">
                         <div class="col-md-12">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
@@ -161,17 +161,9 @@ $html.=<<<cd
                                     </div>
                                     <div class="panel-body">
                                         <div class="row ls_divider last">
-                                       
                                             <div class="col-md-10 ls-group-input">
-                                                <textarea class="animatedTextArea form-control " id="edttext" name="edttext"> {$row["text"]}</textarea>
+                                                <textarea class="form-control" id="edttext" name="edttext"> {$row["text"]}</textarea>
                                             </div>
-                                             <script>
-                                                // Replace the <textarea id="editor1"> with a CKEditor
-                                                // instance, using default configuration.
-                                                CKEDITOR.replace( 'edttext',{
-                                                    language: 'fa'
-                                                } );
-                                            </script>
                                         </div>
                                     </div>
                                 </div>

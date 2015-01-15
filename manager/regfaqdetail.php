@@ -180,8 +180,13 @@ $html=<<<cd
                                 <div class="panel-body">
                                     <div class="form-group">
                                         <textarea id="txtanswer" name="txtanswer" >
-					{$row["answertxt"]}
-					</textarea>
+                    					   {$row["answertxt"]}
+                    					</textarea>
+                                        <script>
+                                            CKEDITOR.replace( 'txtanswer',{
+                                                  language: 'fa'
+                                              } );
+                                        </script>
                                     </div>
                                 </div>
                             </div>

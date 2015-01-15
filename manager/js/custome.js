@@ -12,7 +12,7 @@ $(document).ready(function(){
       jQuery('ul.mainNav li.conf').addClass('active');
     } 
     if(href.indexOf("regfaqdetail")>0){
-      jQuery('ul.mainNav li.faq').addClass('active');
+      jQuery('ul.mainNav li a.faq').addClass('active');
     } 
     href=href.substr(first,lenght+1);
     $("ul.mainNav li a").each(function(){
@@ -30,5 +30,15 @@ $(document).ready(function(){
     $(document).ready(function(){
 	    $('textarea.animatedTextArea').autosize();    
 	});
+
+
+//*****************editor text
+
+
+  // Replace the <textarea id="editor1"> with a CKEditor
+  // instance, using default configuration.
+  CKEDITOR.replace( 'edttext',{
+      language: 'fa'
+  } );
 
 });

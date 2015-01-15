@@ -61,9 +61,7 @@ $html.=<<<cd
                                             <tr>
 											<th>#</th>
                                                 <th>عنوان</th>
-                                                <th>تاریخ شروع کلاس</th>
-                                                <th>مدت کلاس</th>
-                                                <th>تاریخ پایان کلاس</th>
+                                                <th>زمان و ساعات کلاس</th>
                                                 <th class="text-center">عملیات</th>
                                             </tr>
                                             </thead>
@@ -100,9 +98,7 @@ $html.=<<<cd
                                             <tr>
                                                 <td>{$rownumber}</td>
                                                 <td>{$rows[$i]["title"]}</td>
-                                                <td>{$rows[$i]["starttime"]}</td>
-                                                <td>{$rows[$i]["period"]}</td>
-                                                <td>{$rows[$i]["endtime"]}</td>
+                                                <td>{$rows[$i]["txtdate"]}</td>
                                                 
                                                 <td class="text-center">
 												<a href="addclass.php?act=edit&did={$rows[$i]["id"]}"  >					
