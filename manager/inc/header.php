@@ -272,7 +272,7 @@
                     <li><a href="regconferenceconf.php">تایید شده ها</a></li>
                 </ul>
             </li>
-            <li >
+            <li>
                 <a class="faq" href="regfaq.php">
                     <i class="fa fa-pencil-square-o"></i>
                     <span>پرسش و پاسخ</span>
