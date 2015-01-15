@@ -43,13 +43,23 @@
 				else
 				{
 				  $imgrow =$db->Select("pics","*","sid='{$did}' AND tid='2'");
-				  if ($imgfp != $imgrow["img"])
+				 // $cnt = $db->CountOf("pics", "sid='{$did}' AND tid='2'");
+				  if (count($imgrow) > 0)
 				  {
-					$values = array("`tid`"=>"'2'","`sid`"=>"'{$did}'",
-						"`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
-						"`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
-					$db->UpdateQuery("pics",$values,array("sid='{$did}' AND tid='2' "));	
-				  }	
+					  if ($imgfp != $imgrow["img"])
+					  {
+						$values = array("`tid`"=>"'2'","`sid`"=>"'{$did}'",
+							"`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
+							"`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
+						$db->UpdateQuery("pics",$values,array("sid='{$did}' AND tid='2' "));	
+					  }
+					} 
+					else
+					{
+						$fields = array("`tid`","`sid`","`itype`","`img`","`iname`","`isize`");		
+						$values = array("'2'","'{$did}'","'{$type}'","'{$imgfp}'","'{$name}'","'{$size}'");	
+						$db->InsertQuery('pics',$fields,$values);
+					}
 				}	
 				//echo $db->cmd;
 			}
