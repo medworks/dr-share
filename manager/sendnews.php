@@ -164,12 +164,24 @@ cd;
 
 	$pagination->navigation_position("right");
 
-	$pagination->records_per_page($records_per_page);	
-
-	$db->cmd = "( SELECT *,1 As 'type' FROM news )".
+	$pagination->records_per_page($records_per_page);
+    
+     if (isset($_GET["type"]) and $_GET["type"]=="grp")
+	 {
+		$db->cmd = 	"( SELECT *,1 As 'type' FROM news )".
+					" WHERE gid={$gid} "
+					" UNION ALL ".
+					" (SELECT *,2 As 'type' FROM topics ) ".
+					" WHERE gid={$gid} ".
+					" LIMIT ".($pagination->get_page() - 1) * $records_per_page.",".$records_per_page ;		
+	 }
+	 else
+	 {
+		$db->cmd = "( SELECT *,1 As 'type' FROM news )".
 	           " UNION ALL ".
 			   " (SELECT *,2 As 'type' FROM topics ) ".
 			   " LIMIT ".($pagination->get_page() - 1) * $records_per_page.",".$records_per_page ;			
+	 }
 	$res = $db->RunSQL();			
 	$rows = array();
     if ($res)
@@ -255,6 +267,30 @@ $html.=<<<cd
         </div>
     </section>
     <!--Page main section end -->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#cbmenu").change(function(){
+				var id= $(this).val();
+				$.get('./ajaxcommand.php?smid='+id,function(data) {			
+						$('#sm1').html(data);
+						
+						$("#cbsm1").change(function(){
+							var id= $(this).val();
+							$.get('./ajaxcommand.php?smid2='+id,function(data) {			
+								$('#sm2').html(data);
+							});
+						});			
+				});
+			});	
+			
+			$("#cbgroup").change(function() {
+				var id= $(this).val();
+				// ?type=grp&gid=id
+				 document.location.href="?type=grp&id="+id;    
+			});
+		
+		});
+	</script>
 cd;
 	include_once("./inc/header.php");
 	echo $html;
