@@ -59,7 +59,7 @@ $html.=<<<cd
                                             <tr>
 											<th>#</th>
                                                 <th>عنوان</th>
-                                                <th>متن</th>
+                                                <!-- <th>متن</th> -->
                                                 <th>منو و زیر منو</th>
                                                 <th class="text-center">عملیات</th>
                                             </tr>
@@ -141,7 +141,7 @@ $vals = array();
 for($i = 0; $i < Count($rows); $i++)
 {
 	$rownumber = $i+1;
-	$rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
+	$rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>30)?mb_substr($rows[$i]["subject"],0,30,"UTF-8")."...":$rows[$i]["subject"];
 	$rows[$i]["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
 	$vals =  getparrentsname($db,$rows[$i]["smid"]);
 $html.=<<<cd
@@ -150,7 +150,7 @@ $html.=<<<cd
                                             <tr>
                                                 <td>{$rownumber}</td>
                                                 <td>{$rows[$i]["subject"]}</td>
-                                                <td>{$rows[$i]["text"]}</td>
+                                                <!-- <td>{$rows[$i]["text"]}</td> -->
                                                 <td>
                                                     <span class="label label-success">{$vals[2]}</span>
                                                     <span class="label label-info">{$vals[1]}</span>
