@@ -18,6 +18,8 @@
 	}
 	
 	$db = Database::GetDatabase();
+	$categories = $db->SelectAll("categories","*");
+	$cbgroup = DbSelectOptionTag("cbgroup",$categories,"name",NULL,NULL,"form-control",NULL,"  گروه  ");	
 	
 	if (isset($_GET["act"]) and $_GET["act"]=="send")
 	{
@@ -126,11 +128,7 @@ $html.=<<<cd
                                             انتخاب بر اساس گروه
                                         </label>
                                     </div>
-                                    <select class="form-control">
-                                        <option value="">گروه</option>
-                                        <option value="">Default select</option>
-                                        <option value="">Default select</option>
-                                    </select>
+                                    {$cbgroup}
                                 </div>
                             </div>
                         </div>
