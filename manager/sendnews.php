@@ -68,7 +68,7 @@
 		return $ht;
 	}
 
-	$cbmenu = "<select> \n ";
+	$cbmenu = "<select name='cbmenu' class='form-control' id='cbmenu'> \n ";
 	$cbmenu.= printTree($tree);
 	$cbmenu.= "</select>";
 			
@@ -222,6 +222,16 @@ cd;
 					" LIMIT ".($pagination->get_page() - 1) * $records_per_page.",".$records_per_page ;		
 	 }
 	 else
+	 if (isset($_GET["type"]) and $_GET["type"]=="mnu")
+	 {
+		$db->cmd = 	"SELECT * FROM ( SELECT *,1 As 'type' FROM news  ".
+					" WHERE smid={$_GET['mid']} ".
+					" UNION ALL ".
+					" SELECT *,2 As 'type' FROM topics  ".
+					" WHERE smid={$_GET['mid']} ) as tb".
+					" LIMIT ".($pagination->get_page() - 1) * $records_per_page.",".$records_per_page ;		
+	 }
+	 else
 	 {
 		$db->cmd = "( SELECT *,1 As 'type' FROM news )".
 	           " UNION ALL ".
@@ -317,16 +327,8 @@ $html.=<<<cd
 		$(document).ready(function(){
 			$("#cbmenu").change(function(){
 				var id= $(this).val();
-				$.get('./ajaxcommand.php?smid='+id,function(data) {			
-						$('#sm1').html(data);
-						
-						$("#cbsm1").change(function(){
-							var id= $(this).val();
-							$.get('./ajaxcommand.php?smid2='+id,function(data) {			
-								$('#sm2').html(data);
-							});
-						});			
-				});
+				// ?type=mnu&mid=id
+				 document.location.href="?type=mnu&mid="+id; 
 			});	
 			
 			$("#cbgroup").change(function() {
