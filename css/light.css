@@ -10,6 +10,7 @@ background:#fff!important;
 #content .entry {
 color:rgba(0,0,0,1);
 margin-right: 10px;
+direction: rtl;
 }
 
 #main h4 {

@@ -54,9 +54,9 @@
 	for($i = 0; $i < Count($mnu); $i++)
 	{
 $chbs.=<<<cd
-		<label for="cat">{$mnu[$i]["name"]}
+		<label for="cat" style="white-space:nowrap">{$mnu[$i]["name"]}
         </label>
-		<input type="checkbox" name="cat[]" value="{$mnu[$i][id]}" />
+		<input type="checkbox" name="cat[]" value="{$mnu[$i][id]}" style="margin-top:5px"/>
 		<br/>
 cd;
 	}
@@ -65,9 +65,9 @@ cd;
 	{
 $chbs.=<<<cd
 
-		<label for="grp">{$grp[$i]["name"]}
+		<label for="grp" style="white-space:nowrap">{$grp[$i]["name"]}
         </label>
-		<input type="checkbox" name="grp[]" value="{$grp[$i][id]}" />
+		<input type="checkbox" name="grp[]" value="{$grp[$i][id]}" style="margin-top:5px"/>
 		<br/>
 cd;
 	}	
