@@ -20,6 +20,57 @@
 	$db = Database::GetDatabase();
 	$menues = $db->SelectAll("submenues","*","pid = 0");	
 	$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
+	
+	$rows = $db->SelectAll("submenues","*",NULL,"pos ASC,id ASC"); 
+	 
+	function buildTree(Array $data, $parent = 0) {
+    $tree = array();
+    foreach ($data as $d) {
+        if ($d['pid'] == $parent) {
+            $children = buildTree($data, $d['id']);
+            // set a trivial key
+            if (!empty($children)) {
+                $d['_children'] = $children;
+            }
+            $tree[] = $d;
+        }
+    }
+    return $tree;
+	}
+	
+	function has_children($rows,$id) 
+	{
+		foreach ($rows as $row) 
+		{
+			if ($row['pid'] == $id)
+			  return true;
+		}
+		return false;
+	}
+	
+	$tree = buildTree($rows);
+	//print_r($tree);
+	function printTree($tree, $r = 0, $p = NULL) {
+		foreach ($tree as $i => $t) {
+			//$dash = ($t['pid'] == 0) ? '' : str_repeat('-', $r) .' ';
+			$dash = ($t['pid'] == 0) ? '  ***  ' : str_repeat('&nbsp;', $r*$t['level']) .' ';
+			$ht.= "\t<option value='{$t[id]}'>{$dash}{$t['name']}</option>\n";
+			if ($t['pid'] == $p) {
+				// reset $r
+				$r = 0;
+			}
+			if (isset($t['_children'])) {
+			//echo "1";
+			//if (has_children($tree, $row['id'])){
+				$ht.= printTree($t['_children'], $r+1, $t['pid']);
+			}
+		}
+		return $ht;
+	}
+
+	$cbmenu = "<select> \n ";
+	$cbmenu.= printTree($tree);
+	$cbmenu.= "</select>";
 			
 	$categories = $db->SelectAll("categories","*");
 	$cbgroup = DbSelectOptionTag("cbgroup",$categories,"name",NULL,NULL,"form-control",NULL,"  گروه  ");	
