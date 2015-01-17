@@ -168,11 +168,11 @@ cd;
     
      if (isset($_GET["type"]) and $_GET["type"]=="grp")
 	 {
-		$db->cmd = 	"( SELECT *,1 As 'type' FROM news )".
-					" WHERE gid={$gid} "
+		$db->cmd = 	"SELECT * FROM ( SELECT *,1 As 'type' FROM news  ".
+					" WHERE gid={$_GET['gid']} ".
 					" UNION ALL ".
-					" (SELECT *,2 As 'type' FROM topics ) ".
-					" WHERE gid={$gid} ".
+					" SELECT *,2 As 'type' FROM topics  ".
+					" WHERE gid={$_GET['gid']} ) as tb".
 					" LIMIT ".($pagination->get_page() - 1) * $records_per_page.",".$records_per_page ;		
 	 }
 	 else
@@ -286,7 +286,7 @@ $html.=<<<cd
 			$("#cbgroup").change(function() {
 				var id= $(this).val();
 				// ?type=grp&gid=id
-				 document.location.href="?type=grp&id="+id;    
+				 document.location.href="?type=grp&gid="+id;    
 			});
 		
 		});
