@@ -564,7 +564,7 @@ class Zebra_Pagination
             // if "next page" and "previous page" links are to be shown to the right of the links to individual pages
             elseif ($this->_properties['navigation_position'] == 'right')
 
-                $output .= $this->_show_pages() . $this->_show_previous() . $this->_show_next();
+                $output .= $this->_show_previous() . $this->_show_pages() . $this->_show_next();
 
             // if "next page" and "previous page" links are to be shown on the outside of the links to individual pages
             else $output .= $this->_show_previous() . $this->_show_pages() . $this->_show_next();
