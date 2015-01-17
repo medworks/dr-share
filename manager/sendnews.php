@@ -18,6 +18,9 @@
 	}
 	
 	$db = Database::GetDatabase();
+	$menues = $db->SelectAll("submenues","*","pid = 0");	
+	$cbmenu = DbSelectOptionTag("cbmenu",$menues,"name",NULL,NULL,"form-control",NULL,"  منو  ");
+			
 	$categories = $db->SelectAll("categories","*");
 	$cbgroup = DbSelectOptionTag("cbgroup",$categories,"name",NULL,NULL,"form-control",NULL,"  گروه  ");	
 	
@@ -96,21 +99,13 @@ $html.=<<<cd
                                             انتخاب بر اساس منو
                                         </label>
                                     </div>
-                                    <select class="form-control">
-                                        <option value="">منو</option>
-                                        <option value="">Default select</option>
-                                        <option value="">Default select</option>
-                                    </select>
-                                    <select class="form-control">
-                                        <option value="">زیر منو</option>
-                                        <option value="">Default select</option>
-                                        <option value="">Default select</option>
-                                    </select>
-                                    <select class="form-control">
-                                        <option value="">زیر منو</option>
-                                        <option value="">Default select</option>
-                                        <option value="">Default select</option>
-                                    </select>
+                                    {$cbmenu}
+									<div id="sm1">
+											{$cbsm1}
+									</div>
+                                     <div id="sm2">
+											{$cbsm2}
+									</div>   
                                 </div>
                             </div>
                         </div>
