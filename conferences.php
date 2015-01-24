@@ -86,7 +86,7 @@
 		//echo $db->cmd;
 	}
 	$hamayesh = $db->SelectAll("defhamayesh","*","`expire` ='0'");	
-	$cbhamayesh = DbSelectOptionTag("cbhamayesh",$hamayesh,"title",NULL,NULL,"form-control",NULL,"  همایش  ");	
+	$cbhamayesh = DbSelectOptionTagRadio("cbhamayesh",$hamayesh,"title",NULL,NULL,"form-control",NULL,"  همایش  ");	
 $msgs = GetMessage($_GET['msg']);		
 $chtml.=<<<cd
 <div id="main" class="col9 clearfix">
@@ -102,7 +102,7 @@ $chtml.=<<<cd
                 <div class="nt_form">
 				    <!-- {$msgs} -->
                     <form id="frmclass" class="formdata" enctype="multipart/form-data" action="" method="post" role="form">
-						<div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+						<div class="nt_form_row name_row" style="">
                             <label for="nt_field01">نام همایش
                                 <span class="star">*</span>
                             </label>

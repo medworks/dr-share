@@ -89,7 +89,7 @@
 		//echo $db->cmd;
 	}
 	$class = $db->SelectAll("defclasses","*","`expire` ='0'");	
-	$cbclass = DbSelectOptionTag("cbclass",$class,"title",NULL,NULL,"form-control",NULL,"  کلاس  ");	
+	$cbclass = DbSelectOptionTagRadio("cbclass",$class,"title",NULL,NULL,"form-control",NULL,"  کلاس  ");	
 $msgs = GetMessage($_GET['msg']);		
 $chtml.=<<<cd
 <div id="main" class="col9 clearfix">
@@ -105,13 +105,14 @@ $chtml.=<<<cd
                 <div class="nt_form">
 				    <!-- {$msgs} -->
                     <form id="frmclass" class="formdata" enctype="multipart/form-data" action="" method="post" role="form">
-						<div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
+						<div class="nt_form_row name_row" style="">
                             <label for="nt_field01">نام کلاس
                                 <span class="star">*</span>
                             </label>
                             {$cbclass}
                         </div>
-					
+                        <div class="clearboth"></div>
+					   
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">نام و نام خانوادگی
                                 <span class="star">*</span>

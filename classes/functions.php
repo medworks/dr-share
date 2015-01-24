@@ -338,6 +338,20 @@ function DataGrid($cols, $rows, $colsClass, $rowsClass, $itemsInPage, $pageNo, $
             //var_dump($option);
             return  $option;
         }
+        function DbSelectOptionTagRadio($optionname,$dbdata,$feild,$selected=Null,$onchange=Null,$classname=null,$Style=Null,$FirstItemName=Null)
+        {
+            //$option = "<select Style='$Style' name='$optionname' class='$classname' id='$optionname' onchange='$onchange' >";
+			//$option.="<option value='0'>{$FirstItemName}</option>";
+			
+            foreach($dbdata as $key=>$val)
+            {			  
+               if ($selected == $val["id"]){ $select = "selected='1'";} else { $select="";}
+                $option.="{$val[$feild]} <input type='radio' name='radiobut' class='validate[required]' data-prompt-position='topLeft:-150' value='{$val["id"]}' style='margin-top:6px'/><br />";
+            }
+            //$option.="</select>";
+            //var_dump($option);
+            return  $option;
+        }
        function GetUserName($userid)
 	   {
 	      $db = Database::GetDatabase();
