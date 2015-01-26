@@ -346,7 +346,7 @@ function DataGrid($cols, $rows, $colsClass, $rowsClass, $itemsInPage, $pageNo, $
             foreach($dbdata as $key=>$val)
             {			  
                if ($selected == $val["id"]){ $select = "selected='1'";} else { $select="";}
-                $option.="{$val[$feild]} <input type='radio' name='radiobut' class='validate[required]' data-prompt-position='topLeft:-150' value='{$val["id"]}' style='margin-top:6px'/><br />";
+                $option.="{$val[$feild]} <input type='radio' name='{$optionname}' class='validate[required]' data-prompt-position='topLeft:-150' value='{$val["id"]}' style='margin-top:6px'/><br />";
             }
             //$option.="</select>";
             //var_dump($option);
