@@ -211,7 +211,7 @@ var BP_Confirm = {"are_you_sure":"Are you sure?"};
 <style type="text/css">
 	.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}
 </style>
-
+<script type="text/javascript" src="./lib/js/jquery.bpopup.js"></script>
 </head>
 <body class="is_loading has_slider slider_royalslider royalslider has_header_social is_home right_sidebar right_sidebar" oncontextmenu="return false;">
 <section id="body_inner">
