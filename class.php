@@ -92,6 +92,25 @@
 	$cbclass = DbSelectOptionTagRadio("cbclass",$class,"title",NULL,NULL,"form-control",NULL,"  کلاس  ");	
 $msgs = GetMessage($_GET['msg']);		
 $chtml.=<<<cd
+<style>
+#contents { 
+    background-color:#fff;
+    border-radius:15px;
+    color:#000;
+    display:none; 
+    padding:20px;
+    min-width:400px;
+    min-height: 180px;
+}
+.b-close{
+    cursor:pointer;
+    position:absolute;
+    right:10px;
+    top:5px;
+}
+
+} 
+</style>
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
         <div class="article_grid four_column_blog">
@@ -110,7 +129,10 @@ $chtml.=<<<cd
                                 <span class="star">*</span>
                             </label>
                             {$cbclass}
-                        </div>
+                        </div>						
+						<div id="contents" class="content" style="display:none;">
+						<a class="b-close">x<a/>
+						</div>
                         <div class="clearboth"></div>
 					   
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
@@ -232,6 +254,20 @@ $chtml.=<<<cd
 		
 	</div><!-- #main_inner -->
 </div>
+<script type="text/javascript">
+		jQuery(document).ready(function(){         
+           jQuery('input[name="cbclass"]:radio').click(function(e) {				
+                //e.preventDefault();								
+				var id = jQuery('input:radio[name="cbclass"]:checked').val() ;
+			
+		      jQuery('#contents').bPopup({					
+				// content:'ajax',
+                 //   contentContainer:'.content',
+                    loadUrl: 'classinfos.php?id='+id
+                });	
+            });		
+		});			
+	</script>	
 cd;
 
 	include_once('./inc/header.php');
