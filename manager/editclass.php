@@ -109,7 +109,7 @@ $html.=<<<cd
                                                 
                                                 <td class="text-center">
 												<a href="?act=expire&did={$rows[$i]["id"]}"  >					
-                                                    <button class="btn btn-xs btn-warning" title="منقضی"><i class="fa fa-pencil-square-o"></i></button>
+                                                    <button class="btn btn-xs btn-danger" title="منقضی"><i class="fa fa-times"></i></button>
 												</a>
 												<a href="addclass.php?act=edit&did={$rows[$i]["id"]}"  >					
                                                     <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
