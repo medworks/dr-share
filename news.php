@@ -43,11 +43,18 @@ cd;
 for($i = 0; $i < Count($rows); $i++)
 {
 	$rows[$i]["regdate"] = ToJalali($rows[$i]["regdate"],"Y/m/d H:i");
+	$pic = $db->Select("pics","*","`sid`='{$rows[$i]['id']}' AND `tid`='2'");
+	$img = base64_encode($pic['img']);
+    $src = 'data: '.$pic['itype'].';base64,'.$img;
 $nhtml.=<<<cd
 			<div class="col3">
 				<div>
 					<div class="article_grid_image">
+					<!--
 						<img class=" morph" src="manager/img.php?did={$rows[$i]['id']}&tid=2" style="width:201px!important;height:115px!important"/>
+					-->
+					<img class=" morph" src="{$src}" style="width:201px!important;height:115px!important"/>
+ 
 						<div class="hover_buttons">
 							<div>
 								<div>
