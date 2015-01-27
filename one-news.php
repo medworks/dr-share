@@ -18,6 +18,9 @@
 	$news = $db->Select("news","*","id={$_GET['id']}");
 	$seo->Site_Title = $news['subject'];
 	$news["regdate"] = ToJalali($news["regdate"],"Y/m/d H:i");
+	$pic = $db->Select("pics","*","`sid`='{$_GET['id']}' AND `tid`='2'");
+	$img = base64_encode($pic['img']);
+    $src = 'data: '.$pic['itype'].';base64,'.$img;
 $ohtml.=<<<cd
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
@@ -25,8 +28,8 @@ $ohtml.=<<<cd
 		<div class="single_post_module">
 			<div class="post type-post status-publish format-standard has-post-thumbnail hentry category-featured category-lifestyle category-travel tag-adipiscing tag-augue tag-donec tag-etiam tag-euismod">
 				<div class="single_post_image">					
-					<a href="manager/img.php?did={$news['id']}&tid=2" class="hb-image-zoom" rel="swipebox[single_post_image]" title="">
-					  <img class=" morph" src="manager/img.php?did={$news['id']}&tid=2" width="874px" height="492px" />	
+					<a href="{$src}" class="hb-image-zoom" rel="swipebox[single_post_image]" title="">
+					  <img class=" morph" src="{$src}" width="874px" height="492px" />	
 					</a>
 					<div class="meta_category">
 						<a href="javascript:void();" class="cat-featured" title="{$news['subject']}">تاریخ : {$news["regdate"]}</a>						
