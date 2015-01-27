@@ -23,7 +23,14 @@
 	{
 		$db->Delete("defclasses"," id",$_GET["did"]);		
 		header('location:editclass.php?act=new');	
-	}		
+	}
+	else
+	if ($_GET['act']=="expire")
+	{
+		$values = array("`expire`"=>"'1'");
+		$db->UpdateQuery("defclasses",$values,array("id='{$_GET[did]}'"));
+		header('location:editclass.php?act=new');	
+	}			
     
 $html.=<<<cd
     <!--Page main section start-->
@@ -101,6 +108,9 @@ $html.=<<<cd
                                                 <td>{$rows[$i]["period"]}</td>
                                                 
                                                 <td class="text-center">
+												<a href="?act=expire&did={$rows[$i]["id"]}"  >					
+                                                    <button class="btn btn-xs btn-warning" title="منقضی"><i class="fa fa-pencil-square-o"></i></button>
+												</a>
 												<a href="addclass.php?act=edit&did={$rows[$i]["id"]}"  >					
                                                     <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
 												</a>

@@ -125,11 +125,11 @@ $html=<<<cd
                                 </div>
                                 <div class="panel-body">
                                     <div class="form-group">
-                                        <textarea id="txtdate" name="txtdate" class="form-control " >
+                                        <textarea id="edtperiod" name="edtperiod" class="form-control " >
                                             {$row["edtperiod"]}
                                         </textarea>
                                         <script>
-                                            CKEDITOR.replace( 'txtdate',{
+                                            CKEDITOR.replace( 'edtperiod',{
                                                   language: 'fa'
                                               } );
                                         </script>
