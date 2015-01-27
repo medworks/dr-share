@@ -69,6 +69,7 @@ $html.=<<<cd
 											<th>#</th>
                                                 <th>عنوان</th>
                                                 <th>زمان و ساعات کلاس</th>
+												<th>اعتبار</th>
                                                 <th class="text-center">عملیات</th>
                                             </tr>
                                             </thead>
@@ -98,6 +99,7 @@ $vals = array();
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;
+$rows[$i]["expire"] = ($rows[$i]["expire"]==0)?" دارد ":" خیر ";
 
 $html.=<<<cd
 
@@ -106,6 +108,7 @@ $html.=<<<cd
                                                 <td>{$rownumber}</td>
                                                 <td>{$rows[$i]["title"]}</td>
                                                 <td>{$rows[$i]["period"]}</td>
+												<td>{$rows[$i]["expire"]}</td>
                                                 
                                                 <td class="text-center">
 												<a href="?act=expire&did={$rows[$i]["id"]}"  >					
