@@ -30,6 +30,13 @@
 		$values = array("`expire`"=>"'1'");
 		$db->UpdateQuery("defhamayesh",$values,array("id='{$_GET[did]}'"));
 		header('location:editconference.php?act=new');	
+	}	
+	else
+	if ($_GET['act']=="valid")
+	{
+		$values = array("`expire`"=>"'0'");
+		$db->UpdateQuery("defhamayesh",$values,array("id='{$_GET[did]}'"));
+		header('location:editconference.php?act=new');	
 	}			
     
 $html.=<<<cd
@@ -69,6 +76,7 @@ $html.=<<<cd
 											<th>#</th>
                                                 <th>عنوان</th>
                                                 <th>زمان و ساعات همایش</th>
+												<th>اعتبار</th>
                                                 <th class="text-center">عملیات</th>
                                             </tr>
                                             </thead>
@@ -98,6 +106,7 @@ $vals = array();
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;
+$rows[$i]["expire"] = ($rows[$i]["expire"]==0)?" دارد ":" خیر ";
 
 $html.=<<<cd
 
@@ -106,11 +115,15 @@ $html.=<<<cd
                                                 <td>{$rownumber}</td>
                                                 <td>{$rows[$i]["title"]}</td>
                                                 <td>{$rows[$i]["txtdate"]}</td>
+												<td>{$rows[$i]["expire"]}</td>
                                                 
                                                 <td class="text-center">
 												<a href="?act=expire&did={$rows[$i]["id"]}"  >												
                                                     <button class="btn btn-xs btn-danger" title="منقضی"><i class="fa fa-minus"></i></button>
 												</a>	
+												<a href="?act=valid&did={$rows[$i]["id"]}"  >					
+                                                    <button class="btn btn-xs btn-danger" title="معتبر"><i class="fa fa-times"></i></button>
+												</a>
 												<a href="addconference.php?act=edit&did={$rows[$i]["id"]}"  >					
                                                     <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
 												</a>
