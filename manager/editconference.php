@@ -23,7 +23,14 @@
 	{
 		$db->Delete("defhamayesh"," id",$_GET["did"]);		
 		header('location:editconference.php?act=new');	
-	}		
+	}
+	else
+	if ($_GET['act']=="expire")
+	{
+		$values = array("`expire`"=>"'1'");
+		$db->UpdateQuery("defhamayesh",$values,array("id='{$_GET[did]}'"));
+		header('location:editconference.php?act=new');	
+	}			
     
 $html.=<<<cd
     <!--Page main section start-->
@@ -101,6 +108,9 @@ $html.=<<<cd
                                                 <td>{$rows[$i]["txtdate"]}</td>
                                                 
                                                 <td class="text-center">
+												<a href="?act=expire&did={$rows[$i]["id"]}"  >												
+                                                    <button class="btn btn-xs btn-danger" title="منقضی"><i class="fa fa-minus"></i></button>
+												</a>	
 												<a href="addconference.php?act=edit&did={$rows[$i]["id"]}"  >					
                                                     <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
 												</a>
