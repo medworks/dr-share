@@ -89,6 +89,25 @@
 	$cbhamayesh = DbSelectOptionTagRadio("cbhamayesh",$hamayesh,"title",NULL,NULL,"form-control",NULL,"  همایش  ");	
 $msgs = GetMessage($_GET['msg']);		
 $chtml.=<<<cd
+<style>
+#contents { 
+    background-color:#fff;
+    border-radius:15px;
+    color:#000;
+    display:none; 
+    padding:20px;
+    min-width:400px;
+    min-height: 180px;
+}
+.b-close{
+    cursor:pointer;
+    position:absolute;
+    right:10px;
+    top:5px;
+}
+
+} 
+</style>
 <div id="main" class="col9 clearfix">
 	<div id="main_inner">
         <div class="article_grid four_column_blog">
@@ -108,6 +127,10 @@ $chtml.=<<<cd
                             </label>
                             {$cbhamayesh}
                         </div>
+						<div id="contents" class="content" style="display:none;">
+						<a class="b-close">X</a>
+						</div>
+						<div class="clearboth"></div>
                         <div class="nt_form_row name_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field01">نام و نام خانوادگی
                                 <span class="star">*</span>
@@ -227,6 +250,20 @@ $chtml.=<<<cd
 		
 	</div><!-- #main_inner -->
 </div>
+<script type="text/javascript">
+		jQuery(document).ready(function(){         
+           jQuery('input[name="cbhamayesh"]:radio').click(function(e) {				
+                //e.preventDefault();								
+				var id = jQuery('input:radio[name="cbhamayesh"]:checked').val() ;
+			
+		      jQuery('#contents').bPopup({					
+				// content:'ajax',
+                 //   contentContainer:'.content',
+                    loadUrl: 'hamayeshinfos.php?id='+id
+                });	
+            });		
+		});			
+	</script>	
 cd;
 
 	include_once('./inc/header.php');
