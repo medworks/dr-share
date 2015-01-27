@@ -122,7 +122,7 @@ $html.=<<<cd
                                                     <button class="btn btn-xs btn-danger" title="منقضی"><i class="fa fa-times"></i></button>
 												</a>
 												<a href="?act=valid&did={$rows[$i]["id"]}"  >					
-                                                    <button class="btn btn-xs btn-danger" title="معتبر"><i class="fa fa-times"></i></button>
+                                                    <button class="btn btn-xs btn-warning" title="معتبر"><i class="fa fa-check"></i></button>
 												</a>
 												<a href="addclass.php?act=edit&did={$rows[$i]["id"]}"  >					
                                                     <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
