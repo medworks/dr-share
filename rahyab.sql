@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2015 at 07:17 PM
--- Server version: 5.6.11
--- PHP Version: 5.5.3
+-- Generation Time: Jan 27, 2015 at 06:08 PM
+-- Server version: 5.6.21
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `rahyab`
 --
-CREATE DATABASE IF NOT EXISTS `rahyab` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE `rahyab`;
 
 -- --------------------------------------------------------
 
@@ -29,7 +27,7 @@ USE `rahyab`;
 --
 
 CREATE TABLE IF NOT EXISTS `ask` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `degri` varchar(20) NOT NULL,
   `reshte` varchar(20) NOT NULL,
@@ -39,9 +37,8 @@ CREATE TABLE IF NOT EXISTS `ask` (
   `question` text NOT NULL,
   `regdate` datetime NOT NULL,
   `answer` tinyint(1) NOT NULL DEFAULT '0',
-  `answertxt` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `answertxt` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `ask`
@@ -57,10 +54,9 @@ INSERT INTO `ask` (`id`, `name`, `degri`, `reshte`, `email`, `tel`, `mobile`, `q
 --
 
 CREATE TABLE IF NOT EXISTS `categories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+`id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `categories`
@@ -79,7 +75,7 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `classes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `clsid` int(11) NOT NULL,
   `birth` varchar(15) NOT NULL,
@@ -97,9 +93,8 @@ CREATE TABLE IF NOT EXISTS `classes` (
   `email` varchar(25) NOT NULL,
   `desc` text NOT NULL,
   `regdate` datetime NOT NULL,
-  `confirm` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `confirm` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `classes`
@@ -119,15 +114,14 @@ INSERT INTO `classes` (`id`, `name`, `clsid`, `birth`, `father`, `tahol`, `meli`
 --
 
 CREATE TABLE IF NOT EXISTS `clspics` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `tid` int(11) NOT NULL,
   `cid` int(11) NOT NULL,
   `itype` varchar(25) NOT NULL,
   `img` mediumblob NOT NULL,
   `iname` varchar(100) NOT NULL,
-  `isize` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+  `isize` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `clspics`
@@ -145,24 +139,24 @@ INSERT INTO `clspics` (`id`, `tid`, `cid`, `itype`, `img`, `iname`, `isize`) VAL
 --
 
 CREATE TABLE IF NOT EXISTS `defclasses` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `title` varchar(50) NOT NULL,
   `subjects` text NOT NULL,
   `starttime` varchar(40) NOT NULL,
-  `period` varchar(30) NOT NULL,
+  `period` text NOT NULL,
   `endtime` varchar(40) NOT NULL,
   `details` text NOT NULL,
-  `expire` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `expire` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `defclasses`
 --
 
 INSERT INTO `defclasses` (`id`, `title`, `subjects`, `starttime`, `period`, `endtime`, `details`, `expire`) VALUES
-(1, 'کلاس روانشناسی', '																								\r\n				hgjhgjhg\r\nhkjhkj							\r\n											', 'چهارشنبه ۲۲ آذر ', '۱۰۰ جلسه', 'سه شنبه ۲۲ فروردین', '													hjkhkj\r\njkhjkhjk\r\nhkjhk\r\njhkjhjk											\r\n											\r\n											', 0),
-(2, 'کلاس ریاضی', '															لتالتالا\r\nانتانتانت\r\nاتناتنانت\r\nاتنانت									\r\n											\r\n											', 'چهارشنبه ۲۲ دی ', '۵۰ جلسه', 'سه شنبه ۲۲ خرداد', '																								\r\n						ندارد					\r\n											', 0);
+(1, 'کلاس روانشناسی', '																								\r\n				hgjhgjhg\r\nhkjhkj							\r\n											', 'چهارشنبه ۲۲ آذر ', '۱۰۰ جلسه', 'سه شنبه ۲۲ فروردین', '													hjkhkj\r\njkhjkhjk\r\nhkjhk\r\njhkjhjk											\r\n											\r\n											', 1),
+(2, 'کلاس ریاضی', '<p>لتالتالا انتانتانت اتناتنانت اتنانت</p>\r\n', '', '<p>تست 16</p>\r\n', '', '<p>ندارد</p>\r\n', 0),
+(3, 'شخصی', '<p>تست 15</p>\r\n', '', '<p>تست 15</p>\r\n', '', '<p>تست 15</p>\r\n', 0);
 
 -- --------------------------------------------------------
 
@@ -171,16 +165,15 @@ INSERT INTO `defclasses` (`id`, `title`, `subjects`, `starttime`, `period`, `end
 --
 
 CREATE TABLE IF NOT EXISTS `defhamayesh` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `title` varchar(50) NOT NULL,
   `subjects` text NOT NULL,
   `starttime` varchar(40) NOT NULL,
-  `period` varchar(30) NOT NULL,
+  `period` text NOT NULL,
   `endtime` varchar(40) NOT NULL,
   `details` text NOT NULL,
-  `expire` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `expire` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `defhamayesh`
@@ -197,15 +190,14 @@ INSERT INTO `defhamayesh` (`id`, `title`, `subjects`, `starttime`, `period`, `en
 --
 
 CREATE TABLE IF NOT EXISTS `exam` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `subject` varchar(100) NOT NULL,
   `text` text NOT NULL,
   `itype` varchar(25) NOT NULL,
   `img` mediumblob NOT NULL,
   `iname` varchar(50) NOT NULL,
-  `isize` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `isize` varchar(25) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `exam`
@@ -224,12 +216,11 @@ INSERT INTO `exam` (`id`, `subject`, `text`, `itype`, `img`, `iname`, `isize`) V
 --
 
 CREATE TABLE IF NOT EXISTS `gallerypics` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `gcid` int(11) NOT NULL,
   `subject` varchar(100) NOT NULL,
-  `text` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+  `text` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gallerypics`
@@ -248,10 +239,9 @@ INSERT INTO `gallerypics` (`id`, `gcid`, `subject`, `text`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `gcategories` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+`id` int(11) NOT NULL,
+  `name` varchar(200) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gcategories`
@@ -268,14 +258,13 @@ INSERT INTO `gcategories` (`id`, `name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `gpics` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `gid` int(11) NOT NULL,
   `itype` varchar(25) NOT NULL,
   `img` mediumblob NOT NULL,
   `iname` varchar(100) NOT NULL,
-  `isize` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `isize` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -284,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `gpics` (
 --
 
 CREATE TABLE IF NOT EXISTS `hamayesh` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `hid` int(11) NOT NULL,
   `birth` varchar(15) NOT NULL,
@@ -302,9 +291,8 @@ CREATE TABLE IF NOT EXISTS `hamayesh` (
   `email` varchar(25) NOT NULL,
   `desc` text NOT NULL,
   `regdate` datetime NOT NULL,
-  `confirm` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `confirm` tinyint(1) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `hamayesh`
@@ -320,11 +308,10 @@ INSERT INTO `hamayesh` (`id`, `name`, `hid`, `birth`, `father`, `tahol`, `meli`,
 --
 
 CREATE TABLE IF NOT EXISTS `health` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `subject` varchar(100) NOT NULL,
-  `text` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+  `text` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `health`
@@ -342,11 +329,10 @@ INSERT INTO `health` (`id`, `subject`, `text`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `menues` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `pos` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+  `pos` tinyint(3) unsigned NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `menues`
@@ -364,15 +350,14 @@ INSERT INTO `menues` (`id`, `name`, `pos`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `menusubjects` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `mid` int(11) NOT NULL,
   `smid` int(11) NOT NULL,
   `subject` varchar(100) NOT NULL,
   `text` mediumtext NOT NULL,
   `regdate` datetime NOT NULL,
-  `picid` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=85 ;
+  `picid` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `menusubjects`
@@ -463,15 +448,14 @@ INSERT INTO `menusubjects` (`id`, `mid`, `smid`, `subject`, `text`, `regdate`, `
 --
 
 CREATE TABLE IF NOT EXISTS `news` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `gid` int(11) NOT NULL,
   `smid` int(11) NOT NULL,
   `subject` varchar(100) NOT NULL,
   `text` text NOT NULL,
   `regdate` datetime NOT NULL,
-  `picid` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+  `picid` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `news`
@@ -496,7 +480,7 @@ INSERT INTO `news` (`id`, `gid`, `smid`, `subject`, `text`, `regdate`, `picid`) 
 --
 
 CREATE TABLE IF NOT EXISTS `newsmember` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(60) NOT NULL,
   `degri` varchar(30) NOT NULL,
   `reshte` varchar(30) NOT NULL,
@@ -505,9 +489,8 @@ CREATE TABLE IF NOT EXISTS `newsmember` (
   `mobile` varchar(12) NOT NULL,
   `menu` varchar(100) NOT NULL,
   `group` varchar(100) NOT NULL,
-  `regdate` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+  `regdate` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `newsmember`
@@ -524,15 +507,14 @@ INSERT INTO `newsmember` (`id`, `name`, `degri`, `reshte`, `email`, `tell`, `mob
 --
 
 CREATE TABLE IF NOT EXISTS `pics` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `tid` int(11) NOT NULL,
   `sid` int(11) NOT NULL,
   `itype` varchar(25) NOT NULL,
   `img` mediumblob NOT NULL,
   `iname` varchar(50) NOT NULL,
-  `isize` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+  `isize` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -541,11 +523,10 @@ CREATE TABLE IF NOT EXISTS `pics` (
 --
 
 CREATE TABLE IF NOT EXISTS `settings` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `key` varchar(30) NOT NULL,
-  `value` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
+  `value` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `settings`
@@ -600,15 +581,14 @@ INSERT INTO `settings` (`id`, `key`, `value`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `slide` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `subject` varchar(100) NOT NULL,
   `text` text NOT NULL,
   `itype` varchar(25) NOT NULL,
   `img` mediumblob NOT NULL,
   `iname` varchar(50) NOT NULL,
-  `isize` varchar(25) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+  `isize` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -617,14 +597,13 @@ CREATE TABLE IF NOT EXISTS `slide` (
 --
 
 CREATE TABLE IF NOT EXISTS `submenues` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `mid` int(11) NOT NULL,
   `pid` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `level` tinyint(4) NOT NULL,
-  `pos` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+  `pos` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `submenues`
@@ -647,15 +626,14 @@ INSERT INTO `submenues` (`id`, `mid`, `pid`, `name`, `level`, `pos`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `topics` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `gid` int(11) NOT NULL,
   `smid` int(11) NOT NULL,
   `subject` varchar(100) NOT NULL,
   `text` text NOT NULL,
   `regdate` datetime NOT NULL,
-  `picid` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+  `picid` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `topics`
@@ -677,16 +655,15 @@ INSERT INTO `topics` (`id`, `gid`, `smid`, `subject`, `text`, `regdate`, `picid`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+`id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
   `family` varchar(50) NOT NULL,
   `image` varchar(60) NOT NULL,
   `email` varchar(30) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(35) NOT NULL,
-  `type` tinyint(4) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+  `type` tinyint(4) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
@@ -695,6 +672,256 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `name`, `family`, `image`, `email`, `username`, `password`, `type`) VALUES
 (1, 'Media', 'Teq', '', 'admin@mediateq.ir', 'php', '05098a2bd8c52e8c912e02d7cbfaf9e9', 0);
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `ask`
+--
+ALTER TABLE `ask`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `classes`
+--
+ALTER TABLE `classes`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `clspics`
+--
+ALTER TABLE `clspics`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `defclasses`
+--
+ALTER TABLE `defclasses`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `defhamayesh`
+--
+ALTER TABLE `defhamayesh`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `exam`
+--
+ALTER TABLE `exam`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gallerypics`
+--
+ALTER TABLE `gallerypics`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gcategories`
+--
+ALTER TABLE `gcategories`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `gpics`
+--
+ALTER TABLE `gpics`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `hamayesh`
+--
+ALTER TABLE `hamayesh`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `health`
+--
+ALTER TABLE `health`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menues`
+--
+ALTER TABLE `menues`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `menusubjects`
+--
+ALTER TABLE `menusubjects`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `newsmember`
+--
+ALTER TABLE `newsmember`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pics`
+--
+ALTER TABLE `pics`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `settings`
+--
+ALTER TABLE `settings`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `slide`
+--
+ALTER TABLE `slide`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `submenues`
+--
+ALTER TABLE `submenues`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `topics`
+--
+ALTER TABLE `topics`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `ask`
+--
+ALTER TABLE `ask`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `classes`
+--
+ALTER TABLE `classes`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `clspics`
+--
+ALTER TABLE `clspics`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `defclasses`
+--
+ALTER TABLE `defclasses`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `defhamayesh`
+--
+ALTER TABLE `defhamayesh`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `exam`
+--
+ALTER TABLE `exam`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `gallerypics`
+--
+ALTER TABLE `gallerypics`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `gcategories`
+--
+ALTER TABLE `gcategories`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `gpics`
+--
+ALTER TABLE `gpics`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `hamayesh`
+--
+ALTER TABLE `hamayesh`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `health`
+--
+ALTER TABLE `health`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `menues`
+--
+ALTER TABLE `menues`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `menusubjects`
+--
+ALTER TABLE `menusubjects`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=85;
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+--
+-- AUTO_INCREMENT for table `newsmember`
+--
+ALTER TABLE `newsmember`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `pics`
+--
+ALTER TABLE `pics`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `settings`
+--
+ALTER TABLE `settings`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=41;
+--
+-- AUTO_INCREMENT for table `slide`
+--
+ALTER TABLE `slide`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `submenues`
+--
+ALTER TABLE `submenues`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT for table `topics`
+--
+ALTER TABLE `topics`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
