@@ -127,7 +127,7 @@ $html=<<<cd
                                 <div class="panel-body">
                                     <div class="form-group">
                                         <textarea id="txtdate" name="txtdate" class="form-control" >
-                                            {$row["date"]}
+                                            {$row["period"]}
                                         </textarea>
                                         <script>
                                             CKEDITOR.replace( 'txtdate',{
