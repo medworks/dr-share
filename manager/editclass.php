@@ -30,6 +30,13 @@
 		$values = array("`expire`"=>"'1'");
 		$db->UpdateQuery("defclasses",$values,array("id='{$_GET[did]}'"));
 		header('location:editclass.php?act=new');	
+	}		
+	else
+	if ($_GET['act']=="valid")
+	{
+		$values = array("`expire`"=>"'0'");
+		$db->UpdateQuery("defclasses",$values,array("id='{$_GET[did]}'"));
+		header('location:editclass.php?act=new');	
 	}			
     
 $html.=<<<cd
@@ -113,6 +120,9 @@ $html.=<<<cd
                                                 <td class="text-center">
 												<a href="?act=expire&did={$rows[$i]["id"]}"  >					
                                                     <button class="btn btn-xs btn-danger" title="منقضی"><i class="fa fa-times"></i></button>
+												</a>
+												<a href="?act=valid&did={$rows[$i]["id"]}"  >					
+                                                    <button class="btn btn-xs btn-danger" title="معتبر"><i class="fa fa-times"></i></button>
 												</a>
 												<a href="addclass.php?act=edit&did={$rows[$i]["id"]}"  >					
                                                     <button class="btn btn-xs btn-warning" title="ویرایش"><i class="fa fa-pencil-square-o"></i></button>
