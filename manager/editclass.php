@@ -98,7 +98,7 @@ $html.=<<<cd
                                             <tr>
                                                 <td>{$rownumber}</td>
                                                 <td>{$rows[$i]["title"]}</td>
-                                                <td>{$rows[$i]["txtdate"]}</td>
+                                                <td>{$rows[$i]["period"]}</td>
                                                 
                                                 <td class="text-center">
 												<a href="addclass.php?act=edit&did={$rows[$i]["id"]}"  >					

@@ -17,10 +17,11 @@
 	{
 		$row = $db->Select("defclasses","*"," id ={$_GET[id]}");
 $html=<<<cd
-<b>{$row["title"]}</b>
-<hr/>
-<br>
-	{$row["details"]}
+<p style="font-size:22px;text-align:right">{$row["title"]}</p>
+<p style="font-size:22px;text-align:right">{$row["subject"]}</p>
+<p style="font-size:22px;text-align:right">{$row["period"]}</p>
+<p style="font-size:20px;text-align:right">{$row["details"]}</p>
+
 cd;
 	}
 echo $html;	

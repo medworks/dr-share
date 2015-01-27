@@ -131,7 +131,7 @@ $chtml.=<<<cd
                             {$cbclass}
                         </div>						
 						<div id="contents" class="content" style="display:none;">
-						<a class="b-close">x<a/>
+						<a class="b-close">X</a>
 						</div>
                         <div class="clearboth"></div>
 					   
