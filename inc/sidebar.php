@@ -50,29 +50,50 @@ $html.=<<<cd
 				</div>
 			</div>
 		</div>
-
 		<div class="widget widget_text fade-in">
+			<h4 class="widgettitle rtl">ساعات کار کلینیک</h4>
+			<div class="textwidget">
+				<div class="flickr_wrap">
+					<p style="text-align:right;margin-right:15px;font-size:22px">از شنبه تا پنجشنبه ساعت 9 الی 21</p>	
+				</div>
+			</div>
+		</div>
+		<div class="widget widget_text fade-in">
+			<h4 class="widgettitle rtl">راه های ارتباط با کلینیک</h4>
+			<div class="textwidget">
+				<div class="flickr_wrap">
+					<p style="text-align:right;margin-right:15px;font-size:22px">مراجعه حضوری</p>	
+					<p style="text-align:right;margin-right:20px;font-size:18px">آدرس: مشهد، خیابان احمدآباد، ابتدای خیابان عارف، بعد از داروخانه دکتر شهسواری، ساختمان نگین، طبقه دوم، واحد3</p>	
+					<p style="text-align:right;margin-right:15px;font-size:22px">تماس تلفنی</p>
+					<p style="text-align:right;margin-right:20px;font-size:18px ;direction:rtl">تلفن: <span style='display:inline-block;direction:ltr'>051-3841774</span></p>	
+					<p style="text-align:right;margin-right:20px;font-size:18px ;direction:rtl">تلفن: <span style='display:inline-block;direction:ltr'>0935-9856189</span></p>	
+					<p style="text-align:right;margin-right:15px;font-size:22px">ایمیل</p>
+					<p style="text-align:right;margin-right:20px;font-size:18px"><a href="javascript:void(0);">info@rahyabclinic.com</a></p>	
+				</div>
+			</div>
+		</div>
+
+<!--		<div class="widget widget_text fade-in">
 			<h4 class="widgettitle rtl">گالری تصاویر</h4>
 			<div class="textwidget">
 				<div class="flickr_wrap">
-cd;
-for($i = 0; $i < Count($gallery); $i++)
-{
-	//$pic = $db->Select("gpics","*","`gid`='{$gallery[$i][id]}'");
-	$img = base64_encode($gallery[$i]['img']);
-	$src = 'data: '.$gallery[$i]['itype'].';base64,'.$img;
-$html.=<<<cd
+// cd;
+// for($i = 0; $i < Count($gallery); $i++)
+// {
+// 	$img = base64_encode($gallery[$i]['img']);
+// 	$src = 'data: '.$gallery[$i]['itype'].';base64,'.$img;
+// $html.=<<<cd
 					<div class="flickr_badge_image" id="flickr_badge_image1">
 						<a href="gallery.html">
 							<img  src="{$src}"  width="75px" height="75px" />
 						</a>
 					</div>
-cd;
-}
-$html.=<<<cd
+// cd;
+// }
+// $html.=<<<cd
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<div class="widget widget_text fade-in">
 			<div class="textwidget">
