@@ -64,7 +64,7 @@ $nhtml.=<<<cd
 						</div>
 					</div>
 					<div class="article_grid_content">
-						<h3 class="article_heading">
+						<h3 class="article_heading rtl">
 							<a href="one-news{$rows[$i]['id']}.html" title="{$rows[$i]['subject']}" rel="bookmark">
 								{$rows[$i]["subject"]}
 							</a>

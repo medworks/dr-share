@@ -70,7 +70,8 @@ for($i = 0; $i < Count($news); $i++)
 	$img = base64_encode($pic['img']);
 	$src = 'data: '.$pic['itype'].';base64,'.$img;
 	//$pic=$db->Select("pics","*","tid=2 AND sid ='{$news[i][id]}'",NULL);
-	$news[$i]["text"] =(mb_strlen($news[$i]["text"])>90)?mb_substr($news[$i]["text"],0,90,"UTF-8")."...":$news[$i]["text"];
+	$news[$i]["text"] =(mb_strlen($news[$i]["text"])>120)?mb_substr($news[$i]["text"],0,120,"UTF-8")."...":$news[$i]["text"];
+        $body=strip_tags($news[$i]["text"]);
 	if ($i % 4 == 0)
 	{
 		$class = " last";
@@ -92,12 +93,12 @@ $fhtml.=<<<cd
 								</div>
 							</div>
 						</div>
-						<div class="article_grid_content">
+						<div class="article_grid_content rtl">
 							<h3 class="article_heading rtl">
 								<a href="one-news{$news[$i]['id']}.html" title="{$news[$i]['subject']}" rel="bookmark">{$news[$i]['subject']}</a>
 							</h3>
 							<div class="post_excerpt">
-								<p class="rtl" style="font-size:18px">{$news[$i]['text']}</p>
+								<p class="rtl" style="font-size:18px">{$body}</p>
 								<p>
 									<a class="post_more_link" href="one-news{$news[$i]['id']}.html" style="font-size:15px">ادامه خبر</a>
 								</p>

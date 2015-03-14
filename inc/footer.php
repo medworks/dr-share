@@ -33,7 +33,7 @@ $html.=<<<cd
 		<div class="col12">
 			<div class="col4">
 				<div id="text-9" class="widget widget_text fade-in">
-                    <div class="textwidget">
+                    <div class="textwidget rtl">
 						<div class="custom_logo">
 							<h1 class="rtl" style="color:#fff">کلینیک رهیاب</h1>
 						</div>
@@ -68,22 +68,34 @@ $html.=<<<cd
 					<h4 class="widgettitle rtl">پیوندهای مفید</h4>
 					<ul>
 						<li>
-							<a href="#" style="color:#000;">پیوند 1</a>
+							<a href="http://www.aasect.org" style="color:#000;line-height:1.3" target="_blank">انجمن مدرسان، مشاوران و درمانگران مسایل جنسیآمریکا (AASECT)</a>
 						</li>
 						<li>
-							<a href="#" style="color:#000;">پیوند 2</a>
+							<a href="http://www.worldsexology.org" style="color:#000;line-height:1.3" target="_blank">انجمن جهانی سلامت جنسی (WAS)</a>
 						</li>
 						<li>
-							<a href="#" style="color:#000;">پیوند 3</a>
+							<a href="http://www.naasas.com" style="color:#000;line-height:1.3" target="_blank">انجمن ملی پیشرفت علم و هنر در مسایل جنسی (NAASAS)</a>
 						</li>
 						<li>
-							<a href="#" style="color:#000;">پیوند 4</a>
+							<a href="http://www.apa.org" style="color:#000;line-height:1.3" target="_blank">انجمن روانشناسی آمریکا (APA)</a>
 						</li>
 						<li>
-							<a href="#" style="color:#000;">پیوند 5</a>
+							<a href="http://www.apsa.org" style="color:#000;line-height:1.3" target="_blank">انجمن روانکاوی آمریکا</a>
 						</li>
 						<li>
-							<a href="#" style="color:#000;">پیوند 6</a>
+							<a href="http://www.ipa.org.uk" style="color:#000;line-height:1.3" target="_blank">انجمن بین المللی روانکاوی</a>
+						</li>
+						<li>
+							<a href="http://pcoiran.ir" style="color:#000;line-height:1.3" target="_blank">سازمان نظام روان شناسی و مشاوره جمهوری اسلامی ایران</a>
+						</li>
+						<li>
+							<a href="http://www.iranpa.org" style="color:#000;line-height:1.3" target="_blank">انجمن روانشناسی ایران</a>
+						</li>
+						<li>
+							<a href="www.irancpa.com" style="color:#000;line-height:1.3" target="_blank">انجمن روانشناسی بالینی ایران</a>
+						</li>
+						<li>
+							<a href="http://tip.iums.ac.ir" style="color:#000;line-height:1.3" target="_blank">انستیتو روانپزشکی تهران</a>
 						</li>
 					</ul>
 				</div>

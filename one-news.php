@@ -36,7 +36,7 @@ $ohtml.=<<<cd
 					</div>
 				</div>
 				<article class="single_post_content">
-					<h1 class="article_heading entry_title" style="font-size:35px !important">{$news['subject']}</h1>
+					<h1 class="article_heading entry_title rtl" style="font-size:35px !important">{$news['subject']}</h1>
 					<div class="clearboth"></div>
 					<div class="entry">
 						<p style="font-size:22px;font-weight:normal;">

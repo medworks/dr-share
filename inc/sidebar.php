@@ -18,34 +18,13 @@
     
 
 $html.=<<<cd
-<style>
-#contents { 
-    background-color:#fff;
-    border-radius:15px;
-    color:#000;
-    display:none; 
-    padding:20px;
-    min-width:400px;
-    min-height: 180px;
-}
-.b-close{
-    cursor:pointer;
-    position:absolute;
-    right:10px;
-    top:5px;
-}
 
-} 
-</style>
 <div id="sidebar" class="col3 last">
-<div id="contents" class="content" style="display:none;">
-						<a class="b-close">X</a>
-						</div>
 	<div id="sidebar_inner">
 		<div id="archives-5" class="widget widget_archive fade-in">
 			<h4 class="widgettitle rtl">کلینیک رهیاب</h4>
 			<ul>
-				<li><a id="creator" href="javascript:void(0);">موسس (دکتر شاره)</a></li>
+				<li><a href="creator.html">موسس (دکتر شاره)</a></li>
 				<li><a href="news.html" class="news">اخبار و تازه ها</a></li>
 				<li><a href="class.html">کلاسها و دوره های آموزشی</a></li>
 				<li><a href="conferences.html">همایش ها</a></li>
@@ -145,17 +124,6 @@ $html.=<<<cd
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-		jQuery(document).ready(function(){         
-           jQuery('#creator').click(function(e) {				
-				//var id = jQuery('input:radio[name="cbclass"]:checked').val() ;
-			
-		      jQuery('#contents').bPopup({					
-                    loadUrl: 'creator.php'
-                });	
-            });		
-		});			
-	</script>
 cd;
 
 ?>
