@@ -90,6 +90,8 @@ $vals = array();
 for($i = 0; $i < Count($rows); $i++)
 {
 $rownumber = $i+1;
+$rows[$i]["subject"] = strip_tags($rows[$i]["subject"]);
+$rows[$i]["text"] = strip_tags($rows[$i]["text"]);
 $rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>20)?mb_substr($rows[$i]["subject"],0,20,"UTF-8")."...":$rows[$i]["subject"];
 $rows[$i]["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
 $vals = "";
