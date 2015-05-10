@@ -88,19 +88,19 @@ $fhtml.=<<<cd
 							<div class="hover_buttons">
 								<div>
 									<div>
-										<a href="one-news{$news[$i]['id']}.html" class="hb-image-link" title="{$news[$i]['subject']}"></a>
+										<a href="one-news{$news[$i]['id']}.html" class="hb-image-link" title="{$news[$i]['subject']}" target="_blank"></a>
 									</div>
 								</div>
 							</div>
 						</div>
 						<div class="article_grid_content rtl">
 							<h3 class="article_heading rtl">
-								<a href="one-news{$news[$i]['id']}.html" title="{$news[$i]['subject']}" rel="bookmark">{$news[$i]['subject']}</a>
+								<a href="one-news{$news[$i]['id']}.html" title="{$news[$i]['subject']}" rel="bookmark" target="_blank">{$news[$i]['subject']}</a>
 							</h3>
 							<div class="post_excerpt">
-								<p class="rtl" style="font-size:18px">{$body}</p>
+								<!-- <p class="rtl" style="font-size:18px">{$body}</p> -->
 								<p>
-									<a class="post_more_link" href="one-news{$news[$i]['id']}.html" style="font-size:15px">ادامه خبر</a>
+									<a class="post_more_link" href="one-news{$news[$i]['id']}.html" style="font-size:15px" target="_blank">ادامه خبر</a>
 								</p>
 							</div>
 						</div>
