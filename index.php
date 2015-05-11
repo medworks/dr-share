@@ -35,8 +35,14 @@ $fhtml.=<<<cd
 						-->
 						 <img class="rsImg" src="{$src}" alt ="{$rows[$i]['subject']}" width="492" height="874" />
 					</a>
+					<style>
+						.slider_h h2 span{
+							font-size:50px !important;
+							word-spacing : 0 !important;
+						}
+					</style>
 					<div class="slider_h">
-						<a href="#">
+						<a href="javascript:void(0);">
 							<h2>{$slide[$i]['subject']}</h2>
 						</a>
 					</div>
