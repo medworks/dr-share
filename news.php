@@ -38,6 +38,12 @@ $nhtml.=<<<cd
 	<div id="main_inner">
 		<div class="article_grid four_column_blog">
 			<h4>اخبار و تازه ها</h4>
+			<style>
+				.col3{
+					min-height: 340px;
+					float: left;
+				}
+			</style>
 cd;
 
 for($i = 0; $i < Count($rows); $i++)
@@ -46,8 +52,16 @@ for($i = 0; $i < Count($rows); $i++)
 	$pic = $db->Select("pics","*","`sid`='{$rows[$i]['id']}' AND `tid`='2'");
 	$img = base64_encode($pic['img']);
     $src = 'data: '.$pic['itype'].';base64,'.$img;
+	if ($i % 4 == 0)
+	{
+		$class = " last";
+	}
+	else
+	{
+		$class = "";
+	}
 $nhtml.=<<<cd
-			<div class="col3">
+			<div class="col3 {$class}">
 				<div>
 					<div class="article_grid_image">
 					<!--
