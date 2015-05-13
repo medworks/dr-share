@@ -37,7 +37,7 @@ $fhtml.=<<<cd
 					</a>
 					<style>
 						.slider_h h2 span{
-							font-size:50px !important;
+							font-size:25px !important;
 							word-spacing : 0 !important;
 						}
 					</style>
