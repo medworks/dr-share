@@ -44,7 +44,7 @@ jQuery(document).ready(function() {
             arrowsNav: true,
             fadeinLoadedSlide: true,
             controlNavigationSpacing: 0,
-            controlNavigation: 'thumbnails',
+            controlNavigation: 'bullets',
             thumbs: {
                 autoCenter: false,
                 fitInViewport: true,
@@ -87,13 +87,13 @@ jQuery(document).ready(function() {
                 $head.attr('class', 'minimize');
                 $stop.attr('class', 'visible');
             } else if (direction == 'up') {
-				$head.attr('class', 'maximize');
+                $head.attr('class', 'maximize');
                 $stop.attr('class', 'invisible');
             }
         }); 
-		//jQuery('#navigation').addClass('minimize', jQuery(document).scrollTop() > 0);		
-	
- 		/* 
+        //jQuery('#navigation').addClass('minimize', jQuery(document).scrollTop() > 0);     
+    
+        /* 
          * Social Count plugin colors fix.
          */
          jQuery('.items .count, .items .label').removeAttr('style');
@@ -113,7 +113,7 @@ jQuery(document).ready(function() {
             });  
 
     
-    	
+        
         jQuery('.article_grid.three_column_blog.carousel').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
@@ -146,23 +146,24 @@ jQuery(document).ready(function() {
                 }
               ]
         });
+        
 
 
         jQuery('.article_grid.one_column_blog.carousel').slick({
-        	slidesToShow: 1,
-        	slidesToScroll: 1,
+            slidesToShow: 1,
+            slidesToScroll: 1,
             infinite: true,
             autoplay: true,
-        	autoplaySpeed: 7000,
-        	vertical: true
+            autoplaySpeed: 7000,
+            vertical: true
         });
 
         jQuery('.article_grid.four_column_blog.carousel').slick({
             rtl: true,
             slidesToShow: 4,
             slidesToScroll: 1,
-            infinite: true,
-            autoplay: true,
+            infinite: false,
+            autoplay: false,
             autoplaySpeed: 7000,
             responsive: [
                 {
@@ -190,6 +191,7 @@ jQuery(document).ready(function() {
                 }
               ]
         });
+                
         jQuery('.article_grid.two_column_blog.carousel').slick({
             slidesToShow: 2,
             slidesToScroll: 1,
@@ -207,13 +209,13 @@ jQuery(document).ready(function() {
               ]
         });
         jQuery('.article_list.carousel').slick({
-			slidesToShow: 2,
-        	slidesToScroll: 1,
+            slidesToShow: 2,
+            slidesToScroll: 1,
             infinite: true,
             autoplay: true,
-        	slide:'> li',
-        	autoplaySpeed: 7000,
-        	vertical: true
+            slide:'> li',
+            autoplaySpeed: 7000,
+            vertical: true
         });
     
             /* 
@@ -580,13 +582,13 @@ var SidebarMenuEffects = (function() {
 
 jQuery(window).load(function(){
     
-			/* 
+            /* 
          * preloader
          */
-   		 jQuery('#preload').fadeOut(300, function() {
-   		 	jQuery(this).remove();
-   		 });
-   		 jQuery('body').removeClass('is_loading');
+         jQuery('#preload').fadeOut(300, function() {
+            jQuery(this).remove();
+         });
+         jQuery('body').removeClass('is_loading');
     
 
             /* 
@@ -595,12 +597,12 @@ jQuery(window).load(function(){
 
 
         jQuery('.slider_h h2').slabText({
-        	viewportBreakpoint: 468,
+            viewportBreakpoint: 468,
             minCharsPerLine: 11
         });
 
         jQuery('#content-slider .rsNavItem > h3').slabText({
-        	minCharsPerLine: 9
+            minCharsPerLine: 9
         })
 
 
