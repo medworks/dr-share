@@ -19,7 +19,7 @@
 	$Contact_Email = GetSettingValue('Contact_Email',0);
 	
 	$About_System = GetSettingValue('About_System',0);
-	$About_System= (mb_strlen($About_System)>450) ? mb_substr($About_System,0,450,"UTF-8")."..." : $body;
+	$About_System= (mb_strlen($About_System)>537) ? mb_substr($About_System,0,537,"UTF-8")."..." : $body;
 
 
 $html.=<<<cd
@@ -85,16 +85,16 @@ $html.=<<<cd
 						<li>
 							<a href="http://www.ipa.org.uk" style="color:#000;line-height:1.3" target="_blank">انجمن بین المللی روانکاوی</a>
 						</li>
-						<li>
+<li>
 							<a href="http://pcoiran.ir" style="color:#000;line-height:1.3" target="_blank">سازمان نظام روان شناسی و مشاوره جمهوری اسلامی ایران</a>
 						</li>
-						<li>
+<li>
 							<a href="http://www.iranpa.org" style="color:#000;line-height:1.3" target="_blank">انجمن روانشناسی ایران</a>
 						</li>
-						<li>
-							<a href="www.irancpa.com" style="color:#000;line-height:1.3" target="_blank">انجمن روانشناسی بالینی ایران</a>
+<li>
+							<a href="http://www.irancpa.com" style="color:#000;line-height:1.3" target="_blank">انجمن روانشناسی بالینی ایران</a>
 						</li>
-						<li>
+<li>
 							<a href="http://tip.iums.ac.ir" style="color:#000;line-height:1.3" target="_blank">انستیتو روانپزشکی تهران</a>
 						</li>
 					</ul>
