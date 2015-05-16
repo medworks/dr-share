@@ -163,8 +163,8 @@ jQuery(document).ready(function() {
             slidesToShow: 4,
             slidesToScroll: 1,
             infinite: false,
-            autoplay: false,
-            autoplaySpeed: 7000,
+            autoplay: true,
+            autoplaySpeed: 1000,
             responsive: [
                 {
                   breakpoint: 1024,

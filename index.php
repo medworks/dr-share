@@ -13,8 +13,8 @@
 	
 	$db = Database::GetDatabase();
 	
-	$news = $db->SelectAll("news","*",NULL,"id ASC");
-	$slide = $db->SelectAll("slide","*",NULL,"id ASC");
+	$news = $db->SelectAll("news","*",NULL,"id DESC");
+	$slide = $db->SelectAll("slide","*",NULL,"id DESC");
 	
 $fhtml.=<<<cd
 <div id="main" class="col9 clearfix">
@@ -29,7 +29,7 @@ for($i = 0; $i < Count($slide); $i++)
 	
 $fhtml.=<<<cd
 				<div>
-					<a href="#">
+					<a href="javascript:void(0);">
 						<!--
 						<img class="rsImg" src="manager/img.php?slide=yes&did={$slide[$i]['id']}" alt ="{$rows[$i]['subject']}" width="492" height="874" />
 						-->
@@ -77,7 +77,7 @@ for($i = 0; $i < Count($news); $i++)
 	$src = 'data: '.$pic['itype'].';base64,'.$img;
 	//$pic=$db->Select("pics","*","tid=2 AND sid ='{$news[i][id]}'",NULL);
 	$news[$i]["text"] =(mb_strlen($news[$i]["text"])>120)?mb_substr($news[$i]["text"],0,120,"UTF-8")."...":$news[$i]["text"];
-        $body=strip_tags($news[$i]["text"]);
+    $body=strip_tags($news[$i]["text"]);
 	if ($i % 4 == 0)
 	{
 		$class = " last";
@@ -87,7 +87,7 @@ for($i = 0; $i < Count($news); $i++)
 		$class = "";
 	}
 $fhtml.=<<<cd
-				<div class="3 {$class}">
+				<div class="3 $class">
 					<div class="fade-in article_grid_module appeared">
 						<div class="article_grid_image">
 						<img class="morph" src="{$src}" alt ="{$news[$i]['subject']}" style="width:201px !important;height:115px !important" />
