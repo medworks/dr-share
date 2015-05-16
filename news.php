@@ -48,7 +48,7 @@ cd;
 
 for($i = 0; $i < Count($rows); $i++)
 {
-	$rows[$i]["regdate"] = ToJalali($rows[$i]["regdate"],"Y/m/d H:i");
+	$rows[$i]["regdate"] = ToJalali($rows[$i]["regdate"],"Y/m/d");
 	$pic = $db->Select("pics","*","`sid`='{$rows[$i]['id']}' AND `tid`='2'");
 	$img = base64_encode($pic['img']);
     $src = 'data: '.$pic['itype'].';base64,'.$img;
@@ -72,25 +72,25 @@ $nhtml.=<<<cd
 						<div class="hover_buttons">
 							<div>
 								<div>
-									<a href="one-news{$rows[$i]['id']}.html" class="hb-image-link" title="{$rows[$i]['subject']}"></a>
+									<a href="one-news{$rows[$i]['id']}.html" class="hb-image-link" title="{$rows[$i]['subject']}" target="_blank"></a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="article_grid_content">
 						<h3 class="article_heading rtl">
-							<a href="one-news{$rows[$i]['id']}.html" title="{$rows[$i]['subject']}" rel="bookmark">
+							<a href="one-news{$rows[$i]['id']}.html" title="{$rows[$i]['subject']}" rel="bookmark" target="_blank">
 								{$rows[$i]["subject"]}
 							</a>
 						</h3>
 						<p class="post_meta">
 							<span class="meta_date">
-								<a href="one-news{$rows[$i]['id']}.html" title="{$rows[$i]['subject']}" >{$rows[$i]["regdate"]}</a>
+								<a href="one-news{$rows[$i]['id']}.html" title="{$rows[$i]['subject']}" target="_blank">{$rows[$i]["regdate"]}</a>
 							</span>							
 						</p>
 						<div class="post_excerpt">							
 							<p>
-								<a class="post_more_link" href="one-news{$rows[$i]['id']}.html">ادامه خبر</a>
+								<a class="post_more_link" href="one-news{$rows[$i]['id']}.html" target="_blank">ادامه خبر</a>
 							</p>
 						</div>
 					</div>
