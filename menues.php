@@ -55,7 +55,7 @@ $ohtml.=<<<cd
 					}
 				</style>
 				<article class="single_post_content">
-					<h1 class="article_heading entry_title" style="font-size:28px !important;direction:rtl;color:#555">{$news['subject']}</h1>
+					<h1 class="article_heading entry_title" style="font-family:'bmitra' !important;font-size:25px !important;direction:rtl;color:#555">{$news['subject']}</h1>
 					<div class="clearboth"></div>
 					<div class="entry">
 						<p style="font-size:22px;font-weight:normal!important;color:#000;line-height: 1.5;letter-spacing:0px;text-align:justify;direction:rtl">
