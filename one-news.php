@@ -17,7 +17,7 @@
 	
 	$news = $db->Select("news","*","id={$_GET['id']}");
 	$seo->Site_Title = $news['subject'];
-	$news["regdate"] = ToJalali($news["regdate"],"Y/m/d H:i");
+	$news["regdate"] = ToJalali($news["regdate"],"Y/m/d");
 	$pic = $db->Select("pics","*","`sid`='{$_GET['id']}' AND `tid`='2'");
 	$img = base64_encode($pic['img']);
     $src = 'data: '.$pic['itype'].';base64,'.$img;
