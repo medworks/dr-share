@@ -44,7 +44,7 @@ jQuery(document).ready(function() {
             arrowsNav: true,
             fadeinLoadedSlide: true,
             controlNavigationSpacing: 0,
-            controlNavigation: 'bullets',
+            controlNavigation: 'thumbnails',
             thumbs: {
                 autoCenter: false,
                 fitInViewport: true,
