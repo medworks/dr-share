@@ -18,7 +18,7 @@
 	$db = Database::GetDatabase();
 	
 	function upload($db,$did,$mode)
-	{		
+	{
 		if(is_uploaded_file($_FILES['userfile']['tmp_name']) && getimagesize($_FILES['userfile']['tmp_name']) != false)
 		{    
 			$size = getimagesize($_FILES['userfile']['tmp_name']);		
@@ -32,6 +32,7 @@
 			//echo $db->cmd;
 			if($_FILES['userfile']['size'] < $maxsize )
 			{    
+				//echo "my1";
 				//tid 1 is for menu pics, 2 for news pics, 3 for maghalat pics
 				if ($mode == "insert")
 				{
@@ -41,14 +42,25 @@
 				}
 				else
 				{
-				  $imgrow =$db->Select("pics","*","sid='{$did}' AND tid='3' ");
-				  if ($imgfp != $imgrow["img"])
+				//	echo "1";
+				  $imgrow =$db->Select("pics","*","sid='{$did}' AND tid='3'");
+				  if (count($imgrow) > 0)
 				  {
-					$values = array("`tid`"=>"'3'","`sid`"=>"'{$did}'",
-						"`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
-						"`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
-					$db->UpdateQuery("pics",$values,array("sid='{$did}' AND tid='3'"));	
-				  }	
+					  if ($imgfp != $imgrow["img"])
+					  {
+						$values = array("`tid`"=>"'3'","`sid`"=>"'{$did}'",
+							"`itype`"=>"'{$type}'","`img`"=>"'{$imgfp}'",
+							"`iname`"=>"'{$name}'","`isize`"=>"'{$size}'");
+						$db->UpdateQuery("pics",$values,array("sid='{$did}' AND tid='3' "));	
+					  }
+					} 
+					else
+					{
+						$fields = array("`tid`","`sid`","`itype`","`img`","`iname`","`isize`");		
+						$values = array("'3'","'{$did}'","'{$type}'","'{$imgfp}'","'{$name}'","'{$size}'");	
+						$db->InsertQuery('pics',$fields,$values);
+					}
+				  				  	
 				}	
 				//echo $db->cmd;
 			}
@@ -273,7 +285,10 @@
 		$pic = $db->Select("pics","*","sid='{$_GET["did"]}' AND tid = 3",NULL);
 		if (isset($pic))
 		{
-			$imgload = "<img  src='img.php?did={$_GET[did]}&tid=3'  width='200px' height='180px' />";
+			$img = base64_encode($pic['img']);
+			$src = 'data: '.$pic['itype'].';base64,'.$img;
+			//$imgload = "<img  src='img.php?did={$_GET[did]}&tid=3'  width='200px' height='180px' />";
+			$imgload = "<img  src='{$src}'  width='200px' height='180px' />";
 		}	
 	}
   
