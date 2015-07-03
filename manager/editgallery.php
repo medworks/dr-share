@@ -94,6 +94,7 @@ $prow = $db->Select("gallerypics","*","id='{$rows[$i][gid]}'");
 $grow = $db->Select("gcategories","*","id='{$prow[gcid]}'",NULL);
 
 $prow["subject"] =(mb_strlen($prow["subject"])>20)?mb_substr($prow["subject"],0,20,"UTF-8")."...":$prow["subject"];
+$prow[$i]["text"] = strip_tags($prow[$i]["text"]);
 $prow["text"] =(mb_strlen($prow["text"])>20)?mb_substr($prow["text"],0,20,"UTF-8")."...":$prow["text"];
 
 $html.=<<<cd

@@ -142,6 +142,7 @@ for($i = 0; $i < Count($rows); $i++)
 {
 	$rownumber = $i+1;
 	$rows[$i]["subject"] =(mb_strlen($rows[$i]["subject"])>30)?mb_substr($rows[$i]["subject"],0,30,"UTF-8")."...":$rows[$i]["subject"];
+	$rows[$i]["text"] = strip_tags($rows[$i]["text"]);
 	$rows[$i]["text"] =(mb_strlen($rows[$i]["text"])>20)?mb_substr($rows[$i]["text"],0,20,"UTF-8")."...":$rows[$i]["text"];
 	$vals =  getparrentsname($db,$rows[$i]["smid"]);
 $html.=<<<cd
