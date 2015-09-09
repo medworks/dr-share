@@ -127,8 +127,8 @@
 		}
 		$result .= <<<JAVA
 		<script language="javascript">
-		$(document).ready(function(){
-			$("#message").delay(5000).fadeOut(500);
+		jQuery(document).ready(function(){
+			jQuery("#message").delay(4000).fadeOut(500);
 		});	
 		</script>
 JAVA;
