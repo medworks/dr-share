@@ -221,7 +221,7 @@ $chtml.=<<<cd
                             <label for="nt_field01">موبایل
                                 <span class="star">*</span>
                             </label>
-                            <input type="text" id="edtmob" name="edtmob" class="textfield name validate[required,custom[onlyNumberSp],maxSize[11],minSize[10]]" data-prompt-position="topLeft:-50" placeholder="09359856189" value="">
+                            <input type="text" id="edtmob" name="edtmob" class="textfield name validate[required,custom[onlyNumberSp],maxSize[11],minSize[11]]" data-prompt-position="topLeft:-50" placeholder="09359856189" value="">
                         </div>
                         <div class="nt_form_row email_row" style="margin-top:30px;display:inline-block">
                             <label for="nt_field11">ایمیل
