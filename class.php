@@ -122,7 +122,9 @@ $chtml.=<<<cd
                     </span>
                 </p>
                 <div class="nt_form">
-                    <!-- {$msgs} -->
+                    <div id="message">                    
+					{$msgs}
+					</div>
                     <form id="frmclass" class="formdata" enctype="multipart/form-data" action="" method="post" role="form">
                         <div class="nt_form_row name_row" style="">
                             <label for="nt_field01">نام کلاس
