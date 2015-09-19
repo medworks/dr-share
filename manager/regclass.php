@@ -58,7 +58,7 @@ $html.=<<<cd
                                                 <th>نام و نام خانوادگی</th>
                                                 <th>موبایل</th>
                                                 <th>تلفن تماس</th>
-                                                <th>شهر</th>
+                                                <th>دوره انتخابی</th>
                                                 <th class="text-center">عملیات</th>
                                             </tr>
                                             </thead>
@@ -86,16 +86,16 @@ $rows = $db->SelectAll("classes",
 $vals = array();
 for($i = 0; $i < Count($rows); $i++)
 {
+	$row = $db->Select("defclasses","*"," id = {$rows[$i][clsid]}");
+	$classname = $row["title"];
 $rownumber = $i+1;
 $html.=<<<cd
-
-                                                
                                             <tr>
                                                 <td>{$rownumber}</td>
                                                 <td>{$rows[$i]["name"]}</td>
                                                 <td>{$rows[$i]["mobile"]}</td>
                                                 <td>{$rows[$i]["tel"]}</td>
-                                                <td>{$rows[$i]["shahr"]}</td>
+                                                <td>{$classname}</td>
                                                 <td class="text-center">
     							<a href="regcldetail.php?act=view&did={$rows[$i]['id']}"  >					
 								<button class="btn btn-xs btn-warning" title="مشاهده"><i class="fa fa-eye"></i></button>

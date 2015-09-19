@@ -128,9 +128,10 @@
 		$result .= <<<JAVA
 		<script language="javascript">
 		jQuery(document).ready(function(){
-			jQuery("#message").delay(6000).fadeOut(500);
+			jQuery("#message").delay(3000).fadeOut(500);
 		});	
 		</script>
+		
 JAVA;
 		return $result;
 	}

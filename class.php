@@ -122,7 +122,7 @@ $chtml.=<<<cd
                     </span>
                 </p>
                 <div class="nt_form">
-                    <div id="message">                    
+                    <div id="messages">                    
 					{$msgs}
 					</div>
                     <form id="frmclass" class="formdata" enctype="multipart/form-data" action="" method="post" role="form">
@@ -267,7 +267,12 @@ $chtml.=<<<cd
                  //   contentContainer:'.content',
                     loadUrl: 'classinfos.php?id='+id
                 }); 
-            });     
+				
+            }); 
+				
+		jQuery(document).ready(function(){
+			jQuery("#messages").delay(120000).fadeOut(500);
+		});	
         });         
     </script>   
 cd;
