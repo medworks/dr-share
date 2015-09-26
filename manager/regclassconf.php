@@ -17,7 +17,11 @@
 		die(); // solve a security bug
 	} 
 	$db = Database::GetDatabase(); 
-		
+	 if ($_GET['act']=="del")
+	{
+		$db->Delete("classes"," id",$_GET["did"]);		
+		header('location:regclassconf.php?act=new');	
+	}		
     
 $html.=<<<cd
     <!--Page main section start-->
@@ -69,7 +73,8 @@ cd;
 
 	$pagination->navigation_position("right");
 
-	$reccount = $db->CountAll("classes");
+	$reccount = $db->CountOf("classes"," confirm =1 ");
+	//$reccount = $db->CountAll("classes");
 	$pagination->records($reccount); 
 	
     $pagination->records_per_page($records_per_page);	
@@ -103,7 +108,11 @@ $html.=<<<cd
                                                     <a href="regcldetail.php?act=view&did={$rows[$i]["id"]}"  >                    
                                                         <button class="btn btn-xs btn-warning" title="مشاهده"><i class="fa fa-eye"></i></button>
                                                     </a>   
-                                                </td>
+                                                
+												<a href="?act=del&did={$rows[$i]["id"]}">                   
+												<button class="btn btn-xs btn-danger" title="حذف"><i class="fa fa-minus"></i></button>
+												</a>
+												</td>
                                             </tr>
 cd;
 }
@@ -125,6 +134,20 @@ $html.=<<<cd
         </div>
     </section>
     <!--Page main section end -->
+	<script type='text/javascript'>
+		$(document).ready(function(){	
+		  $(":button.btn-danger").click(function() 
+		  {
+				if(confirm("از حذف این رکورد مطمئن هستید؟"))
+				{					
+				}
+				else
+				{
+					return false;
+				}
+		  });
+	    });
+		</script>
 cd;
 	include_once("./inc/header.php");
 	echo $html;
